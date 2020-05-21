@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2016, 2019 Openworx.
+    @author Mario Gielissen <mario@openworx.nl>
+    License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+    <data>
+
+        <template id="_assets_primary_variables" inherit_id="web._assets_primary_variables" priority="15">
+            <xpath expr="//link[last()]" position="after">
+                <link rel="stylesheet" type="text/scss"
+                      href="/backend_theme_v13/static/src/scss/primary_variables.scss"/>
+            </xpath>
+        </template>
+
+        <template id="_assets_secondary_variables" inherit_id="web._assets_secondary_variables" priority="15">
+            <xpath expr="//link" position="before">
+                <link rel="stylesheet" type="text/scss"
+                      href="/backend_theme_v13/static/src/scss/secondary_variables.scss"/>
+            </xpath>
+        </template>
+
+        <template id="_assets_backend_helpers" inherit_id="web._assets_backend_helpers" priority="15">
+            <xpath expr="//link[@href='/web/static/src/scss/bootstrap_overridden.scss']" position="replace">
+                <link rel="stylesheet" type="text/scss"
+                      href="/backend_theme_v13/static/src/scss/bootstrap_overridden.scss"/>
+            </xpath>
+        </template>
+
+        <template id="assets_common" name="backend_theme_v13 assets common" inherit_id="web.assets_common">
+            <xpath expr="//link[@href='/web/static/src/scss/ui_extra.scss']" position="replace">
+                <link rel="stylesheet" type="text/scss" href="/backend_theme_v13/static/src/scss/ui.scss"/>
+            </xpath>
+            <xpath expr="//link[last()]" position="after">
+                <link rel="stylesheet" type="text/scss" href="/backend_theme_v13/static/src/scss/fonts.scss"/>
+            </xpath>
+        </template>
+
+        <template id="assets_backend" name="backend_theme_v13 assets backend" inherit_id="web.assets_backend">
+            <xpath expr="//link[@href='/web/static/src/scss/webclient_extra.scss']" position="replace">
+                <link rel="stylesheet" type="text/scss" href="/backend_theme_v13/static/src/scss/webclient.scss"/>
+            </xpath>
+            <xpath expr="//link[@href='/web/static/src/scss/webclient_layout.scss']" position="replace">
+                <link rel="stylesheet" type="text/scss"
+                      href="/backend_theme_v13/static/src/scss/webclient_layout.scss"/>
+            </xpath>
+            <xpath expr="//link[@href='/web/static/src/scss/fields_extra.scss']" position="replace">
+                <link rel="stylesheet" type="text/scss" href="/backend_theme_v13/static/src/scss/fields.scss"/>
+            </xpath>
+            <xpath expr="//link[@href='/web/static/src/scss/form_view_extra.scss']" position="replace">
+                <link rel="stylesheet" type="text/scss" href="/backend_theme_v13/static/src/scss/form_view.scss"/>
+            </xpath>
+            <xpath expr="//link[@href='/web/static/src/scss/list_view_extra.scss']" position="replace">
+                <link rel="stylesheet" type="text/scss" href="/backend_theme_v13/static/src/scss/list_view.scss"/>
+            </xpath>
+            <xpath expr="//link[@href='/web/static/src/scss/search_view_extra.scss']" position="replace">
+                <link rel="stylesheet" type="text/scss" href="/backend_theme_v13/static/src/scss/search_view.scss"/>
+            </xpath>
+            <xpath expr="//link[@href='/web/static/src/scss/dropdown_extra.scss']" position="replace">
+                <link rel="stylesheet" type="text/scss" href="/backend_theme_v13/static/src/scss/dropdown.scss"/>
+            </xpath>
+            <xpath expr="//link[last()]" position="after">
+                <link rel="stylesheet" type="text/scss" href="/backend_theme_v13/static/src/scss/home_menu.scss"/>
+                <link rel="stylesheet" type="text/scss"
+                      href="/backend_theme_v13/static/src/scss/home_menu_layout.scss"/>
+                <link rel="stylesheet" type="text/scss"
+                      href="/backend_theme_v13/static/src/scss/search_panel_mobile.scss"/>
+                <link rel="stylesheet" type="text/scss" href="/backend_theme_v13/static/src/scss/menu_mobile.scss"/>
+                <link rel="stylesheet" type="text/scss" href="/backend_theme_v13/static/src/scss/menu_search.scss"/>
+                <link rel="stylesheet" type="text/scss"
+                      href="/backend_theme_v13/static/src/scss/control_panel_layout.scss"/>
+                <link rel="stylesheet" type="text/scss" href="/backend_theme_v13/static/src/scss/datepicker.scss"/>
+                <link rel="stylesheet" type="text/scss" href="/backend_theme_v13/static/src/scss/kanban_view.scss"/>
+                <link rel="stylesheet" type="text/scss" href="/backend_theme_v13/static/src/scss/touch_device.scss"/>
+                <link rel="stylesheet" type="text/scss" href="/backend_theme_v13/static/src/scss/snackbar.scss"/>
+                <link rel="stylesheet" type="text/scss"
+                      href="/backend_theme_v13/static/src/scss/swipe_item_mixin.scss"/>
+                <link rel="stylesheet" type="text/scss"
+                      href="/backend_theme_v13/static/src/scss/form_view_mobile.scss"/>
+                <link rel="stylesheet" type="text/scss"
+                      href="/backend_theme_v13/static/src/scss/kanban_view_mobile.scss"/>
+                <link rel="stylesheet" type="text/scss" href="/backend_theme_v13/static/src/scss/modal_mobile.scss"/>
+
+                <link rel="stylesheet" type="text/scss" href="/web/static/src/scss/navbar_mobile.scss"/>
+            </xpath>
+
+
+        </template>
+
+    </data>
+</odoo>

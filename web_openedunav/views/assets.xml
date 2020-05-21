@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="web_openedunav_assets_frontend" name="Theme OpenEducat Frontend Assets"
+              inherit_id="website.assets_frontend">
+        <xpath expr="." position="inside">
+            <link href="/web_openedunav/static/src/scss/homepage.scss"
+                  type="text/scss" rel="stylesheet"/>
+        </xpath>
+    </template>
+
+    <template id="snippet_id" inherit_id="website.snippets">
+        <xpath expr="//div[@id='snippet_structure']" position="before">
+            <div class="o_panel_body">
+                <!--________________________ Snippets____________________ -->
+                        <t t-snippet="web_openedunav.slider"
+                           t-thumbnail="web_openedunav/static/src/img/snippets_icons/op_edunav.png"/>
+                        <t t-snippet="web_openedunav.about-us"
+                           t-thumbnail="web_openedunav/static/src/img/snippets_icons/op_edunav.png"/>
+                        <t t-snippet="web_openedunav.ourcourse"
+                           t-thumbnail="web_openedunav/static/src/img/snippets_icons/op_edunav.png"/>
+                        <t t-snippet="web_openedunav.achievement"
+                           t-thumbnail="web_openedunav/static/src/img/snippets_icons/op_edunav.png"/>
+                        <t t-snippet="web_openedunav.teacher"
+                           t-thumbnail="web_openedunav/static/src/img/snippets_icons/op_edunav.png"/>
+                        <t t-snippet="web_openedunav.event"
+                           t-thumbnail="web_openedunav/static/src/img/snippets_icons/op_edunav.png"/>
+                        <t t-snippet="web_openedunav.newsfeed"
+                           t-thumbnail="web_openedunav/static/src/img/snippets_icons/op_edunav.png"/>
+                        <t t-snippet="web_openedunav.footer"
+                           t-thumbnail="web_openedunav/static/src/img/snippets_icons/op_edunav.png"/>
+            </div>
+        </xpath>
+    </template>
+</odoo>
