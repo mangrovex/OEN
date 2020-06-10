@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="view_sie_subject_form" model="ir.ui.view">
+			<field name="name">sie.subject.form</field>
+			<field name="model">sie.subject</field>
+			<field name="arch" type="xml">
+				<form string="Subject">
+					<sheet>
+						<group col="1">
+							<field name="name" placeholder="Module"/>
+						</group>
+						<group col="4">
+							<field name="acronym"/>
+							<field name="code"/>
+							<field name="shaft_id"
+							       options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
+							<!--<field name="senescyt_code"/>-->
+							<field name="subject_type"/>
+							<field name="version"/>
+							<field name="last_review"/>
+							<field name="hours"/>
+							<field name="running_hours" readonly="1"/>
+							<field name="credits"/>
+							<field name="coefficient" digits="(14, 6)" readonly="1"/>
+							<field name="state"/>
+							<field name="start_date" attrs="{'required':['|',('state','=','r'),('state','=','f')]}"/>
+							<field name="end_date" attrs="{'required':[('state','=','f')]}"/>
+							<field name="plus_exec_hours" readonly="1"/>
+						</group>
+						<notebook>
+							<page string="Contenido Imprescindible">
+								<group>
+									<field name="subject_content_ids" nolabel="1">
+										<form string="Contenido Imprescindible">
+											<sheet>
+												<group>
+													<field name="name" placeholder="Ciencias Navales"/>
+													<field name="faculty_id"/>
+													<field name="date_start"/>
+													<field name="date_end"/>
+													<field name="hours"/>
+													<field name="score"/>
+												</group>
+											</sheet>
+										</form>
+										<tree>
+											<field name="name"/>
+											<field name="faculty_id"/>
+											<field name="date_start"/>
+											<field name="date_end"/>
+											<field name="hours"/>
+											<field name="score"/>
+										</tree>
+									</field>
+								</group>
+							</page>
+							<page string="Docente">
+								<group>
+									<!--<field name="faculty_ids" widget='many2many_tags'/>-->
+									<field name="faculty_id"
+									       options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
+									<field name="course_id" readonly="1"/>
+								</group>
+							</page>
+							<page string="Syllabus">
+								<group>
+									<field name="pre_requirement" widget="html_code_view"/>
+									<field name="co_requisites" widget="html_code_view"/>
+									<field name="description" widget="html_code_view"/>
+									<field name="competences" widget="html_code_view"/>
+									<field name="competition_unit" widget="html_code_view"/>
+									<field name="element_of_competition" widget="html_code_view"/>
+									<field name="learning_outcome" widget="html_code_view"/>
+									<field name="contribution_of_the_subject" widget="html_code_view"/>
+								</group>
+							</page>
+							<page string="Unidades de Aprendizaje">
+								<field name="unit_ids" nolabel="1"/>
+							</page>
+							<page string="Información adicional">
+								<group>
+									<field name="additional_data" nolabel="1" widget="html_tiny"/>
+								</group>
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record id="view_sie_subject_tree" model="ir.ui.view">
+			<field name="name">sie.subject.tree</field>
+			<field name="model">sie.subject</field>
+			<field name="arch" type="xml">
+				<tree string="Subject">
+					<field name="code"/>
+					<field name="name"/>
+					<field name="faculty_id"/>
+					<field name="credits"/>
+					<field name="start_date"/>
+					<field name="end_date"/>
+					<field name="state"/>
+					<field name="hours"/>
+					<field name="running_hours"/>
+					<field name="coefficient"/>
+				</tree>
+			</field>
+		</record>
+		<record id="view_sie_subject_search" model="ir.ui.view">
+			<field name="name">sie.subject.search</field>
+			<field name="model">sie.subject</field>
+			<field name="arch" type="xml">
+				<search string="Search Subject">
+					<field name="code"/>
+					<field name="name"/>
+					<field name="shaft_id"/>
+					<group expand="0" string="Group By...">
+						<filter name="group_shaft" string="Shaft of Training" context="{'group_by': 'shaft_id'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+		
+		<record model="ir.actions.act_window" id="act_open_sie_subject_view">
+			<field name="name">Modulo</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">sie.subject</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_sie_subject_search"/>
+			<field name="domain">[]</field>
+			<field name="context">{'search_default_group_shaft': 1}</field>
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+					Click to create a new Module.
+				</p>
+			</field>
+		</record>
+		<record model="ir.actions.act_window.view" id="act_open_sie_subject_view_form">
+			<field name="act_window_id" ref="act_open_sie_subject_view"/>
+			<field name="sequence" eval="20"/>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_sie_subject_form"/>
+		</record>
+		<record model="ir.actions.act_window.view" id="act_open_sie_subject_view_tree">
+			<field name="act_window_id" ref="act_open_sie_subject_view"/>
+			<field name="sequence" eval="10"/>
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_sie_subject_tree"/>
+		</record>
+	</data>
+</openerp>

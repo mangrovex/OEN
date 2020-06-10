@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_res_state_city_group_user,access_res_state_city_group_user,model_res_state_city,base.group_user,1,1,1,1
+access_res_city_parish_group_user,access_res_city_parish_group_user,model_res_city_parish,base.group_user,1,0,0,0
+access_res_store_manager,model_res_store_manager,model_res_store,base.group_erp_manager,1,1,1,1
+access_res_store_all,model_res_store_all,model_res_store,,1,0,0,0
+access_res_users_group_admin,access_res_users_group_admin,base.model_res_users,group_admin_manager,1,1,1,1
+access_res_company_group_admin,access_res_company_group_admin,base.model_res_company,group_admin_manager,1,1,1,1

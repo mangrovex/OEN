@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_sie_location_tree" model="ir.ui.view">
+            <field name="name">sie.location.tree</field>
+            <field name="model">sie.location</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="location">
+                    <field name="name"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_sie_location_form" model="ir.ui.view">
+            <field name="name">sie.location.form</field>
+            <field name="model">sie.location</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="location">
+                    <sheet>
+                        <separator colspan="4" string="Reparto"/>
+                        <group col="4" colspan="4">
+                            <field name="name"/>
+                            <field name="code"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_sie_location_search" model="ir.ui.view">
+            <field name="name">sie.location.search</field>
+            <field name="model">sie.location</field>
+            <field name="arch" type="xml">
+                <search string="location">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+                        <filter name="Name" string="Name" domain="[]" context="{'group_by':'name'}"/>
+                        <filter name="Code" string="Code" domain="[]" context="{'group_by':'code'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="act_open_sie_location_view">
+            <field name="name">Reparto</field>
+            <field name="res_model">sie.location</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_sie_location_search"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Clic para crear un nuevo reparto.
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

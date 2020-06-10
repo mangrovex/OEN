@@ -1,0 +1,329 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="1">
+        <record model="sie.promotion.course" id="sie_promotion_course_01">
+            <field name="name">I</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_02">
+            <field name="name">II</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_03">
+            <field name="name">III</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_04">
+            <field name="name">IV</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_05">
+            <field name="name">V</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_06">
+            <field name="name">VI</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_07">
+            <field name="name">VII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_08">
+            <field name="name">VIII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_09">
+            <field name="name">IX</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_10">
+            <field name="name">X</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_11">
+            <field name="name">XI</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_12">
+            <field name="name">XII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_13">
+            <field name="name">XIII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_14">
+            <field name="name">XIV</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_15">
+            <field name="name">XV</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_16">
+            <field name="name">XVI</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_17">
+            <field name="name">XVII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_18">
+            <field name="name">XVIII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_19">
+            <field name="name">XIX</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_20">
+            <field name="name">XX</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_21">
+            <field name="name">XXI</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_22">
+            <field name="name">XXII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_23">
+            <field name="name">XXIII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_24">
+            <field name="name">XXIV</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_25">
+            <field name="name">XXV</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_26">
+            <field name="name">XXVI</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_27">
+            <field name="name">XXVII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_28">
+            <field name="name">XXVIII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_29">
+            <field name="name">XXIX</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_30">
+            <field name="name">XXX</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_31">
+            <field name="name">XXXI</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_32">
+            <field name="name">XXXII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_33">
+            <field name="name">XXXIII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_34">
+            <field name="name">XXXIV</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_35">
+            <field name="name">XXXV</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_36">
+            <field name="name">XXXVI</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_37">
+            <field name="name">XXXVII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_38">
+            <field name="name">XXXVIII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_39">
+            <field name="name">XXXIX</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_40">
+            <field name="name">XL</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_41">
+            <field name="name">XLI</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_42">
+            <field name="name">XLII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_43">
+            <field name="name">XLIII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_44">
+            <field name="name">XLIV</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_45">
+            <field name="name">XLV</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_46">
+            <field name="name">XLVI</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_47">
+            <field name="name">XLVII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_48">
+            <field name="name">XLVIII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_49">
+            <field name="name">XLIX</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_50">
+            <field name="name">L</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_51">
+            <field name="name">LI</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_52">
+            <field name="name">LII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_53">
+            <field name="name">LIII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_54">
+            <field name="name">LIV</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_55">
+            <field name="name">LV</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_56">
+            <field name="name">LVI</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_57">
+            <field name="name">LVII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_58">
+            <field name="name">LVIII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_59">
+            <field name="name">LVIX</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_60">
+            <field name="name">LX</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_61">
+            <field name="name">LXI</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_62">
+            <field name="name">LXII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_63">
+            <field name="name">LXIII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_64">
+            <field name="name">LXIV</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_65">
+            <field name="name">LXV</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_66">
+            <field name="name">LXVI</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_67">
+            <field name="name">LXVII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_68">
+            <field name="name">LXVIII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_69">
+            <field name="name">LXIX</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_70">
+            <field name="name">LXX</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_71">
+            <field name="name">LXXI</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_72">
+            <field name="name">LXXII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_73">
+            <field name="name">LXXIII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_74">
+            <field name="name">LXXIV</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_75">
+            <field name="name">LXXV</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_76">
+            <field name="name">LXXVI</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_77">
+            <field name="name">LXXVII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_78">
+            <field name="name">LXXVIII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_79">
+            <field name="name">LXXIX</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_80">
+            <field name="name">LXXX</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_81">
+            <field name="name">LXXXI</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_82">
+            <field name="name">LXXXII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_83">
+            <field name="name">LXXXIII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_84">
+            <field name="name">LXXXIV</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_85">
+            <field name="name">LXXXV</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_86">
+            <field name="name">LXXXVI</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_87">
+            <field name="name">LXXXVII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_88">
+            <field name="name">LXXXVIII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_89">
+            <field name="name">LXXXIX</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_90">
+            <field name="name">XC</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_91">
+            <field name="name">XCI</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_92">
+            <field name="name">XCII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_93">
+            <field name="name">XCIII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_94">
+            <field name="name">XCIV</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_95">
+            <field name="name">XCV</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_96">
+            <field name="name">XCVI</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_97">
+            <field name="name">XCVII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_98">
+            <field name="name">XCVIII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_99">
+            <field name="name">XCIX</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_100">
+            <field name="name">C</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_101">
+            <field name="name">CI</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_102">
+            <field name="name">CII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_103">
+            <field name="name">CIII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_104">
+            <field name="name">CIV</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_105">
+            <field name="name">CV</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_106">
+            <field name="name">CVI</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_107">
+            <field name="name">CVII</field>
+        </record>
+        <record model="sie.promotion.course" id="sie_promotion_course_108">
+            <field name="name">CVIII</field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_sie_score_statistician_form" model="ir.ui.view">
+            <field name="name">sie.score.statistician.form</field>
+            <field name="model">sie.score</field>
+            <field name="arch" type="xml">
+                <form string="Scores">
+                    <header>
+                        <button name="action_publish" type="object" states="draft,for review" string="Publish"
+                                class="oe_highlight"/>
+                        <button name="action_approve" type="object" states="published" string="Approve" icon="gtk-apply"
+                                class="oe_highlight"
+                                groups="openedunav_escape.group_sie_stats"/>
+                        <button name="action_reject" type="object" icon="gtk-undo" states="published" string="Reject"
+                                class="oe_highlight"
+                                groups="openedunav_escape.group_sie_stats"/>
+                        <button name="action_to_published" type="object" icon="gtk-undo" states="approved"
+                                string="To published"
+                                class="oe_highlight"
+                                groups="openedunav_escape.group_sie_stats" confirm="Are you sure?"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,published,approved"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="course_id" options='{"no_open":True,"no_create_edit":True}'
+                                   attrs="{'readonly':[('create_date', '!=', False)]}"/>
+                            <field name="teacher_id" attrs="{'readonly':[('create_date', '!=', False)]}"/>
+                            <!--<field name="quiz" attrs="{'readonly':[('create_date', '!=', False)]}"/>-->
+                            <field name="parameter_id" options='{"no_open":True,"no_create_edit":True}'/>
+                                   <!--attrs="{'invisible':['|',('quiz','=','is_quiz_p'),('quiz','=','is_quiz_v')],-->
+                                   <!--'required': [('quiz','!=','is_quiz_p'),('quiz','!=','is_quiz_v')],-->
+                                   <!--'readonly':[('create_date', '!=', False)]}"/>-->
+                            <field name="subject_id" options='{"no_open":True,"no_create_edit":True}'
+                                   attrs="{'readonly':[('create_date', '!=', False)]}"/>
+                            <field name="score_number" />
+                                   <!--attrs="{'invisible':['|',('parameter_name','=','009'),('quiz','=','is_quiz_v')],-->
+                                   <!--'required': [('parameter_name','!=','009'),('quiz','!=','is_quiz_v')],-->
+                                   <!--'readonly':[('create_date', '!=', False)]}"/>-->
+                            <field name="subject_credits"/>
+                            <!--<field name="parameter_name" invisible="1"/>-->
+                            <field name="matrix_id" invisible="1"/>
+                            <field name="create_date" invisible="1"/>
+                        </group>
+                        <notebook>
+                            <page string="Students">
+                                <field name="student_ids" nolabel="1" mode="tree" options="{'no_create':True}"
+                                       attrs="{'readonly':[('state', '!=', 'for review')]}">
+                                    <tree editable="top" string="Students" create="false" delete="false">
+                                        <field name="student_id" options="{'no_open':True}" readonly="1"/>
+                                        <field name="score" widget="score"/>
+                                    </tree>
+                                    <form string="Students">
+                                        <sheet>
+                                            <group>
+                                                <field name="student_id" options='{"no_open":True}'/>
+                                                <field name="score" options='{"no_open":True}'/>
+                                            </group>
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Notes">
+                                <field name="notes" nolabel="1"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_sie_score_statistician_tree" model="ir.ui.view">
+            <field name="name">sie.score.statistician.tree</field>
+            <field name="model">sie.score</field>
+            <field name="arch" type="xml">
+                <tree string="Scores"
+                      colors="gray:state == 'draft';red:state == 'published';blue:state == 'approved'">
+                    <field name="parameter_id"/>
+                    <!--<field name="quiz"/>-->
+                    <field name="score_number"/>
+                    <field name="create_date"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_sie_score_statistician_search" model="ir.ui.view">
+            <field name="name">sie.score.statistician.search</field>
+            <field name="model">sie.score</field>
+            <field name="arch" type="xml">
+                <search string="Search Scores">
+                    <field name="course_id"/>
+                    <field name="subject_id"/>
+                    <filter name="draft" string="Draft" domain="[('state','=','draft')]"/>
+                    <filter name="published" string="Published" domain="[('state','=','published')]"/>
+                    <filter name="review" string="For review" domain="[('state','=','for review')]"/>
+                    <filter name="score_approved" string="Approved" domain="[('state','=','approved')]"
+                            help="Approved Score"/>
+                    <group expand="0" string="Group By...">
+                        <filter name="State" string="State" context="{'group_by': 'state'}"/>
+                        <filter name="group_course" string="Course" domain="[]" context="{'group_by': 'course_id'}"/>
+                        <filter name="group_subject" string="Subject" context="{'group_by': 'subject_id'}"/>
+                        <filter name="Parameter" string="Parameter" context="{'group_by': 'parameter_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_sie_score_statistician_view">
+            <field name="name">Scores Statistician</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sie.score</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_sie_score_statistician_search"/>
+            <field name="domain">[('state','!=','draft'),('course_id.statistician.user_id','=',uid)]</field>
+            <field name="context">{'search_default_group_course': 1,'search_default_group_subject': 1}
+            </field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new score statistician.
+                </p>
+            </field>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_sie_score_view_statistician_form">
+            <field name="act_window_id" ref="act_open_sie_score_statistician_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_sie_score_statistician_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_sie_score_view_statistician_tree">
+            <field name="act_window_id" ref="act_open_sie_score_statistician_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_sie_score_statistician_tree"/>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,6 @@
+<openerp>
+    <data noupdate="0">
+        <menuitem id="menu_sie_configuration_behavior" name="Comportamiento"
+                  parent="openedunav_core.sie_main_menu" sequence="20"/>
+    </data>
+</openerp>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- Menu item to Behavior Task list -->
+        <!--<menuitem id="behavior_menu"-->
+                  <!--name="Behavior"-->
+                  <!--parent=""-->
+                  <!--sequence="1"/>-->
+
+        <menuitem id="news_menu"
+                  name="Novedades"
+                  action="act_open_sie_news_view"
+                  parent="menu_sie_configuration_behavior"
+                  sequence="2"/>
+
+        <menuitem id="license_menu"
+                  name="Permisos"
+                  action="act_open_sie_license_view"
+                  parent="menu_sie_configuration_behavior"
+                  sequence="3"/>
+
+        <menuitem id="brigadier_menu"
+                  name="Nota de Brigadier"
+                  action="act_open_sie_brigadier_note_view"
+                  parent="menu_sie_configuration_behavior"
+                  sequence="4"/>
+
+         <menuitem id="report_menu"
+                  name="Corte de Notas"
+                  action="act_open_sie_report_behavior_view"
+                  parent="menu_sie_configuration_behavior"
+                  sequence="5"/>
+
+        <!--Menu news -->
+        <!--<record id="act_open_sie_news_view" model="ir.actions.act_window">-->
+            <!--<field name="name">Sie_News_View</field>-->
+            <!--<field name="res_model">sie.news</field>-->
+            <!--<field name="view_type">form</field>-->
+            <!--<field name="view_mode">tree,form</field>-->
+        <!--</record>-->
+        <!--<menuitem id="News_menu"-->
+                  <!--name="News"-->
+                  <!--action="act_open_sie_news_view"-->
+                  <!--parent="behavior_menu"-->
+                  <!--sequence="2"/>-->
+
+        <!--Menu License -->
+        <!--<record id="act_open_sie_license_view" model="ir.actions.act_window">-->
+            <!--<field name="name">Sie_License_View</field>-->
+            <!--<field name="res_model">sie.license</field>-->
+            <!--<field name="view_type">form</field>-->
+            <!--<field name="view_mode">tree,form</field>-->
+        <!--</record>-->
+        <!--<menuitem id="License_menu"-->
+                  <!--name="License"-->
+                  <!--action="act_open_sie_license_view"-->
+                  <!--parent="behavior_menu"-->
+                  <!--sequence="3"/>-->
+
+    </data>
+</odoo>

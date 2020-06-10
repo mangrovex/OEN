@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_sie_physical_proof_param_form" model="ir.ui.view">
+            <field name="name">sie.physical.proof.param.form</field>
+            <field name="model">sie.physical.proof.param</field>
+            <field name="arch" type="xml">
+                <form string="Parameter of Physical Proof" version="7.0">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="test_id"/>
+                                <field name="table_id"/>
+                                <field name="gender"/>
+                            </group>
+                            <group>
+                                <field name="measure"/>
+                                <field name="control"
+                                       attrs="{'required':[('measure', '=', 'time')], 'invisible':[('measure', '!=', 'time')]}"/>
+                                <field name="value"/>
+                                <field name="max_value"
+                                       attrs="{'required':[('control', '=', 'between'), ('measure', '=', 'time')], 'invisible':['|', ('measure', '!=', 'time'), ('control', '!=', 'between')]}"/>
+                                <field name="coefficient"
+                                       attrs="{'required':[('measure', '=', 'time')], 'invisible':[('measure', '!=', 'time')]}"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_sie_physical_proof_param_tree" model="ir.ui.view">
+            <field name="name">sie.physical.proof.param.tree</field>
+            <field name="model">sie.physical.proof.param</field>
+            <field name="arch" type="xml">
+                <tree string="Parameter of Physical Proof">
+                    <field name="test_id"/>
+                    <field name="table_id"/>
+                    <field name="gender"/>
+                    <field name="value"/>
+                    <field name="measure"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_sie_physical_proof_param_search" model="ir.ui.view">
+            <field name="name">sie.physical.proof.param.search</field>
+            <field name="model">sie.physical.proof.param</field>
+            <field name="arch" type="xml">
+                <search string="Parameter of Physical Proof">
+                    <field name="test_id"/>
+                    <field name="table_id"/>
+                    <filter string="Males" domain="[('gender','=','male')]"/>
+                    <filter string="Females" domain="[('gender','=','female')]"/>
+                    <filter string="Time" domain="[('measure','=','time')]"/>
+                    <filter string="Number" domain="[('measure','=','number')]"/>
+                    <group string="Group by...">
+                        <filter string="Gender" context="{'group_by': 'gender'}"/>
+                        <filter string="Unit of Measure" context="{'group_by': 'measure'}"/>
+                        <filter string="Test" context="{'group_by': 'test_id'}"/>
+                        <filter string="Table" context="{'group_by': 'table_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_sie_physical_proof_param_view">
+            <field name="name">Parameter of Physical Proof</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sie.physical.proof.param</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_sie_physical_proof_param_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new parameter.
+                </p>
+            </field>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_sie_physical_proof_param_view_form">
+            <field name="act_window_id" ref="act_open_sie_physical_proof_param_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_sie_physical_proof_param_form"/>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_sie_physical_proof_param_view_tree">
+            <field name="act_window_id" ref="act_open_sie_physical_proof_param_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_sie_physical_proof_param_tree"/>
+        </record>
+    </data>
+</openerp>

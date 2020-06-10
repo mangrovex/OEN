@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_openedunav_behavior_openedunav_behavior,openedunav_behavior.openedunav_behavior,model_openedunav_behavior_openedunav_behavior,,1,0,0,0

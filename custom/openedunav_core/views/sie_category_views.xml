@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_sie_faculty_category_tree" model="ir.ui.view">
+            <field name="name">sie.faculty.category.tree</field>
+            <field name="model">sie.faculty.category</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Category">
+                    <field name="name"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_sie_faculty_category_form" model="ir.ui.view">
+            <field name="name">sie.faculty.category.form</field>
+            <field name="model">sie.faculty.category</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Category">
+                    <sheet>
+                        <separator colspan="4" string="Category"/>
+                        <group colspan="4">
+                            <field name="name"/>
+                            <field name="code"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_sie_faculty_category_search">
+            <field name="name">sie.faculty.category.search</field>
+            <field name="model">sie.faculty.category</field>
+            <field name="arch" type="xml">
+                <search string="Category">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+                        <filter name="Name" string="Name" context="{'group_by':'name'}"/>
+                        <filter name="Code" string="Code" context="{'group_by':'code'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_sie_faculty_category_view">
+            <field name="name">Category</field>
+            <field name="res_model">sie.faculty.category</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_sie_faculty_category_search"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new category.
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

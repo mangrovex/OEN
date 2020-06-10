@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sie_timekeeping,access_sie_timekeeping,model_sie_timekeeping,base.group_user,1, 1, 1, 1
+access_sie_timekeeping_calc,access_sie_timekeeping_calc,model_sie_timekeeping_calc,base.group_user,1, 1, 1, 1 
+access_sie_timekeeping_line_calc,access_sie_timekeeping_line_calc,model_sie_timekeeping_line_calc,base.group_user,1, 1, 1, 1 

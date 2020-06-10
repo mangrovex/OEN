@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="1">
+
+        <record model="sie.award" id="sie_award_01">
+            <field name="name">Medalla de Honor y Disciplina Luis Minacho</field>
+            <field name="given">honor y disciplina militar</field>
+        </record>
+        <record model="sie.award" id="sie_award_02">
+            <field name="name">Medalla del Círculo Militar</field>
+            <field name="given">honor y disciplina militar</field>
+        </record>
+        <record model="sie.award" id="sie_award_03">
+            <field name="name">Medalla Academia de Guerra</field>
+            <field name="given">honor y disciplina militar</field>
+        </record>
+        <record model="sie.award" id="sie_award_04">
+            <field name="name">Medalla al Mérito República del Ecuador</field>
+            <field name="given">honor y disciplina militar</field>
+        </record>
+        <record model="sie.award" id="sie_award_05">
+            <field name="name">Medalla al Mérito Naval "Comandante Morán Valverde"</field>
+            <field name="given">logros en el campo naval</field>
+        </record>
+        <record model="sie.award" id="sie_award_06">
+            <field name="name">Cruz al Mérito Militar "Vencedores de Tarqui"</field>
+            <field name="given">logros en el campo militar</field>
+        </record>
+        <record model="sie.award" id="sie_award_07">
+            <field name="name">Cruz al Mérito de Guerra</field>
+            <field name="given">logros extraordinarios en el campo de batalla</field>
+        </record>
+        <record model="sie.award" id="sie_award_08">
+            <field name="name">Medalla de Honor de la Fuerza Naval</field>
+            <field name="given">logros sobresalientes en la protección de la patria en mar</field>
+        </record>
+        <record model="sie.award" id="sie_award_09">
+            <field name="name">Medalla al Mérito de la Fuerza Naval</field>
+            <field name="given">logros sobresalientes en la protección de la patria en aire</field>
+        </record>
+        <record model="sie.award" id="sie_award_10">
+            <field name="name">Cruz al Mérito Militar</field>
+            <field name="given">logros sobresalientes en la protección de la patria en tierra</field>
+        </record>
+        <record model="sie.award" id="sie_award_11">
+            <field name="name">Orden de Eloy Alfaro</field>
+            <field name="given">logros sobresalientes en los campos civil o militar de la protección de la patria
+            </field>
+        </record>
+        <record model="sie.award" id="sie_award_12">
+            <field name="name">Orden al Mérito Aeronáutico</field>
+            <field name="given">logros sobresalientes en el campo aeronáutico de la protección de la patria</field>
+        </record>
+        <record model="sie.award" id="sie_award_13">
+            <field name="name">Orden de Atahualpa</field>
+            <field name="given">logros extraordinarios, nacionales y extranjeros, por la protección de la patria</field>
+        </record>
+        <record model="sie.award" id="sie_award_14">
+            <field name="name">Orden de Abdón Calderón</field>
+            <field name="given">logros extraordinarios en la protección de la patria</field>
+        </record>
+    </data>
+</openerp>

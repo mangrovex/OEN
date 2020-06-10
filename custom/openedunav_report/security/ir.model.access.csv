@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_openedunav_report_openedunav_report,openedunav_report.openedunav_report,model_openedunav_report_openedunav_report,base.group_user,1,1,1,1

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="concept_01" model="sie.concept">
+            <field name="name">Esp&#237;ritu de cuerpo</field>
+            <field name="description">Sentimiento y acciones con que se desarrolla la solidaridad y v&#237;nculo de
+                armon&#237;a para obtener &#233;xito y prestigio de un reparto.
+            </field>
+        </record>
+        <record id="concept_02" model="sie.concept">
+            <field name="name">Honor</field>
+            <field name="description">Honor
+            </field>
+        </record>
+        <record id="concept_03" model="sie.concept">
+            <field name="name">Lealtad</field>
+            <field name="description">Devoci&#243;n sublime a una causa; cumplimiento fiel y sincero de los deberes y
+                obligaciones para lograr un pr&#243;posito de armon&#237;a entre subalternos y superiores.
+            </field>
+        </record>
+        <record id="concept_04" model="sie.concept">
+            <field name="name">Honestidad</field>
+            <field name="description">Honestidad</field>
+        </record>
+        <record id="concept_05" model="sie.concept">
+            <field name="name">Cooperaci&#243;n</field>
+            <field name="description">Facultad y empe&#241;o para trabajar en armon&#237;a con los dem&#225;s formando
+                un solo en cualquier circunstancia.
+            </field>
+        </record>
+        <record id="concept_06" model="sie.concept">
+            <field name="name">Adaptabilidad</field>
+            <field name="description">Facultad de acostumbrarse a los cambios de circunstancias an&#237;micas y
+                ambientales, derivadas de las necesidades del servicio.
+            </field>
+        </record>
+        <record id="concept_07" model="sie.concept">
+            <field name="name">Celo en el manejo de los bienes</field>
+            <field name="description">Preocupaci&#243;n y cuidado en el manejo de los bienes de la Armada.</field>
+        </record>
+        <record id="concept_08" model="sie.concept">
+            <field name="name">Celo por el servicio</field>
+            <field name="description">Responsabilidad, cuidado, devoci&#243;n e inter&#233;s en el cumplimiento del
+                deber, el esmero con que se cumple cualquier funci&#243;n asignada.
+            </field>
+        </record>
+        <record id="concept_09" model="sie.concept">
+            <field name="name">Control sobre s&#237; mismo</field>
+            <field name="description">Presencia de &#225;nimo, calma, cordura, seguridad, control para actuar en
+                situaciones dif&#237;ciles, sin afectarse por las circunstancias ni el medio ambiente que lo rodea; ni
+                afectar negativamente a los dem&#225;s.
+            </field>
+        </record>
+        <record id="concept_10" model="sie.concept">
+            <field name="name">Iniciativa</field>
+            <field name="description">Capacidad para trabajar bajo su propia responsabilidad, cuando considera que su
+                acci&#243;n es oportuna y necesaria.
+            </field>
+        </record>
+        <record id="concept_11" model="sie.concept">
+            <field name="name">Integridad</field>
+            <field name="description">Rectitud de car&#225;cter y solidez de los principios morales, veracidad y
+                honestidad en todos los actos y procedimientos.
+            </field>
+        </record>
+        <record id="concept_12" model="sie.concept">
+            <field name="name">Capacidad f&#237;sica</field>
+            <field name="description">Aptitud para la pr&#225;ctica deportiva y cultura f&#237;sica.</field>
+        </record>
+        <record id="concept_13" model="sie.concept">
+            <field name="name">Esp&#237;ritu militar</field>
+            <field name="description">Amor al reparto y a la Armada; respeto, fe y sacrificio para cumplir con el deber
+                sin espera de recompensa.
+            </field>
+        </record>
+        <record id="concept_14" model="sie.concept">
+            <field name="name">Porte militar y presentaci&#243;n</field>
+            <field name="description">Demostraci&#243;n de las formas militares, compostura, cuidado y correci&#243;n de
+                la persona y el vestir.
+            </field>
+        </record>
+        <record id="concept_15" model="sie.concept">
+            <field name="name">Cualidades art&#237;sticas-culturales (C&#237;rculos)</field>
+            <field name="description">Aptitudes naturales o creadas hacia actividades de la m&#250;sica, pintura,
+                dibujo, idiomas y otras expresiones del arte y la cultura.
+            </field>
+        </record>
+    </data>
+</openerp>

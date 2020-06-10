@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record model='sie.fault.literal' id='0'>
+            <field name='literal'>a</field>
+            <field name='name'>Omitir el saludo a un superior, no responder el saludo o efectuar mal un saludo dentro o
+                fuera de la Escuela;
+            </field>
+            <field name='article_id' ref="art_38"/>
+        </record>
+        <record model='sie.fault.literal' id='1'>
+            <field name='literal'>b</field>
+            <field name='article_id' ref="art_38"/>
+            <field name='name'>Nopedir permiso para continuar, dentro o fuera de la Escuelano</field>
+        </record>
+        <record model='sie.fault.literal' id='2'>
+            <field name='literal'>c</field>
+            <field name='article_id' ref="art_38"/>
+            <field name='name'>Tomar asiento en presencia de un superior, sin tener autorización</field>
+        </record>
+        <record model='sie.fault.literal' id='3'>
+            <field name='literal'>d</field>
+            <field name='article_id' ref="art_38"/>
+            <field name='name'>No acudir con presteza al llamado de un superior</field>
+        </record>
+        <record model='sie.fault.literal' id='4'>
+            <field name='literal'>e</field>
+            <field name='article_id' ref="art_38"/>
+            <field name='name'>No adoptar la posición de firmes al paso de una formación armada</field>
+        </record>
+        <record model='sie.fault.literal' id='5'>
+            <field name='literal'>f</field>
+            <field name='article_id' ref="art_38"/>
+            <field name='name'>Cumplir mal un ejercicio físico</field>
+        </record>
+        <record model='sie.fault.literal' id='6'>
+            <field name='literal'>g</field>
+            <field name='article_id' ref="art_38"/>
+            <field name='name'>No dar aviso militarmente de la presencia de un superior</field>
+        </record>
+        <record model='sie.fault.literal' id='7'>
+            <field name='literal'>h</field>
+            <field name='article_id' ref="art_38"/>
+            <field name='name'>Ingresar o salir de una dependencia, sin tener autorización</field>
+        </record>
+        <record model='sie.fault.literal' id='8'>
+            <field name='literal'>a</field>
+            <field name='article_id' ref="art_39"/>
+            <field name='name'>No cumplir o efectuar incorrectamente una sanción por la comisión de una falta leve
+            </field>
+        </record>
+        <record model='sie.fault.literal' id='9'>
+            <field name='literal'>b</field>
+            <field name='article_id' ref="art_39"/>
+            <field name='name'>Hacer comentarios desfavorables y sin fundamento sobre el rancho o refrigerio</field>
+        </record>
+        <record model='sie.fault.literal' id='10'>
+            <field name='literal'>c</field>
+            <field name='article_id' ref="art_39"/>
+            <field name='name'>Hacer reclamos injustificados</field>
+        </record>
+        <record model='sie.fault.literal' id='11'>
+            <field name='literal'>d</field>
+            <field name='article_id' ref="art_39"/>
+            <field name='name'>Responder irrespetuosamente al Comandante de Curso</field>
+        </record>
+        <record model='sie.fault.literal' id='12'>
+            <field name='literal'>e</field>
+            <field name='article_id' ref="art_39"/>
+            <field name='name'>No observar el órgano regular para dirigirse a un superior</field>
+        </record>
+        <record model='sie.fault.literal' id='13'>
+            <field name='literal'>f</field>
+            <field name='article_id' ref="art_39"/>
+            <field name='name'>Cumplir mal una orden o consigna recibida;</field>
+        </record>
+        <record model='sie.fault.literal' id='14'>
+            <field name='literal'>g</field>
+            <field name='article_id' ref="art_39"/>
+            <field name='name'>No presentarse al superior respectivo de acuerdo con el órgano regular establecido, una
+                vez cumplida una sanción impuesta
+            </field>
+        </record>
+        <record model='sie.fault.literal' id='15'>
+            <field name='literal'>h</field>
+            <field name='article_id' ref="art_39"/>
+            <field name='name'>Tener en su poder pasquines y no informar al superior</field>
+        </record>
+        <record model='sie.fault.literal' id='16'>
+            <field name='literal'>i</field>
+            <field name='article_id' ref="art_39"/>
+            <field name='name'>No observar la cortesía militar ante la presencia de un superior</field>
+        </record>
+        <record model='sie.fault.literal' id='17'>
+            <field name='literal'>j</field>
+            <field name='article_id' ref="art_39"/>
+            <field name='name'>No cumplir una orden, consigna o disposición por negligencia</field>
+        </record>
+        <record model='sie.fault.literal' id='18'>
+            <field name='literal'>k</field>
+            <field name='article_id' ref="art_39"/>
+            <field name='name'>Tomar arbitrariamente el nombre de un superior</field>
+        </record>
+        <record model='sie.fault.literal' id='19'>
+            <field name='literal'>L</field>
+            <field name='article_id' ref="art_39"/>
+            <field name='name'>Hacer uso de uniformes, insignias, condecoraciones, distintivos que no le correspondan al
+                aspirante
+            </field>
+        </record>
+        <record model='sie.fault.literal' id='20'>
+            <field name='literal'>m</field>
+            <field name='article_id' ref="art_39"/>
+            <field name='name'>Participar en reclamos colectivos</field>
+        </record>
+        <record model='sie.fault.literal' id='21'>
+            <field name='literal'>n</field>
+            <field name='article_id' ref="art_39"/>
+            <field name='name'>Hacer señales o gestos impropios ante un superior</field>
+        </record>
+        <record model='sie.fault.literal' id='22'>
+            <field name='literal'>o</field>
+            <field name='article_id' ref="art_39"/>
+            <field name='name'>Ser irrespetuoso con los superiores, instructores y docentes</field>
+        </record>
+        <record model='sie.fault.literal' id='23'>
+            <field name='literal'>p</field>
+            <field name='article_id' ref="art_39"/>
+            <field name='name'>No anotarse una sanción ordenada por un superior;</field>
+        </record>
+        <record model='sie.fault.literal' id='24'>
+            <field name='literal'>q</field>
+            <field name='article_id' ref="art_39"/>
+            <field name='name'>Hacer comentarios desfavorables o críticas infundadas sobre la Escuela, sus integrantes o
+                sobre sus normas y procedimientos
+            </field>
+        </record>
+        <record model='sie.fault.literal' id='25'>
+            <field name='literal'>r</field>
+            <field name='article_id' ref="art_39"/>
+            <field name='name'>Emplear expresiones, ademanes o gestos que tiendan a disminuir la autoridad o respeto a
+                un superior
+            </field>
+        </record>
+        <record model='sie.fault.literal' id='26'>
+            <field name='literal'>s</field>
+            <field name='article_id' ref="art_39"/>
+            <field name='name'>Presentar quejas infundadas, falsas o calumniosas contra la actuación o conducta de un
+                superior
+            </field>
+        </record>
+        <record model='sie.fault.literal' id='27'>
+            <field name='literal'>t</field>
+            <field name='article_id' ref="art_39"/>
+            <field name='name'>Sorprender o engañar en asuntos relacionados con el serviciot</field>
+        </record>
+        <record model='sie.fault.literal' id='28'>
+            <field name='literal'>u</field>
+            <field name='article_id' ref="art_39"/>
+            <field name='name'>Fingir enfermedad o valerse de cualquier pretexto para evadir el régimen interno de la
+                Escuela;
+            </field>
+        </record>
+        <record model='sie.fault.literal' id='29'>
+            <field name='literal'>v</field>
+            <field name='article_id' ref="art_39"/>
+            <field name='name'>Ocultar o cambiar el grado o nombre cuando fuere preguntado por un superior con el objeto
+                de evadir responsabilidades;
+            </field>
+        </record>
+        <record model='sie.fault.literal' id='30'>
+            <field name='literal'>w</field>
+            <field name='article_id' ref="art_39"/>
+            <field name='name'>Emplear términos descorteses al dirigirse a un superior, sea verbalmente o por escrito;
+            </field>
+        </record>
+        <record model='sie.fault.literal' id='31'>
+            <field name='literal'>x</field>
+            <field name='article_id' ref="art_39"/>
+            <field name='name'>Hacer continuos reclamos injustificados;</field>
+        </record>
+        <record model='sie.fault.literal' id='32'>
+            <field name='literal'>y</field>
+            <field name='article_id' ref="art_39"/>
+            <field name='name'>Efectuar publicaciones o declaraciones en los medios de comunicación social relacionadas
+                con los actos del servicio militar sin la correspondiente autorización, siempre que éstas no afecten a
+                la imagen institucional; y,
+            </field>
+        </record>
+        <record model='sie.fault.literal' id='33'>
+            <field name='literal'>z</field>
+            <field name='article_id' ref="art_39"/>
+            <field name='name'>Abandonar la plaza sin la autorización correspondiente;</field>
+        </record>
+        <record model='sie.fault.literal' id='34'>
+            <field name='literal'>a</field>
+            <field name='article_id' ref="art_40"/>
+            <field name='name'>Inducir a realizar reclamos colectivos;</field>
+        </record>
+        <record model='sie.fault.literal' id='35'>
+            <field name='literal'>b</field>
+            <field name='article_id' ref="art_40"/>
+            <field name='name'>Realizar actos de manifiesta violencia o indisciplina contra un superior, sea de obra,
+                palabra o por escrito;
+            </field>
+        </record>
+        <record model='sie.fault.literal' id='36'>
+            <field name='literal'>c</field>
+            <field name='article_id' ref="art_40"/>
+            <field name='name'>No cumplir o efectuar incorrectamente una sanción impuesta por el Consejo de
+                Disciplina;
+            </field>
+        </record>
+        <record model='sie.fault.literal' id='37'>
+            <field name='literal'>d</field>
+            <field name='article_id' ref="art_40"/>
+            <field name='name'>No cumplir o efectuar incorrectamente una sanción por la comisión de una falta grave;
+            </field>
+        </record>
+        <record model='sie.fault.literal' id='38'>
+            <field name='literal'>e</field>
+            <field name='article_id' ref="art_40"/>
+            <field name='name'>Hacer públicos o elaborar escritos contrarios a la disciplina militar y sobre aspectos
+                militares, en contra de autoridades, juzgando su conducta, el desempeño de su cargo o función, en nombre
+                propio, valiéndose de seudónimos o tomando el nombre de terceras personas;
+            </field>
+        </record>
+        <record model='sie.fault.literal' id='39'>
+            <field name='literal'>f</field>
+            <field name='article_id' ref="art_40"/>
+            <field name='name'>Efectuar publicaciones o declaraciones en los medios de comunicación social, lesivas a la
+                misión e imagen institucional o de sus miembros;
+            </field>
+        </record>
+        <record model='sie.fault.literal' id='40'>
+            <field name='literal'>g</field>
+            <field name='article_id' ref="art_40"/>
+            <field name='name'>Elevar informes falsos;</field>
+        </record>
+        <record model='sie.fault.literal' id='41'>
+            <field name='literal'>h</field>
+            <field name='article_id' ref="art_40"/>
+            <field name='name'>Abandonar el país sin la autorización correspondiente; y,</field>
+        </record>
+        <record model='sie.fault.literal' id='42'>
+            <field name='literal'>i</field>
+            <field name='article_id' ref="art_40"/>
+            <field name='name'>Alterar deliberadamente órdenes o consignas impartidas por un superior, con graves
+                consecuencias
+            </field>
+        </record>
+        <record model='sie.fault.literal' id='43'>
+            <field name='literal'>a)</field>
+            <field name='article_id' ref="art_41"/>
+            <field name='name'>Encontrarse en lugares y horarios no establecidos</field>
+        </record>
+        <record model='sie.fault.literal' id='44'>
+            <field name='literal'>c</field>
+            <field name='article_id' ref="art_41"/>
+            <field name='name'>Conceder permisos indebidos para asuntos de poca importancia</field>
+        </record>
+        <record model='sie.fault.literal' id='45'>
+            <field name='literal'>d)</field>
+            <field name='article_id' ref="art_41"/>
+            <field name='name'>CONSUMIR ALIMENTOS EN LUGARES Y HORARIOS NO ESTABLECIDOS</field>
+        </record>
+        <record model='sie.fault.literal' id='46'>
+            <field name='literal'>f</field>
+            <field name='article_id' ref="art_41"/>
+            <field name='name'>Encender las luces, dispositivos eléctricos u electrónicos después de la hora de
+                silencio, sin autorización
+            </field>
+        </record>
+        <record model='sie.fault.literal' id='47'>
+            <field name='literal'>g</field>
+            <field name='article_id' ref="art_41"/>
+            <field name='name'>Realizar llamadas telefónicas sin autorización o excederse en el uso de teléfonos
+                públicos en la Escuela
+            </field>
+        </record>
+        <record model='sie.fault.literal' id='48'>
+            <field name='literal'>i</field>
+            <field name='article_id' ref="art_41"/>
+            <field name='name'>Interrumpir las actividades académicas o de estudio de los/las aspirantes</field>
+        </record>
+        <record model='sie.fault.literal' id='49'>
+            <field name='literal'>aa</field>
+            <field name='article_id' ref="art_42"/>
+            <field name='name'>Utilizar sin autorización o en forma impropia ayudas a la instrucción o material
+                didácticoU
+            </field>
+        </record>
+        <record model='sie.fault.literal' id='50'>
+            <field name='literal'>cc</field>
+            <field name='article_id' ref="art_42"/>
+            <field name='name'>Ingresar a áreas prohibidas sin la debida autorización</field>
+        </record>
+        <record model='sie.fault.literal' id='51'>
+            <field name='literal'>g</field>
+            <field name='article_id' ref="art_42"/>
+            <field name='name'>Tomarse atribuciones que no le corresponden</field>
+        </record>
+        <record model='sie.fault.literal' id='52'>
+            <field name='literal'>i</field>
+            <field name='article_id' ref="art_42"/>
+            <field name='name'>Interferir o interceder en la imposición de una sanción disciplinaria o en la ejecución
+                de la
+            </field>
+        </record>
+        <record model='sie.fault.literal' id='53'>
+            <field name='literal'>k</field>
+            <field name='article_id' ref="art_42"/>
+            <field name='name'>Efectuar cambios no autorizados para el servicio de guardia o diferentes comisiones
+            </field>
+        </record>
+        <record model='sie.fault.literal' id='54'>
+            <field name='literal'>q</field>
+            <field name='article_id' ref="art_42"/>
+            <field name='name'>Utilizar equipos de comunicación o electrónicos en horarios no autorizados</field>
+        </record>
+        <record model='sie.fault.literal' id='55'>
+            <field name='literal'>r</field>
+            <field name='article_id' ref="art_42"/>
+            <field name='name'>Cambiarse de civil sin autorización</field>
+        </record>
+        <record model='sie.fault.literal' id='56'>
+            <field name='literal'>u</field>
+            <field name='article_id' ref="art_42"/>
+            <field name='name'>Atribuirse o establecer privilegios en actos de servicio por amistad o parentesco, en
+                beneficio faculty o de terceros
+            </field>
+        </record>
+        <record model='sie.fault.literal' id='57'>
+            <field name='literal'>v</field>
+            <field name='article_id' ref="art_42"/>
+            <field name='name'>Inducir o incitar a los aspirantes menos antiguos a cometer una falta levev</field>
+        </record>
+        <record model='sie.fault.literal' id='58'>
+            <field name='literal'>y</field>
+            <field name='article_id' ref="art_42"/>
+            <field name='name'>Emplear faculty, equipo, uniformes, materiales, medios de transporte, enseres, de la
+                Escuela en forma contraria a los reglamentos, para beneficio faculty o de terceros
+            </field>
+        </record>
+        <record model='sie.fault.literal' id='59'>
+            <field name='literal'>a</field>
+            <field name='article_id' ref="art_43"/>
+            <field name='name'>No observar las normas establecidas en el Reglamento de Honores y Ceremonial Militar o
+                Ceremonial Marítimo
+            </field>
+        </record>
+        <record model='sie.fault.literal' id='60'>
+            <field name='literal'>aa</field>
+            <field name='article_id' ref="art_43"/>
+            <field name='name'>Dormirse en clases o instrucción</field>
+        </record>
+        <record model='sie.fault.literal' id='61'>
+            <field name='literal'>b</field>
+            <field name='article_id' ref="art_43"/>
+            <field name='name'>No pedir permiso para entrar o salir de una dependencia o formación</field>
+        </record>
+        <record model='sie.fault.literal' id='62'>
+            <field name='literal'>c</field>
+            <field name='article_id' ref="art_43"/>
+            <field name='name'>No presentarse correctamente ante un superior dentro o fuera de la Escuela</field>
+        </record>
+        <record model='sie.fault.literal' id='63'>
+            <field name='literal'>cc</field>
+            <field name='article_id' ref="art_43"/>
+            <field name='name'>No conocer el Santo y Seña;</field>
+        </record>
+        <record model='sie.fault.literal' id='64'>
+            <field name='literal'>d</field>
+            <field name='article_id' ref="art_43"/>
+            <field name='name'>Cumplir mal una consigna o pasarla inapropiadamente</field>
+        </record>
+        <record model='sie.fault.literal' id='65'>
+            <field name='literal'>dd</field>
+            <field name='article_id' ref="art_43"/>
+            <field name='name'>No mantener la debida compostura militar del faculty a su mando</field>
+        </record>
+        <record model='sie.fault.literal' id='66'>
+            <field name='literal'>e</field>
+            <field name='article_id' ref="art_43"/>
+            <field name='name'>No tener útiles de limpieza o aseo faculty completos</field>
+        </record>
+        <record model='sie.fault.literal' id='67'>
+            <field name='literal'>ff</field>
+            <field name='article_id' ref="art_43"/>
+            <field name='name'>Salir del aula, auditorio, casino o comedor sin autorización</field>
+        </record>
+        <record model='sie.fault.literal' id='68'>
+            <field name='literal'>g</field>
+            <field name='article_id' ref="art_43"/>
+            <field name='name'>Leer revistas, periodicos o libros en horas y lugares no autorizados</field>
+        </record>
+        <record model='sie.fault.literal' id='69'>
+            <field name='literal'>h</field>
+            <field name='article_id' ref="art_43"/>
+            <field name='name'>Tener prendas incompletas o no disponer de los uniformes reglamentarios</field>
+        </record>
+        <record model='sie.fault.literal' id='70'>
+            <field name='literal'>i</field>
+            <field name='article_id' ref="art_43"/>
+            <field name='name'>No cortarse o peinarse el cabello en forma reglamentaria;</field>
+        </record>
+        <record model='sie.fault.literal' id='71'>
+            <field name='literal'>j</field>
+            <field name='article_id' ref="art_43"/>
+            <field name='name'>Demostrar negligencia o desidia en sus actividades diarias</field>
+        </record>
+        <record model='sie.fault.literal' id='72'>
+            <field name='literal'>k</field>
+            <field name='article_id' ref="art_43"/>
+            <field name='name'>Encontrarse por áreas no autorizadas;</field>
+        </record>
+        <record model='sie.fault.literal' id='73'>
+            <field name='literal'>l</field>
+            <field name='article_id' ref="art_43"/>
+            <field name='name'>No mantener la biblioteca faculty actualizada de acuerdo con las regulaciones de la
+                Escuelano m
+            </field>
+        </record>
+        <record model='sie.fault.literal' id='74'>
+            <field name='literal'>m</field>
+            <field name='article_id' ref="art_43"/>
+            <field name='name'>Hablar o moverse en fila sin permiso</field>
+        </record>
+        <record model='sie.fault.literal' id='75'>
+            <field name='literal'>n</field>
+            <field name='article_id' ref="art_43"/>
+            <field name='name'>Dar mal un parte en las actividades de la Escuela;</field>
+        </record>
+        <record model='sie.fault.literal' id='76'>
+            <field name='literal'>o</field>
+            <field name='article_id' ref="art_43"/>
+            <field name='name'>Poseer artículos no autorizados</field>
+        </record>
+        <record model='sie.fault.literal' id='77'>
+            <field name='literal'>p</field>
+            <field name='article_id' ref="art_43"/>
+            <field name='name'>No guardar la correcta compostura dentro y fuera de la Escuela</field>
+        </record>
+        <record model='sie.fault.literal' id='78'>
+            <field name='literal'>s</field>
+            <field name='article_id' ref="art_43"/>
+            <field name='name'>Guardar o tener comida en áreas no apropiadas o adecuadas para este efecto</field>
+        </record>
+        <record model='sie.fault.literal' id='79'>
+            <field name='literal'>t</field>
+            <field name='article_id' ref="art_43"/>
+            <field name='name'>Presentar mala revista de armamento</field>
+        </record>
+    </data>
+</openerp>

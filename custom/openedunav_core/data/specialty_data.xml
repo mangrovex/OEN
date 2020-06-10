@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record model="sie.specialty" id="sie_specialty_su">
+            <field name="acronym">SU</field>
+            <field name="name">Superficie</field>
+        </record>
+
+        <record model="sie.specialty" id="sie_specialty_ss">
+            <field name="acronym">SS</field>
+            <field name="name">Submarino</field>
+        </record>
+
+        <record model="sie.specialty" id="sie_specialty_av">
+            <field name="acronym">AV</field>
+            <field name="name">Aviaci&#243;n</field>
+        </record>
+
+        <record model="sie.specialty" id="sie_specialty_hi">
+            <field name="acronym">HI</field>
+            <field name="name">Hidrografia</field>
+        </record>
+
+        <record model="sie.specialty" id="sie_specialty_et">
+            <field name="acronym">ET</field>
+            <field name="name">Electr&#243;nica</field>
+        </record>
+
+        <record model="sie.specialty" id="sie_specialty_cn">
+            <field name="acronym">CN</field>
+            <field name="name">Ciencias Navales</field>
+        </record>
+
+        <record model="sie.specialty" id="sie_specialty_mc">
+            <field name="acronym">MC</field>
+            <field name="name">Mec&#225;nica</field>
+        </record>
+
+        <record model="sie.specialty" id="sie_specialty_el">
+            <field name="acronym">EL</field>
+            <field name="name">Electricidad</field>
+        </record>
+
+        <record model="sie.specialty" id="sie_specialty_im">
+            <field name="acronym">IM</field>
+            <field name="name">Infanteria de Marina</field>
+        </record>
+
+        <record model="sie.specialty" id="sie_specialty_in">
+            <field name="acronym">IN</field>
+            <field name="name">Inteligencia</field>
+        </record>
+
+        <record model="sie.specialty" id="sie_specialty_gc">
+            <field name="acronym">GC</field>
+            <field name="name">Guardacostas</field>
+        </record>
+
+        <record model="sie.specialty" id="sie_specialty_ad">
+            <field name="acronym">AD</field>
+            <field name="name">Administraci&#243;n</field>
+        </record>
+
+        <record model="sie.specialty" id="sie_specialty_ab">
+            <field name="acronym">AB</field>
+            <field name="name">Abastecimientos</field>
+        </record>
+
+        <record model="sie.specialty" id="sie_specialty_if">
+            <field name="acronym">IF</field>
+            <field name="name">Inform&#225;tica</field>
+        </record>
+
+        <record model="sie.specialty" id="sie_specialty_sn">
+            <field name="acronym">SN</field>
+            <field name="name">Sanidad</field>
+        </record>
+
+        <record model="sie.specialty" id="sie_specialty_ch">
+            <field name="acronym">CH</field>
+            <field name="name">Chofer</field>
+        </record>
+
+        <record model="sie.specialty" id="sie_specialty_cm">
+            <field name="acronym">CM</field>
+            <field name="name">C&#225;mara</field>
+        </record>
+
+        <record model="sie.specialty" id="sie_specialty_cc">
+            <field name="acronym">CC</field>
+            <field name="name">Cocinero</field>
+        </record>
+
+        <record model="sie.specialty" id="sie_specialty_st">
+            <field name="acronym">ST</field>
+            <field name="name">Sastre</field>
+        </record>
+
+        <record model="sie.specialty" id="sie_specialty_pq">
+            <field name="acronym">PQ</field>
+            <field name="name">Peluquero</field>
+        </record>
+
+        <record model="sie.specialty" id="sie_specialty_mu">
+            <field name="acronym">MU</field>
+            <field name="name">M&#250;sico</field>
+        </record>
+
+        <record model="sie.specialty" id="sie_specialty_a-">
+            <field name="acronym">A&#209;</field>
+            <field name="name">Alba&#241;il</field>
+        </record>
+
+        <record model="sie.specialty" id="sie_specialty_rp">
+            <field name="acronym">RP</field>
+            <field name="name">Reparaciones</field>
+        </record>
+
+        <record model="sie.specialty" id="sie_specialty_jt">
+            <field name="acronym">JT</field>
+            <field name="name">Justicia</field>
+        </record>
+
+        <record model="sie.specialty" id="sie_specialty_ig">
+            <field name="acronym">IG</field>
+            <field name="name">Ingeniero</field>
+        </record>
+
+        <record model="sie.specialty" id="sie_specialty_md">
+            <field name="acronym">MD</field>
+            <field name="name">M&#233;dico</field>
+        </record>
+
+        <record model="sie.specialty" id="sie_specialty_od">
+            <field name="acronym">OD</field>
+            <field name="name">Odont&#243;logo</field>
+        </record>
+
+        <record model="sie.specialty" id="sie_specialty_em">
+            <field name="acronym">EM</field>
+            <field name="name">Estado Mayor</field>
+        </record>
+
+        <record model="sie.specialty" id="sie_specialty_emc">
+            <field name="acronym">EMC</field>
+            <field name="name">Estado Mayor Conjunto</field>
+        </record>
+
+        <record model="sie.specialty" id="sie_specialty_ems">
+            <field name="acronym">EMS</field>
+            <field name="name">Estado Mayor Servicio</field>
+        </record>
+
+        <record model="sie.specialty" id="sie_specialty_csm">
+            <field name="acronym">CSM</field>
+            <field name="name">Curso Superior Militar</field>
+        </record>
+
+    </data>
+</odoo>

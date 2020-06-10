@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Faculty -->
+        <record id="sie_faculty_view_tree" model="ir.ui.view">
+            <field name="name">sie.faculty.tree</field>
+            <field name="model">sie.faculty</field>
+            <field eval="8" name="priority"/>
+            <field name="arch" type="xml">
+                <tree string="Contacts">
+                    <field name="identification_id"/>
+                    <field name="grade_id"/>
+                    <field name="full_name"/>
+                    <field name="phone"/>
+                    <field name="email"/>
+                    <field name="user_id" invisible="1"/>
+                    <field name="active" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sie_faculty_view_form" model="ir.ui.view">
+            <field name="name">sie.faculty.form</field>
+            <field name="model">sie.faculty</field>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <form string="Facultad">
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="toggle_active" type="object"
+                                    class="oe_stat_button" icon="fa-archive">
+                                <field name="active" widget="boolean_button"
+                                       options='{"terminology": "archive"}'/>
+                            </button>
+                        </div>
+                        <field name="image_1920" widget='image' class="oe_avatar"
+                               options='{"preview_image": "image_medium", "size": [90, 90]}'/>
+                        <div>
+                            <h1>
+                                <field name="name" default_focus="1" placeholder="Nombre"/>
+                            </h1>
+                        </div>
+                        <div class="oe_edit_only">
+                            <group>
+                                <group>
+                                    <field name="first_name" placeholder="Primer Nombre" required="True"/>
+                                    <field name="middle_name" placeholder="Segundo Nombre"/>
+                                </group>
+                                <group>
+                                    <field name="last_name" placeholder="Primer Apellido" required="True"/>
+                                    <field name="mother_name" placeholder="Segundo Apellido" required="True"/>
+                                </group>
+                            </group>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="acronym"/>
+                                <field name="academic_title_id"
+                                       options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
+                                <field name="grade_id"
+                                       options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
+                                <field name="type_ced_ruc"/>
+                                <field name="serial_navy"/>
+                                <field name="location_id"
+                                       options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
+                                <field name="place_of_birth"
+                                       options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
+                                <field name="type"/>
+                                <field name="marital_status"/>
+                                <field name="gender"/>
+                                <label for="street" string="Direccion"/>
+                                <div class="o_addsies_format">
+                                    <field name="street" placeholder="Street..." class="o_addsies_street"/>
+                                    <field name="street2" placeholder="Street 2..." class="o_addsies_street"/>
+                                    <field name="country_id" placeholder="Country" class="o_addsies_country"
+                                           options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
+                                    <field name="state_id" placeholder="State"
+                                           options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'
+                                           domain="[('country_id', '=', country_id)]"
+                                           context="{'country_id': country_id, 'zip': zip}" class="o_address_city"/>
+                                    <field name="city_id" placeholder="Town"
+                                           domain="[('state_id', '=', state_id)]"
+                                           context="{'state_id': state_id}"
+                                           options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'
+                                           class="o_address_city"/>
+                                    <field name="parish_id" class="o_address_state" placeholder="Parish"
+                                           context="{'city_id': city_id}"
+                                           options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
+                                    <field name="zip" placeholder="ZIP" class="o_addsies_zip"/>
+
+                                </div>
+                            </group>
+                            <group>
+                                <field name="specialty_id"
+                                       options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
+                                <field name="ced_ruc"/>
+                                <field name="birthday"/>
+                                <field name="age"/>
+                                <field name="blood_group"/>
+                                <field name="nationality"
+                                       options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
+                                <field name="study_level"/>
+                                <field name="phone" string="Telefono"/>
+                                <field name="email"/>
+                                <field name="user_id" string="Usuario"
+                                       options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="sie_information" string="Información">
+
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_sie_faculty_view">
+            <field name="name">Docentes y Evaluadores</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sie.faculty</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">Create the first faculty
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

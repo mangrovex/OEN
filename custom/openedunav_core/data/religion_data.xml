@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="1">
+        <record model="sie.religion" id="sie_religion_01">
+            <field name="name">Bahaísmo</field>
+            <field name="code">01</field>
+        </record>
+        <record model="sie.religion" id="sie_religion_02">
+            <field name="name">Budismo</field>
+            <field name="code">02</field>
+        </record>
+        <record model="sie.religion" id="sie_religion_03">
+            <field name="name">Confucianismo</field>
+            <field name="code">03</field>
+        </record>
+        <record model="sie.religion" id="sie_religion_04">
+            <field name="name">Iglesia católica</field>
+            <field name="code">04</field>
+        </record>
+        <record model="sie.religion" id="sie_religion_05">
+            <field name="name">Iglesia copta</field>
+            <field name="code">05</field>
+        </record>
+        <record model="sie.religion" id="sie_religion_06">
+            <field name="name">Iglesia ortodoxa</field>
+            <field name="code">06</field>
+        </record>
+        <record model="sie.religion" id="sie_religion_07">
+            <field name="name">Mormonismo</field>
+            <field name="code">07</field>
+        </record>
+        <record model="sie.religion" id="sie_religion_08">
+            <field name="name">Iglesia anglicana</field>
+            <field name="code">08</field>
+        </record>
+        <record model="sie.religion" id="sie_religion_09">
+            <field name="name">Protestantismo</field>
+            <field name="code">09</field>
+        </record>
+        <record model="sie.religion" id="sie_religion_10">
+            <field name="name">Iglesias adventistas</field>
+            <field name="code">10</field>
+        </record>
+        <record model="sie.religion" id="sie_religion_11">
+            <field name="name">Espiritismo</field>
+            <field name="code">11</field>
+        </record>
+        <record model="sie.religion" id="sie_religion_12">
+            <field name="name">Hinduismo</field>
+            <field name="code">12</field>
+        </record>
+        <record model="sie.religion" id="sie_religion_13">
+            <field name="name">Indígenas</field>
+            <field name="code">13</field>
+        </record>
+        <record model="sie.religion" id="sie_religion_14">
+            <field name="name">Islam</field>
+            <field name="code">14</field>
+        </record>
+        <record model="sie.religion" id="sie_religion_15">
+            <field name="name">Jainismo</field>
+            <field name="code">15</field>
+        </record>
+        <record model="sie.religion" id="sie_religion_16">
+            <field name="name">Judaísmo</field>
+            <field name="code">16</field>
+        </record>
+        <record model="sie.religion" id="sie_religion_17">
+            <field name="name">Mandeísmo</field>
+            <field name="code">17</field>
+        </record>
+        <record model="sie.religion" id="sie_religion_18">
+            <field name="name">Neopaganismo</field>
+            <field name="code">18</field>
+        </record>
+        <record model="sie.religion" id="sie_religion_19">
+            <field name="name">Pastafarismo</field>
+            <field name="code">19</field>
+        </record>
+        <record model="sie.religion" id="sie_religion_20">
+            <field name="name">Satanismo</field>
+            <field name="code">20</field>
+        </record>
+        <record model="sie.religion" id="sie_religion_21">
+            <field name="name">Shinto</field>
+            <field name="code">21</field>
+        </record>
+        <record model="sie.religion" id="sie_religion_22">
+            <field name="name">Sijismo</field>
+            <field name="code">22</field>
+        </record>
+        <record model="sie.religion" id="sie_religion_23">
+            <field name="name">Samaritanismo</field>
+            <field name="code">23</field>
+        </record>
+        <record model="sie.religion" id="sie_religion_24">
+            <field name="name">Taoísmo</field>
+            <field name="code">24</field>
+        </record>
+        <record model="sie.religion" id="sie_religion_25">
+            <field name="name">Yazidismo</field>
+            <field name="code">25</field>
+        </record>
+        <record model="sie.religion" id="sie_religion_26">
+            <field name="name">Yainismo</field>
+            <field name="code">26</field>
+        </record>
+        <record model="sie.religion" id="sie_religion_27">
+            <field name="name">Zoroastrismo</field>
+            <field name="code">27</field>
+        </record>
+    </data>
+</openerp>

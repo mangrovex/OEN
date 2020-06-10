@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_sie_merit_form" model="ir.ui.view">
+            <field name="name">sie.merit.form</field>
+            <field name="model">sie.merit</field>
+            <field name="arch" type="xml">
+                <form string="Merits" version="7.0">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only" string="Name"/>
+                            <h1>
+                                <field name="name" class="oe_inline" placeholder="Merit"/>
+                            </h1>
+                        </div>
+                        <group col="4">
+                            <field name="kind_of_merit"/>
+                            <newline/>
+                            <field name="min_merits"/>
+                            <field name="max_merits"/>
+                            <field name="kind_id"
+                                   attrs="{'invisible':[('kind_of_merit','=','recognition')],'required':[('kind_of_merit','=','medal')]}"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_sie_merit_tree" model="ir.ui.view">
+            <field name="name">sie.merit.tree</field>
+            <field name="model">sie.merit</field>
+            <field name="arch" type="xml">
+                <tree string="Merits">
+                    <field name="kind_of_merit"/>
+                    <field name="name"/>
+                    <field name="kind_id"/>
+                    <field name="min_merits"/>
+                    <field name="max_merits"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_sie_merit_search" model="ir.ui.view">
+            <field name="name">sie.merit.search</field>
+            <field name="model">sie.merit</field>
+            <field name="arch" type="xml">
+                <search string="Merits">
+                    <field name="name"/>
+                    <filter string="Medals" domain="[('kind_of_merit','=','medal')]"/>
+                    <filter string="Recognitions" domain="[('kind_of_merit','=','recognition')]"/>
+                    <group string="Group by...">
+                        <filter string="Kind of Merit" context="{'group_by': 'kind_of_merit'}"/>
+                        <filter string="Kind of Medal" context="{'group_by': 'kind_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_sie_merit_view">
+            <field name="name">Merit</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sie.merit</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_sie_merit_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new merit.
+                </p>
+            </field>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_sie_merit_view_form">
+            <field name="act_window_id" ref="act_open_sie_merit_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_sie_merit_form"/>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_sie_merit_view_tree">
+            <field name="act_window_id" ref="act_open_sie_merit_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_sie_merit_tree"/>
+        </record>
+    </data>
+</openerp>

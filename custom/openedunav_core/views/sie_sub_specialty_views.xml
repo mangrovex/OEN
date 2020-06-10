@@ -1,0 +1,52 @@
+<odoo>
+    <data>
+        <record id="view_sie_sub_specialty_tree" model="ir.ui.view">
+            <field name="name">sie.specialty.tree</field>
+            <field name="model">sie.specialty</field>
+            <field name="arch" type="xml">
+                <tree string="Sub.specialty">
+                    <field name="name"/>
+                    <field name="acronym"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_sie_sub_specialty_form" model="ir.ui.view">
+            <field name="name">sie.sub.specialty.form</field>
+            <field name="model">sie.sub.specialty</field>
+            <field name="arch" type="xml">
+                <form string="sub.specialty">
+                    <sheet>
+                        <group>
+                            <field name="specialty_id" options='{"no_open":True,"no_create_edit":True}'/>
+                            <field name="name"/>
+                            <field name="acronym"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_sie_sub_specialty_search" model="ir.ui.view">
+            <field name="name">sie.sub.specialty.search</field>
+            <field name="model">sie.sub.specialty</field>
+            <field name="arch" type="xml">
+                <search string="sub.specialty">
+                    <field name="name" select="True"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_sie_sub_specialty_view">
+            <field name="name">Sub.Specialty</field>
+            <field name="res_model">sie.sub.specialty</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_sie_sub_specialty_search"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new specialty.
+                </p>
+            </field>
+        </record>
+
+    </data>
+
+</odoo>

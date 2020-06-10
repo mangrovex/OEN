@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="1">
+
+        <record model="sie.grade" id="sie_grade_alm">
+            <field name="name">Almirante</field>
+            <field name="acronym">ALM</field>
+            <field name="is_official">True</field>
+            <field name="order_">1</field>
+        </record>
+        <record model="sie.grade" id="sie_grade_valm">
+            <field name="name">Vicealmirante</field>
+            <field name="acronym">VALM</field>
+            <field name="is_official">True</field>
+            <field name="order_">2</field>
+        </record>
+        <record model="sie.grade" id="sie_grade_calm">
+            <field name="name">Contralmirante</field>
+            <field name="acronym">CALM</field>
+            <field name="is_official">True</field>
+            <field name="order_">3</field>
+        </record>
+        <record model="sie.grade" id="sie_grade_cpnv">
+            <field name="name">Capit&#225;n de Navio</field>
+            <field name="acronym">CPNV</field>
+            <field name="is_official">True</field>
+            <field name="order_">4</field>
+        </record>
+        <record model="sie.grade" id="sie_grade_cpfg">
+            <field name="name">Capit&#225;n de Fragata</field>
+            <field name="acronym">CPFG</field>
+            <field name="is_official">True</field>
+            <field name="order_">5</field>
+        </record>
+        <record model="sie.grade" id="sie_grade_cpcb">
+            <field name="name">Capit&#225;n de Corbeta</field>
+            <field name="acronym">CPCB</field>
+            <field name="is_official">True</field>
+            <field name="order_">6</field>
+        </record>
+        <record model="sie.grade" id="sie_grade_tnnv">
+            <field name="name">Teniente de Navio</field>
+            <field name="acronym">TNNV</field>
+            <field name="is_official">True</field>
+            <field name="order_">7</field>
+        </record>
+        <record model="sie.grade" id="sie_grade_tnfg">
+            <field name="name">Teniente de Fragata</field>
+            <field name="acronym">TNFG</field>
+            <field name="is_official">True</field>
+            <field name="order_">8</field>
+        </record>
+        <record model="sie.grade" id="sie_grade_alfg">
+            <field name="name">Alferez de Fragata</field>
+            <field name="acronym">ALFG</field>
+            <field name="is_official">True</field>
+            <field name="order_">9</field>
+        </record>
+        <record model="sie.grade" id="sie_grade_gama">
+            <field name="name">Guardia Marina</field>
+            <field name="acronym">GAMA</field>
+            <field name="order_">10</field>
+        </record>
+        <record model="sie.grade" id="sie_grade_subm">
+            <field name="name">Suboficial Mayor</field>
+            <field name="acronym">SUBM</field>
+            <field name="order_">11</field>
+        </record>
+        <record model="sie.grade" id="sie_grade_subp">
+            <field name="name">Suboficial Primero</field>
+            <field name="acronym">SUBP</field>
+            <field name="order_">12</field>
+        </record>
+        <record model="sie.grade" id="sie_grade_subs">
+            <field name="name">Suboficial Segundo</field>
+            <field name="acronym">SUBS</field>
+            <field name="order_">13</field>
+        </record>
+        <record model="sie.grade" id="sie_grade_sgop">
+            <field name="name">Sargento Primero</field>
+            <field name="acronym">SGOP</field>
+            <field name="order_">14</field>
+        </record>
+        <record model="sie.grade" id="sie_grade_sgos">
+            <field name="name">Sargento Segundo</field>
+            <field name="acronym">SGOS</field>
+            <field name="order_">15</field>
+        </record>
+        <record model="sie.grade" id="sie_grade_cbop">
+            <field name="name">Cabo Primero</field>
+            <field name="acronym">CBOP</field>
+            <field name="order_">16</field>
+        </record>
+        <record model="sie.grade" id="sie_grade_cbos">
+            <field name="name">Cabo Segundo</field>
+            <field name="acronym">CBOS</field>
+            <field name="order_">17</field>
+        </record>
+        <record model="sie.grade" id="sie_grade_maro">
+            <field name="name">Marinero</field>
+            <field name="acronym">MARO</field>
+            <field name="order_">18</field>
+        </record>
+        <record model="sie.grade" id="sie_grade_grum">
+            <field name="name">Grumete</field>
+            <field name="acronym">GRUM</field>
+            <field name="order_">19</field>
+        </record>
+
+    </data>
+</openerp>

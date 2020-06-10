@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_sie_fault_article_form" model="ir.ui.view">
+            <field name="name">sie.fault.article.form</field>
+            <field name="model">sie.fault.article</field>
+            <field name="priority" eval="16"/>
+            <field name="arch" type="xml">
+                <form string="Article" version="7.0">
+                    <sheet>
+                        <div class="oe_title" colspan="4">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="kind_id" options='{"no_open":True}'/>
+                            <field name="classification_id" options='{"no_open":True}'/>
+                            <notebook colspan="2">
+                                <page string="Faults">
+                                    <field name="literal_ids" nolabel="1" mode="tree">
+                                        <tree editable="bottom" string="Fault">
+                                            <field name="literal"/>
+                                            <field name="name"/>
+                                        </tree>
+                                    </field>
+                                </page>
+                            </notebook>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_sie_fault_article_tree" model="ir.ui.view">
+            <field name="name">sie.fault.article.tree</field>
+            <field name="model">sie.fault.article</field>
+            <field name="arch" type="xml">
+                <tree string="Articles">
+                    <field name="name"/>
+                    <field name="kind_id"/>
+                    <field name="classification_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_sie_fault_article_search" model="ir.ui.view">
+            <field name="name">sie.fault.article.search</field>
+            <field name="model">sie.fault.article</field>
+            <field name="arch" type="xml">
+                <search string="Articles">
+                    <field name="name"/>
+                    <field name="kind_id"/>
+                    <field name="classification_id"/>
+                    <group string="Group by...">
+                        <filter string="Kind of Fault" domain="[]" context="{'group_by': 'kind_id'}"/>
+                        <filter string="Classification of Fault" domain="[]"
+                                context="{'group_by': 'classification_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_sie_fault_article_view">
+            <field name="name">Fault Article</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sie.fault.article</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_sie_fault_article_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new fault article.
+                </p>
+            </field>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_sie_fault_article_view_form">
+            <field name="act_window_id" ref="act_open_sie_fault_article_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_sie_fault_article_form"/>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_sie_fault_article_view_tree">
+            <field name="act_window_id" ref="act_open_sie_fault_article_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_sie_fault_article_tree"/>
+        </record>
+    </data>
+</openerp>

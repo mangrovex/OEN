@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_sie_course_form" model="ir.ui.view">
+            <field name="name">sie.course.form</field>
+            <field name="model">sie.course</field>
+            <field name="arch" type="xml">
+                <form string="Course" version="7.0">
+                    <header>
+                        <button name="action_plan" type="object"
+                                string="Planificado"
+                                groups="base.group_system,openedunav_escape.group_sie_planning"
+                                states="running,finalized"/>
+                        <button name="action_run" type="object"
+                                string="Ejecución" states="planned"
+                                groups="base.group_system,openedunav_escape.group_sie_planning"
+                                class="oe_highlight"/>
+                        <button name="action_done" type="object"
+                                string="Finalizado" states="running"
+                                groups="base.group_system,openedunav_escape.group_sie_planning"
+                                class="oe_highlight"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <!--<field name="lastname"/>-->
+                        </group>
+                        <group col="4">
+                            <field name="course_name" options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="duration_days"/>
+                            <field name="work_days"/>
+                            <field name="promotion_course_id" options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
+                            <field name="enrollment"/>
+                            <!--<field name="statistician" options='{"no_open":True}'/>-->
+                            <field name="year" invisible="1"/>
+                            <field name="director" invisible="1"/>
+                            <!--<field name="new_table"/>-->
+                            <field name="matrix_id" options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
+                            <field name="place"/>
+                            <field name="assigned_officer_id" options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
+                        </group>
+                        <notebook>
+                            <!--<page string="Parameters">-->
+                            <!--<field name="parameter_ids" nolabel="1"/>-->
+                            <!--</page>-->
+                            <page string="Asignaturas">
+                                <group col="4">
+                                    <field name="no_of_subject"/>
+                                    <field name="total_hours"/>
+                                    <field name="total_credits"/>
+                                    <field name="exec_hours" readonly="1"/>
+                                </group>
+                                <group>
+                                    <field name="subject_ids" nolabel="1" widget="many2many_list"/>
+                                </group>
+                            </page>
+                            <!--<page string="Professional Attitude">-->
+                                <!--&lt;!&ndash;<group col="2">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<field name="professional_attitude" nolabel="1" mode="tree" domain=" ['|',('director', '=', True), '|',('planta', '=', True),('division', '=', True)]">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<tree editable="bottom" string="Students" create="true" delete="true">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<field name="display_title_name" options="{'no_open':True}" readonly="1"/>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</tree>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</field>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</group>&ndash;&gt;-->
+                                <!--<group>-->
+                                    <!--<field name="course_professional" nolabel="1" mode="tree">-->
+                                        <!--&lt;!&ndash;<tree editable="bottom" string="Students" create="false">&ndash;&gt;-->
+                                        <!--<tree editable="bottom" string="Students">-->
+                                            <!--&lt;!&ndash;<field name="name" options="{'no_open':True}" readonly="1"/>&ndash;&gt;-->
+                                            <!--&lt;!&ndash;<field name="faculty_id" options="{'no_open':True}" readonly="1" invisible="1"/>&ndash;&gt;-->
+                                            <!--<field name="faculty_id" options="{'no_open':True,'no_create': True}"/>-->
+                                            <!--<field name="director"/>-->
+                                            <!--<field name="division"/>-->
+                                            <!--<field name="planta"/>-->
+                                            <!--<field name="rol_name" readonly="1"/>-->
+                                        <!--</tree>-->
+                                    <!--</field>-->
+                                <!--</group>-->
+                            <!--</page>-->
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_sie_course_tree" model="ir.ui.view">
+            <field name="name">sie.course.tree</field>
+            <field name="model">sie.course</field>
+            <field name="arch" type="xml">
+                <tree string="Course"
+                      colors="gray:state == 'planned';green:state == 'running';blue:state == 'finalized'">
+                    <field name="name"/>
+                    <field name="exec_hours"/>
+                    <field name="total_hours"/>
+                    <field name="promotion_course_id"/>
+                    <field name="year"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_sie_course_search" model="ir.ui.view">
+            <field name="name">sie.course.search</field>
+            <field name="model">sie.course</field>
+            <field name="arch" type="xml">
+                <search string="Search Course">
+                    <field name="name"/>
+                    <filter name="Planned" string="Planned" domain="[('state','=','planned')]"/>
+                    <filter name="Running" string="Running" domain="[('state','=','running')]"/>
+                    <filter name="Finalized" string="Finalized" domain="[('state','=','finalized')]"/>
+                    <field name="period"/>
+                    <group expand="0" string="Group By...">
+                        <filter name="Year" string="Year" context="{'group_by': 'year'}"/>
+                        <filter name="Period" string="Period" context="{'group_by': 'period'}"/>
+                        <filter name="State" string="State" context="{'group_by': 'state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_sie_course_view">
+            <field name="name">Curso</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sie.course</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_sie_course_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{'search_default_group_state': 1}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new course.
+                </p>
+            </field>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_sie_course_view_form">
+            <field name="act_window_id" ref="act_open_sie_course_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_sie_course_form"/>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_sie_course_view_tree">
+            <field name="act_window_id" ref="act_open_sie_course_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_sie_course_tree"/>
+        </record>
+    </data>
+</openerp>

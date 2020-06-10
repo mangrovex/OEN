@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="view_report_behavior_form" model="ir.ui.view">
+            <field name="name">Comportamiento</field>
+            <field name="model">sie.report.behavior</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button type="object" name="generate_report" string="Generar Corte" class="oe_highlight"/>
+                        <!--<button special="cancel" string="Cancelar"/>-->
+                    </header>
+                    <sheet>
+                        <!-- Form    content -->
+                        <group col="4">
+                            <!--<div class="oe_chatter">  create="false"-->
+                            <field name="course_id" colspan="4"
+                                   options="{'no_create':True , 'no_open':True}"/>
+                            <field name="is_readonly" colspan="4" invisible="1"/>
+                            <field name="date" colspan="2"/>
+                            <field name="aport" colspan="2"/>
+                            <!--</div>-->
+                        </group>
+                        <group col="4" string="Fecha de Período">
+                            <!--<div class="oe_chatter">-->
+                            <field name="date_in" colspan="2"/>
+                            <field name="date_out" colspan="2"/>
+                            <!--</div>-->
+                        </group>
+                        <notebook>
+                            <page string="Estudiantes">
+                                <div class="oe_button_box" name="button_box">
+                                    <span>
+                                        <strong>Ordenar por</strong>
+                                    </span>
+                                    <button name="sort_by_name" type="object" string="Nombre" class="oe_highlight"/>
+                                    <button name="sort_by_score" type="object" string="Nota" class="oe_highlight"/>
+                                </div>
+                                <field name="student_ids" nolabel="1" mode="tree">
+                                    <tree string="Students" create="false" delete="false">
+                                        <field name="seq" widget="handle"/>
+                                        <field name="student_id" readonly="1"
+                                               attrs="{'readonly': [('is_readonly','=',True)]}"/>
+                                        <field name="note_total" readonly="1"/>
+
+                                    </tree>
+                                    <form>
+                                        <group string="Parámetros">
+                                            <field name="student_id"/>
+                                            <field name="punctuality"/>
+                                            <field name="presence"/>
+                                            <field name="conservation"/>
+                                            <field name="average"/>
+                                            <!--<field name="leave"/>-->
+                                            <field name="leave_calc"/>
+                                            <!--<field name="medical_leave"/>-->
+                                            <field name="medical_calc"/>
+                                            <field name="note_oficial_1"/>
+                                            <field name="military_postage"/>
+                                            <field name="note_total"/>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--ACTION form-->
+        <record model="ir.actions.act_window.view" id="act_open_sie_report_behavior_view_form">
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_report_behavior_form"/>
+        </record>
+
+        <!--TREE-->
+         <record id="view_sie_report_behavior_tree" model="ir.ui.view">
+            <field name="name"> Comportamiento</field>
+            <field name="model">sie.report.behavior</field>
+            <field name="arch" type="xml">
+                <tree string="Comportamiento">
+                    <field name="course_id"/>
+                    <field name="aport"/>
+                    <!--<field name="name_type" string="Type News"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <!--ACTION tree-->
+        <record model="ir.actions.act_window.view" id="act_open_sie_report_behavior_view_tree">
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_sie_report_behavior_tree"/>
+        </record>
+
+         <!--PRINCIPAL ACTION-->
+        <record model="ir.actions.act_window" id="act_open_sie_report_behavior_view">
+            <field name="name">Comportamiento</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sie.report.behavior</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <!--<field name="search_view_id" ref="view_sie_report_behavior_search"/>-->
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click para generar nuevo reporte.
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

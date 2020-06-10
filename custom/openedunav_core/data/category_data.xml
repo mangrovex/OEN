@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="1">
+        <record model="sie.faculty.category" id="sie_category_01">
+            <field name="name">Tiempo Completo</field>
+            <field name="code">01</field>
+        </record>
+        <record model="sie.faculty.category" id="sie_category_02">
+            <field name="name">Medio Tiempo</field>
+            <field name="code">02</field>
+        </record>
+        <record model="sie.faculty.category" id="sie_category_03">
+            <field name="name">Cátedra</field>
+            <field name="code">03</field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <!--<menuitem id="menu_sie_configuration_physical_proof" name="Physical Proof"-->
+                  <!--parent="openedunav_core.sie_configuration_menu" sequence="20"/>-->
+        <!--<menuitem id="menu_sie_physical_proof_param"-->
+                  <!--name="Parameter"-->
+                  <!--action="act_open_sie_physical_proof_param_view"-->
+                  <!--parent="menu_sie_configuration_physical_proof"-->
+                  <!--groups="base.group_system"-->
+                  <!--sequence="10"/>-->
+        <!--<menuitem id="menu_sie_physical_proof_test"-->
+                  <!--name="Test"-->
+                  <!--action="act_open_sie_physical_proof_test_view"-->
+                  <!--parent="menu_sie_configuration_physical_proof"-->
+                  <!--groups="base.group_system"-->
+                  <!--sequence="20"/>-->
+        <!--<menuitem id="menu_sie_physical_proof_table"-->
+                  <!--name="Table"-->
+                  <!--action="act_open_sie_physical_proof_table_view"-->
+                  <!--parent="menu_sie_configuration_physical_proof"-->
+                  <!--groups="base.group_system"-->
+                  <!--sequence="30"/>-->
+
+        <menuitem id="menu_sie_physical_proof" name="Pruebas Fisicas"
+                  parent="openedunav_core.sie_main_menu" sequence="10"/>
+
+        <menuitem id="sie_physical_proof_menu"
+                  name="Pruebas Fisicas"
+                  action="act_open_sie_physical_proof_view"
+                  parent="menu_sie_physical_proof"
+                  groups="base.group_system"
+                  sequence="2"/>
+    </data>
+</openerp>

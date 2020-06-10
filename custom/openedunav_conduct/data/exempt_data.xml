@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!--
+        KIND OF EXEMPT
+        -->
+        <record id="koe_1" model="sie.exempt.kind">
+            <field name="name">Hospitalizado</field>
+        </record>
+        <record id="koe_2" model="sie.exempt.kind">
+            <field name="name">Exento ejercicio</field>
+        </record>
+        <record id="koe_3" model="sie.exempt.kind">
+            <field name="name">Exento de ba&#241;o</field>
+        </record>
+        <record id="koe_4" model="sie.exempt.kind">
+            <field name="name">Descanso m&#233;dico</field>
+        </record>
+        <record id="koe_5" model="sie.exempt.kind">
+            <field name="name">Exento de ejercicio y formaci&#243;n</field>
+        </record>
+        <record id="koe_6" model="sie.exempt.kind">
+            <field name="name">Exento de ejercicio - Formaci&#243;n - Gdia. Armada</field>
+        </record>
+        <record id="koe_7" model="sie.exempt.kind">
+            <field name="name">Exento litera</field>
+        </record>
+
+    </data>
+</openerp>

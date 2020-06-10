@@ -1,0 +1,39 @@
+<odoo>
+    <data>
+        <!-- School Planning -->
+        <menuitem id="sie_matrix"
+                  name="Parámetros de Evaluación"
+                  action="act_open_sie_matrix_view"
+                  parent="openedunav_core.sie_planning_menu"
+                  groups="base.group_system,openedunav_core.group_admin"
+                  sequence="1"/>
+
+        <!-- Académico -->
+        <menuitem id="sie_academic"
+                  name="Académico"
+                  parent="openedunav_core.sie_main_menu"
+                  sequence="3"/>
+        <menuitem id="sie_integrator_product_menu"
+                  name="Producto Integrador"
+                  action="act_open_sie_integrator_product_view"
+                  parent="sie_academic"
+                  groups="base.group_system,openedunav_core.group_admin"
+                  sequence="2"/>
+
+		<!-- School Configuration -->
+        <menuitem id="sie_parameter_name_menu"
+                  name="Nombre Parámetro"
+                  action="act_open_sie_param_name_view"
+                  parent="openedunav_core.sie_configuration_school_menu"
+                  groups="base.group_system,openedunav_core.group_admin"
+                  sequence="10"/>
+
+		<menuitem id="sie_training_shaft_menu"
+				  name="Ejes de Estudio"
+				  action="act_open_sie_training_shaft_view"
+				  parent="sie_configuration_school_menu"
+				  groups="group_admin"
+				  sequence="7"/>
+
+	</data>
+</odoo>

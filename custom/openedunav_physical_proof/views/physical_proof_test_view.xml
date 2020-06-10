@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_sie_physical_proof_test_form" model="ir.ui.view">
+            <field name="name">sie.physical.proof.test.form</field>
+            <field name="model">sie.physical.proof.test</field>
+            <field name="arch" type="xml">
+                <form string="Test" version="7.0">
+                    <sheet>
+                        <group col="6">
+                            <field name="name" colspan="4"/>
+                            <field name="score"/>
+                            <field name="code"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_sie_physical_proof_test_tree" model="ir.ui.view">
+            <field name="name">sie.physical.proof.test.tree</field>
+            <field name="model">sie.physical.proof.test</field>
+            <field name="arch" type="xml">
+                <tree string="Test">
+                    <field name="name"/>
+                    <field name="score"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_sie_physical_proof_test_search" model="ir.ui.view">
+            <field name="name">sie.physical.proof.test.search</field>
+            <field name="model">sie.physical.proof.test</field>
+            <field name="arch" type="xml">
+                <search string="Test">
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_sie_physical_proof_test_view">
+            <field name="name">physical_proof_test</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sie.physical.proof.test</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_sie_physical_proof_test_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new physical_proof_test.
+                </p>
+            </field>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_sie_physical_proof_test_view_form">
+            <field name="act_window_id" ref="act_open_sie_physical_proof_test_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_sie_physical_proof_test_form"/>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_sie_physical_proof_test_view_tree">
+            <field name="act_window_id" ref="act_open_sie_physical_proof_test_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_sie_physical_proof_test_tree"/>
+        </record>
+    </data>
+</openerp>

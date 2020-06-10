@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="1">
+
+        <record model="sie.nato" id="sie_nato_01">
+            <field name="name">A</field>
+            <field name="display_name">Alfa</field>
+        </record>
+        <record model="sie.nato" id="sie_nato_02">
+            <field name="name">B</field>
+            <field name="display_name">Bravo</field>
+        </record>
+        <record model="sie.nato" id="sie_nato_03">
+            <field name="name">C</field>
+            <field name="display_name">Charlie</field>
+        </record>
+        <record model="sie.nato" id="sie_nato_04">
+            <field name="name">D</field>
+            <field name="display_name">Delta</field>
+        </record>
+        <record model="sie.nato" id="sie_nato_05">
+            <field name="name">E</field>
+            <field name="display_name">Echo</field>
+        </record>
+        <record model="sie.nato" id="sie_nato_06">
+            <field name="name">F</field>
+            <field name="display_name">Foxtrot</field>
+        </record>
+        <record model="sie.nato" id="sie_nato_08">
+            <field name="name">G</field>
+            <field name="display_name">Golf</field>
+        </record>
+        <record model="sie.nato" id="sie_nato_09">
+            <field name="name">H</field>
+            <field name="display_name">Hotel</field>
+        </record>
+        <record model="sie.nato" id="sie_nato_10">
+            <field name="name">I</field>
+            <field name="display_name">India</field>
+        </record>
+        <record model="sie.nato" id="sie_nato_11">
+            <field name="name">J</field>
+            <field name="display_name">Juliett</field>
+        </record>
+        <record model="sie.nato" id="sie_nato_12">
+            <field name="name">K</field>
+            <field name="display_name">Kilo</field>
+        </record>
+        <record model="sie.nato" id="sie_nato_13">
+            <field name="name">L</field>
+            <field name="display_name">Lima</field>
+        </record>
+        <record model="sie.nato" id="sie_nato_14">
+            <field name="name">M</field>
+            <field name="display_name">Mike</field>
+        </record>
+        <record model="sie.nato" id="sie_nato_15">
+            <field name="name">N</field>
+            <field name="display_name">November</field>
+        </record>
+        <record model="sie.nato" id="sie_nato_16">
+            <field name="name">O</field>
+            <field name="display_name">Oscar</field>
+        </record>
+        <record model="sie.nato" id="sie_nato_17">
+            <field name="name">P</field>
+            <field name="display_name">Papa</field>
+        </record>
+        <record model="sie.nato" id="sie_nato_18">
+            <field name="name">Q</field>
+            <field name="display_name">Quebec</field>
+        </record>
+        <record model="sie.nato" id="sie_nato_19">
+            <field name="name">R</field>
+            <field name="display_name">Romeo</field>
+        </record>
+        <record model="sie.nato" id="sie_nato_20">
+            <field name="name">S</field>
+            <field name="display_name">Sierra</field>
+        </record>
+        <record model="sie.nato" id="sie_nato_21">
+            <field name="name">T</field>
+            <field name="display_name">Tango</field>
+        </record>
+        <record model="sie.nato" id="sie_nato_22">
+            <field name="name">U</field>
+            <field name="display_name">Uniform</field>
+        </record>
+        <record model="sie.nato" id="sie_nato_23">
+            <field name="name">V</field>
+            <field name="display_name">Victor</field>
+        </record>
+        <record model="sie.nato" id="sie_nato_24">
+            <field name="name">W</field>
+            <field name="display_name">Whiskey</field>
+        </record>
+        <record model="sie.nato" id="sie_nato_25">
+            <field name="name">X</field>
+            <field name="display_name">X-ray</field>
+        </record>
+        <record model="sie.nato" id="sie_nato_26">
+            <field name="name">Y</field>
+            <field name="display_name">Yankee</field>
+        </record>
+        <record model="sie.nato" id="sie_nato_27">
+            <field name="name">Z</field>
+            <field name="display_name">Zulu</field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="art_37_a" model="sie.fault.kind">
+            <field name="name">Contra la subordinaci&#243;n</field>
+        </record>
+        <record id="art_37_b" model="sie.fault.kind">
+            <field name="name">Abuso de facultades</field>
+        </record>
+        <record id="art_37_c" model="sie.fault.kind">
+            <field name="name">Contra los deberes y obligaciones militares</field>
+        </record>
+        <record id="art_37_d" model="sie.fault.kind">
+            <field name="name">Contra la puntualidad y asistencia</field>
+        </record>
+        <record id="art_37_e" model="sie.fault.kind">
+            <field name="name">Contra el decoro faculty y compostura militar</field>
+        </record>
+        <record id="art_37_f" model="sie.fault.kind">
+            <field name="name">Contra la propiedad</field>
+        </record>
+        <record id="art_37_g" model="sie.fault.kind">
+            <field name="name">Contra la salubridad e higiene</field>
+        </record>
+        <record id="art_37_h" model="sie.fault.kind">
+            <field name="name">Contra la moral</field>
+        </record>
+        <record id="art_37_i" model="sie.fault.kind">
+            <field name="name">Contra la seguridad de las operaciones militares</field>
+        </record>
+    </data>
+</openerp>

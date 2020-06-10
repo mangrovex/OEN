@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!--
+        KIND OF MEDAL
+        -->
+        <record id="kom_1" model="sie.medal.kind">
+            <field name="name">Medallas al m&#233;rito por desempe&#241;o integral</field>
+        </record>
+        <record id="kom_2" model="sie.medal.kind">
+            <field name="name">Medallas al m&#233;rito por acciones relevantes en actos del servicio o fuera de
+                &#233;l
+            </field>
+        </record>
+        <record id="kom_3" model="sie.medal.kind">
+            <field name="name">Medallas al m&#233;rito militar</field>
+        </record>
+        <record id="kom_4" model="sie.medal.kind">
+            <field name="name">Medallas al m&#233;rito deportivo</field>
+        </record>
+        <!--
+        MERITS
+        -->
+        <!--medals-->
+        <record id="merit_11" model="sie.merit">
+            <field name="name">Primera clase (Primera antig&#252;edad)</field>
+            <field name="kindofmerit">medal</field>
+            <field name="kind_id" ref="kom_1"/>
+            <field name="min_merits">25</field>
+            <field name="max_merits">25</field>
+        </record>
+        <record id="merit_12" model="sie.merit">
+            <field name="name">Segunda clase (Segunda antig&#252;edad)</field>
+            <field name="kindofmerit">medal</field>
+            <field name="kind_id" ref="kom_1"/>
+            <field name="min_merits">20</field>
+            <field name="max_merits">20</field>
+        </record>
+        <record id="merit_13" model="sie.merit">
+            <field name="name">Tercera clase (Tercera antig&#252;edad)</field>
+            <field name="kindofmerit">medal</field>
+            <field name="kind_id" ref="kom_1"/>
+            <field name="min_merits">15</field>
+            <field name="max_merits">15</field>
+        </record>
+        <record id="merit_21" model="sie.merit">
+            <field name="name">Ca&#241;onero Calder&#243;n</field>
+            <field name="kindofmerit">medal</field>
+            <field name="kind_id" ref="kom_2"/>
+            <field name="min_merits">15</field>
+            <field name="max_merits">25</field>
+        </record>
+        <record id="merit_31" model="sie.merit">
+            <field name="name">Primera clase (Primera antig&#252;edad)</field>
+            <field name="kindofmerit">medal</field>
+            <field name="kind_id" ref="kom_3"/>
+            <field name="min_merits">15</field>
+            <field name="max_merits">15</field>
+        </record>
+        <record id="merit_32" model="sie.merit">
+            <field name="name">Segunda clase (Segunda antig&#252;edad)</field>
+            <field name="kindofmerit">medal</field>
+            <field name="kind_id" ref="kom_3"/>
+            <field name="min_merits">10</field>
+            <field name="max_merits">10</field>
+        </record>
+        <record id="merit_33" model="sie.merit">
+            <field name="name">Tercera clase (Tercera antig&#252;edad)</field>
+            <field name="kindofmerit">medal</field>
+            <field name="kind_id" ref="kom_3"/>
+            <field name="min_merits">5</field>
+            <field name="max_merits">5</field>
+        </record>
+        <record id="merit_41" model="sie.merit">
+            <field name="name">Primera clase (Primera antig&#252;edad)</field>
+            <field name="kindofmerit">medal</field>
+            <field name="kind_id" ref="kom_4"/>
+            <field name="min_merits">15</field>
+            <field name="max_merits">15</field>
+        </record>
+        <record id="merit_42" model="sie.merit">
+            <field name="name">Segunda clase (Segunda antig&#252;edad)</field>
+            <field name="kindofmerit">medal</field>
+            <field name="kind_id" ref="kom_4"/>
+            <field name="min_merits">10</field>
+            <field name="max_merits">10</field>
+        </record>
+        <record id="merit_43" model="sie.merit">
+            <field name="name">Tercera clase (Tercera antig&#252;edad)</field>
+            <field name="kindofmerit">medal</field>
+            <field name="kind_id" ref="kom_4"/>
+            <field name="min_merits">5</field>
+            <field name="max_merits">5</field>
+        </record>
+        <!--recognitions-->
+        <!-- <record id="recognition_01" model="sie.merit">
+            <field name="name">Brigadier Capit&#225;n</field>
+            <field name="kindofmerit">recognition</field>
+            <field name="min_merits">25</field>
+            <field name="max_merits">25</field>
+        </record>
+        <record id="recognition_02" model="sie.merit">
+            <field name="name">Brigadier Teniente</field>
+            <field name="kindofmerit">recognition</field>
+            <field name="min_merits">20</field>
+            <field name="max_merits">20</field>
+        </record>
+        <record id="recognition_03" model="sie.merit">
+            <field name="name">Brigadier Alf&#233;rez</field>
+            <field name="kindofmerit">recognition</field>
+            <field name="min_merits">15</field>
+            <field name="max_merits">15</field>
+        </record> -->
+        <record id="recognition_04" model="sie.merit">
+            <field name="name">Encomio Solemne</field>
+            <field name="kindofmerit">recognition</field>
+            <field name="min_merits">10</field>
+            <field name="max_merits">10</field>
+        </record>
+        <record id="recognition_05" model="sie.merit">
+            <field name="name">Encomio Simple</field>
+            <field name="kindofmerit">recognition</field>
+            <field name="min_merits">6</field>
+            <field name="max_merits">6</field>
+        </record>
+        <record id="recognition_06" model="sie.merit">
+            <field name="name">Lista de M&#233;ritos</field>
+            <field name="kindofmerit">recognition</field>
+            <field name="min_merits">4</field>
+            <field name="max_merits">4</field>
+        </record>
+        <record id="recognition_07" model="sie.merit">
+            <field name="name">Bander&#237;n</field>
+            <field name="kindofmerit">recognition</field>
+            <field name="min_merits">3</field>
+            <field name="max_merits">3</field>
+        </record>
+        <record id="recognition_08" model="sie.merit">
+            <field name="name">Cuadro de Records Deportivos</field>
+            <field name="kindofmerit">recognition</field>
+            <field name="min_merits">2</field>
+            <field name="max_merits">2</field>
+        </record>
+        <record id="recognition_09" model="sie.merit">
+            <field name="name">Franquicia Especial</field>
+            <field name="kindofmerit">recognition</field>
+        </record>
+        <record id="recognition_10" model="sie.merit">
+            <field name="name">Felicitaci&#243;n Faculty</field>
+            <field name="kindofmerit">recognition</field>
+        </record>
+
+    </data>
+</openerp>

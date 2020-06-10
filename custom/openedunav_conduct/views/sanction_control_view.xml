@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_sie_sanction_control_form" model="ir.ui.view">
+            <field name="name">sie.sanction.control.form</field>
+            <field name="model">sie.sanction.control</field>
+            <field name="arch" type="xml">
+                <form string="Control of Sanctions" version="7.0">
+                    <header>
+                        <button name="print_report" class="oe_highlight" icon="gtk-print" states="published,settled"
+                                string="Print" type="object"/>
+                        <button name="publish" class="oe_highlight" icon="gtk-apply" states="draft" string="Publish"
+                                type="object"
+                                confirm="Are you sure to publish the sanction?"/>
+                        <button name="settle" class="oe_highlight" icon="gtk-apply" states="published" string="Settle"
+                                type="object"
+                                confirm="Are you sure to settle the sanction?. You can not delete an sanction which was settled"/>
+                        <field name="state" widget="statusbar"/>
+                        <!-- statusbar_visible="draft,published,settled" statusbar_colors='{"cancelled":"red"}'-->
+                    </header>
+                    <sheet>
+                        <group col="4">
+                            <field name="date"/>
+                            <newline/>
+                            <field name="name" colspan="4"/>
+                            <field name="course_id" options='{"no_open":True}'/>
+                            <newline/>
+                            <field name="enrollment_id" options='{"no_open":True}'/>
+                            <newline/>
+                            <field name="student_id" options='{"no_open":True}'/>
+                            <newline/>
+                            <field name="article_id" options='{"no_open":True}'/>
+                            <newline/>
+                            <field name="literal_id" colspan="4" options='{"no_open":True}'/>
+                            <field name="classification_id" colspan="4" options='{"no_open":True}' readonly="1"/>
+                            <field name="punisher_id" colspan="4" options='{"no_open":True}'/>
+                            <field name="sanction_id" colspan="4" options='{"no_open":True}'/>
+                            <field name="demerits" readonly="1"/>
+                            <notebook colspan="4">
+                                <page string="Acts">
+                                    <group>
+                                        <field name="acts" nolabel="1"/>
+                                    </group>
+                                </page>
+                                <page string="For print">
+                                    <group>
+                                        <field name="number"/>
+                                        <field name="officer_id" options='{"no_open":True}'/>
+                                    </group>
+                                </page>
+                            </notebook>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_sie_sanction_control_tree" model="ir.ui.view">
+            <field name="name">sie.sanction.control.tree</field>
+            <field name="model">sie.sanction.control</field>
+            <field name="arch" type="xml">
+                <tree string="Control of Sanctions" colors="green:state == 'draft';blue:state == 'published'">
+                    <field name="date"/>
+                    <field name="course_id"/>
+                    <field name="enrollment_id"/>
+                    <field name="student_id"/>
+                    <field name="name"/>
+                    <field name="article_id"/>
+                    <field name="literal_id"/>
+                    <field name="punisher_id"/>
+                    <field name="demerits"/>
+                    <field name="sanction_id" invisible="1"/>
+                    <field name="classification_id" invisible="1"/>
+                    <field name="state" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_sie_sanction_control_search" model="ir.ui.view">
+            <field name="name">sie.sanction.control.search</field>
+            <field name="model">sie.sanction.control</field>
+            <field name="arch" type="xml">
+                <search string="Control of Sanctions">
+                    <filter name="draft" string="Draft" domain="[('state', '=', 'draft')]"/>
+                    <filter name="published" string="Published" domain="[('state', '=', 'published')]"/>
+                    <filter name="settled" string="Settled" domain="[('state', '=', 'settled')]"/>
+                    <filter name="last_days" string="Last 15 days"
+                            domain="[('date','&gt;=',(context_today() + datetime.timedelta(-15)).strftime('%%Y-%%m-%%d'))]"/>
+                    <field name="course_id"/>
+                    <field name="enrollment_id"/>
+                    <field name="student_id"/>
+                    <field name="article_id"/>
+                    <field name="punisher_id"/>
+                    <group string="Group by...">
+                        <filter string="Course" domain="[]" context="{'group_by': 'course_id'}"/>
+                        <filter string="Classroom" domain="[]" context="{'group_by': 'enrollment_id'}"/>
+                        <filter string="Student" domain="[]" context="{'group_by': 'student_id'}"/>
+                        <filter string="Article" domain="[]" context="{'group_by': 'article_id'}"/>
+                        <filter string="Literal" domain="[]" context="{'group_by': 'literal_id'}"/>
+                        <filter string="Punisher" domain="[]" context="{'group_by': 'punisher_id'}"/>
+                        <filter string="Sanction" domain="[]" context="{'group_by': 'sanction_id'}"/>
+                        <filter string="State" domain="[]" context="{'group_by': 'state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_sie_sanction_control_view">
+            <field name="name">Sanction Control</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sie.sanction.control</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_sie_sanction_control_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new sanction control.
+                </p>
+            </field>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_sie_sanction_control_view_form">
+            <field name="act_window_id" ref="act_open_sie_sanction_control_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_sie_sanction_control_form"/>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_sie_sanction_control_view_tree">
+            <field name="act_window_id" ref="act_open_sie_sanction_control_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_sie_sanction_control_tree"/>
+        </record>
+
+        <report id="sanction_control_report_id"
+                model="sie.sanction.control"
+                string="Sanction Control Report"
+                report_type="qweb-pdf"
+                name="OpenEduFrog.sanction_control_report"
+                file="OpenEduFrog.sanction_control_report"
+                attachment_use="True"
+                attachment="(object.name)+'pdf'"
+        />
+
+    </data>
+</openerp>

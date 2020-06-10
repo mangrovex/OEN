@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="art_38" model="sie.fault.article">
+            <field name="name">Art. 38</field>
+            <field name="kind_id" ref="art_37_a"/>
+            <field name="classification_id" ref="art_36_a"/>
+        </record>
+        <record id="art_39" model="sie.fault.article">
+            <field name="name">Art. 39</field>
+            <field name="kind_id" ref="art_37_a"/>
+            <field name="classification_id" ref="art_36_b"/>
+        </record>
+        <record id="art_40" model="sie.fault.article">
+            <field name="name">Art. 40</field>
+            <field name="kind_id" ref="art_37_a"/>
+            <field name="classification_id" ref="art_36_c"/>
+        </record>
+        <record id="art_41" model="sie.fault.article">
+            <field name="name">Art. 41</field>
+            <field name="kind_id" ref="art_37_b"/>
+            <field name="classification_id" ref="art_36_a"/>
+        </record>
+        <record id="art_42" model="sie.fault.article">
+            <field name="name">Art. 42</field>
+            <field name="kind_id" ref="art_37_b"/>
+            <field name="classification_id" ref="art_36_b"/>
+        </record>
+        <record id="art_43" model="sie.fault.article">
+            <field name="name">Art. 43</field>
+            <field name="kind_id" ref="art_37_b"/>
+            <field name="classification_id" ref="art_36_c"/>
+        </record>
+        <record id="art_44" model="sie.fault.article">
+            <field name="name">Art. 44</field>
+            <field name="kind_id" ref="art_37_c"/>
+            <field name="classification_id" ref="art_36_a"/>
+        </record>
+        <record id="art_45" model="sie.fault.article">
+            <field name="name">Art. 45</field>
+            <field name="kind_id" ref="art_37_c"/>
+            <field name="classification_id" ref="art_36_b"/>
+        </record>
+        <record id="art_46" model="sie.fault.article">
+            <field name="name">Art. 46</field>
+            <field name="kind_id" ref="art_37_c"/>
+            <field name="classification_id" ref="art_36_c"/>
+        </record>
+        <record id="art_47" model="sie.fault.article">
+            <field name="name">Art. 47</field>
+            <field name="kind_id" ref="art_37_d"/>
+            <field name="classification_id" ref="art_36_a"/>
+        </record>
+        <record id="art_48" model="sie.fault.article">
+            <field name="name">Art. 48</field>
+            <field name="kind_id" ref="art_37_d"/>
+            <field name="classification_id" ref="art_36_b"/>
+        </record>
+        <record id="art_49" model="sie.fault.article">
+            <field name="name">Art. 49</field>
+            <field name="kind_id" ref="art_37_d"/>
+            <field name="classification_id" ref="art_36_c"/>
+        </record>
+        <record id="art_50" model="sie.fault.article">
+            <field name="name">Art. 50</field>
+            <field name="kind_id" ref="art_37_e"/>
+            <field name="classification_id" ref="art_36_a"/>
+        </record>
+        <record id="art_51" model="sie.fault.article">
+            <field name="name">Art. 51</field>
+            <field name="kind_id" ref="art_37_e"/>
+            <field name="classification_id" ref="art_36_b"/>
+        </record>
+        <record id="art_52" model="sie.fault.article">
+            <field name="name">Art. 52</field>
+            <field name="kind_id" ref="art_37_e"/>
+            <field name="classification_id" ref="art_36_c"/>
+        </record>
+        <record id="art_53" model="sie.fault.article">
+            <field name="name">Art. 53</field>
+            <field name="kind_id" ref="art_37_f"/>
+            <field name="classification_id" ref="art_36_a"/>
+        </record>
+        <record id="art_54" model="sie.fault.article">
+            <field name="name">Art. 54</field>
+            <field name="kind_id" ref="art_37_f"/>
+            <field name="classification_id" ref="art_36_b"/>
+        </record>
+        <record id="art_55" model="sie.fault.article">
+            <field name="name">Art. 55</field>
+            <field name="kind_id" ref="art_37_f"/>
+            <field name="classification_id" ref="art_36_c"/>
+        </record>
+        <record id="art_56" model="sie.fault.article">
+            <field name="name">Art. 56</field>
+            <field name="kind_id" ref="art_37_g"/>
+            <field name="classification_id" ref="art_36_a"/>
+        </record>
+        <record id="art_57" model="sie.fault.article">
+            <field name="name">Art. 57</field>
+            <field name="kind_id" ref="art_37_g"/>
+            <field name="classification_id" ref="art_36_b"/>
+        </record>
+        <record id="art_58" model="sie.fault.article">
+            <field name="name">Art. 58</field>
+            <field name="kind_id" ref="art_37_g"/>
+            <field name="classification_id" ref="art_36_c"/>
+        </record>
+        <record id="art_59" model="sie.fault.article">
+            <field name="name">Art. 59</field>
+            <field name="kind_id" ref="art_37_h"/>
+            <field name="classification_id" ref="art_36_b"/>
+        </record>
+        <record id="art_60" model="sie.fault.article">
+            <field name="name">Art. 60</field>
+            <field name="kind_id" ref="art_37_h"/>
+            <field name="classification_id" ref="art_36_c"/>
+        </record>
+        <record id="art_61" model="sie.fault.article">
+            <field name="name">Art. 61</field>
+            <field name="kind_id" ref="art_37_i"/>
+            <field name="classification_id" ref="art_36_a"/>
+        </record>
+        <record id="art_62" model="sie.fault.article">
+            <field name="name">Art. 62</field>
+            <field name="kind_id" ref="art_37_i"/>
+            <field name="classification_id" ref="art_36_b"/>
+        </record>
+        <record id="art_63" model="sie.fault.article">
+            <field name="name">Art. 63</field>
+            <field name="kind_id" ref="art_37_i"/>
+            <field name="classification_id" ref="art_36_c"/>
+        </record>
+    </data>
+</openerp>

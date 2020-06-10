@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="dp_coefficient" model="decimal.precision">
+            <field name="name">Coefficient</field>
+            <field name="digits">4</field>
+        </record>
+        <record id="dp_score" model="decimal.precision">
+            <field name="name">Score</field>
+            <field name="digits">3</field>
+        </record>
+        <record id="dp_total" model="decimal.precision">
+            <field name="name">Total</field>
+            <field name="digits">3</field>
+        </record>
+        <record id="dp_calculation" model="decimal.precision">
+            <field name="name">Calculation</field>
+            <field name="digits">6</field>
+        </record>
+
+    </data>
+</openerp>

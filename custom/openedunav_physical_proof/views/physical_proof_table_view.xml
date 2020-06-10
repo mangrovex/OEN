@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_sie_physical_proof_table_form" model="ir.ui.view">
+            <field name="name">sie.physical.proof.table.form</field>
+            <field name="model">sie.physical.proof.table</field>
+            <field name="arch" type="xml">
+                <form string="Table" version="7.0">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only" string="Name"/>
+                            <h1>
+                                <field name="name" class="oe_inline" placeholder="Name"/>
+                            </h1>
+                        </div>
+                        <group col="4">
+                            <field name="from_included"/>
+                            <field name="to_not_included"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_sie_physical_proof_table_tree" model="ir.ui.view">
+            <field name="name">sie.physical.proof.table.tree</field>
+            <field name="model">sie.physical.proof.table</field>
+            <field name="arch" type="xml">
+                <tree string="Table">
+                    <field name="name"/>
+                    <field name="from_included"/>
+                    <field name="to_not_included"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_sie_physical_proof_table_search" model="ir.ui.view">
+            <field name="name">sie.physical.proof.table.search</field>
+            <field name="model">sie.physical.proof.table</field>
+            <field name="arch" type="xml">
+                <search string="Table">
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_sie_physical_proof_table_view">
+            <field name="name">Physical Proof Table</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sie.physical.proof.table</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_sie_physical_proof_table_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new physical_proof_table.
+                </p>
+            </field>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_sie_physical_proof_table_view_form">
+            <field name="act_window_id" ref="act_open_sie_physical_proof_table_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_sie_physical_proof_table_form"/>
+        </record>
+        <record model="ir.actions.act_window.view" id="act_open_sie_physical_proof_table_view_tree">
+            <field name="act_window_id" ref="act_open_sie_physical_proof_table_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_sie_physical_proof_table_tree"/>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="fav_ico" name="edunav Icon" inherit_id="web.layout">
+            <xpath expr="//html/head/title" position="replace">
+                <title>OpenEduNav</title>
+            </xpath>
+        </template>
+
+        <template id="fav_ico" name="edunav Icon" inherit_id="web.layout">
+            <xpath expr="//html/head/link[1]" position="replace">
+                <link rel="shortcut icon"
+                    href="/openedunav_core/static/src/img/openedunav_favicon.ico"
+                    type="image/x-icon" />
+            </xpath>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_sie_academic_title_form" model="ir.ui.view">
+            <field name="name">sie.academic.title.form</field>
+            <field name="model">sie.academic.title</field>
+            <field name="arch" type="xml">
+                <form string="Academic Title" version="7.0">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                            <group>
+                                <field name="abbreviation"/>
+                            </group>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_sie_academic_title_tree" model="ir.ui.view">
+            <field name="name">sie.academic.title.tree</field>
+            <field name="model">sie.academic.title</field>
+            <field name="arch" type="xml">
+                <tree string="Academic Titles">
+                    <!--field name="acronym" /-->
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_sie_academic_title_search" model="ir.ui.view">
+            <field name="name">sie.academic.title.search</field>
+            <field name="model">sie.academic.title</field>
+            <field name="arch" type="xml">
+                <search string="Academic Titles">
+                    <group string="Filter by...">
+                        <field name="name"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_sie_academic_title_view">
+            <field name="name">Academic Titles</field>
+            <field name="res_model">sie.academic.title</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_sie_academic_title_search"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new Academic Title.
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

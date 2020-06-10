@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 ACSONE SA/NV
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="local_py3o_server" model="py3o.server">
+        <field name="url" >http://localhost:8765/form</field>
+    </record>
+    <!--declaración para que el reporte se un pdf.-->
+    <record id="behavior_report_py3o" model="ir.actions.report.xml">
+        <field name="name">Reporte Comportamiento</field>
+        <field name="type">ir.actions.report.xml</field>
+        <field name="model">sie.report.behavior</field>
+        <field name="report_name">py3o_user_info</field>
+        <field name="report_type">py3o</field>
+        <field name="py3o_filetype">pdf</field>
+        <field name="py3o_server_id" ref="report_py3o.local_py3o_server"/>
+        <field name="py3o_is_local_fusion" eval="1"/>
+        <!--<field name="py3o_filetype">odt</field>-->
+        <field name="module">openedunav_behavior</field>
+        <field name="py3o_template_fallback">report/report_behavior.odt</field>
+    </record>
+
+    <!--<record id="behavior_report_py3o" model="ir.actions.report.xml">-->
+      <!--<field name="name">Reporte Comportamiento</field>-->
+      <!--<field name="type">ir.actions.report.xml</field>-->
+      <!--<field name="model">sie.report.behavior</field>-->
+      <!--<field name="report_name">behavior_report</field>-->
+      <!--<field name="report_type">py3o</field>-->
+      <!--<field name="py3o_filetype">odt</field>-->
+      <!--<field name="py3o_is_local_fusion" eval="1"/>-->
+      <!--<field name="py3o_filetype">odt</field>-->
+      <!--<field name="module">openedunav_behavior</field>-->
+      <!--<field name="py3o_template_fallback">report/report_behavior3.odt</field>-->
+    <!--</record>-->
+
+    <record id="behavior_report_py3o_print_action" model="ir.values">
+      <field eval="'action'" name="key" />
+      <field eval="'client_print_multi'" name="key2" />
+      <field name="model">sie.report.behavior</field>
+      <field name="name">Reporte Comportamiento</field>
+      <field eval="'ir.actions.report.xml,'+str(behavior_report_py3o)" name="value" />
+    </record>
+
+</odoo>

@@ -1,0 +1,416 @@
+# -*- coding: utf-8 -*-
+from stdnum.ec import ruc, ci
+
+from odoo import models, fields, api,_
+from odoo.exceptions import ValidationError
+
+TYPE_CED_RUC = [('cedula', 'CEDULA'),
+                ('ruc', 'RUC'),
+                ('pasaporte', 'PASAPORTE'),
+                ('placa', u'PLACA o RAMV/CPN'),
+                ('final', 'CONSUMIDOR FINAL')]
+TIPO_PERSONA = [('6', 'Persona Natural'),
+                ('9', 'Persona Juridica')]
+
+CUSTOMER_TYPE = [("private", u'Privado'),
+                 ("public", u'Público')]
+
+
+class ResPartner(models.Model):
+    _name = 'res.partner'
+    _inherit = 'res.partner'
+
+    @api.model
+    def name_search(self, name, args=None, operator='ilike', limit=100):  # noqa
+        args = args or []
+        if name:
+            ids = self.search([('vat', operator, name)] + args, limit=limit)  # noqa
+            if not ids:
+                ids = self.search([('name', operator, name)] + args, limit=limit)  # noqa
+        else:
+            ids = self.search(args, limit=limit)
+        return ids.name_get()
+
+    type_ced_ruc = fields.Selection(TYPE_CED_RUC, 'Tipo ID', track_visibility='onchange')
+    tipo_persona = fields.Selection(TIPO_PERSONA, string='Persona', required=True, default='6')
+    ced_ruc = fields.Char(u'Cedula/ RUC',
+                          help=u'Identificación o Registro Unico de Contribuyentes',
+                          store=True, track_visibility='onchange')
+    vat = fields.Char(compute = '_compute_vat',store=True)
+    tz = fields.Selection(default="America/Guayaquil")
+    foreign = fields.Boolean(u'Extranjero?', readonly=False, help=u"", )
+    foreign_type = fields.Selection(
+        [('01', u'Persona Natural'),
+         ('02', u'Sociedad'),
+         ], string=u'Tipo de Cliente Extranjero', readonly=False, help=u"", )
+    business_name = fields.Char(u'Nombre Comercial', size=256, required=False,
+                                readonly=False, help=u"", )
+    # Datos para el reporte dinardap
+    sex = fields.Selection([('M', u'Masculino'),
+                            ('F', u'Femenino'),
+                            ], string=u'Sexo', readonly=False, help=u"",
+                           required=False)
+    marital_status = fields.Selection([('S', u'Soltero(a)'),
+                                       ('C', u'Casado(a)'),
+                                       ('D', u'Divorciado(a)'),
+                                       ('U', u'Unión Libre'),
+                                       ('V', u'Viudo(o)'),
+                                       ], string=u'Estado Civil',
+                                      readonly=False, help=u"", required=False)
+    input_origins = fields.Selection([('B', u'Empleado Público'),
+                                      ('V', u'Empleado Privado'),
+                                      ('I', u'Independiente'),
+                                      ('A', u'Ama de Casa o Estudiante'),
+                                      ('R', u'Rentista'),
+                                      ('H', u'Jubilado'),
+                                      ('M', u'Remesa del Exterior'),
+                                      ], string=u'Origen de Ingresos',
+                                     readonly=False, help=u"", required=False)
+    parte_relacionada = fields.Boolean(u'Parte Relacionada?', readonly=False,
+                                       help=u"", )
+
+    city_id = fields.Many2one('res.state.city', 'Ciudad', ondelete='restrict',
+                              domain="[('state_id','=',state_id)]")
+    parish_id = fields.Many2one(
+        'res.city.parish', ondelete='restrict', string="Parish",
+        domain="[('city_id', '=', city_id)]")
+
+    customer_type = fields.Selection(CUSTOMER_TYPE, string="Tipo de cliente", default="private")
+
+    _sql_constraints = [
+        ('partner_unique',
+         'unique(country_id,ced_ruc,type_ced_ruc,tipo_persona,company_id)',
+         u'La indeficación debe ser única.'),
+        ('partner_unique_id',
+         'unique(ced_ruc,type_ced_ruc)',
+         u'La indeficación debe ser única.'),
+    ]
+
+    @api.depends('ced_ruc','country_id')
+    def _compute_vat(self):
+        # calculo del vat de odoo a partir del campo ced_ruc
+        for record in self:
+            if not record.ced_ruc:
+                record.vat = None
+            else:
+                if not record.country_id:
+                    record.vat = "EC" + record.ced_ruc
+                else:
+                    record.vat = record.country_id.code + record.ced_ruc
+
+    @api.onchange('vat')
+    def _onchange_vat(self):
+        for record in self:
+            if record.vat:
+                record.vat = record.vat.upper()
+
+    @api.onchange('type_ced_ruc')
+    def _onchange_type_ced_ruc(self):
+        for record in self:
+            if not record.type_ced_ruc:
+                record.vat = None
+
+    @api.onchange('ced_ruc')
+    def _onchange_ced_ruc(self):
+        for record in self:
+            if not record.ced_ruc:
+                record.vat = None
+            else:
+                if not record.country_id:
+                    record.vat = "EC" + record.ced_ruc
+                else:
+                    record.vat = record.country_id.code + record.ced_ruc
+
+    @api.depends('vat')
+    def _compute_ced_ruc(self):
+        for record in self:
+            if record.vat:
+                vat_country, vat_number = self._split_vat(record.vat)
+                record.ced_ruc = vat_number
+
+    @api.onchange('city_id')
+    def _onchange_city_id(self):
+        for record in self:
+            if record.city_id:
+                record.city = self.city_id.name.capitalize()
+            else:
+                record.city = None
+
+    def onchange_state(self, state_id):
+        if state_id:
+            return {'value': {'city_id': None, 'city': None}}
+        return super(ResPartner, self).onchange_state(state_id)
+
+    @api.onchange('country_id')
+    def _onchange_country_id(self):
+        if self.country_id:
+            self.state_id = None
+            self.city_id = None
+            self.parish_id = None
+
+    @api.constrains('ced_ruc', 'type_ced_ruc', 'tipo_persona')
+    def check_ced_ruc(self):
+        for record in self:
+            if record.type_ced_ruc:
+                # if not record.vat:
+                #     raise ValidationError(u'Ingresar número de identificación')
+                # vat_country, vat_number = self._split_vat(record.vat)
+                if record.type_ced_ruc == 'cedula' and not ci.is_valid(record.ced_ruc):
+                    raise ValidationError('CI [%s] no es valido !' % record.ced_ruc)
+                elif record.type_ced_ruc == 'ruc' and not ruc.is_valid(record.ced_ruc):
+                    raise ValidationError('RUC [%s] no es valido !' % record.ced_ruc)
+
+    def verifica_cedula(self, ced):
+        if ci.is_valid(ced):
+            return True
+        else:
+            return False
+
+    def create_user(self):
+        self.env['res.users'].create_user(self)
+
+    @api.model
+    def _validate_ref(self, ref):
+        type_ref = ""
+        if self.env.context.get('skip_ruc_validation') or not ref:
+            return type_ref
+        try:
+            if not self.env.context.get('foreign', False):
+                # validar que sea solo numeros
+                try:
+                    int(ref)
+                except ValueError:
+                    raise Warning(_(u'La CEDULA/RUC %s solo debe tener números, por favor verifique') % (ref))
+                if (len(ref) == 13):
+                    dato = ref
+                    if (int(dato[2]) == 9):
+                        # verify if partner is a private company
+                        if self.verifica_ruc_spri(ref):
+                            type_ref = 'ruc'
+                        elif self.verifica_id_cons_final(ref):
+                            type_ref = 'consumidor'
+                        else:
+                            raise Warning(_(u'La CEDULA/RUC %s no es correcta, por favor verifique') % (ref))
+                    elif (int(dato[2]) == 6):
+                        # verify if partner is a statal company
+                        if self.verifica_ruc_spub(ref):
+                            type_ref = 'ruc'
+                        else:
+                            raise Warning(_(u'La CEDULA/RUC %s es incorrecto, por favor verifique') % (ref))
+                    elif (int(dato[2]) < 6):
+                        # verify if partner is a natural person
+                        if self.verifica_ruc_pnat(ref):
+                            type_ref = 'ruc'
+                        else:
+                            raise Warning(_(u'La CEDULA/RUC %s es incorrecto, por favor verifique') % (ref))
+                    else:
+                        raise Warning(_(u'La CEDULA/RUC %s es incorrecto, por favor verifique') % (ref))
+                elif (len(ref) == 10):
+                    # verify the dni or Cedula of partner
+                    if self.verifica_cedula(ref):
+                        type_ref = 'cedula'
+                    else:
+                        raise Warning(_(u'La CEDULA/RUC %s es incorrecto, por favor verifique') % (ref))
+                else:
+                    raise Warning(_(u'La CEDULA/RUC %s es incorrecto, por favor verifique') % (ref))
+            else:
+                type_ref = 'passport'
+        except:
+            raise Warning(_(u'La CEDULA/RUC %s es incorrecto, por favor verifique') % (ref))
+        return type_ref
+
+    def verifica_ruc_spri(self, ruc):
+        try:
+            # soporte para nacionalizados(codigo 30 y 50)
+            if int(ruc[0] + ruc[1]) < 25 or int(ruc[0] + ruc[1]) in (30, 50):
+                prueba1 = True
+            else:
+                prueba1 = False
+            if (int(ruc[2]) == 9):
+                prueba2 = True
+            else:
+                prueba2 = False
+            val0 = int(ruc[0]) * 4
+            val1 = int(ruc[1]) * 3
+            val2 = int(ruc[2]) * 2
+            val3 = int(ruc[3]) * 7
+            val4 = int(ruc[4]) * 6
+            val5 = int(ruc[5]) * 5
+            val6 = int(ruc[6]) * 4
+            val7 = int(ruc[7]) * 3
+            val8 = int(ruc[8]) * 2
+            tot = val0 + val1 + val2 + val3 + val4 + val5 + val6 + val7 + val8
+            divisor = int(tot / 11.0)
+            veri = int(11 - (tot - (11 * divisor)))
+            if veri == 11: veri = 0
+            if (veri == 0):
+                if ((int(ruc[9])) == 0):
+                    prueba3 = True
+                else:
+                    prueba3 = False
+            else:
+                if ((int(ruc[9])) == (veri)):
+                    prueba3 = True
+                else:
+                    prueba3 = False
+            # la ultima parte debe ser el codigo del establecimiento, entre 001, 00N
+            # pero x ahora solo validar que sea 001
+            if ruc[10:] in ('001',):
+                prueba4 = True
+            else:
+                prueba4 = False
+            if (prueba1 and prueba2 and prueba3 and prueba4):
+                return True
+            else:
+                return False
+        except:
+            return False
+
+    def verifica_ruc_spub(self, ruc):
+        try:
+            # soporte para nacionalizados(codigo 30 y 50)
+            if int(ruc[0] + ruc[1]) < 25 or int(ruc[0] + ruc[1]) in (30, 50):
+                prueba1 = True
+            else:
+                prueba1 = False
+            if (int(ruc[2]) == 6):
+                prueba2 = True
+            else:
+                prueba2 = False
+            val0 = int(ruc[0]) * 3
+            val1 = int(ruc[1]) * 2
+            val2 = int(ruc[2]) * 7
+            val3 = int(ruc[3]) * 6
+            val4 = int(ruc[4]) * 5
+            val5 = int(ruc[5]) * 4
+            val6 = int(ruc[6]) * 3
+            val7 = int(ruc[7]) * 2
+            tot = val0 + val1 + val2 + val3 + val4 + val5 + val6 + val7
+            divisor = int(tot / 11.0)
+            veri = int(11 - (tot - (11 * divisor)))
+            if veri == 11: veri = 0
+            if (veri == 0):
+                if ((int(ruc[8])) == 0):
+                    prueba3 = True
+                else:
+                    prueba3 = False
+            else:
+                if ((int(ruc[8])) == (veri)):
+                    prueba3 = True
+                else:
+                    prueba3 = False
+            # la ultima parte debe ser el codigo del establecimiento, entre 001, 00N
+            # pero x ahora solo validar que sea 001
+            if ruc[10:] in ('001',):
+                prueba4 = True
+            else:
+                prueba4 = False
+            if (prueba1 and prueba2 and prueba3 and prueba4):
+                return True
+            else:
+                # FIXME: por alguna razon existio un caso de un ruc que el sistema del sri tiene asignado a una persona natural y tiene la forma de institucion publica
+                if prueba4:
+                    return self.verifica_cedula(ruc[:10])
+                return False
+        except:
+            return False
+
+    def verifica_ruc_pnat(self, ruc):
+        try:
+            # soporte para nacionalizados(codigo 30 y 50)
+            if int(ruc[0] + ruc[1]) < 25 or int(ruc[0] + ruc[1]) in (30, 50):
+                prueba1 = True
+            else:
+                prueba1 = False
+            if (int(ruc[2]) < 6):
+                prueba2 = True
+            else:
+                prueba2 = False
+            valores = [int(ruc[x]) * (2 - x % 2) for x in range(9)]
+            suma = sum(map(lambda x: x > 9 and x - 9 or x, valores))
+            dsup = 10
+            if suma > 10:
+                dsup = (int(str(suma)[0]) + 1) * 10
+            veri = dsup - suma
+            if veri == 10:
+                veri = 0
+            if int(ruc[9]) == veri:
+                prueba3 = True
+            else:
+                prueba3 = False
+            # la ultima parte debe ser el codigo del establecimiento, entre 001, 00N
+            # pero x ahora solo validar que sea 001
+            if ruc[10:] in ('001',):
+                prueba4 = True
+            else:
+                prueba4 = False
+            if (prueba1 and prueba2 and prueba3 and prueba4):
+                return True
+            else:
+                if prueba4:
+                    return self.verifica_cedula(ruc[:10])
+                return False
+        except:
+            return False
+
+    def verifica_cedula(self, ced):
+        try:
+            valores = [int(ced[x]) * (2 - x % 2) for x in range(9)]
+            suma = sum(map(lambda x: x > 9 and x - 9 or x, valores))
+            dsup = 10
+            if suma > 10:
+                dsup = (int(str(suma)[0]) + 1) * 10
+            veri = dsup - suma
+            if veri == 10:
+                veri = 0
+            if int(ced[9]) == veri:
+                return True
+            else:
+                return False
+        except:
+            return False
+
+    def verifica_id_cons_final(self, ced):
+        b = True
+        try:
+            for n in ced:
+                if int(n) != 9:
+                    b = False
+            return b
+        except:
+            return False
+
+    # @api.model
+    # @api.returns('self', lambda value: value.id)
+    # def create(self, vals):
+    #     if not vals.get('vat'):
+    #         # sequence = self.env['ir.sequence'].next_by_code('res.partner.no.id')
+    #         # vals['vat'] = sequence
+    #     return super(ResPartner, self).create(vals)
+
+    # @api.multi
+    # def write(self, vals):
+    #     partner = []
+    #     for record in self:
+    #         if not record.type_ced_ruc:
+    #             if not vals.get('type_ced_ruc'):
+    #                 vals.update({'vat': None})
+    #                 partner = super(ResPartner, record).write(vals)
+    #                 vals.pop("vat")
+    #             else:
+    #                 partner = super(ResPartner, record).write(vals)
+    #         else:
+    #             partner = super(ResPartner, record).write(vals)
+    #     return partner
+
+    # @api.multi
+    # def _commercial_fields(self):
+    #     """ Returns the list of fields that are managed by the commercial entity
+    #     to which a partner belongs. These fields are meant to be hidden on
+    #     partners that aren't `commercial entities` themselves, and will be
+    #     delegated to the parent `commercial entity`. The list is meant to be
+    #     extended by inheriting classes. """
+    #     return ['credit_limit']
+
+    # def check_vat_ec(self, vat):
+    #     return True

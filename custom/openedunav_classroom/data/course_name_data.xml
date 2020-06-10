@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<odoo>
+    <data noupdate="1">
+        <record model="sie.course.name" id="sie_course_name_maro_cabos">
+            <field name="name">PERFECCIONAMIENTO MARO-CABOS</field>
+        </record>
+        <record model="sie.course.name" id="sie_course_name_cbop_sgos">
+            <field name="name">PERFECCIONAMIENTO CBOP-SGOS</field>
+        </record>
+        <record model="sie.course.name" id="sie_course_name_sgos_subs">
+            <field name="name">PERFECCIONAMIENTO SGOS-SUBS</field>
+        </record>
+        <record model="sie.course.name" id="sie_course_name_superficie">
+            <field name="name">ESPECIALIZACIÓN SUPERFICIE</field>
+        </record>
+        <record model="sie.course.name" id="sie_course_name_guardacostas">
+        <field name="name">ESPECIALIZACIÓN GUARDACOSTAS</field>
+        </record>
+        <record model="sie.course.name" id="sie_course_name_submarinos">
+        <field name="name">ESPECIALIZACIÓN SUBMARINOS</field>
+        </record>
+        <record model="sie.course.name" id="sie_course_name_hidrografos">
+            <field name="name">ESPECIALIZACIÓN HIDROGRAFOS</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,329 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="1">
+        <record model="sie.promotion" id="sie_promotion_01">
+            <field name="name">1</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_02">
+            <field name="name">2</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_03">
+            <field name="name">3</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_04">
+            <field name="name">4</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_05">
+            <field name="name">5</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_06">
+            <field name="name">6</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_07">
+            <field name="name">7</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_08">
+            <field name="name">8</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_09">
+            <field name="name">9</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_10">
+            <field name="name">10</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_11">
+            <field name="name">11</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_12">
+            <field name="name">12</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_13">
+            <field name="name">13</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_14">
+            <field name="name">14</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_15">
+            <field name="name">15</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_16">
+            <field name="name">16</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_17">
+            <field name="name">17</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_18">
+            <field name="name">18</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_19">
+            <field name="name">19</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_20">
+            <field name="name">20</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_21">
+            <field name="name">21</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_22">
+            <field name="name">22</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_23">
+            <field name="name">23</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_24">
+            <field name="name">24</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_25">
+            <field name="name">25</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_26">
+            <field name="name">26</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_27">
+            <field name="name">27</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_28">
+            <field name="name">28</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_29">
+            <field name="name">29</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_30">
+            <field name="name">30</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_31">
+            <field name="name">31</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_32">
+            <field name="name">32</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_33">
+            <field name="name">33</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_34">
+            <field name="name">34</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_35">
+            <field name="name">35</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_36">
+            <field name="name">36</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_37">
+            <field name="name">37</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_38">
+            <field name="name">38</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_39">
+            <field name="name">39</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_40">
+            <field name="name">40</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_41">
+            <field name="name">41</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_42">
+            <field name="name">42</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_43">
+            <field name="name">43</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_44">
+            <field name="name">44</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_45">
+            <field name="name">45</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_46">
+            <field name="name">46</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_47">
+            <field name="name">47</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_48">
+            <field name="name">48</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_49">
+            <field name="name">49</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_50">
+            <field name="name">50</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_51">
+            <field name="name">51</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_52">
+            <field name="name">52</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_53">
+            <field name="name">53</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_54">
+            <field name="name">54</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_55">
+            <field name="name">55</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_56">
+            <field name="name">56</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_57">
+            <field name="name">57</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_58">
+            <field name="name">58</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_59">
+            <field name="name">59</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_60">
+            <field name="name">60</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_61">
+            <field name="name">61</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_62">
+            <field name="name">62</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_63">
+            <field name="name">63</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_64">
+            <field name="name">64</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_65">
+            <field name="name">65</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_66">
+            <field name="name">66</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_67">
+            <field name="name">67</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_68">
+            <field name="name">68</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_69">
+            <field name="name">69</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_70">
+            <field name="name">70</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_71">
+            <field name="name">71</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_72">
+            <field name="name">72</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_73">
+            <field name="name">73</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_74">
+            <field name="name">74</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_75">
+            <field name="name">75</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_76">
+            <field name="name">76</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_77">
+            <field name="name">77</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_78">
+            <field name="name">78</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_79">
+            <field name="name">79</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_80">
+            <field name="name">80</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_81">
+            <field name="name">81</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_82">
+            <field name="name">82</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_83">
+            <field name="name">83</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_84">
+            <field name="name">84</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_85">
+            <field name="name">85</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_86">
+            <field name="name">86</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_87">
+            <field name="name">87</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_88">
+            <field name="name">88</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_89">
+            <field name="name">89</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_90">
+            <field name="name">90</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_91">
+            <field name="name">91</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_92">
+            <field name="name">92</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_93">
+            <field name="name">93</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_94">
+            <field name="name">94</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_95">
+            <field name="name">95</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_96">
+            <field name="name">96</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_97">
+            <field name="name">97</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_98">
+            <field name="name">98</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_99">
+            <field name="name">99</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_100">
+            <field name="name">100</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_101">
+            <field name="name">101</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_102">
+            <field name="name">102</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_103">
+            <field name="name">103</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_104">
+            <field name="name">104</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_105">
+            <field name="name">105</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_106">
+            <field name="name">106</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_107">
+            <field name="name">107</field>
+        </record>
+        <record model="sie.promotion" id="sie_promotion_108">
+            <field name="name">108</field>
+        </record>
+    </data>
+</openerp>

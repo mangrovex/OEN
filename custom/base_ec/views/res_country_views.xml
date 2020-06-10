@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="view_country_form_inherit_ec_base" model="ir.ui.view">
+            <field name="name">view.country.form.inherit.ec.base</field>
+            <field name="model">res.country</field>
+            <field name="inherit_id" ref="base.view_country_form"/>
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="code_ec"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_country_tree_inherit_ec_base" model="ir.ui.view">
+            <field name="name">view.country.tree.inherit.ec.base</field>
+            <field name="model">res.country</field>
+            <field name="inherit_id" ref="base.view_country_tree"/>
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="code_ec"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

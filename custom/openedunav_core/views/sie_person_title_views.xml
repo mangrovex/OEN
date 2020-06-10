@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+        <record id="view_sie_person_title_tree" model="ir.ui.view">
+            <field name="name">sie.person.title.tree</field>
+            <field name="model">sie.person.title</field>
+            <field name="arch" type="xml">
+                <tree string="Specialties">
+                    <field name="name"/>
+                    <field name="acronym"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_sie_person_title_form" model="ir.ui.view">
+            <field name="name">sie.person.title.form</field>
+            <field name="model">sie.person.title</field>
+            <field name="arch" type="xml">
+                <form string="person.title">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="acronym"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_sie_person_title_search" model="ir.ui.view">
+            <field name="name">sie.person.title.search</field>
+            <field name="model">sie.person.title</field>
+            <field name="arch" type="xml">
+                <search string="person.title">
+                    <field name="name" select="True"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_sie_person_title_view">
+            <field name="name">person.title</field>
+            <field name="res_model">sie.person.title</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_sie_person_title_search"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new person.title.
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

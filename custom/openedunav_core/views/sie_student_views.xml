@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="sie_student_view_form" model="ir.ui.view">
+            <field name="name">sie.student.form</field>
+            <field name="model">sie.student</field>
+            <field name="arch" type="xml">
+                <form string="Student">
+                    <field name="active" invisible="1"/>
+                    <header>
+                        <button string="Chat" class="btn btn-primary o_student_chat_btn" attrs="{'invisible': [('user_id','=', False)]}"/>
+                    </header>
+                    <sheet>
+                        <div name="button_box" class="oe_button_box">
+                        </div>
+                        <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                        <field name="image_1920" widget='image' class="oe_avatar" options='{"zoom": true, "preview_image":"image_128"}'/>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Student's Name" required="True"/>
+                            </h1>
+                            <field name="category_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_create_edit': True}" placeholder="Tags"  groups="openedunav_core.group_admin"/>
+                        </div>
+                        <div class="oe_edit_only">
+                            <group>
+                                <group>
+                                    <field name="first_name" placeholder="Primer Nombre" required="True"/>
+                                    <field name="middle_name" placeholder="Segundo Nombre"/>
+                                </group>
+                                <group>
+                                    <field name="last_name" placeholder="Primer Apellido" required="True"/>
+                                    <field name="mother_name" placeholder="Segundo Apellido" required="True"/>
+                                </group>
+                            </group>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="grade_id"
+                                       options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
+                                <field name="serial_navy"/>
+                                <field name="location_id"
+                                       options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
+                                <field name="place_of_birth"
+                                       options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
+                                <field name="admission_date"/>
+                                <field name="promotion_id"
+                                       options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
+                                <field name="gender"/>
+                                <label for="street" string="Direccion"/>
+                                <div class="o_addsies_format">
+                                    <field name="street" placeholder="Street..." class="o_addsies_street"/>
+                                    <field name="street2" placeholder="Street 2..." class="o_addsies_street"/>
+                                    <field name="country_id" placeholder="Country" class="o_addsies_country"
+                                           options='{"no_open": True, "no_create_edit": True}'/>
+                                    <field name="state_id" placeholder="State"
+                                           options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'
+                                           domain="[('country_id', '=', country_id)]"
+                                           context="{'country_id': country_id, 'zip': zip}" class="o_address_city"/>
+                                    <field name="city_id" placeholder="Town"
+                                           domain="[('state_id', '=', state_id)]"
+                                           context="{'state_id': state_id}"
+                                           options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'
+                                           class="o_address_city"/>
+                                    <field name="parish_id" class="o_address_state" placeholder="Parish"
+                                           context="{'city_id': city_id}"
+                                           options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
+                                    <field name="zip" placeholder="ZIP" class="o_addsies_zip"/>
+
+                                </div>
+                            </group>
+                            <group>
+                                <field name="specialty_id"
+                                       options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
+                                <field name="sub_specialty_id"/>
+                                <field name="identification_id"/>
+                                <field name="birthday"/>
+                                <field name="age"/>
+                                <field name="blood_group"/>
+                                <field name="nationality"
+                                       options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
+                                <field name="study_level"/>
+                                <field name="children"/>
+                                <field name="spouse_complete_name"/>
+                                <field name="father_complete_name"/>
+                                <field name="mother_complete_name"/>
+                                <field name="phone" string="Phone"/>
+                                <field name="email"/>
+                                <field name="user_id" string="User"
+                                       options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
+                            </group>
+                        </group>
+                        <group col="3">
+                            <group>
+                                <field name="physical_exoneration"/>
+                            </group>
+                            <group>
+                                <field name="conadis"/>
+                            </group>
+                            <group>
+                                <field name="conadis_percent"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="observation_physical"/>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="mobile_phone" widget="phone"/>
+                                <field name="work_phone" widget="phone"/>
+                                <field name="work_email" widget="email"/>
+                                <field name="company_id" groups="base.group_multi_company"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="personal_information" string="Private Information" >
+                                <group>
+                                    <group string="Private Contact">
+                                        <field name="email" string="Email"/>
+                                        <field name="phone" class="o_force_ltr"   string="Phone"/>
+                                    </group>
+                                    <group string="Citizenship">
+                                        <field name="nationality"/>
+                                        <field name="identification_id"  />
+                                        <field name="passport_id"  />
+                                        <field name="gender"/>
+                                        <field name="birthday"/>
+                                        <field name="place_of_birth"  />
+                                        <field name="country_of_birth"  />
+                                    </group>
+                                    <group string="Marital Status">
+                                        <field name="marital"/>
+                                        <field name="spouse_complete_name" attrs="{'invisible': [('marital', 'not in', ['married', 'cohabitant'])]}"  />
+                                        <field name="spouse_birthdate" attrs="{'invisible': [('marital', 'not in', ['married', 'cohabitant'])]}"  />
+                                    </group>
+                                    <group string="Dependant">
+                                        <field name="children"/>
+                                    </group>
+                                    <group string="Emergency">
+                                        <field name="emergency_contact"/>
+                                        <field name="emergency_phone" class="o_force_ltr"/>
+                                    </group>
+                                    <group string="Work Permit" name="work_permit">
+                                        <field name="visa_no"/>
+                                        <field name="visa_expire"/>
+                                    </group>
+                                    <group string="Education">
+                                        <field name="certificate"/>
+                                        <field name="study_field"/>
+                                        <field name="study_school"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page name="sie_settings" string="HR Settings" >
+                                <group>
+                                    <group string='Status' name="active_group">
+                                        <field name="user_id" string="Related User"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sie_student_view_tree" model="ir.ui.view">
+            <field name="name">sie.student.tree</field>
+            <field name="model">sie.student</field>
+            <field eval="8" name="priority"/>
+            <field name="arch" type="xml">
+                <tree string="Contacts">
+                    <field name="identification_id"/>
+                    <field name="grade_id"/>
+                    <field name="full_name"/>
+                    <field name="phone"/>
+                    <field name="email"/>
+                    <field name="user_id" invisible="1"/>
+                    <field name="active" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_sie_student_view">
+            <field name="name">Estudiantes</field>
+            <field name="res_model">sie.student</field>
+            <field name="view_mode">form,tree</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">Create the first student
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+        <record id="sie_student_view_form_inherit_escape" model="ir.ui.view">
+            <field name="name">sie.student.form.inherit_escape</field>
+            <field name="model">sie.student</field>
+            <field name="inherit_id" ref="openedunav_core.sie_student_view_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Cursos">
+                        <group>
+                            <group>
+                                <field name="current_course" options='{"no_open":True,"no_create_edit":True}'/>
+                            </group>
+                            <group>
+                                <field name="in_course"/>
+                            </group>
+                        </group>
+                        <field name="enrollment_ids"/>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+
+</odoo>

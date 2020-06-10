@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-extend="WebClient.DebugManager">
+        <t t-jquery="li[class='o_debug_manager']" t-operation="after">
+            <li>
+                <a href="/web/database/manager" target="_blank" title="Database Manager" style="opacity:0.5;">
+                    <i class="fa fa-database" role="img" aria-label="Database Manager"/>
+                </a>
+            </li>
+        </t>
+    </t>
+</templates>

@@ -1,0 +1,98 @@
+<odoo>
+    <data>
+        <menuitem id="sie_main_menu"
+                  name="OpenEduNav"
+                  parent=""
+                  sequence="1"
+                  web_icon="openedunav_core,static/src/img/army.png"/>
+        <!-- General Configuration -->
+        <menuitem id="sie_configuration_menu"
+                  name="Configuration"
+                  parent="sie_main_menu"
+                  sequence="5"/>
+        <menuitem id="sie_school_config_general_menu"
+                  name="General Management"
+                  parent="sie_configuration_menu"
+                  sequence="1"/>
+        <menuitem id="sie_academic_title_menu"
+                  name="Academic Title"
+                  action="act_open_sie_academic_title_view"
+                  parent="sie_school_config_general_menu"
+                  groups="openedunav_core.group_admin"
+                  sequence="1"/>
+        <menuitem id="sie_faculty_category_menu"
+                  name="Faculty Category"
+                  action="act_open_sie_faculty_category_view"
+                  parent="sie_school_config_general_menu"
+                  groups="openedunav_core.group_admin"
+                  sequence="2"/>
+        <menuitem id="sie_grade_menu"
+                  name="Grade"
+                  action="act_open_sie_grade_view"
+                  parent="sie_school_config_general_menu"
+                  groups="openedunav_core.group_admin"
+                  sequence="3"/>
+        <menuitem id="sie_promotion_menu"
+                  name="Promotion"
+                  action="act_open_sie_promotion_view"
+                  parent="sie_school_config_general_menu"
+                  groups="openedunav_core.group_admin"
+                  sequence="4"/>
+        <menuitem id="sie_religion_menu"
+                  name="Religion"
+                  action="act_open_sie_religion_view"
+                  parent="sie_school_config_general_menu"
+                  groups="openedunav_core.group_admin"
+                  sequence="5"/>
+        <menuitem id="sie_nato_menu"
+                  name="Nato"
+                  action="act_open_sie_nato_view"
+                  parent="sie_school_config_general_menu"
+                  groups="openedunav_core.group_admin"
+                  sequence="6"/>
+        <menuitem id="sie_specialty_menu"
+                  name="Specialty"
+                  action="act_open_sie_specialty_view"
+                  parent="sie_school_config_general_menu"
+                  groups="openedunav_core.group_admin"
+                  sequence="7"/>
+        <menuitem id="sie_sub_specialty"
+                  name="Sub Specialty"
+                  action="act_open_sie_sub_specialty_view"
+                  parent="sie_school_config_general_menu"
+                  groups="openedunav_core.group_admin"
+                  sequence="8"/>
+        <menuitem id="sie_person_title_menu"
+                  name="Person Títle"
+                  action="act_open_sie_person_title_view"
+                  parent="sie_school_config_general_menu"
+                  groups="openedunav_core.group_admin"
+                  sequence="9"/>
+        <menuitem id="sie_location_menu"
+                  name="Location"
+                  action="act_open_sie_location_view"
+                  parent="sie_school_config_general_menu"
+                  groups="openedunav_core.group_admin"
+                  sequence="10"/>
+        <!-- School Planning -->
+        <menuitem id="sie_planning_menu"
+                  name="Planning"
+                  parent="sie_main_menu"
+                  sequence="1"
+        />
+        <menuitem id="sie_faculty_menu"
+                  name="Faculty"
+                  action="act_open_sie_faculty_view"
+                  parent="sie_planning_menu"
+                  groups="openedunav_core.group_admin"
+                  sequence="1"
+        />
+        <menuitem id="sie_student_menu"
+                  name="Student"
+                  action="act_open_sie_student_view"
+                  parent="sie_planning_menu"
+                  groups="openedunav_core.group_admin"
+                  sequence="2"
+        />
+    </data>
+</odoo>

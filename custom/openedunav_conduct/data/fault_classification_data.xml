@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="art_36_a" model="sie.fault.classification">
+            <field name="name">Leve</field>
+            <field name="description">Art. 65</field>
+        </record>
+        <record id="art_36_b" model="sie.fault.classification">
+            <field name="name">Grave</field>
+            <field name="description">Art. 66</field>
+        </record>
+        <record id="art_36_c" model="sie.fault.classification">
+            <field name="name">Atentatoria</field>
+            <field name="description">Art. 67</field>
+        </record>
+    </data>
+</openerp>

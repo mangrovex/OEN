@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="sanction_l_1" model="sie.fault.sanction">
+            <field name="name">CENSURA</field>
+            <field name="classification_id" ref="art_36_a"/>
+            <field name="demerits">2</field>
+        </record>
+        <record id="sanction_l_2" model="sie.fault.sanction">
+            <field name="name">30' DE MANTENIMIENTO DE INSTALACIONES</field>
+            <field name="classification_id" ref="art_36_a"/>
+            <field name="demerits">3</field>
+        </record>
+        <record id="sanction_l_3" model="sie.fault.sanction">
+            <field name="name">30' DE EJERCICIOS F&#205;SICOS</field>
+            <field name="demerits">4</field>
+            <field name="classification_id" ref="art_36_a"/>
+        </record>
+        <record id="sanction_l_4" model="sie.fault.sanction">
+            <field name="name">1⁄2 D&#205;A DE PERDIDA DE FRANQUICIA</field>
+            <field name="demerits">5</field>
+            <field name="classification_id" ref="art_36_a"/>
+        </record>
+        <record id="sanction_l_5" model="sie.fault.sanction">
+            <field name="name">1 D&#205;A DE PERDIDA DE FRANQUICIA</field>
+            <field name="demerits">6</field>
+            <field name="classification_id" ref="art_36_a"/>
+        </record>
+        <record id="sanction_g_1" model="sie.fault.sanction">
+            <field name="name">2 D&#205;AS DE PERDIDA DE FRANQUICIA</field>
+            <field name="demerits">7</field>
+            <field name="classification_id" ref="art_36_b"/>
+        </record>
+        <record id="sanction_g_2" model="sie.fault.sanction">
+            <field name="name">3 D&#205;AS DE PERDIDA DE FRANQUICIA</field>
+            <field name="demerits">8</field>
+            <field name="classification_id" ref="art_36_b"/>
+        </record>
+        <record id="sanction_g_3" model="sie.fault.sanction">
+            <field name="name">4 D&#205;AS DE PERDIDA DE FRANQUICIA</field>
+            <field name="demerits">10</field>
+            <field name="classification_id" ref="art_36_b"/>
+        </record>
+        <record id="sanction_g_4" model="sie.fault.sanction">
+            <field name="name">5 D&#205;AS DE PERDIDA DE FRANQUICIA</field>
+            <field name="demerits">12</field>
+            <field name="classification_id" ref="art_36_b"/>
+        </record>
+        <record id="sanction_g_5" model="sie.fault.sanction">
+            <field name="name">6 D&#205;AS DE PERDIDA DE FRANQUICIA</field>
+            <field name="demerits">14</field>
+            <field name="classification_id" ref="art_36_b"/>
+        </record>
+        <record id="sanction_g_6" model="sie.fault.sanction">
+            <field name="name">RUTINA DISCIPLINARIA DE 5 D&#205;AS</field>
+            <field name="demerits">16</field>
+            <field name="classification_id" ref="art_36_b"/>
+        </record>
+        <record id="sanction_g_7" model="sie.fault.sanction">
+            <field name="name">RUTINA DISCIPLINARIA DE 7 D&#205;AS</field>
+            <field name="demerits">18</field>
+            <field name="classification_id" ref="art_36_b"/>
+        </record>
+        <record id="sanction_g_8" model="sie.fault.sanction">
+            <field name="name">RUTINA DISCIPLINARIA DE 9 D&#205;AS</field>
+            <field name="demerits">20</field>
+            <field name="classification_id" ref="art_36_b"/>
+        </record>
+        <record id="sanction_a_1" model="sie.fault.sanction">
+            <field name="name">8 D&#205;AS DE PERDIDA DE FRANQUICIA</field>
+            <field name="demerits">21</field>
+            <field name="classification_id" ref="art_36_c"/>
+        </record>
+        <record id="sanction_a_2" model="sie.fault.sanction">
+            <field name="name">RUTINA DISCIPLINARIA DE 10 D&#205;AS</field>
+            <field name="demerits">27</field>
+            <field name="classification_id" ref="art_36_c"/>
+        </record>
+        <record id="sanction_a_3" model="sie.fault.sanction">
+            <field name="name">RUTINA DISCIPLINARIA DE 15 D&#205;AS</field>
+            <field name="demerits">34</field>
+            <field name="classification_id" ref="art_36_c"/>
+        </record>
+        <record id="sanction_a_4" model="sie.fault.sanction">
+            <field name="name">P&#201;RDIDA DE VACACIONES</field>
+            <field name="demerits">40</field>
+            <field name="classification_id" ref="art_36_c"/>
+        </record>
+    </data>
+</openerp>

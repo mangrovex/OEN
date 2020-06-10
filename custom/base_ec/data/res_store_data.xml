@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="default_store" model="res.store">
+            <field name="name" search="[]" model="res.company" use="name"/>
+            <field name="code">001</field>
+            <field name="user_ids" eval="[(6, 0, [ref('base.user_root')])]"></field>
+        </record>
+    </data>
+</odoo>

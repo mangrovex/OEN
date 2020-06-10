@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="True">
+        <record model="sie.person.title" id="person_title_01">
+            <field name="acronym">Ing.</field>
+            <field name="name">Ingeniero</field>
+        </record>
+        <record model="sie.person.title" id="person_title_02">
+            <field name="acronym">Dr.</field>
+            <field name="name">Doctor</field>
+        </record>
+        <record model="sie.person.title" id="person_title_03">
+            <field name="acronym">Abg.</field>
+            <field name="name">Abogado</field>
+        </record>
+        <record model="sie.person.title" id="person_title_04">
+            <field name="acronym">Lic.</field>
+            <field name="name">Licenciado</field>
+        </record>
+        <record model="sie.person.title" id="person_title_05">
+            <field name="acronym">Bach.</field>
+            <field name="name">Bachiller</field>
+        </record>
+        <record model="sie.person.title" id="person_title_06">
+            <field name="acronym">Tlgo.</field>
+            <field name="name">Tecnologo</field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="True">
+        <record model="sie.academic.title" id="academic_title_01">
+            <field name="name">Analista de Sistemas</field>
+        </record>
+        <record model="sie.academic.title" id="academic_title_02">
+            <field name="name">Ingeniero Químico y de Sistemas Modalidad Internacional</field>
+        </record>
+        <record model="sie.academic.title" id="academic_title_03">
+            <field name="name">Ingeniero Industrial y de Sistemas Modalidad Internacional</field>
+        </record>
+        <record model="sie.academic.title" id="academic_title_04">
+            <field name="name">Analista de Sistemas de Computadoras</field>
+        </record>
+        <record model="sie.academic.title" id="academic_title_05">
+            <field name="name">Doctorado en Informática</field>
+        </record>
+        <record model="sie.academic.title" id="academic_title_06">
+            <field name="name">Doctorado en Inteligencia Artificial</field>
+        </record>
+        <record model="sie.academic.title" id="academic_title_07">
+            <field name="name">Ingeniería de Sistemas de Manufactura</field>
+        </record>
+        <record model="sie.academic.title" id="academic_title_08">
+            <field name="name">Ingeniero en Computación Administrativo y Producción</field>
+        </record>
+        <record model="sie.academic.title" id="academic_title_09">
+            <field name="name">Ingeniero en Electrónica y Comunicaciones</field>
+        </record>
+        <record model="sie.academic.title" id="academic_title_10">
+            <field name="name">Ingeniero de Sistemas</field>
+        </record>
+        <record model="sie.academic.title" id="academic_title_11">
+            <field name="name">Ingeniero Industrial y de Sistemas</field>
+        </record>
+        <record model="sie.academic.title" id="academic_title_12">
+            <field name="name">Ingeniero Químico y de Sistemas</field>
+        </record>
+        <record model="sie.academic.title" id="academic_title_13">
+            <field name="name">Ingeniero en Sistemas Computacionales</field>
+        </record>
+        <record model="sie.academic.title" id="academic_title_14">
+            <field name="name">Ingeniero en Sistemas Electrónicos</field>
+        </record>
+        <record model="sie.academic.title" id="academic_title_15">
+            <field name="name">Ingeniero en Sistemas de Información</field>
+        </record>
+        <record model="sie.academic.title" id="academic_title_16">
+            <field name="name">Licenciado en Ciencias de la Información</field>
+        </record>
+        <record model="sie.academic.title" id="academic_title_17">
+            <field name="name">Licenciado en Ciencias de la Información y Comunicación</field>
+        </record>
+        <record model="sie.academic.title" id="academic_title_18">
+            <field name="name">Licenciado en Diseño Gráfico</field>
+        </record>
+        <record model="sie.academic.title" id="academic_title_19">
+            <field name="name">Licenciado en Informática Aplicada</field>
+        </record>
+        <record model="sie.academic.title" id="academic_title_20">
+            <field name="name">Licenciado en Medios de Información</field>
+        </record>
+        <record model="sie.academic.title" id="academic_title_21">
+            <field name="name">Licenciado en Sistemas Computacionales</field>
+        </record>
+        <record model="sie.academic.title" id="academic_title_22">
+            <field name="name">Licenciado en Sistemas de Computación Administrativa</field>
+        </record>
+        <record model="sie.academic.title" id="academic_title_23">
+            <field name="name">Licenciado en Tecnología de Información</field>
+        </record>
+        <record model="sie.academic.title" id="academic_title_24">
+            <field name="name">Maestría en Ciencias, Esp. en Administración de Sistemas de Información</field>
+        </record>
+        <record model="sie.academic.title" id="academic_title_25">
+            <field name="name">Maestría en Ciencias, Especialidad en Automatización (Sistemas Inteligentes)</field>
+        </record>
+        <record model="sie.academic.title" id="academic_title_26">
+            <field name="name">Maestría en Bibliotecología Y Ciencias de la Información</field>
+        </record>
+        <record model="sie.academic.title" id="academic_title_27">
+            <field name="name">Maestría en Ciencias, Especialidad en Sistemas de Calidad y Productividad</field>
+        </record>
+        <record model="sie.academic.title" id="academic_title_28">
+            <field name="name">Maestría en Ciencias, Especialidad en Tecnología Informática
+            </field>
+        </record>
+        <record model="sie.academic.title" id="academic_title_29">
+            <field name="name">Maestría en Ingeniería Industrial y de sistemas</field>
+        </record>
+        <record model="sie.academic.title" id="academic_title_30">
+            <field name="name">Maestría en Administración de Tecnologías de Información</field>
+        </record>
+        <record model="sie.academic.title" id="academic_title_31">
+            <field name="name">Programador de Sistemas</field>
+        </record>
+        <record model="sie.academic.title" id="academic_title_32">
+            <field name="name">Tecnologo de Sistemas</field>
+        </record>
+    </data>
+</openerp>

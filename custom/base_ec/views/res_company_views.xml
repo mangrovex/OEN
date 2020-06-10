@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Compania -->
+
+        <record id="view_company_form_inherit_l10n_ec_base" model="ir.ui.view">
+            <field name="name">view.company.form.inherit.l10n.ec.base</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <field name="partner_id" position="after">
+                    <field name="ruc_contador"/>
+                    <field name="cedula_rl"/>
+                    <field name="establishments"/>
+                    <field name="country_id" position="replace"/>
+                    <field name="street2" position="attributes">
+                        <attribute name="placeholder">Urbanización o Zona</attribute>
+                    </field>
+                    <field name="street2" position="after">
+                        <field name="country_id" placeholder="Country" class="o_address_city"
+                               options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}"/>
+                    </field>
+                    <field name="state_id" position="attributes">
+                        <attribute name="domain">[('country_id', '=', country_id)]</attribute>
+                    </field>
+                    <field name="state_id" position="after">
+                        <field name="city_id" placeholder="Ciudad" class="o_address_city"
+                               options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}"/>
+                    </field>
+                    <field name="city" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                    </field>
+                </field>
+            </field>
+        </record>
+
+
+        <menuitem name="Compañias" action="base.action_res_company_form" id="menu_admin_company" parent="menu_main_admin"
+                  sequence="20"/>
+    </data>
+</odoo>
