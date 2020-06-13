@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+#    noinspection PyStatementEffect
 {
     "name": "Web Screenshot",
     "version": "13.0.0.1",

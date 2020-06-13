@@ -1,209 +1,450 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * base_location
+#	* base_ec
 #
-# Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 11.0\n"
+"Project-Id-Version: Odoo Server 12.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-22 03:38+0000\n"
-"PO-Revision-Date: 2017-11-22 03:38+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
-"Language-Team: Spanish (Ecuador) (https://www.transifex.com/oca/teams/23907/"
-"es_EC/)\n"
-"Language: es_EC\n"
+"POT-Creation-Date: 2019-06-13 16:52+0000\n"
+"PO-Revision-Date: 2019-06-13 16:52+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: \n"
 
-#. module: base_location
-#: model:res.city,name:base_location.demo_brussels_city
-msgid "Brussels"
+#. module: base_ec
+#: selection:res.partner,input_origins:0
+msgid "Ama de Casa o Estudiante"
 msgstr ""
 
-#. module: base_location
-#: model:ir.model.fields,help:base_location.field_res_company__country_enforce_cities
-msgid ""
-"Check this box to ensure every address created in that country has a 'City' "
-"chosen in the list of the country's cities."
+#. module: base_ec
+#: selection:res.partner,type_ced_ruc:0
+msgid "CEDULA"
 msgstr ""
 
-#. module: base_location
-#: model:ir.actions.act_window,name:base_location.action_res_city_full
-#: model:ir.ui.menu,name:base_location.locations_menu_cities
+#. module: base_ec
+#: selection:res.partner,type_ced_ruc:0
+msgid "CONSUMIDOR FINAL"
+msgstr ""
+
+#. module: base_ec
+#: model_terms:ir.ui.view,arch_db:base_ec.view_partner_form_inherit_base_ec
+msgid "Calle"
+msgstr ""
+
+#. module: base_ec
+#: model_terms:ir.ui.view,arch_db:base_ec.view_partner_address_form_inherit_l10n_ec_base
+msgid "Calle.."
+msgstr ""
+
+#. module: base_ec
+#: selection:res.partner,marital_status:0
+msgid "Casado(a)"
+msgstr ""
+
+#. module: base_ec
+#: model:ir.model.fields,field_description:base_ec.field_res_partner__ced_ruc
+#: model:ir.model.fields,field_description:base_ec.field_res_users__ced_ruc
+msgid "Cedula/ RUC"
+msgstr ""
+
+#. module: base_ec
+#: model_terms:ir.ui.view,arch_db:base_ec.res_city_parish_view_tree
+#: model_terms:ir.ui.view,arch_db:base_ec.res_state_city_view_tree
 msgid "Cities"
 msgstr ""
 
-#. module: base_location
-#: model:ir.model,name:base_location.model_res_city
-#: model:ir.model.fields,field_description:base_location.field_res_city_zip__city_id
+#. module: base_ec
+#: model_terms:ir.ui.view,arch_db:base_ec.res_city_parish_view_form
+#: model_terms:ir.ui.view,arch_db:base_ec.res_state_city_view_form
 msgid "City"
+msgstr "Ciudad"
+
+#. module: base_ec
+#: model:ir.model,name:base_ec.model_res_state_city
+msgid "City models"
 msgstr ""
 
-#. module: base_location
-#: model:ir.model.fields,field_description:base_location.field_res_company__city_id
-msgid "City ID"
+#. module: base_ec
+#: model:ir.model.fields,field_description:base_ec.field_res_city_parish__city_id
+#: model:ir.model.fields,field_description:base_ec.field_res_company__city_id
+#: model:ir.model.fields,field_description:base_ec.field_res_partner__city_id
+#: model:ir.model.fields,field_description:base_ec.field_res_users__city_id
+#: model_terms:ir.ui.view,arch_db:base_ec.view_company_form_inherit_l10n_ec_base
+#: model_terms:ir.ui.view,arch_db:base_ec.view_partner_address_form_inherit_l10n_ec_base
+#: model_terms:ir.ui.view,arch_db:base_ec.view_partner_form_inherit_base_ec
+msgid "Ciudad"
 msgstr ""
 
-#. module: base_location
-#: model_terms:ir.ui.view,arch_db:base_location.view_company_form_city
-#: model_terms:ir.ui.view,arch_db:base_location.view_partner_form
-msgid "City completion"
+#. module: base_ec
+#: model:ir.actions.act_window,name:base_ec.res_state_city_action
+#: model:ir.ui.menu,name:base_ec.menu_state_city
+msgid "Ciudades"
 msgstr ""
 
-#. module: base_location
-#: model:ir.model,name:base_location.model_res_city_zip
-msgid "City/locations completion object"
-msgstr ""
+#. module: base_ec
+#: model:ir.model.fields,field_description:base_ec.field_res_state_city__code
+msgid "Code"
+msgstr "Código"
 
-#. module: base_location
-#: model:ir.model,name:base_location.model_res_company
+#. module: base_ec
+#: model:ir.model,name:base_ec.model_res_company
 msgid "Companies"
-msgstr ""
+msgstr "Compañías"
 
-#. module: base_location
-#: model:ir.model,name:base_location.model_res_partner
+#. module: base_ec
+#: model:ir.model,name:base_ec.model_res_partner
 msgid "Contact"
-msgstr ""
+msgstr "Contacto"
 
-#. module: base_location
-#: model_terms:ir.ui.view,arch_db:base_location.view_country_search
+#. module: base_ec
+#: model_terms:ir.ui.view,arch_db:base_ec.view_company_form_inherit_l10n_ec_base
 msgid "Country"
-msgstr ""
+msgstr "País"
 
-#. module: base_location
-#: model:ir.model.fields,field_description:base_location.field_res_city_zip__create_uid
+#. module: base_ec
+#: model:ir.model.fields,field_description:base_ec.field_res_city_parish__create_uid
+#: model:ir.model.fields,field_description:base_ec.field_res_state_city__create_uid
 msgid "Created by"
-msgstr "Creado por"
+msgstr "Creado por:"
 
-#. module: base_location
-#: model:ir.model.fields,field_description:base_location.field_res_city_zip__create_date
+#. module: base_ec
+#: model:ir.model.fields,field_description:base_ec.field_res_city_parish__create_date
+#: model:ir.model.fields,field_description:base_ec.field_res_state_city__create_date
 msgid "Created on"
-msgstr "Creado en"
+msgstr "Creado"
 
-#. module: base_location
-#: model:ir.model.fields,field_description:base_location.field_res_city_zip__display_name
+#. module: base_ec
+#: model:ir.model.fields,field_description:base_ec.field_res_company__cedula_rl
+msgid "Cédula Representante Legal"
+msgstr ""
+
+#. module: base_ec
+#: model:ir.model.fields,field_description:base_ec.field_res_city_parish__code
+msgid "Código"
+msgstr ""
+
+#. module: base_ec
+#: model:ir.model.fields,field_description:base_ec.field_res_city_parish__display_name
+#: model:ir.model.fields,field_description:base_ec.field_res_state_city__display_name
 msgid "Display Name"
-msgstr "Nombre mostrado"
+msgstr "Nombre a Mostrar"
 
-#. module: base_location
-#: model_terms:ir.actions.act_window,help:base_location.action_res_city_full
-msgid ""
-"Display and manage the list of all cities that can be assigned to\n"
-"            your partner records. Note that an option can be set on each "
-"country separately\n"
-"            to enforce any address of it to have a city in this list."
+#. module: base_ec
+#: selection:res.partner,marital_status:0
+msgid "Divorciado(a)"
 msgstr ""
 
-#. module: base_location
-#: model:ir.model.fields,field_description:base_location.field_res_company__country_enforce_cities
-msgid "Enforce Cities"
+#. module: base_ec
+#: model_terms:ir.ui.view,arch_db:base_ec.view_partner_form_inherit_base_ec
+msgid "EC0912344511"
 msgstr ""
 
-#. module: base_location
-#: model:ir.model.fields,field_description:base_location.field_res_city_zip__id
+#. module: base_ec
+#: selection:res.partner,input_origins:0
+msgid "Empleado Privado"
+msgstr ""
+
+#. module: base_ec
+#: selection:res.partner,input_origins:0
+msgid "Empleado Público"
+msgstr ""
+
+#. module: base_ec
+#: model:ir.model.fields,field_description:base_ec.field_res_company__establishments
+msgid "Establecimientos"
+msgstr ""
+
+#. module: base_ec
+#: model:ir.model.fields,field_description:base_ec.field_res_partner__marital_status
+#: model:ir.model.fields,field_description:base_ec.field_res_users__marital_status
+msgid "Estado Civil"
+msgstr ""
+
+#. module: base_ec
+#: model:ir.model.fields,field_description:base_ec.field_res_partner__foreign
+#: model:ir.model.fields,field_description:base_ec.field_res_users__foreign
+msgid "Extranjero?"
+msgstr ""
+
+#. module: base_ec
+#: selection:res.partner,sex:0
+msgid "Femenino"
+msgstr ""
+
+#. module: base_ec
+#: model:ir.model.fields,field_description:base_ec.field_res_users__signature_image
+msgid "Firma digital"
+msgstr ""
+
+#. module: base_ec
+#: model:ir.model.fields,field_description:base_ec.field_res_city_parish__id
+#: model:ir.model.fields,field_description:base_ec.field_res_state_city__id
 msgid "ID"
-msgstr "ID (identificación)"
+msgstr ""
 
-#. module: base_location
-#: model:ir.model.fields,field_description:base_location.field_res_city_zip____last_update
+#. module: base_ec
+#: model:ir.model.fields,help:base_ec.field_res_partner__ced_ruc
+#: model:ir.model.fields,help:base_ec.field_res_users__ced_ruc
+msgid "Identificación o Registro Unico de Contribuyentes"
+msgstr ""
+
+#. module: base_ec
+#: selection:res.partner,input_origins:0
+msgid "Independiente"
+msgstr ""
+
+#. module: base_ec
+#: selection:res.partner,input_origins:0
+msgid "Jubilado"
+msgstr ""
+
+#. module: base_ec
+#: sql_constraint:res.partner:0
+msgid "La indeficación debe ser única."
+msgstr ""
+
+#. module: base_ec
+#: model:ir.model.fields,field_description:base_ec.field_res_city_parish____last_update
+#: model:ir.model.fields,field_description:base_ec.field_res_state_city____last_update
 msgid "Last Modified on"
 msgstr "Última modificación en"
 
-#. module: base_location
-#: model:ir.model.fields,field_description:base_location.field_res_city_zip__write_uid
+#. module: base_ec
+#: model:ir.model.fields,field_description:base_ec.field_res_city_parish__write_uid
+#: model:ir.model.fields,field_description:base_ec.field_res_state_city__write_uid
 msgid "Last Updated by"
-msgstr "Última actualización de"
+msgstr "Ultima Actualización por"
 
-#. module: base_location
-#: model:ir.model.fields,field_description:base_location.field_res_city_zip__write_date
+#. module: base_ec
+#: model:ir.model.fields,field_description:base_ec.field_res_city_parish__write_date
+#: model:ir.model.fields,field_description:base_ec.field_res_state_city__write_date
 msgid "Last Updated on"
 msgstr "Última actualización en"
 
-#. module: base_location
-#: model_terms:ir.ui.view,arch_db:base_location.view_partner_form
-msgid "Location completion"
+#. module: base_ec
+#: selection:res.partner,sex:0
+msgid "Masculino"
 msgstr ""
 
-#. module: base_location
-#: model:ir.actions.act_window,name:base_location.action_zip_tree
-msgid "Locations"
+#. module: base_ec
+#: model:ir.model.fields,field_description:base_ec.field_res_state_city__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: base_ec
+#: model:ir.model.fields,field_description:base_ec.field_res_partner__business_name
+#: model:ir.model.fields,field_description:base_ec.field_res_users__business_name
+#: model_terms:ir.ui.view,arch_db:base_ec.view_partner_form_inherit_base_ec
+msgid "Nombre Comercial"
 msgstr ""
 
-#. module: base_location
-#: model_terms:ir.ui.view,arch_db:base_location.view_city_zip_filter
-msgid "Search zip"
+#. module: base_ec
+#: model:ir.model.fields,field_description:base_ec.field_res_partner__input_origins
+#: model:ir.model.fields,field_description:base_ec.field_res_users__input_origins
+msgid "Origen de Ingresos"
 msgstr ""
 
-#. module: base_location
-#: code:addons/base_location/models/res_partner.py:0
-#, python-format
-msgid "The city of partner %s differs from that in location %s"
+#. module: base_ec
+#: selection:res.partner,type_ced_ruc:0
+msgid "PASAPORTE"
 msgstr ""
 
-#. module: base_location
-#: code:addons/base_location/models/res_partner.py:0
-#, python-format
-msgid "The country of the partner %s differs from that in location %s"
+#. module: base_ec
+#: selection:res.partner,type_ced_ruc:0
+msgid "PLACA o RAMV/CPN"
 msgstr ""
 
-#. module: base_location
-#: code:addons/base_location/models/res_partner.py:0
-#, python-format
-msgid "The state of the partner %s differs from that in location %s"
+#. module: base_ec
+#: model:ir.model.fields,field_description:base_ec.field_res_partner__parish_id
+#: model:ir.model.fields,field_description:base_ec.field_res_users__parish_id
+msgid "Parish"
 msgstr ""
 
-#. module: base_location
-#: model:ir.model.fields,help:base_location.field_res_company__zip_id
-msgid "Use the city name or the zip code to search the location"
+#. module: base_ec
+#: model:ir.model.fields,field_description:base_ec.field_res_city_parish__name
+#: model_terms:ir.ui.view,arch_db:base_ec.view_partner_address_form_inherit_l10n_ec_base
+#: model_terms:ir.ui.view,arch_db:base_ec.view_partner_form_inherit_base_ec
+msgid "Parroquia"
 msgstr ""
 
-#. module: base_location
-#: model:ir.model.constraint,message:base_location.constraint_res_city_name_state_country_uniq
-msgid ""
-"You already have a city with that name in the same state.The city must have "
-"a unique name within it's state and it's country"
+#. module: base_ec
+#: model:ir.model,name:base_ec.model_res_city_parish
+#: model:ir.ui.menu,name:base_ec.menu_city_parish
+msgid "Parroquias"
 msgstr ""
 
-#. module: base_location
-#: model:ir.model.constraint,message:base_location.constraint_res_city_zip_name_city_uniq
-msgid ""
-"You already have a zip with that code in the same city. The zip code must be "
-"unique within it's city"
+#. module: base_ec
+#: model:ir.model.fields,field_description:base_ec.field_res_partner__parte_relacionada
+#: model:ir.model.fields,field_description:base_ec.field_res_users__parte_relacionada
+msgid "Parte Relacionada?"
 msgstr ""
 
-#. module: base_location
-#: model:ir.model.fields,field_description:base_location.field_res_city_zip__name
+#. module: base_ec
+#: model_terms:ir.ui.view,arch_db:base_ec.view_partner_address_form_inherit_l10n_ec_base
+#: model_terms:ir.ui.view,arch_db:base_ec.view_partner_form_inherit_base_ec
+msgid "País"
+msgstr ""
+
+#. module: base_ec
+#: model:ir.model.fields,field_description:base_ec.field_res_partner__tipo_persona
+#: model:ir.model.fields,field_description:base_ec.field_res_users__tipo_persona
+msgid "Persona"
+msgstr ""
+
+#. module: base_ec
+#: selection:res.partner,tipo_persona:0
+msgid "Persona Juridica"
+msgstr ""
+
+#. module: base_ec
+#: selection:res.partner,foreign_type:0
+#: selection:res.partner,tipo_persona:0
+msgid "Persona Natural"
+msgstr ""
+
+#. module: base_ec
+#: model:ir.model.fields,field_description:base_ec.field_res_state_city__state_id
+#: model_terms:ir.ui.view,arch_db:base_ec.view_partner_address_form_inherit_l10n_ec_base
+#: model_terms:ir.ui.view,arch_db:base_ec.view_partner_form_inherit_base_ec
+msgid "Provincia"
+msgstr ""
+
+#. module: base_ec
+#: model:ir.actions.act_window,name:base_ec.res_city_parish_action
+msgid "Provincias"
+msgstr ""
+
+#. module: base_ec
+#: selection:res.partner,type_ced_ruc:0
+msgid "RUC"
+msgstr ""
+
+#. module: base_ec
+#: model_terms:ir.ui.view,arch_db:base_ec.view_partner_form_inherit_base_ec
+msgid "Razón Social"
+msgstr ""
+
+#. module: base_ec
+#: selection:res.partner,input_origins:0
+msgid "Remesa del Exterior"
+msgstr ""
+
+#. module: base_ec
+#: selection:res.partner,input_origins:0
+msgid "Rentista"
+msgstr ""
+
+#. module: base_ec
+#: model:ir.model.fields,field_description:base_ec.field_res_company__ruc_contador
+msgid "Ruc del Contador"
+msgstr ""
+
+#. module: base_ec
+#: model_terms:ir.ui.view,arch_db:base_ec.view_partner_form_inherit_base_ec
+msgid "Ruc/Cédula/Pasaporte"
+msgstr ""
+
+#. module: base_ec
+#: model:ir.model.fields,field_description:base_ec.field_res_partner__sex
+#: model:ir.model.fields,field_description:base_ec.field_res_users__sex
+msgid "Sexo"
+msgstr ""
+
+#. module: base_ec
+#: selection:res.partner,foreign_type:0
+msgid "Sociedad"
+msgstr ""
+
+#. module: base_ec
+#: selection:res.partner,marital_status:0
+msgid "Soltero(a)"
+msgstr ""
+
+#. module: base_ec
+#: model:ir.model.fields,field_description:base_ec.field_res_partner__vat
+#: model:ir.model.fields,field_description:base_ec.field_res_users__vat
+msgid "Tax ID"
+msgstr ""
+
+#. module: base_ec
+#: model:ir.model.fields,help:base_ec.field_res_partner__vat
+#: model:ir.model.fields,help:base_ec.field_res_users__vat
+msgid "The Tax Identification Number. Complete it if the contact is subjected to government taxes. Used in some legal statements."
+msgstr ""
+
+#. module: base_ec
+#: model:ir.model.fields,help:base_ec.field_res_partner__tz
+#: model:ir.model.fields,help:base_ec.field_res_users__tz
+msgid "The partner's timezone, used to output proper date and time values inside printed reports. It is important to set a value for this field. You should use the same timezone that is otherwise used to pick and render date and time values: your computer's timezone."
+msgstr "Zona horaria de la empresa, usada para mostrar la fecha y hora adecuadas en los informes. Es importante establecer un valor para este campo. Debería usar la misma zona horaria que se coge en cualquier caso para mostrar los valores de fecha y hora: la zona horaria de su ordenador."
+
+#. module: base_ec
+#: model:ir.model.fields,field_description:base_ec.field_res_partner__tz
+#: model:ir.model.fields,field_description:base_ec.field_res_users__tz
+msgid "Timezone"
+msgstr "Zona horaria"
+
+#. module: base_ec
+#: model:ir.model.fields,field_description:base_ec.field_res_partner__type_ced_ruc
+#: model:ir.model.fields,field_description:base_ec.field_res_users__type_ced_ruc
+msgid "Tipo ID"
+msgstr ""
+
+#. module: base_ec
+#: model:ir.model.fields,field_description:base_ec.field_res_partner__foreign_type
+#: model:ir.model.fields,field_description:base_ec.field_res_users__foreign_type
+msgid "Tipo de Cliente Extranjero"
+msgstr ""
+
+#. module: base_ec
+#: model_terms:ir.ui.view,arch_db:base_ec.view_partner_form_inherit_base_ec
+msgid "Tipo de Identificador"
+msgstr ""
+
+#. module: base_ec
+#: model_terms:ir.ui.view,arch_db:base_ec.view_partner_form_inherit_base_ec
+msgid "Tipo de Persona"
+msgstr ""
+
+#. module: base_ec
+#: selection:res.partner,marital_status:0
+msgid "Unión Libre"
+msgstr ""
+
+#. module: base_ec
+#: model_terms:ir.ui.view,arch_db:base_ec.view_partner_form_inherit_base_ec
+msgid "Urbanización o Zon"
+msgstr ""
+
+#. module: base_ec
+#: model_terms:ir.ui.view,arch_db:base_ec.view_company_form_inherit_l10n_ec_base
+#: model_terms:ir.ui.view,arch_db:base_ec.view_partner_address_form_inherit_l10n_ec_base
+#: model_terms:ir.ui.view,arch_db:base_ec.view_partner_form_inherit_base_ec
+msgid "Urbanización o Zona"
+msgstr ""
+
+#. module: base_ec
+#: model:ir.model,name:base_ec.model_res_users
+msgid "Users"
+msgstr "Usuarios"
+
+#. module: base_ec
+#: model_terms:ir.ui.view,arch_db:base_ec.view_partner_form_inherit_base_ec
+msgid "Usuarios"
+msgstr ""
+
+#. module: base_ec
+#: selection:res.partner,marital_status:0
+msgid "Viudo(o)"
+msgstr ""
+
+#. module: base_ec
+#: model_terms:ir.ui.view,arch_db:base_ec.view_partner_address_form_inherit_l10n_ec_base
+#: model_terms:ir.ui.view,arch_db:base_ec.view_partner_form_inherit_base_ec
 msgid "ZIP"
-msgstr ""
+msgstr "C.P."
 
-#. module: base_location
-#: model:ir.model.fields,field_description:base_location.field_res_company__zip_id
-#: model:ir.model.fields,field_description:base_location.field_res_partner__zip_id
-#: model:ir.model.fields,field_description:base_location.field_res_users__zip_id
-msgid "ZIP Location"
-msgstr ""
-
-#. module: base_location
-#: model_terms:ir.ui.view,arch_db:base_location.city_zip_form
-msgid "Zip"
-msgstr ""
-
-#. module: base_location
-#: model:ir.ui.menu,name:base_location.locations_menu_zips
-#: model_terms:ir.ui.view,arch_db:base_location.city_zip_tree
-#: model_terms:ir.ui.view,arch_db:base_location.view_city_form
-#: model_terms:ir.ui.view,arch_db:base_location.view_res_country_city_better_zip_form
-msgid "Zips"
-msgstr ""
-
-#. module: base_location
-#: model:ir.model.fields,field_description:base_location.field_res_city__zip_ids
-msgid "Zips in this city"
-msgstr ""
-
-#~ msgid "Group By"
-#~ msgstr "Agrupar por"

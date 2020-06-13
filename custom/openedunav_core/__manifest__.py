@@ -16,7 +16,8 @@
     'summary': 'Sistema Educativo de la Armada del Ecuador',
     'images': [],
     'depends': [
-        'base_ec',
+        'base_location',
+        'partner_contact_information',
         'hr',
         'board',
         'web',
@@ -36,7 +37,8 @@
         'data/specialty_data.xml',
         'data/promotion_data.xml',
         'data/sub_specialty_data.xml',
-
+        'views/res_partner_views.xml',
+        'views/person_abstract_entity.xml',
         'views/sie_academic_title_views.xml',
         'views/sie_category_views.xml',
         'views/sie_grade_views.xml',
@@ -49,6 +51,7 @@
         'views/sie_specialty_views.xml',
         'views/sie_sub_specialty_views.xml',
         'views/sie_student_views.xml',
+        'views/sie_student_category_views.xml',
         'views/sie_location_views.xml',
         'views/hr_view.xml',
         'views/website_assets.xml',

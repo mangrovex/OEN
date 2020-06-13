@@ -7,7 +7,9 @@
 ##############################################################################
 
 from . import hr
+from . import person_abstract_entity
 from . import res_company
+from . import res_partner
 from . import res_users
 from . import sie_academic_title
 from . import sie_faculty

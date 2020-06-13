@@ -4,10 +4,9 @@
 #    Manexware S.A.
 #    Copyright (C) 2009-TODAY Manexware
 #
-# noinspection PyStatementEffect
+#    noinspection PyStatementEffect
+#
 ###############################################################################
-
-
 {
     'name': 'Web OpenEduNav',
     'category': 'Website',

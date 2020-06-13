@@ -14,7 +14,7 @@
 #    You should have received a copy of the GNU LESSER GENERAL PUBLIC LICENSE
 #    GENERAL PUBLIC LICENSE (AGPL v3) along with this program.
 #    If not, see <http://www.gnu.org/licenses/>.
-#
+# noinspection PyStatementEffect
 ##############################################################################
 {
     'name': 'Access Restriction By IP',

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+#    noinspection PyStatementEffect
 {
     'name': 'Button For Database Manager',
     'version': '1.0',

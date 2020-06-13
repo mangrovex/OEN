@@ -1,4 +1,11 @@
-# Copyright 2020 Manexware S.A.
+# -*- coding: utf-8 -*-
+###############################################################################
+#
+#    Manexware S.A.
+#    Copyright (C) 2009-TODAY Manexware
+#
+# noinspection PyStatementEffect
+###############################################################################
 {
     "name": "Contigo Debrand",
     "summary": "Remove enterprise modules and setting items",

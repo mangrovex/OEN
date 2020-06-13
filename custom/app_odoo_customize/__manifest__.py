@@ -20,7 +20,7 @@
 # Odoo10离线开发手册下载-含python教程，jquery参考，Jinja2模板，PostgresSQL参考（odoo开发必备）
 # https://www.sunpop.cn/odoo10_developer_document_offline/
 # description:
-
+# noinspection PyStatementEffect
 {
     'name': 'Customize odoo OEM (Boost, My Odoo)',
     'version': '13.20.04.12',

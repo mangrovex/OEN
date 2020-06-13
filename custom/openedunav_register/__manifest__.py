@@ -36,7 +36,6 @@
     ],
     'data': [
         'security/ir.model.access.csv',
-        'views/enrollment_views.xml',
         'views/register_subject_views.xml',
         'views/register_directors_views.xml',
         'views/register_seminary_views.xml',

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">Partner: personal info</field>
+        <field name="model">res.partner</field>
+        <field
+                name="inherit_id"
+                ref="partner_contact_information_page.view_partner_form"
+        />
+        <field name="arch" type="xml">
+            <xpath
+                    expr="//page[@name='personal_information_page']//group[@name='personal_information_group']"
+            >
+                <group string="General" col="2">
+                    <field name='gender'/>
+                </group>
+                <group string="Birth day" col="2">
+                    <field name='birthdate_date'/>
+                    <field
+                            name="age"
+                            attrs="{'invisible': [('birthdate_date', '=', False)]}"
+                    />
+                    <field
+                            name="place_of_birth"
+                            attrs="{'invisible': [('birthdate_date', '=', False)]}"
+                    />
+                    <field
+                            name="country_of_birth"
+                            attrs="{'invisible': [('birthdate_date', '=', False)]}"
+                    />
+                </group>
+            </xpath>
+            <xpath
+                    expr="//page[@name='conadis_page']//group[@name='conadis_information_group']"
+            >
+                <group col="2">
+                    <field name="physical_exoneration"/>
+                </group>
+                <group col="2">
+                    <field name="conadis"/>
+                    <field name="conadis_percent" widget="Percent"/>
+                </group>
+                <field name="observation_physical" placeholder="Observaciones..."/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

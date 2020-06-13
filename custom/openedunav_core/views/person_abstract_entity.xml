@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="person_abstract_entity_view_tree" model="ir.ui.view">
+        <field name="name">person.abstract.entity.tree</field>
+        <field name="model">person.abstract.entity</field>
+        <field name="arch" type="xml">
+            <tree string="Person Entity">
+                <field name="ced_ruc"/>
+                <field name="name"/>
+                <field name="email"/>
+                <field name="age"/>
+                <field name="gender"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="person_abstract_entity_view_form" model="ir.ui.view">
+        <field name="name">person.abstract.entity.form</field>
+        <field name="model">person.abstract.entity</field>
+        <field name="arch" type="xml">
+            <form string="Person Entity">
+                <sheet>
+                    <div class="oe_button_box" name="button_box"/>
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
+                            attrs="{'invisible': [('active', '=', True)]}"/>
+                    <field name="image_1920" widget="image" class="oe_avatar"
+                           options="{&quot;preview_image&quot;: &quot;image_128&quot;}"/>
+                    <div class="oe_title">
+                        <field name="active" invisible="1"/>
+                        <h1>
+                            <field name="name" placeholder="Name" required="True" invisible="1"/>
+                            <field name="full_name" required="True" readonly="1"/>
+                        </h1>
+                    </div>
+                    <div class="oe_edit_only">
+                        <group>
+                            <group>
+                                <field name="first_name" default_focus="1" placeholder="Primer Nombre" required="True"/>
+                                <field name="middle_name" placeholder="Segundo Nombre"/>
+                            </group>
+                            <group>
+                                <field name="last_name" placeholder="Primer Apellido" required="True"/>
+                                <field name="mother_name" placeholder="Segundo Apellido" required="True"/>
+                            </group>
+                        </group>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="type" groups="base.group_no_one" attrs="{'invisible': 0, 'readonly': 1}"/>
+                            <label for="street" string="Private Address"/>
+                            <div class="o_address_format">
+                                <field name="street" placeholder="Street..." class="o_address_street"/>
+                                <field name="street2" placeholder="Urbanización o Zona" class="o_address_street"/>
+                                <field name="country_id" placeholder="País" class="o_address_country"
+                                       options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}"/>
+                                <field name="state_id" placeholder="Provincia" options="{&quot;no_open&quot;: True}"
+                                       domain="[('country_id', '=', country_id)]"
+                                       context="{'country_id': country_id, 'zip': zip}" class="o_address_city"/>
+                                <field name="city_id" placeholder="Ciudad" domain="[('state_id', '=', state_id)]"
+                                       context="{'state_id': state_id}"
+                                       options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}"
+                                       class="o_address_city"/>
+                                <field name="parish_id" class="o_address_state" placeholder="Parroquia"
+                                       context="{'city_id': city_id}"
+                                       options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}"/>
+                                <field name="zip" placeholder="ZIP" class="o_address_zip"/>
+                            </div>
+                            <field name="type_ced_ruc" placeholder="Tipo de Identificador"/>
+                            <field name="type_person" required="1" attrs="{'invisible':[('type_ced_ruc', '=', False)],}"/>
+                            <field name="ced_ruc" attrs="{'invisible':[('type_ced_ruc', '=', False)]}"
+                                   placeholder="091234451-1"/>
+                        </group>
+                        <group>
+                            <field name="phone" widget="phone"/>
+                            <field name="mobile" widget="phone"/>
+                            <field name="email" widget="email" context="{'gravatar_image': True}"/>
+                            <field name="title" options="{&quot;no_open&quot;: True}" placeholder="e.g. Mister"/>
+                        </group>
+                    </group>
+
+                    <notebook colspan="4">
+                        <page name="internal_notes" string="Internal Notes">
+                            <field name="comment" placeholder="Internal note..."/>
+                        </page>
+                        <page name="personal_information_page" string="Personal Information">
+                            <group name="personal_information_group">
+                                <group name="general" string="General" col="2">
+                                    <field name="gender"/>
+                                    <field name="blood_group"/>
+                                    <field name="nationality"
+                                           options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
+
+                                    <field name="foreign"/>
+                                </group>
+                                <group string="Birth day" col="2">
+                                    <field name="birthdate_date"/>
+                                    <field name="age" attrs="{'invisible': [('birthdate_date', '=', False)]}"/>
+                                    <field name="place_of_birth"
+                                           attrs="{'invisible': [('birthdate_date', '=', False)]}"/>
+                                    <field name="country_of_birth"
+                                           attrs="{'invisible': [('birthdate_date', '=', False)]}"/>
+                                </group>
+                                <group name="emergency" string="Emergency Contact" col="2">
+                                    <field name="emergency_contact"/>
+                                    <field name="emergency_phone"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page name="conadis_page" string="CONADIS Information">
+                            <group name="conadis_information_group">
+                                <group col="2">
+                                    <field name="physical_exoneration"/>
+                                </group>
+                                <group col="2">
+                                    <field name="conadis"/>
+                                    <field name="conadis_percent" widget="Percent"/>
+                                </group>
+                                <field name="observation_physical" placeholder="Observaciones..."/>
+                            </group>
+                        </page>
+                        <page name="military_page" string="Military Information">
+                            <group name="military_information_group"/>
+                        </page>
+                        <page name="sie_page" string="SIE Information">
+                            <group name="sie_information_group"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="person_abstract_entity_view_kanban" model="ir.ui.view">
+        <field name="name">person.abstract.entity.kanban</field>
+        <field name="model">person.abstract.entity</field>
+        <field name="type">kanban</field>
+        <field name="arch" type="xml">
+            <kanban class="o_res_partner_kanban">
+                <field name="id"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="partner_id"/>
+                <field name="mobile"/>
+                <field name="image_1920"/>
+                <field name="gender"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban">
+                            <div class="o_kanban_tags_section oe_kanban_partner_categories"/>
+                            <div class="o_kanban_image">
+                                <t t-if="record.partner_id.raw_value">
+                                    <img name="kanban_image_entity"
+                                         t-att-src="kanban_image('res.partner', 'image_1920', record.partner_id.raw_value)"
+                                         alt="partner"/>
+                                </t>
+                                <t t-else="">
+                                    <img name="kanban_image_default_person"
+                                         t-attf-src='{{ _s }}/base/static/src/img/avatar.png' alt="person"/>
+                                </t>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <strong class="oe_partner_heading">
+                                    <field name="full_name"/>
+                                </strong>
+                                <ul name="entity_details">
+                                    <li t-if="record.email.raw_value"><field name="email"/></li>
+                                    <li t-if="record.mobile.raw_value"><field name="mobile"/></li>
+                                    <li t-if="record.phone.raw_value"><field name="phone"/></li>
+                                    <li t-if="record.gender.raw_value"><field name="gender"/></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="person_abstract_entity_view_search" model="ir.ui.view">
+        <field name="name">person.abstract.entity.search</field>
+        <field name="model">person.abstract.entity</field>
+        <field name="arch" type="xml">
+            <search string="Person Entities">
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+
+</odoo>

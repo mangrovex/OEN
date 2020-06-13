@@ -4,7 +4,8 @@
 #    Manexware S.A.
 #    Copyright (C) 2009-TODAY Manexware
 #
-# noinspection PyStatementEffect
+#    noinspection PyStatementEffect
+#
 ###############################################################################
 
 {

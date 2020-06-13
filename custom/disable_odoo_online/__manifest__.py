@@ -1,5 +1,6 @@
 # Copyright (C) 2013 Therp BV (<http://therp.nl>).
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+#    noinspection PyStatementEffect
 {
     "name": "Remove odoo.com Bindings",
     "version": "13.0.1.0.0",

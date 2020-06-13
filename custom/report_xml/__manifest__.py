@@ -1,5 +1,6 @@
 # Copyright (C) 2014-2015  Grupo ESOC <www.grupoesoc.es>
 # License AGPL-3.0 or later (https://www.gnuorg/licenses/agpl.html).
+#    noinspection PyStatementEffect
 {
     "name": "XML Reports",
     "version": "12.0.1.0.0",

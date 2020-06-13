@@ -2,7 +2,7 @@
 # Copyright 2017-2018 Tecnativa - Jairo Llopis
 # Copyright 2018-2019 Tecnativa - Alexandre Díaz
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
-
+#    noinspection PyStatementEffect
 {
     "name": "Web Responsive",
     "summary": "Responsive web client, community-supported",

@@ -8,9 +8,7 @@ class SubjectWizard(models.TransientModel):
 
     course_id = fields.Many2one('sie.course', string='Course', required=True)
 
-    @api.multi
     def print_report(self):
-        data = {}
-        data['course_id'] = self.course_id.id
-        data['download_name'] = self.course_id.name + '.pdf'
-        return self.env['report'].get_action(self, 'openedunav_report.report_subject_act', data=data)
+        for record in self:
+            data = {'course_id': record.course_id.id, 'download_name': record.course_id.name + '.pdf'}
+            return record.env['report'].get_action(record, 'openedunav_report.report_subject_act', data=data)

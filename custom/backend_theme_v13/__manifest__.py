@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
-# Copyright 2020 Manexware
-# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
-
+###############################################################################
+#
+#    Manexware S.A.
+#    Copyright (C) 2009-TODAY Manexware
+#
+#    noinspection PyStatementEffect
+###############################################################################
 {
     "name": "Material Backend Theme V13",
     "summary": "Material Backend Theme V13",

@@ -1,6 +1,9 @@
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+# -*- coding: utf-8
 
-from . import res_city_zip
 from . import res_partner
-from . import res_company
-from . import res_city
+from . import res_city_parish
+from . import res_state_city
+from . import res_country
+
+
+

@@ -45,6 +45,7 @@
         'views/course_views.xml',
         'views/faculty_views.xml',
         'views/course_name_views.xml',
+        'views/enrollment_views.xml',
         'views/attachment_views.xml',
         'views/student_views.xml',
         'data/promotion_course_data.xml',
