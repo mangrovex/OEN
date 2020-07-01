@@ -106,7 +106,7 @@
 
 
         <record model="ir.actions.act_window" id="action_list_sie_student">
-            <field name="name">Docentes y Evaluadores</field>
+            <field name="name">Estudiantes</field>
             <field name="res_model">sie.student</field>
             <field name="view_mode">kanban,tree,form</field>
             <field name="help" type="html">

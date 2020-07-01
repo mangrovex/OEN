@@ -119,5 +119,48 @@
 <!--                   eval="[(4, ref('openedunav_core.group_sie_faculty'))]" />-->
 <!--            <field name="domain_force"> [(1,'=',1)]</field>-->
 <!--        </record>-->
+
+
+
+        <!-- Teacher -->
+        <record id="group_sie_teacher" model="res.groups">
+            <field name="name">Teacher</field>
+            <field name="category_id" ref="module_category_openedunav"/>
+        </record>
+        <!-- Statisticians -->
+        <record id="group_sie_stats" model="res.groups">
+            <field name="name">Statistician</field>
+            <field name="category_id" ref="module_category_openedunav"/>
+        </record>
+
+        <record id="group_sie_professional_attitude" model="res.groups">
+            <field name="name">Professional Attitude</field>
+            <field name="category_id" ref="module_category_openedunav"/>
+        </record>
+
+        <record id="group_sie_professional_attitude_professor" model="res.groups">
+            <field name="name">Professional Attitude Professor</field>
+            <field name="category_id" ref="module_category_openedunav"/>
+        </record>
+
+        <!-- Planning-->
+        <record id="group_sie_planning" model="res.groups">
+            <field name="name">Planning</field>
+            <field name="category_id" ref="module_category_openedunav"/>
+        </record>
+
+        <!-- Executive-->
+        <record id="group_sie_executive" model="res.groups">
+            <field name="name">Executive</field>
+            <field name="category_id" ref="module_category_openedunav"/>
+        </record>
+
+        <!-- Academic-->
+        <record id="group_sie_academic" model="res.groups">
+            <field name="name">Academic</field>
+            <field name="category_id" ref="module_category_openedunav"/>
+        </record>
+
+
     </data>
 </openerp>

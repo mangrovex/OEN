@@ -6,6 +6,162 @@ from odoo.exceptions import ValidationError
 from odoo.tools import config
 
 
+def check_ced_ruc(ced):
+    if ci.is_valid(ced):
+        return True
+    else:
+        return False
+
+
+def check_ruc_s_pri(ruc):
+    try:
+        # soporte para nacionalizados(codigo 30 y 50)
+        if int(ruc[0] + ruc[1]) < 25 or int(ruc[0] + ruc[1]) in (30, 50):
+            test1 = True
+        else:
+            test1 = False
+        if int(ruc[2]) == 9:
+            test2 = True
+        else:
+            test2 = False
+        val0 = int(ruc[0]) * 4
+        val1 = int(ruc[1]) * 3
+        val2 = int(ruc[2]) * 2
+        val3 = int(ruc[3]) * 7
+        val4 = int(ruc[4]) * 6
+        val5 = int(ruc[5]) * 5
+        val6 = int(ruc[6]) * 4
+        val7 = int(ruc[7]) * 3
+        val8 = int(ruc[8]) * 2
+        tot = val0 + val1 + val2 + val3 + val4 + val5 + val6 + val7 + val8
+        divisor = int(tot / 11.0)
+        veri = int(11 - (tot - (11 * divisor)))
+        if veri == 11: veri = 0
+        if veri == 0:
+            if (int(ruc[9])) == 0:
+                test3 = True
+            else:
+                test3 = False
+        else:
+            if (int(ruc[9])) == (veri):
+                test3 = True
+            else:
+                test3 = False
+        # la ultima parte debe ser el codigo del establecimiento, entre 001, 00N
+        # pero x ahora solo validar que sea 001
+        if ruc[10:] in ('001',):
+            test4 = True
+        else:
+            test4 = False
+        if test1 and test2 and test3 and test4:
+            return True
+        else:
+            return False
+    except:
+        return False
+
+
+def check_ruc_s_pub(ruc):
+    try:
+        # soporte para nacionalizados(codigo 30 y 50)
+        if int(ruc[0] + ruc[1]) < 25 or int(ruc[0] + ruc[1]) in (30, 50):
+            test1 = True
+        else:
+            test1 = False
+        if int(ruc[2]) == 6:
+            test2 = True
+        else:
+            test2 = False
+        val0 = int(ruc[0]) * 3
+        val1 = int(ruc[1]) * 2
+        val2 = int(ruc[2]) * 7
+        val3 = int(ruc[3]) * 6
+        val4 = int(ruc[4]) * 5
+        val5 = int(ruc[5]) * 4
+        val6 = int(ruc[6]) * 3
+        val7 = int(ruc[7]) * 2
+        tot = val0 + val1 + val2 + val3 + val4 + val5 + val6 + val7
+        divisor = int(tot / 11.0)
+        veri = int(11 - (tot - (11 * divisor)))
+        if veri == 11: veri = 0
+        if veri == 0:
+            if (int(ruc[8])) == 0:
+                test3 = True
+            else:
+                test3 = False
+        else:
+            if (int(ruc[8])) == (veri):
+                test3 = True
+            else:
+                test3 = False
+        # la ultima parte debe ser el codigo del establecimiento, entre 001, 00N
+        # pero x ahora solo validar que sea 001
+        if ruc[10:] in ('001',):
+            test4 = True
+        else:
+            test4 = False
+        if test1 and test2 and test3 and test4:
+            return True
+        else:
+            # FIXME: por alguna razon existio un caso de un ruc que el sistema del sri tiene asignado a una persona
+            #  natural y tiene la forma de institucion publica
+            if test4:
+                return check_ced_ruc(ruc[:10])
+            return False
+    except:
+        return False
+
+
+def check_ruc_p_nat(ruc):
+    try:
+        # soporte para nacionalizados(codigo 30 y 50)
+        if int(ruc[0] + ruc[1]) < 25 or int(ruc[0] + ruc[1]) in (30, 50):
+            test1 = True
+        else:
+            test1 = False
+        if int(ruc[2]) < 6:
+            test2 = True
+        else:
+            test2 = False
+        valores = [int(ruc[x]) * (2 - x % 2) for x in range(9)]
+        suma = sum(map(lambda x: x > 9 and x - 9 or x, valores))
+        dsup = 10
+        if suma > 10:
+            dsup = (int(str(suma)[0]) + 1) * 10
+        veri = dsup - suma
+        if veri == 10:
+            veri = 0
+        if int(ruc[9]) == veri:
+            test3 = True
+        else:
+            test3 = False
+        # la ultima parte debe ser el codigo del establecimiento, entre 001, 00N
+        # pero x ahora solo validar que sea 001
+        if ruc[10:] in ('001',):
+            test4 = True
+        else:
+            test4 = False
+        if test1 and test2 and test3 and test4:
+            return True
+        else:
+            if test4:
+                return check_ced_ruc(ruc[:10])
+            return False
+    except:
+        return False
+
+
+def check_id_cons_final(ced):
+    b = True
+    try:
+        for n in ced:
+            if int(n) != 9:
+                b = False
+        return b
+    except:
+        return False
+
+
 class ResPartner(models.Model):
     _name = 'res.partner'
     _inherit = 'res.partner'
@@ -92,7 +248,6 @@ class ResPartner(models.Model):
 
     @api.depends('ced_ruc', 'country_id')
     def _compute_vat(self):
-        # calculo del vat de odoo a partir del campo ced_ruc
         for record in self:
             if not record.ced_ruc:
                 record.vat = None
@@ -117,20 +272,13 @@ class ResPartner(models.Model):
     @api.onchange('ced_ruc')
     def _onchange_ced_ruc(self):
         for record in self:
-            if not record.ced_ruc:
-                record.vat = None
-            else:
-                if not record.country_id:
-                    record.vat = "EC" + record.ced_ruc
-                else:
+            if record.ced_ruc:
+                if record.country_id:
                     record.vat = record.country_id.code + record.ced_ruc
-
-    @api.depends('vat')
-    def _compute_ced_ruc(self):
-        for record in self:
-            if record.vat:
-                vat_country, vat_number = self._split_vat(record.vat)
-                record.ced_ruc = vat_number
+                else:
+                    record.vat = "EC" + record.ced_ruc
+            else:
+                record.vat = None
 
     @api.onchange('city_id')
     def _onchange_city_id(self):
@@ -156,19 +304,10 @@ class ResPartner(models.Model):
     def check_ced_ruc(self):
         for record in self:
             if record.type_ced_ruc:
-                # if not record.vat:
-                #     raise ValidationError(u'Ingresar número de identificación')
-                # vat_country, vat_number = self._split_vat(record.vat)
                 if record.type_ced_ruc == 'cedula' and not ci.is_valid(record.ced_ruc):
                     raise ValidationError('CI [%s] no es valido !' % record.ced_ruc)
                 elif record.type_ced_ruc == 'ruc' and not ruc.is_valid(record.ced_ruc):
                     raise ValidationError('RUC [%s] no es valido !' % record.ced_ruc)
-
-    def verifica_cedula(self, ced):
-        if ci.is_valid(ced):
-            return True
-        else:
-            return False
 
     def create_user(self):
         self.env['res.users'].create_user(self)
@@ -185,33 +324,33 @@ class ResPartner(models.Model):
                     int(ref)
                 except ValueError:
                     raise Warning(_(u'La CEDULA/RUC %s solo debe tener números, por favor verifique') % (ref))
-                if (len(ref) == 13):
+                if len(ref) == 13:
                     dato = ref
-                    if (int(dato[2]) == 9):
+                    if int(dato[2]) == 9:
                         # verify if partner is a private company
-                        if self.verifica_ruc_spri(ref):
+                        if check_ruc_s_pri(ref):
                             type_ref = 'ruc'
-                        elif self.verifica_id_cons_final(ref):
+                        elif check_id_cons_final(ref):
                             type_ref = 'consumidor'
                         else:
                             raise Warning(_(u'La CEDULA/RUC %s no es correcta, por favor verifique') % (ref))
-                    elif (int(dato[2]) == 6):
+                    elif int(dato[2]) == 6:
                         # verify if partner is a statal company
-                        if self.verifica_ruc_spub(ref):
+                        if check_ruc_s_pub(ref):
                             type_ref = 'ruc'
                         else:
                             raise Warning(_(u'La CEDULA/RUC %s es incorrecto, por favor verifique') % (ref))
-                    elif (int(dato[2]) < 6):
+                    elif int(dato[2]) < 6:
                         # verify if partner is a natural person
-                        if self.verifica_ruc_pnat(ref):
+                        if check_ruc_p_nat(ref):
                             type_ref = 'ruc'
                         else:
                             raise Warning(_(u'La CEDULA/RUC %s es incorrecto, por favor verifique') % (ref))
                     else:
                         raise Warning(_(u'La CEDULA/RUC %s es incorrecto, por favor verifique') % (ref))
-                elif (len(ref) == 10):
+                elif len(ref) == 10:
                     # verify the dni or Cedula of partner
-                    if self.verifica_cedula(ref):
+                    if check_ced_ruc(ref):
                         type_ref = 'cedula'
                     else:
                         raise Warning(_(u'La CEDULA/RUC %s es incorrecto, por favor verifique') % (ref))
@@ -222,147 +361,3 @@ class ResPartner(models.Model):
         except:
             raise Warning(_(u'La CEDULA/RUC %s es incorrecto, por favor verifique') % (ref))
         return type_ref
-
-    def verifica_ruc_spri(self, ruc):
-        try:
-            # soporte para nacionalizados(codigo 30 y 50)
-            if int(ruc[0] + ruc[1]) < 25 or int(ruc[0] + ruc[1]) in (30, 50):
-                prueba1 = True
-            else:
-                prueba1 = False
-            if (int(ruc[2]) == 9):
-                prueba2 = True
-            else:
-                prueba2 = False
-            val0 = int(ruc[0]) * 4
-            val1 = int(ruc[1]) * 3
-            val2 = int(ruc[2]) * 2
-            val3 = int(ruc[3]) * 7
-            val4 = int(ruc[4]) * 6
-            val5 = int(ruc[5]) * 5
-            val6 = int(ruc[6]) * 4
-            val7 = int(ruc[7]) * 3
-            val8 = int(ruc[8]) * 2
-            tot = val0 + val1 + val2 + val3 + val4 + val5 + val6 + val7 + val8
-            divisor = int(tot / 11.0)
-            veri = int(11 - (tot - (11 * divisor)))
-            if veri == 11: veri = 0
-            if (veri == 0):
-                if ((int(ruc[9])) == 0):
-                    prueba3 = True
-                else:
-                    prueba3 = False
-            else:
-                if ((int(ruc[9])) == (veri)):
-                    prueba3 = True
-                else:
-                    prueba3 = False
-            # la ultima parte debe ser el codigo del establecimiento, entre 001, 00N
-            # pero x ahora solo validar que sea 001
-            if ruc[10:] in ('001',):
-                prueba4 = True
-            else:
-                prueba4 = False
-            if (prueba1 and prueba2 and prueba3 and prueba4):
-                return True
-            else:
-                return False
-        except:
-            return False
-
-    def verifica_ruc_spub(self, ruc):
-        try:
-            # soporte para nacionalizados(codigo 30 y 50)
-            if int(ruc[0] + ruc[1]) < 25 or int(ruc[0] + ruc[1]) in (30, 50):
-                prueba1 = True
-            else:
-                prueba1 = False
-            if (int(ruc[2]) == 6):
-                prueba2 = True
-            else:
-                prueba2 = False
-            val0 = int(ruc[0]) * 3
-            val1 = int(ruc[1]) * 2
-            val2 = int(ruc[2]) * 7
-            val3 = int(ruc[3]) * 6
-            val4 = int(ruc[4]) * 5
-            val5 = int(ruc[5]) * 4
-            val6 = int(ruc[6]) * 3
-            val7 = int(ruc[7]) * 2
-            tot = val0 + val1 + val2 + val3 + val4 + val5 + val6 + val7
-            divisor = int(tot / 11.0)
-            veri = int(11 - (tot - (11 * divisor)))
-            if veri == 11: veri = 0
-            if (veri == 0):
-                if ((int(ruc[8])) == 0):
-                    prueba3 = True
-                else:
-                    prueba3 = False
-            else:
-                if ((int(ruc[8])) == (veri)):
-                    prueba3 = True
-                else:
-                    prueba3 = False
-            # la ultima parte debe ser el codigo del establecimiento, entre 001, 00N
-            # pero x ahora solo validar que sea 001
-            if ruc[10:] in ('001',):
-                prueba4 = True
-            else:
-                prueba4 = False
-            if (prueba1 and prueba2 and prueba3 and prueba4):
-                return True
-            else:
-                # FIXME: por alguna razon existio un caso de un ruc que el sistema del sri tiene asignado a una persona natural y tiene la forma de institucion publica
-                if prueba4:
-                    return self.verifica_cedula(ruc[:10])
-                return False
-        except:
-            return False
-
-    def verifica_ruc_pnat(self, ruc):
-        try:
-            # soporte para nacionalizados(codigo 30 y 50)
-            if int(ruc[0] + ruc[1]) < 25 or int(ruc[0] + ruc[1]) in (30, 50):
-                prueba1 = True
-            else:
-                prueba1 = False
-            if (int(ruc[2]) < 6):
-                prueba2 = True
-            else:
-                prueba2 = False
-            valores = [int(ruc[x]) * (2 - x % 2) for x in range(9)]
-            suma = sum(map(lambda x: x > 9 and x - 9 or x, valores))
-            dsup = 10
-            if suma > 10:
-                dsup = (int(str(suma)[0]) + 1) * 10
-            veri = dsup - suma
-            if veri == 10:
-                veri = 0
-            if int(ruc[9]) == veri:
-                prueba3 = True
-            else:
-                prueba3 = False
-            # la ultima parte debe ser el codigo del establecimiento, entre 001, 00N
-            # pero x ahora solo validar que sea 001
-            if ruc[10:] in ('001',):
-                prueba4 = True
-            else:
-                prueba4 = False
-            if (prueba1 and prueba2 and prueba3 and prueba4):
-                return True
-            else:
-                if prueba4:
-                    return self.verifica_cedula(ruc[:10])
-                return False
-        except:
-            return False
-
-    def verifica_id_cons_final(self, ced):
-        b = True
-        try:
-            for n in ced:
-                if int(n) != 9:
-                    b = False
-            return b
-        except:
-            return False

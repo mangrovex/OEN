@@ -24,7 +24,7 @@
                                 <field name="student_ids" nolabel="1" mode="tree"
                                        attrs="{'readonly':[('course_state', '!=', 'planned')]}">
                                     <tree editable="bottom" string="Students">
-                                        <field name="vat" style="width: 10 %%"/>
+                                        <field name="ced_ruc" style="width: 10 %%"/>
                                         <field name="grade_id"/>
                                         <field name="full_name"/>
                                     </tree>

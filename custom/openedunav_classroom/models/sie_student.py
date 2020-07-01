@@ -2,7 +2,10 @@
 
 import logging
 
-from odoo import models, fields
+from stdnum.ec import ruc, ci
+
+from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 _logger = logging.getLogger(__name__)
 
@@ -23,3 +26,5 @@ class SieStudent(models.Model):
         'sie.course',
         string="Curso Actual"
     )
+
+

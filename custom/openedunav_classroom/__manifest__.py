@@ -33,6 +33,7 @@
         'views/register_directors_views.xml',
         'views/register_seminary_views.xml',
         'views/concept_views.xml',
+        'views/training_shaft_views.xml',
         'views/param_name_views.xml',
         'views/matrix_parameter_views.xml',
         'views/matrix_views.xml',

@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_sie_score_student,access_sie_score_student,model_sie_score_student,base.group_user,1, 1, 1, 1
 access_sie_score,access_sie_score,model_sie_score,base.group_user,1, 1, 1, 1
+access_sie_course_score,access_sie_course_score,model_sie_course_score,base.group_user,1,1,1,1

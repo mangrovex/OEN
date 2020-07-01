@@ -23,13 +23,12 @@
                   parent="sie_configuration_school_menu"
                   groups="base.group_system,openedunav_core.group_admin"
                   sequence="10"/>
-
-<!--        <menuitem id="sie_training_shaft_menu"-->
-<!--                  name="Ejes de Estudio"-->
-<!--                  action="action_list_sie_training_shaft"-->
-<!--                  parent="sie_configuration_school_menu"-->
-<!--                  groups="group_admin"-->
-<!--                  sequence="7"/>-->
+        <menuitem id="sie_training_shaft_menu"
+                  name="Ejes de Estudio"
+                  action="action_list_sie_training_shaft"
+                  parent="sie_configuration_school_menu"
+                  groups="base.group_system,openedunav_core.group_admin"
+                  sequence="7"/>
 
         <!-- School Planning -->
         <menuitem id="sie_subject_content_menu"

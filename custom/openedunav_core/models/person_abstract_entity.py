@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
+from stdnum.ec import ci, ruc
 
 from odoo import fields, models, api, _
+from odoo.exceptions import ValidationError
 
 
 class PersonAbstractEntity(models.AbstractModel):
@@ -311,3 +313,12 @@ class PersonAbstractEntity(models.AbstractModel):
                     'tz': self._context.get('tz'),
                 })
                 record.user_id = user_id
+
+    @api.constrains('ced_ruc', 'type_ced_ruc', 'type_person')
+    def check_ced_ruc(self):
+        for record in self:
+            if record.type_ced_ruc:
+                if record.type_ced_ruc == 'cedula' and not ci.is_valid(record.ced_ruc):
+                    raise ValidationError('CI [%s] no es valido !' % record.ced_ruc)
+                elif record.type_ced_ruc == 'ruc' and not ruc.is_valid(record.ced_ruc):
+                    raise ValidationError('RUC [%s] no es valido !' % record.ced_ruc)

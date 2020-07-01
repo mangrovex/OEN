@@ -26,6 +26,10 @@ class SieSubject(models.Model):
         required=True,
         search='_search_name'
     )
+    display_name = fields.Char(
+        'Display Name',
+        size=96
+    )
     code = fields.Char(
         'Código',
         search='_search_code',
@@ -138,9 +142,13 @@ class SieSubject(models.Model):
     @api.depends('name', 'version', 'senescyt_code')
     def _compute_display_name(self):
         for record in self:
-            record.display_name = '%s (v%.1f)' % (record.name, record.version)
-            if record.senescyt_code:
-                record.display_name = '%s [%s]' % (record.display_name, record.senescyt_code)
+            if record.name and record.version:
+                if record.senescyt_code:
+                    display_name = '%s (v%.1f) [%s]' % (record.name, record.version, record.senescyt_code)
+                else:
+                    display_name = '%s (v%.1f)' % (record.name, record.version)
+                record.display_name = display_name
+                record.name = record.display_name.upper()
 
     def _search_name(self, operator, value):
         if operator == 'like':
@@ -215,11 +223,11 @@ class SieSubject(models.Model):
                 SieSubject._create_children(self, new_unit_child, new)
         return
 
-    @api.onchange('name')
-    def do_stuff(self):
-        for record in self:
-            if record.name:
-                record.name = record.name.upper()
+    # @api.onchange('name')
+    # def do_stuff(self):
+    #     for record in self:
+    #         if record.name:
+    #             record.name = record.name.upper()
 
     @api.onchange('course_id')
     def _teacher_id_domain(self):

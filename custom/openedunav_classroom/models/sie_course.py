@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*
+from datetime import datetime
 
 from dateutil.relativedelta import relativedelta
 import logging
@@ -15,6 +16,9 @@ class SieCourse(models.Model):
 
     name = fields.Char(
         string='Nombre',
+    )
+    display_name = fields.Char(
+        string='Nombre',
         compute='_compute_display_name',
         store=True
     )
@@ -25,7 +29,6 @@ class SieCourse(models.Model):
         required=True,
         states={'running': [('readonly', True)], 'finalized': [('readonly', True)]}
     )
-    lastname = fields.Char(string='LastName')
     year = fields.Char(
         string=u'Año',
         required=True,
@@ -236,13 +239,15 @@ class SieCourse(models.Model):
     @api.depends('promotion_course_id', 'course_name', 'enrollment')
     def _compute_display_name(self):
         for record in self:
-            if record.promotion_course_id and record.course_name:
-                name = _('%s - %s' % (record.course_name.name, record.promotion_course_id.name))
-                record.name = name
-            if record.promotion_course_id and record.enrollment and record.matrix_id:
-                name = _('%s - %s - PARALELO %s' % (record.course_name.name,
-                                                    record.promotion_course_id.name, record.enrollment))
-                record.name = name
+            if record.promotion_course_id:
+                if record.course_name:
+                    if record.enrollment:
+                        display_name = _('%s - %s - PARALELO %s' % (record.course_name.name,
+                                                            record.promotion_course_id.name, record.enrollment))
+                    else:
+                        display_name = _('%s - %s' % (record.course_name.name, record.promotion_course_id.name))
+                    record.display_name = display_name
+                    record.name = display_name.upper()
 
     @api.depends('start_date', 'end_date')
     def _compute_duration_days(self):
@@ -290,9 +295,11 @@ class SieCourse(models.Model):
 
     @api.depends('start_date')
     def _compute_year(self):
+        current_year = datetime.now().year
         for record in self:
             if record.start_date:
-                record.year = fields.Datetime.from_string(record.start_date).year
+                current_year = fields.Datetime.from_string(record.start_date).year
+            record.year = current_year
 
     def unlink(self):
         unlink_ids = []

@@ -1,14 +1,22 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_sie_course_name,access_sie_course_name,model_sie_course_name,base.group_user,1, 1, 1, 1 
-access_sie_attachment,access_sie_attachment,model_sie_attachment,base.group_user,1, 1, 1, 1 
-access_sie_subject_content,access_sie_subject_content,model_sie_subject_content,base.group_user,1, 1, 1, 1
-access_sie_promotion_course,access_sie_promotion_course,model_sie_promotion_course,base.group_user,1, 1, 1, 1
-access_sie_subject_unit,access_sie_subject_unit,model_sie_subject_unit,base.group_user,1, 1, 1, 1 
-access_sie_subject,access_sie_subject,model_sie_subject,base.group_user,1, 1, 1, 1 
-access_sie_course,access_sie_course,model_sie_course,base.group_user,1, 1, 1, 1
-access_sie_concept,access_sie_concept,model_sie_concept,base.group_user,1, 1, 1, 1
-access_sie_param_name,access_sie_param_name,model_sie_param_name,base.group_user,1, 1, 1, 1
-access_sie_matrix_parameter,access_sie_matrix_parameter,model_sie_matrix_parameter,base.group_user,1, 1, 1, 1
-access_sie_matrix,access_sie_matrix,model_sie_matrix,base.group_user,1, 1, 1, 1
-access_sie_integrator_product_student,access_sie_integrator_product_student,model_sie_integrator_product_student,base.group_user,1, 1, 1, 1
-access_sie_integrator_product,access_sie_integrator_product,model_sie_integrator_product,base.group_user,1, 1, 1, 1
+access_sie_course_name,access_sie_course_name,model_sie_course_name,base.group_user,1,1,1,1 
+access_sie_attachment,access_sie_attachment,model_sie_attachment,base.group_user,1,1,1,1 
+access_sie_subject_content,access_sie_subject_content,model_sie_subject_content,base.group_user,1,1,1,1
+access_sie_promotion_course,access_sie_promotion_course,model_sie_promotion_course,base.group_user,1,1,1,1
+access_sie_subject_unit,access_sie_subject_unit,model_sie_subject_unit,base.group_user,1,1,1,1 
+access_sie_subject,access_sie_subject,model_sie_subject,base.group_user,1,1,1,1 
+access_sie_course,access_sie_course,model_sie_course,base.group_user,1,1,1,1
+access_sie_concept,access_sie_concept,model_sie_concept,base.group_user,1,1,1,1
+access_sie_param_name,access_sie_param_name,model_sie_param_name,base.group_user,1,1,1,1
+access_sie_matrix_parameter,access_sie_matrix_parameter,model_sie_matrix_parameter,base.group_user,1,1,1,1
+access_sie_matrix,access_sie_matrix,model_sie_matrix,base.group_user,1,1,1,1
+access_sie_integrator_product_student,access_sie_integrator_product_student,model_sie_integrator_product_student,base.group_user,1,1,1,1
+access_sie_integrator_product,access_sie_integrator_product,model_sie_integrator_product,base.group_user,1,1,1,1
+access_sie_register_work,access_sie_register_work,model_sie_register_work,base.group_user,1,1,1,1
+access_sie_register_seminary,access_sie_register_seminary,model_sie_register_seminary,base.group_user,1,1,1,1
+access_sie_register_subject,access_sie_register_subject,model_sie_register_subject,base.group_user,1,1,1,1
+access_sie_register_directors,access_sie_register_directors,model_sie_register_directors,base.group_user,1,1,1,1
+access_sie_register_work_student,access_sie_register_work_student,model_sie_register_work_student,base.group_user,1,1,1,1
+access_sie_register_work_enrollment,access_sie_register_work_enrollment,model_sie_register_work_enrollment,base.group_user,1,1,1,1
+access_sie_enrollment,access_sie_enrollment,model_sie_enrollment,base.group_user,1,1,1,1
+access_sie_training_shaft,access_sie_training_shaft,model_sie_training_shaft,base.group_user,1,1,1,1

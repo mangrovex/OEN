@@ -22,10 +22,10 @@
     'depends': [
         'openedunav_core',
         'openedunav_classroom',
-        # 'openedunav_timekeeping',
         'openedunav_score',
-        # 'openedunav_report',
-        # 'web_openedunav',
+        'openedunav_report',
+        'openedunav_timekeeping',
+        'web_openedunav',
     ],
     'images': [
         'static/description/openedunav_sie_banner.jpg',
