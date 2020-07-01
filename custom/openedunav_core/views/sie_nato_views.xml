@@ -1,6 +1,6 @@
 <odoo>
     <data>
-        <record id="view_sie_nato_tree" model="ir.ui.view">
+        <record id="sie_nato_view_tree" model="ir.ui.view">
             <field name="name">sie.nato.tree</field>
             <field name="model">sie.nato</field>
             <field name="arch" type="xml">
@@ -10,7 +10,8 @@
                 </tree>
             </field>
         </record>
-        <record id="view_sie_nato_form" model="ir.ui.view">
+
+        <record id="sie_nato_view_form" model="ir.ui.view">
             <field name="name">sie.nato.form</field>
             <field name="model">sie.nato</field>
             <field name="arch" type="xml">
@@ -24,7 +25,8 @@
                 </form>
             </field>
         </record>
-        <record id="view_sie_nato_search" model="ir.ui.view">
+
+        <record id="sie_nato_view_search" model="ir.ui.view">
             <field name="name">sie.nato.search</field>
             <field name="model">sie.nato</field>
             <field name="arch" type="xml">
@@ -35,16 +37,17 @@
             </field>
         </record>
 
-        <record model="ir.actions.act_window" id="act_open_sie_nato_view">
+        <record model="ir.actions.act_window" id="action_list_sie_nato">
             <field name="name">nato</field>
             <field name="res_model">sie.nato</field>
             <field name="view_mode">tree,form</field>
-            <field name="search_view_id" ref="view_sie_nato_search"/>
+            <field name="search_view_id" ref="sie_nato_view_search"/>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
                     Click to create a new nato.
                 </p>
             </field>
         </record>
+
     </data>
 </odoo>

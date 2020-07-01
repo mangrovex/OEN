@@ -1,71 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
-	<data>
-		<record id="view_sie_subject_content_form" model="ir.ui.view">
-			<field name="name">sie.subject.content.form</field>
-			<field name="model">sie.subject.content</field>
-			<field name="arch" type="xml">
-				<form string="Contenido Imprescindible">
-					<sheet>
-						<group>
-							<field name="number_module"/>
-							<field name="name" placeholder="Ciencias Navales"/>
-							<field name="faculty_id"/>
-							<field name="date_start"/>
-							<field name="date_end"/>
-							<field name="hours"/>
-							<field name="score"/>
-							<field name="subject_id"/>
-						</group>
-					</sheet>
-				</form>
-			</field>
-		</record>
-		<record id="view_sie_subject_content_tree" model="ir.ui.view">
-			<field name="name">sie.subject.content.tree</field>
-			<field name="model">sie.subject.content</field>
-			<field name="arch" type="xml">
-				<tree>
-					<field name="name"/>
-					<field name="faculty_id"/>
-					<field name="date_start"/>
-					<field name="date_end"/>
-					<field name="hours"/>
-					<field name="score"/>
-					<field name="subject_id"/>
-				</tree>
-			</field>
-		</record>
-		<record id="view_sie_subject_content_search" model="ir.ui.view">
-			<field name="name">sie.subject.content.search</field>
-			<field name="model">sie.subject.content</field>
-			<field name="arch" type="xml">
-				<search string="Search Subject Content">
-					<field name="name"/>
-					<field name="faculty_id"/>
-					<field name="date_start"/>
-					<field name="date_end"/>
-					<field name="hours"/>
-					<field name="score"/>
-					<field name="subject_id"/>
-				</search>
-			</field>
-		</record>
-		
-		<record model="ir.actions.act_window" id="act_open_sie_subject_content_view">
-			<field name="name">Contenido Imprescindible</field>
-			<field name="type">ir.actions.act_window</field>
-			<field name="res_model">sie.subject.content</field>
-			<field name="view_type">form</field>
-			<field name="view_mode">tree,form</field>
-			<field name="search_view_id" ref="view_sie_subject_content_search"/>
-			<field name="domain">[]</field>
-			<field name="context">{}</field>
-			<field name="help" type="html">
-				<p class="oe_view_nocontent_create">
-					Click to create a new Content.
-				</p>
-			</field>
-		</record>
-	</data>
+    <data>
+        <record id="sie_subject_content_view_form" model="ir.ui.view">
+            <field name="name">sie.subject.content.form</field>
+            <field name="model">sie.subject.content</field>
+            <field name="arch" type="xml">
+                <form string="Contenido Imprescindible">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="number_module"/>
+                                <field name="faculty_id"/>
+                                <field name="date_start"/>
+                                <field name="hours"/>
+                            </group>
+                            <group>
+                                <field name="name" placeholder="Ciencias Navales"/>
+                                <field name="subject_id"/>
+                                <field name="date_end"/>
+                                <field name="score"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sie_subject_content_view_tree" model="ir.ui.view">
+            <field name="name">sie.subject.content.tree</field>
+            <field name="model">sie.subject.content</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="faculty_id"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="hours"/>
+                    <field name="score"/>
+                    <field name="subject_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sie_subject_content_view_search" model="ir.ui.view">
+            <field name="name">sie.subject.content.search</field>
+            <field name="model">sie.subject.content</field>
+            <field name="arch" type="xml">
+                <search string="Search Subject Content">
+                    <field name="name"/>
+                    <field name="faculty_id"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="hours"/>
+                    <field name="score"/>
+                    <field name="subject_id"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_list_sie_subject_content">
+            <field name="name">Contenido Imprescindible</field>
+            <field name="res_model">sie.subject.content</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="sie_subject_content_view_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new Content.
+                </p>
+            </field>
+        </record>
+    </data>
 </openerp>

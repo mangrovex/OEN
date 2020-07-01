@@ -1,7 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_sie_concept,access_sie_concept,model_sie_concept,base.group_user,1, 1, 1, 1
-access_sie_param_name,access_sie_param_name,model_sie_param_name,base.group_user,1, 1, 1, 1
-access_sie_matrix_parameter,access_sie_matrix_parameter,model_sie_matrix_parameter,base.group_user,1, 1, 1, 1 
-access_sie_matrix,access_sie_matrix,model_sie_matrix,base.group_user,1, 1, 1, 1 
-access_sie_integrator_product_student,access_sie_integrator_product_student,model_sie_integrator_product_student,base.group_user,1, 1, 1, 1
-access_sie_integrator_product,access_sie_integrator_product,model_sie_integrator_product,base.group_user,1, 1, 1, 1 

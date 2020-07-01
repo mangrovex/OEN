@@ -66,6 +66,12 @@
             <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
         </record>
 
+        <!-- Executive-->
+        <record id="group_sie_executive" model="res.groups">
+            <field name="name">Executive</field>
+            <field name="category_id" ref="module_category_openedunav"/>
+        </record>
+
 <!--        <record model="ir.rule" id="student_login_rule">-->
 <!--            <field name="name">Student Login rule</field>-->
 <!--            <field name="model_id" ref="model_sie_student" />-->

@@ -13,31 +13,12 @@
     'author': 'Manexware S.A.',
     'category': 'Education',
     'website': 'http://www.manexware.com',
-    'summary': '',
-    'description': """
-        Training Institutes.
-        ================================
-
-        You can manage:
-        ---------------
-        * Learning Techniques
-        * Training Shafts
-        * Subjects
-        * Courses
-
-        """,
-    'css': [],
-    'qweb': [],
-    'images': [],
-    'depends': ['openedunav_core',
-
-                ],
-    'demo': [
-
+    'summary': 'Classroom',
+    'depends': [
+        'openedunav_core',
     ],
     'data': [
         'security/ir.model.access.csv',
-        'wizard/subject_wizard_view.xml',
         'views/promotion_course_views.xml',
         'views/subject_unit_views.xml',
         'views/subject_views.xml',
@@ -48,12 +29,23 @@
         'views/enrollment_views.xml',
         'views/attachment_views.xml',
         'views/student_views.xml',
+        'views/register_subject_views.xml',
+        'views/register_directors_views.xml',
+        'views/register_seminary_views.xml',
+        'views/concept_views.xml',
+        'views/param_name_views.xml',
+        'views/matrix_parameter_views.xml',
+        'views/matrix_views.xml',
+        'views/integrator_product_views.xml',
+        'data/concepts_data.xml',
+        'data/training_shaft_data.xml',
+        'data/matrix_parameter_name_data.xml',
+        'data/matrix_data.xml',
+        'data/matrix_param_data.xml',
         'data/promotion_course_data.xml',
         'data/course_name_data.xml',
-        'menu/sie_menu.xml',
-
+        'views/sie_menu.xml',
     ],
-
     'installable': True,
     'auto_install': False,
     'application': False,

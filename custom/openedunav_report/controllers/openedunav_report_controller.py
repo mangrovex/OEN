@@ -15,25 +15,26 @@ from . import report_score
 from . import report_certificate
 
 
+def print_report(full_path, filename):
+    file_content = ''
+    tmp = StringIO()
+    output = PdfFileWriter()
+    inputFile = open(full_path, 'rb')
+    pdf_temp = PdfFileReader(inputFile)
+    if pdf_temp:
+        for page in range(pdf_temp.getNumPages()):
+            output.addPage(pdf_temp.getPage(page))
+        output.write(tmp)
+        tmp.seek(0)
+        data = tmp.read()
+        tmp.close()
+        file_content = data
+    return file_content
+
+
 class SchoolReportController(http.Controller):
-    def print_report(self, full_path, filename):
-        file_content = ''
-        tmp = StringIO()
-        output = PdfFileWriter()
-        inputFile = open(full_path, 'rb')
-        pdf_temp = PdfFileReader(inputFile)
-        if pdf_temp:
-            for page in range(pdf_temp.getNumPages()):
-                output.addPage(pdf_temp.getPage(page))
-            output.write(tmp)
-            tmp.seek(0)
-            data = tmp.read()
-            tmp.close()
-            file_content = data
-        return file_content
-
-
-    @http.route('/web/aguena/report_integrator', type='http', auth="user")
+    
+    @http.route('/web/sie/report_integrator', type='http', auth="user")
     @serialize_exception
     def report_integrator(self, course_id=None, report_type=None, parameter_id=None, war_games_report=None,
                           war_games_id=None, judge_id=None, direction_work_id=None, student_id=None, ordenar=None,
@@ -54,7 +55,7 @@ class SchoolReportController(http.Controller):
             filename, full_path = i_report.get_summary_integrator()
 
         if flag:
-            file_content = self.print_report(full_path, filename)
+            file_content = print_report(full_path, filename)
             if not file_content:
                 return request.not_found()
             else:
@@ -64,7 +65,7 @@ class SchoolReportController(http.Controller):
                                                                      'attachment; filename=%s' % filename),
                                                                     ('Content-Type', 'application/pdf')])
 
-    @http.route('/web/aguena/report_score', type='http', auth="user")
+    @http.route('/web/sie/report_score', type='http', auth="user")
     @serialize_exception
     def report_academic_achievement(self, course_id=None, report_type=None, subject_id=None, student_id=None,
                                     ordenar=None,
@@ -90,7 +91,7 @@ class SchoolReportController(http.Controller):
             filename, full_path = s_report.get_summary_academic_final_guest()
 
         if flag:
-            file_content = self.print_report(full_path, filename)
+            file_content = print_report(full_path, filename)
             if not file_content:
                 return request.not_found()
             else:
@@ -100,7 +101,7 @@ class SchoolReportController(http.Controller):
                                                                      'attachment; filename=%s' % filename),
                                                                     ('Content-Type', 'application/pdf')])
 
-    @http.route('/web/aguena/report_certificate', type='http', auth="user")
+    @http.route('/web/sie/report_certificate', type='http', auth="user")
     @serialize_exception
     def report_certificate(self, course_id=None, **kw):
         local_tz = pytz.timezone('America/Guayaquil')
@@ -111,7 +112,7 @@ class SchoolReportController(http.Controller):
         flag = 1
         filename, full_path = cert_report.get_certificate_report()
         if flag:
-            file_content = self.print_report(full_path, filename)
+            file_content = print_report(full_path, filename)
             if not file_content:
                 return request.not_found()
             else:

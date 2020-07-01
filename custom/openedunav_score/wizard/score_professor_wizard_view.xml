@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-        <record id="score_professor_wizard_form" model="ir.ui.view">
+        <record id="score_professor_wizard_view_form" model="ir.ui.view">
             <field name="name">score_professor_wizard_form</field>
             <field name="model">score.professor.wizard</field>
             <field name="arch" type="xml">
@@ -22,13 +22,11 @@
             </field>
         </record>
 
-        <record id="score_professor_wizard_action" model="ir.actions.act_window">
+        <record id="action_open_score_professor_wizard" model="ir.actions.act_window">
             <field name="name">Reporte Aprovechamiento Profesor</field>
             <field name="res_model">score.professor.wizard</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="view_type">form</field>
             <field name="view_mode">form</field>
-            <field name="view_id" ref="score_professor_wizard_form"/>
+            <field name="view_id" ref="score_professor_wizard_view_form"/>
             <field name="context">{}</field>
             <field name="target">new</field>
         </record>

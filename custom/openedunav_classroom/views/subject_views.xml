@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
 	<data>
-		<record id="view_sie_subject_form" model="ir.ui.view">
+		<record id="sie_subject_view_form" model="ir.ui.view">
 			<field name="name">sie.subject.form</field>
 			<field name="model">sie.subject</field>
 			<field name="arch" type="xml">
@@ -29,32 +29,32 @@
 							<field name="plus_exec_hours" readonly="1"/>
 						</group>
 						<notebook>
-							<page string="Contenido Imprescindible">
-								<group>
-									<field name="subject_content_ids" nolabel="1">
-										<form string="Contenido Imprescindible">
-											<sheet>
-												<group>
-													<field name="name" placeholder="Ciencias Navales"/>
-													<field name="faculty_id"/>
-													<field name="date_start"/>
-													<field name="date_end"/>
-													<field name="hours"/>
-													<field name="score"/>
-												</group>
-											</sheet>
-										</form>
-										<tree>
-											<field name="name"/>
-											<field name="faculty_id"/>
-											<field name="date_start"/>
-											<field name="date_end"/>
-											<field name="hours"/>
-											<field name="score"/>
-										</tree>
-									</field>
-								</group>
-							</page>
+<!--							<page string="Contenido Imprescindible">-->
+<!--								<group>-->
+<!--									<field name="subject_content_ids" nolabel="1">-->
+<!--										<form string="Contenido Imprescindible">-->
+<!--											<sheet>-->
+<!--												<group>-->
+<!--													<field name="name" placeholder="Ciencias Navales"/>-->
+<!--													<field name="faculty_id"/>-->
+<!--													<field name="date_start"/>-->
+<!--													<field name="date_end"/>-->
+<!--													<field name="hours"/>-->
+<!--													<field name="score"/>-->
+<!--												</group>-->
+<!--											</sheet>-->
+<!--										</form>-->
+<!--										<tree>-->
+<!--											<field name="name"/>-->
+<!--											<field name="faculty_id"/>-->
+<!--											<field name="date_start"/>-->
+<!--											<field name="date_end"/>-->
+<!--											<field name="hours"/>-->
+<!--											<field name="score"/>-->
+<!--										</tree>-->
+<!--									</field>-->
+<!--								</group>-->
+<!--							</page>-->
 							<page string="Docente">
 								<group>
 									<!--<field name="faculty_ids" widget='many2many_tags'/>-->
@@ -63,18 +63,18 @@
 									<field name="course_id" readonly="1"/>
 								</group>
 							</page>
-							<page string="Syllabus">
-								<group>
-									<field name="pre_requirement" widget="html_code_view"/>
-									<field name="co_requisites" widget="html_code_view"/>
-									<field name="description" widget="html_code_view"/>
-									<field name="competences" widget="html_code_view"/>
-									<field name="competition_unit" widget="html_code_view"/>
-									<field name="element_of_competition" widget="html_code_view"/>
-									<field name="learning_outcome" widget="html_code_view"/>
-									<field name="contribution_of_the_subject" widget="html_code_view"/>
-								</group>
-							</page>
+<!--							<page string="Syllabus">-->
+<!--								<group>-->
+<!--									<field name="pre_requirement" widget="html_code_view"/>-->
+<!--									<field name="co_requisites" widget="html_code_view"/>-->
+<!--									<field name="description" widget="html_code_view"/>-->
+<!--									<field name="competences" widget="html_code_view"/>-->
+<!--									<field name="competition_unit" widget="html_code_view"/>-->
+<!--									<field name="element_of_competition" widget="html_code_view"/>-->
+<!--									<field name="learning_outcome" widget="html_code_view"/>-->
+<!--									<field name="contribution_of_the_subject" widget="html_code_view"/>-->
+<!--								</group>-->
+<!--							</page>-->
 							<page string="Unidades de Aprendizaje">
 								<field name="unit_ids" nolabel="1"/>
 							</page>
@@ -88,7 +88,8 @@
 				</form>
 			</field>
 		</record>
-		<record id="view_sie_subject_tree" model="ir.ui.view">
+
+		<record id="sie_subject_view_tree" model="ir.ui.view">
 			<field name="name">sie.subject.tree</field>
 			<field name="model">sie.subject</field>
 			<field name="arch" type="xml">
@@ -106,7 +107,8 @@
 				</tree>
 			</field>
 		</record>
-		<record id="view_sie_subject_search" model="ir.ui.view">
+
+		<record id="sie_subject_view_search" model="ir.ui.view">
 			<field name="name">sie.subject.search</field>
 			<field name="model">sie.subject</field>
 			<field name="arch" type="xml">
@@ -121,13 +123,11 @@
 			</field>
 		</record>
 		
-		<record model="ir.actions.act_window" id="act_open_sie_subject_view">
-			<field name="name">Modulo</field>
-			<field name="type">ir.actions.act_window</field>
+		<record model="ir.actions.act_window" id="action_list_sie_subject">
+			<field name="name">Módulo</field>
 			<field name="res_model">sie.subject</field>
-			<field name="view_type">form</field>
 			<field name="view_mode">tree,form</field>
-			<field name="search_view_id" ref="view_sie_subject_search"/>
+			<field name="search_view_id" ref="sie_subject_view_search"/>
 			<field name="domain">[]</field>
 			<field name="context">{'search_default_group_shaft': 1}</field>
 			<field name="help" type="html">
@@ -136,17 +136,19 @@
 				</p>
 			</field>
 		</record>
-		<record model="ir.actions.act_window.view" id="act_open_sie_subject_view_form">
-			<field name="act_window_id" ref="act_open_sie_subject_view"/>
-			<field name="sequence" eval="20"/>
-			<field name="view_mode">form</field>
-			<field name="view_id" ref="view_sie_subject_form"/>
-		</record>
-		<record model="ir.actions.act_window.view" id="act_open_sie_subject_view_tree">
-			<field name="act_window_id" ref="act_open_sie_subject_view"/>
-			<field name="sequence" eval="10"/>
-			<field name="view_mode">tree</field>
-			<field name="view_id" ref="view_sie_subject_tree"/>
-		</record>
+
+<!--		<record model="ir.actions.act_window.view" id="action_open_sie_subject">-->
+<!--			<field name="act_window_id" ref="action_list_sie_subject"/>-->
+<!--			<field name="sequence" eval="20"/>-->
+<!--			<field name="view_mode">form</field>-->
+<!--			<field name="view_id" ref="sie_subject_view_form"/>-->
+<!--		</record>-->
+
+<!--		<record model="ir.actions.act_window.view" id="action_tree_sie_subject">-->
+<!--			<field name="act_window_id" ref="action_list_sie_subject"/>-->
+<!--			<field name="sequence" eval="10"/>-->
+<!--			<field name="view_mode">tree</field>-->
+<!--			<field name="view_id" ref="sie_subject_view_tree"/>-->
+<!--		</record>-->
 	</data>
 </openerp>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-        <record id="view_sie_enrollment_form" model="ir.ui.view">
+        <record id="sie_enrollment_view_form" model="ir.ui.view">
             <field name="name">sie.enrollment.form</field>
             <field name="model">sie.enrollment</field>
             <field name="arch" type="xml">
@@ -35,7 +35,8 @@
                 </form>
             </field>
         </record>
-        <record id="view_sie_enrollment_tree" model="ir.ui.view">
+
+        <record id="sie_enrollment_view_tree" model="ir.ui.view">
             <field name="name">sie.enrollment.tree</field>
             <field name="model">sie.enrollment</field>
             <field name="arch" type="xml">
@@ -46,7 +47,8 @@
                 </tree>
             </field>
         </record>
-        <record id="view_sie_enrollment_search" model="ir.ui.view">
+
+        <record id="sie_enrollment_view_search" model="ir.ui.view">
             <field name="name">sie.enrollment.search</field>
             <field name="model">sie.enrollment</field>
             <field name="arch" type="xml">
@@ -57,13 +59,11 @@
             </field>
         </record>
 
-        <record model="ir.actions.act_window" id="act_open_sie_enrollment_view">
+        <record model="ir.actions.act_window" id="action_list_sie_enrollment">
             <field name="name">Registro de Estudiantes</field>
-            <field name="type">ir.actions.act_window</field>
             <field name="res_model">sie.enrollment</field>
-            <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="search_view_id" ref="view_sie_enrollment_search"/>
+            <field name="search_view_id" ref="sie_enrollment_view_search"/>
             <field name="domain">[]</field>
             <field name="context">{}</field>
             <field name="help" type="html">
@@ -72,17 +72,20 @@
                 </p>
             </field>
         </record>
-        <record model="ir.actions.act_window.view" id="act_open_sie_enrollment_view_form">
-            <field name="act_window_id" ref="act_open_sie_enrollment_view"/>
+
+        <record model="ir.actions.act_window.view" id="action_open_sie_enrollment">
+            <field name="act_window_id" ref="action_list_sie_enrollment"/>
             <field name="sequence" eval="20"/>
             <field name="view_mode">form</field>
-            <field name="view_id" ref="view_sie_enrollment_form"/>
+            <field name="view_id" ref="sie_enrollment_view_form"/>
         </record>
-        <record model="ir.actions.act_window.view" id="act_open_sie_enrollment_view_tree">
-            <field name="act_window_id" ref="act_open_sie_enrollment_view"/>
+
+        <record model="ir.actions.act_window.view" id="action_tree_sie_enrollment">
+            <field name="act_window_id" ref="action_list_sie_enrollment"/>
             <field name="sequence" eval="10"/>
             <field name="view_mode">tree</field>
-            <field name="view_id" ref="view_sie_enrollment_tree"/>
+            <field name="view_id" ref="sie_enrollment_view_tree"/>
         </record>
+
     </data>
 </openerp>

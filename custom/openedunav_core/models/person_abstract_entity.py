@@ -223,7 +223,12 @@ class PersonAbstractEntity(models.AbstractModel):
         readonly=1,
         related='partner_id.user_id.login_date'
     )
-    user_id = fields.Many2one('res.users', 'User', ondelete="cascade")
+    user_id = fields.Many2one(
+        'res.users',
+        'User',
+        ondelete="cascade",
+        help='The internal user in charge of this contact.'
+    )
 
     # _sql_constraints = [
     #     (

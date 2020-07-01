@@ -5,7 +5,7 @@ import logging
 
 from operator import attrgetter
 from odoo import _, models, fields, api
-from .misc import SCORE_STATE, SCORE_NUMBER
+# from .misc import SCORE_STATE, SCORE_NUMBER
 import icu
 
 
@@ -18,32 +18,94 @@ class SieScore(models.Model):
     _rec_name = 'record_name'
     _inherit = ['mail.activity.mixin']
 
-    name = fields.Char(string='Nombre', compute='_compute_name', store=True)
+    name = fields.Char(
+        string='Nombre',
+        compute='_compute_name',
+        store=True
+    )
     notes = fields.Text(string='Notas')
-    course_id = fields.Many2one('sie.course', string='Course',
-                                domain="[('state', '=', 'running')]",
-                                       # ",('subject_ids.faculty_id.user_id','=',uid)]",
-                                ondelete='restrict', required=True)
-    subject_id = fields.Many2one('sie.subject', string='Asignatura', ondelete='restrict',
-                                 domain="["
-                                        # "('faculty_id', '=', teacher_id),"
-                                        "('course_id', '=', course_id),"
-                                        "('state', '=', 'r')]", required=True)
-
-    parameter_id = fields.Many2one('sie.matrix.parameter', string=u'Parámetro', ondelete='restrict',
-                                   domain="[('last_child', '=', True), "
-                                          "('parent_ref', 'like', '002'),"
-                                          "('course_ref', '=',matrix_id)]")
-    student_ids = fields.One2many('sie.score.student', inverse_name='score_id', string='Estudiantes')
-    state = fields.Selection(SCORE_STATE, string='Estado', default='draft')
-    parameter_name = fields.Char(compute='_compute_parameter_name')
-    teacher_id = fields.Many2one('sie.faculty', string='Docente', store=True, ondelete='restrict')
-    matrix_id = fields.Many2one("sie.matrix", compute='_compute_matrix', ondelete='restrict')
-    subject_credits = fields.Integer(related='subject_id.credits', string=u'Créditos')
+    course_id = fields.Many2one(
+        'sie.course',
+        string='Course',
+        domain="[('state', '=', 'running')]",# ",('subject_ids.faculty_id.user_id','=',uid)]",
+        ondelete='restrict',
+        required=True
+    )
+    subject_id = fields.Many2one(
+        'sie.subject',
+        string='Asignatura',
+        ondelete='restrict',
+        domain="["# "('faculty_id', '=', teacher_id),"
+               "('course_id', '=', course_id),"
+               "('state', '=', 'r')]",
+        required=True
+    )
+    parameter_id = fields.Many2one(
+        'sie.matrix.parameter',
+        string=u'Parámetro',
+        ondelete='restrict',
+        domain="[('last_child', '=', True), "
+               "('parent_ref', 'like', '002'),"
+               "('course_ref', '=',matrix_id)]"
+    )
+    student_ids = fields.One2many(
+        'sie.score.student',
+        inverse_name='score_id',
+        string='Estudiantes'
+    )
+    state = fields.Selection(
+        [
+            ('draft', _('Draft')),
+            ('published', _('Published')),
+            ('for review', _('For review')),
+            ('approved', _('Approved')),
+        ],
+        string='Estado',
+        default='draft'
+    )
+    parameter_name = fields.Char(
+        compute='_compute_parameter_name'
+    )
+    teacher_id = fields.Many2one(
+        'sie.faculty',
+        string='Docente',
+        store=True,
+        ondelete='restrict'
+    )
+    matrix_id = fields.Many2one(
+        "sie.matrix",
+        compute='_compute_matrix',
+        ondelete='restrict'
+    )
+    subject_credits = fields.Integer(
+        related='subject_id.credits',
+        string=u'Créditos'
+    )
     # quiz = fields.Selection(selection=[('is_quiz_p', 'Quiz Producto'),
     #                                    ('is_quiz_v', u'Quiz Verificación')],
     #                         string='Quiz')
-    score_number = fields.Selection(SCORE_NUMBER, string='No. Noa')
+    score_number = fields.Selection(
+        [
+            ('1', 'Note 1'),
+            ('2', 'Note 2'),
+            ('3', 'Note 3'),
+            ('4', 'Note 4'),
+            ('5', 'Note 5'),
+            ('6', 'Note 6'),
+            ('7', 'Note 7'),
+            ('8', 'Note 8'),
+            ('9', 'Note 9'),
+            ('10', 'Note 10'),
+            ('11', 'Note 11'),
+            ('12', 'Note 12'),
+            ('13', 'Note 13'),
+            ('14', 'Note 14'),
+            ('15', 'Note 15'),
+            ('16', 'Note 16'),
+            ('17', 'Note 17'),
+        ],
+        string='No. Noa'
+    )
     record_name = fields.Char(compute='_compute_record_name')
 
     _sql_constraints = [
@@ -105,12 +167,12 @@ class SieScore(models.Model):
     #                 if validator_score_int == 1:
     #                     raise Warning("Wait for VERIFICACION FINAL T.E.")
     #
-    @api.multi
+
     @api.onchange('course_id')
     def onchange_course_id(self):
         for record in self:
             students = []
-            enrollment = self.env['sie.enrollment'].search([('course_id', '=', record.course_id.id)])
+            enrollment = record.env['sie.enrollment'].search([('course_id', '=', record.course_id.id)])
             # student_ids = enrollment.student_ids.sorted(key=attrgetter('last_name_1', 'last_name_2'))
             student_ids = enrollment.student_ids
             seq = 0
@@ -257,8 +319,7 @@ class SieScore(models.Model):
     #                 if data:
     #                     raise ValidationError("Debes borrar primero la nota " + str(int(record.score_number) + 1))
     #     return super(SieScore, self).unlink()
-    #
-    @api.multi
+
     @api.depends('course_id')
     def _compute_matrix(self):
         for record in self:
@@ -276,20 +337,18 @@ class SieScore(models.Model):
     # def _compute_subject_credits(self):
     #     if self.subject_id:
     #         self.subject_credits = self.subject_id.credits
-    #
-    @api.one
+
     @api.depends('course_id', 'parameter_id', 'subject_id', 'teacher_id', 'score_number')
     def _compute_name(self):
         for record in self:
-        # name = '%s,%s,%s,%s,%s,%s' % (self.course_id.id, self.parameter_id.id,
-        #                               self.subject_id.id, self.teacher_id.id, self.quiz,
-        #                               self.score_number)
-            name = '%s,%s,%s,%s,%s' % (self.course_id.id, self.parameter_id.id,
-                                          self.subject_id.id, self.teacher_id.id,
-                                          self.score_number)
-
+            # name = '%s,%s,%s,%s,%s,%s' % (self.course_id.id, self.parameter_id.id,
+            #                               self.subject_id.id, self.teacher_id.id, self.quiz,
+            #                               self.score_number)
+            name = '%s,%s,%s,%s,%s' % (record.course_id.id, record.parameter_id.id,
+                                       record.subject_id.id, record.teacher_id.id,
+                                       record.score_number)
             record.name = name
-    #
+
     # @api.one
     # @api.constrains('score_number')
     # def _check_score(self):
@@ -302,15 +361,16 @@ class SieScore(models.Model):
     #             if not data:
     #                 raise ValidationError("Falta nota " + str(int(self.score_number) - 1))
     #
-    @api.one
+
     @api.depends('name')
     def _compute_record_name(self):
-        if self.parameter_id:
-            self.record_name = self.parameter_id.name
-        # if self.quiz == 'is_quiz_v':
-        #     self.record_name = u'Verificación final examen'
-        # if self.quiz == 'is_quiz_p':
-        #     self.record_name = u'Producto de la unidad examen'
+        for record in self:
+            if record.parameter_id:
+                record.record_name = record.parameter_id.name
+            # if self.quiz == 'is_quiz_v':
+            #     self.record_name = u'Verificación final examen'
+            # if self.quiz == 'is_quiz_p':
+            #     self.record_name = u'Producto de la unidad examen'
     #
     # # @api.model
     # # def create(self, vals):
@@ -330,18 +390,16 @@ class SieScore(models.Model):
     #
     # @api.multi
     # def print_act(self):
-    #     return self.env['report'].get_action(self, 'openedunav_escape_report.report_score_act')
+    #     return self.env['report'].get_action(self, 'openedunav_core_report.report_score_act')
     #
     # @api.model
     # def _needaction_domain_get(self):
-    #     if self.env.user.groups_id.filtered(lambda r: r.id == self.env.ref('openedunav_escape.group_sie_stats').id):
+    #     if self.env.user.groups_id.filtered(lambda r: r.id == self.env.ref('openedunav_core.group_sie_stats').id):
     #         return [('state', '=', 'published')]
-    #     if self.env.user.groups_id.filtered(lambda r: r.id == self.env.ref('openedunav_escape.group_sie_teacher').id):
+    #     if self.env.user.groups_id.filtered(lambda r: r.id == self.env.ref('openedunav_core.group_sie_teacher').id):
     #         return [('state', '=', 'for review')]
     #     return False
 
-
-    @api.multi
     def sort_by_name(self):
         for record in self:
              collator = icu.Collator.createInstance(icu.Locale('es'))
@@ -352,7 +410,6 @@ class SieScore(models.Model):
                  seq += 1
                  student.write({'seq':seq})
 
-    @api.multi
     def sort_by_score(self):
         for record in self:
             student_ids = record.student_ids.sorted(

@@ -62,7 +62,7 @@
         </record>
 
 
-        <record model="ir.actions.act_window" id="act_open_sie_faculty_view">
+        <record model="ir.actions.act_window" id="action_list_sie_faculty">
             <field name="name">Docentes y Evaluadores</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">sie.faculty</field>

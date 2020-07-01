@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Reports -->
+
+        <menuitem id="certificate_evaluation_menu"
+                  name="Certificado de Evaluacion"
+                  action="action_open_certificate_evaluation_wizard"
+                  parent="openedunav_score.sie_reports_menu"
+                  groups="base.group_system,openedunav_core.group_admin"
+                  sequence="1"/>
+
+        <menuitem id="sie_report_aguena_integrator_product"
+                  name="Integrator Product"
+                  action="action_open_integrator_product_wizard"
+                  parent="openedunav_score.sie_reports_menu"
+                  groups="base.group_system,openedunav_core.group_admin"
+                  sequence="5"/>
+
+        <menuitem id="sie_report_aguena_integrator_product_student"
+                  name="Integrator Product Student"
+                  action="action_open_integrator_product_student_wizard"
+                  parent="openedunav_score.sie_reports_menu"
+                  groups="base.group_system,openedunav_core.group_student"
+                  sequence="6"/>
+
+        <menuitem id="sie_report_aguena_certificate_menu"
+                  name="Certificate"
+                  action="action_open_certificate_wizard"
+                  parent="openedunav_score.sie_reports_menu"
+                  groups="base.group_system,openedunav_core.group_admin"
+                  sequence="7"/>
+
+        <menuitem id="sie_report_aguena_subject_menu"
+                  name="Subject"
+                  action="action_open_subject_wizard"
+                  parent="openedunav_score.sie_reports_menu"
+                  groups="base.group_system,openedunav_core.group_admin"
+                  sequence="8"/>
+
+    </data>
+</openerp>

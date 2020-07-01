@@ -14,6 +14,7 @@
                 </form>
             </field>
         </record>
+
         <record id="sie_course_score_view_tree" model="ir.ui.view">
             <field name="name">sie.course.score.view.tree</field>
             <field name="model">sie.course</field>
@@ -33,11 +34,9 @@
             </field>
         </record>
 
-        <record id="act_open_sie_course_score_view" model="ir.actions.act_window">
+        <record model="ir.actions.act_window" id="action_list_sie_course_score" >
             <field name="name">Curso</field>
-            <field name="type">ir.actions.act_window</field>
             <field name="res_model">sie.course.score</field>
-            <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="search_view_id" ref="sie_course_score_view_search"/>
             <field name="domain">[]</field>

@@ -2,8 +2,8 @@
 <odoo>
 
 
-        <record id="sie_student_view_form_inherit_escape" model="ir.ui.view">
-            <field name="name">sie.student.form.inherit_escape</field>
+        <record id="sie_student_view_form_inherit" model="ir.ui.view">
+            <field name="name">sie.student.form.inherit</field>
             <field name="model">sie.student</field>
             <field name="inherit_id" ref="openedunav_core.sie_student_view_form"/>
             <field name="arch" type="xml">

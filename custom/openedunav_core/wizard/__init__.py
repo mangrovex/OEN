@@ -19,7 +19,7 @@
 #
 ##############################################################################
 
-from . import create_student
-from . import faculty_create_employee_wizard
-from . import faculty_create_user_wizard
-from . import students_create_user_wizard
+from . import sie_create_student
+from . import wizard_sie_faculty_employee
+from . import wizard_sie_faculty
+from . import wizard_sie_student

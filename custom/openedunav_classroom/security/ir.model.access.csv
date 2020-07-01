@@ -6,3 +6,9 @@ access_sie_promotion_course,access_sie_promotion_course,model_sie_promotion_cour
 access_sie_subject_unit,access_sie_subject_unit,model_sie_subject_unit,base.group_user,1, 1, 1, 1 
 access_sie_subject,access_sie_subject,model_sie_subject,base.group_user,1, 1, 1, 1 
 access_sie_course,access_sie_course,model_sie_course,base.group_user,1, 1, 1, 1
+access_sie_concept,access_sie_concept,model_sie_concept,base.group_user,1, 1, 1, 1
+access_sie_param_name,access_sie_param_name,model_sie_param_name,base.group_user,1, 1, 1, 1
+access_sie_matrix_parameter,access_sie_matrix_parameter,model_sie_matrix_parameter,base.group_user,1, 1, 1, 1
+access_sie_matrix,access_sie_matrix,model_sie_matrix,base.group_user,1, 1, 1, 1
+access_sie_integrator_product_student,access_sie_integrator_product_student,model_sie_integrator_product_student,base.group_user,1, 1, 1, 1
+access_sie_integrator_product,access_sie_integrator_product,model_sie_integrator_product,base.group_user,1, 1, 1, 1

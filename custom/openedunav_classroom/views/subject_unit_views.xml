@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-        <record id="view_sie_subject_unit_form" model="ir.ui.view">
+        <record id="sie_subject_unit_view_form" model="ir.ui.view">
             <field name="name">sie.subject.unit.form</field>
             <field name="model">sie.subject.unit</field>
             <field name="arch" type="xml">
@@ -29,7 +29,8 @@
                 </form>
             </field>
         </record>
-        <record id="view_sie_subject_unit_tree" model="ir.ui.view">
+
+        <record id="sie_subject_unit_view_tree" model="ir.ui.view">
             <field name="name">sie.subject.unit.tree</field>
             <field name="model">sie.subject.unit</field>
             <field name="arch" type="xml">

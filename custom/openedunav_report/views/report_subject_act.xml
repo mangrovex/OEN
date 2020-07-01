@@ -3,8 +3,8 @@
 <openerp>
     <data>
         <template id="report_subject_act">
-            <t t-call="openedunav_aguena_report.html_container">
-                <t t-call="openedunav_aguena_report.score_act_layout">
+            <t t-call="openedunav_report.html_container">
+                <t t-call="openedunav_report.score_act_layout">
                     <div class="page">
                         <div class="row">
                             <div class="col-md-12">

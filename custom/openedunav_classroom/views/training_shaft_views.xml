@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="sie_training_shaft_view_form" model="ir.ui.view">
+            <field name="name">sie.training.shaft.form</field>
+            <field name="model">sie.training.shaft</field>
+            <field name="arch" type="xml">
+                <form string="Shaft of Training" version="7.0">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only" string="Name"/>
+                            <h2>
+                                <field name="name" class="oe_inline" placeholder="Shaft of Training"/>
+                            </h2>
+                        </div>
+
+                        <group>
+                            <field name="faculty_id"/>
+                        </group>
+                    </sheet>
+                    <!--<notebook>-->
+                    <!--<page string="Subjects">-->
+                    <!--<field name="subject_ids" mode="tree" nolabel="1" readonly="1"/>-->
+                    <!--</page>-->
+                    <!--</notebook>-->
+                </form>
+            </field>
+        </record>
+
+        <record id="sie_training_shaft_view_tree" model="ir.ui.view">
+            <field name="name">sie.training.shaft.tree</field>
+            <field name="model">sie.training.shaft</field>
+            <field name="arch" type="xml">
+                <tree string="Shaft of Training">
+                    <field name="name"/>
+                    <field name="faculty_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sie_training_shaft_view_search" model="ir.ui.view">
+            <field name="name">sie.training.shaft.search</field>
+            <field name="model">sie.training.shaft</field>
+            <field name="arch" type="xml">
+                <search string="Search Shaft of Training">
+                    <field name="name"/>
+                    <field name="faculty_id"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_list_sie_training_shaft">
+            <field name="name">Shaft of Training</field>
+            <field name="res_model">sie.training.shaft</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="sie_training_shaft_view_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new shaft of training.
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

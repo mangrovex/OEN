@@ -55,7 +55,7 @@ class ResPartner(models.Model):
     tz = fields.Selection(default="America/Guayaquil")
     city_id = fields.Many2one(
         'res.state.city',
-        'City',
+        'City Id.',
         ondelete='restrict',
         domain="[('state_id','=',state_id)]"
     )

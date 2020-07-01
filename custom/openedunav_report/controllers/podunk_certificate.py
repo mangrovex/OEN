@@ -9,7 +9,7 @@ from manexreport.widget.pagebreak import PageBreak
 from manexreport.prefab import alignment
 import manexreport.prefab.paper as paper_type
 
-from openedunav.openedunav_school.controllers.util import format_sie
+# from openedunav.openedunav_school.controllers.util import format_sie
 
 
 def get_heading(report, course_name, promotion_name, year, student_name, student_nuc, t_hours, credit, start_date,

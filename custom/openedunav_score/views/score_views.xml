@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-        <record id="view_sie_score_form" model="ir.ui.view">
+        <record id="sie_score_view_form" model="ir.ui.view">
             <field name="name">sie.score.form</field>
             <field name="model">sie.score</field>
             <field name="arch" type="xml">
@@ -11,10 +11,10 @@
                                 class="oe_highlight"/>
                         <button name="action_reject" type="object" states="published" string="Reject"
                                 class="oe_highlight"
-                                groups="openedunav_escape.group_sie_stats"/>
+                                groups="openedunav_core.group_sie_stats"/>
                         <button name="action_approve" type="object" states="published" string="Approve"
                                 class="oe_highlight"
-                                groups="openedunav_escape.group_sie_stats" confirm="Are you sure?"/>
+                                groups="openedunav_core.group_sie_stats" confirm="Are you sure?"/>
                         <button name="print_act" string="Print Act" type="object" states="published" icon="gtk-print"/>
                         <field name="state" widget="statusbar" statusbar_visible="draft,for review,published,approved"/>
                     </header>
@@ -72,12 +72,14 @@
                 </form>
             </field>
         </record>
-        <record id="view_sie_score_tree" model="ir.ui.view">
+
+        <record model="ir.ui.view" id="sie_score_view_tree">
             <field name="name">sie.score.tree</field>
             <field name="model">sie.score</field>
+            <field name="priority" eval="16"/>
             <field name="arch" type="xml">
-                <tree string="Scores"
-                      colors="gray:state == 'draft';red:state == 'published';blue:state == 'approved';orange:state=='for review'">
+                <tree string="Scores" decoration-muted="state=='draft'" decoration-danger="state=='published'"
+                      decoration-info="state=='approved'" decoration-primary="state=='for review'">
                     <field name="course_id"/>
                     <field name="subject_id"/>
                     <field name="parameter_id"/>
@@ -88,7 +90,8 @@
                 </tree>
             </field>
         </record>
-        <record id="view_sie_score_search" model="ir.ui.view">
+
+        <record id="sie_score_view_search" model="ir.ui.view">
             <field name="name">sie.score.search</field>
             <field name="model">sie.score</field>
             <field name="arch" type="xml">
@@ -110,13 +113,11 @@
             </field>
         </record>
 
-        <record model="ir.actions.act_window" id="act_open_sie_score_view">
+        <record model="ir.actions.act_window" id="action_list_sie_score">
             <field name="name">Scores</field>
-            <field name="type">ir.actions.act_window</field>
             <field name="res_model">sie.score</field>
-            <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="search_view_id" ref="view_sie_score_search"/>
+            <field name="search_view_id" ref="sie_score_view_search"/>
             <field name="domain">[]</field>
             <field name="context">{'search_default_group_course': 1}
             </field>
@@ -126,17 +127,20 @@
                 </p>
             </field>
         </record>
-        <record model="ir.actions.act_window.view" id="act_open_sie_score_view_form">
-            <field name="act_window_id" ref="act_open_sie_score_view"/>
+
+        <record model="ir.actions.act_window.view" id="action_open_sie_score">
+            <field name="act_window_id" ref="action_list_sie_score"/>
             <field name="sequence" eval="20"/>
             <field name="view_mode">form</field>
-            <field name="view_id" ref="view_sie_score_form"/>
+            <field name="view_id" ref="sie_score_view_form"/>
         </record>
-        <record model="ir.actions.act_window.view" id="act_open_sie_score_view_tree">
-            <field name="act_window_id" ref="act_open_sie_score_view"/>
+
+        <record model="ir.actions.act_window.view" id="action_tree_sie_score">
+            <field name="act_window_id" ref="action_list_sie_score"/>
             <field name="sequence" eval="10"/>
             <field name="view_mode">tree</field>
-            <field name="view_id" ref="view_sie_score_tree"/>
+            <field name="view_id" ref="sie_score_view_tree"/>
         </record>
+
     </data>
 </openerp>

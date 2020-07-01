@@ -2,7 +2,7 @@
 <odoo>
     <data>
 
-        <record id="view_student_category_form" model="ir.ui.view">
+        <record id="student_category_view_form" model="ir.ui.view">
              <field name="name">sie.student.category.form</field>
              <field name="model">sie.student.category</field>
              <field name="arch" type="xml">
@@ -16,7 +16,7 @@
              </field>
          </record>
 
-         <record id="view_student_category_list" model="ir.ui.view">
+         <record id="student_category_view_tree" model="ir.ui.view">
              <field name="name">sie.student.category.list</field>
              <field name="model">sie.student.category</field>
              <field eval="8" name="priority"/>
@@ -27,7 +27,7 @@
              </field>
          </record>
 
-         <record id="open_view_categ_form" model="ir.actions.act_window">
+         <record id="action_list_sie_student_category" model="ir.actions.act_window">
              <field name="name">Student Tags</field>
              <field name="res_model">sie.student.category</field>
              <field name="view_mode">tree,form</field>

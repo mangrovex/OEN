@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="sie_matrix_parameter_view_form" model="ir.ui.view">
+            <field name="name">sie.matrix.parameter.form</field>
+            <field name="model">sie.matrix.parameter</field>
+            <field name="arch" type="xml">
+                <form string="Parameters">
+                    <sheet>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                        <group col="2">
+                            <field name="param_name" options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
+                        </group>
+                        <group col="4">
+                            <field name="coefficient"/>
+                            <field name="minimun_score"/>
+                            <field name="total_coefficient"/>
+                            <field name="type"/>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                        </group>
+                        <notebook>
+                            <page string="Parámetros hijos">
+                                <field name="child_ids" nolabel="1"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sie_matrix_parameter_view_tree" model="ir.ui.view">
+            <field name="name">sie.matrix.parameter.tree</field>
+            <field name="model">sie.matrix.parameter</field>
+            <field name="arch" type="xml">
+                <tree string="Parameters">
+                    <field name="param_name"/>
+                    <field name="coefficient"/>
+                    <field name="minimun_score"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</openerp>

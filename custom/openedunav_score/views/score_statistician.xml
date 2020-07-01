@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-        <record id="view_sie_score_statistician_form" model="ir.ui.view">
+        <record id="sie_score_statistician_view_form" model="ir.ui.view">
             <field name="name">sie.score.statistician.form</field>
             <field name="model">sie.score</field>
             <field name="arch" type="xml">
@@ -11,14 +11,14 @@
                                 class="oe_highlight"/>
                         <button name="action_approve" type="object" states="published" string="Approve" icon="gtk-apply"
                                 class="oe_highlight"
-                                groups="openedunav_escape.group_sie_stats"/>
+                                groups="openedunav_core.group_sie_stats"/>
                         <button name="action_reject" type="object" icon="gtk-undo" states="published" string="Reject"
                                 class="oe_highlight"
-                                groups="openedunav_escape.group_sie_stats"/>
+                                groups="openedunav_core.group_sie_stats"/>
                         <button name="action_to_published" type="object" icon="gtk-undo" states="approved"
                                 string="To published"
                                 class="oe_highlight"
-                                groups="openedunav_escape.group_sie_stats" confirm="Are you sure?"/>
+                                groups="openedunav_core.group_sie_stats" confirm="Are you sure?"/>
                         <field name="state" widget="statusbar" statusbar_visible="draft,published,approved"/>
                     </header>
                     <sheet>
@@ -68,12 +68,13 @@
                 </form>
             </field>
         </record>
-        <record id="view_sie_score_statistician_tree" model="ir.ui.view">
+
+        <record id="sie_score_statistician_view_tree" model="ir.ui.view">
             <field name="name">sie.score.statistician.tree</field>
             <field name="model">sie.score</field>
             <field name="arch" type="xml">
-                <tree string="Scores"
-                      colors="gray:state == 'draft';red:state == 'published';blue:state == 'approved'">
+                <tree string="Scores" decoration-muted="state=='draft'" decoration-danger="state=='published'"
+                      decoration-info="state=='approved'">
                     <field name="parameter_id"/>
                     <!--<field name="quiz"/>-->
                     <field name="score_number"/>
@@ -82,7 +83,8 @@
                 </tree>
             </field>
         </record>
-        <record id="view_sie_score_statistician_search" model="ir.ui.view">
+
+        <record id="sie_score_statistician_view_search" model="ir.ui.view">
             <field name="name">sie.score.statistician.search</field>
             <field name="model">sie.score</field>
             <field name="arch" type="xml">
@@ -104,13 +106,11 @@
             </field>
         </record>
 
-        <record model="ir.actions.act_window" id="act_open_sie_score_statistician_view">
+        <record model="ir.actions.act_window" id="action_list_sie_score_statistician">
             <field name="name">Scores Statistician</field>
-            <field name="type">ir.actions.act_window</field>
             <field name="res_model">sie.score</field>
-            <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="search_view_id" ref="view_sie_score_statistician_search"/>
+            <field name="search_view_id" ref="sie_score_statistician_view_search"/>
             <field name="domain">[('state','!=','draft'),('course_id.statistician.user_id','=',uid)]</field>
             <field name="context">{'search_default_group_course': 1,'search_default_group_subject': 1}
             </field>
@@ -120,18 +120,19 @@
                 </p>
             </field>
         </record>
-        <record model="ir.actions.act_window.view" id="act_open_sie_score_view_statistician_form">
-            <field name="act_window_id" ref="act_open_sie_score_statistician_view"/>
+
+        <record model="ir.actions.act_window.view" id="action_open_sie_score_statistician">
+            <field name="act_window_id" ref="action_list_sie_score_statistician"/>
             <field name="sequence" eval="20"/>
             <field name="view_mode">form</field>
-            <field name="view_id" ref="view_sie_score_statistician_form"/>
+            <field name="view_id" ref="sie_score_statistician_view_form"/>
         </record>
 
-        <record model="ir.actions.act_window.view" id="act_open_sie_score_view_statistician_tree">
-            <field name="act_window_id" ref="act_open_sie_score_statistician_view"/>
+        <record model="ir.actions.act_window.view" id="action_tree_sie_score_statistician">
+            <field name="act_window_id" ref="action_list_sie_score_statistician"/>
             <field name="sequence" eval="10"/>
             <field name="view_mode">tree</field>
-            <field name="view_id" ref="view_sie_score_statistician_tree"/>
+            <field name="view_id" ref="sie_score_statistician_view_tree"/>
         </record>
     </data>
 </openerp>

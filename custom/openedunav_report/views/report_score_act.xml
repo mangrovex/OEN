@@ -3,15 +3,15 @@
 <openerp>
     <data>
         <template id="report_score_act">
-            <t t-call="openedunav_aguena_report.html_container">
-                <t t-call="openedunav_aguena_report.score_act_layout">
+            <t t-call="openedunav_report.html_container">
+                <t t-call="openedunav_report.score_act_layout">
                     <t t-foreach="docs" t-as="o">
                         <div class="page">
                             <div class="row">
                                 <div class="col-xs-12">
                                     <p style="text-align:center;">
                                         <img id="full-screen-background-image" style="width:60px;height:60px;"
-                                             src="/openedunav_aguena_report/static/src/img/aguena.png"/>
+                                             src="/openedunav_report/static/src/img/.png"/>
                                     </p>
                                     <p style="text-align: center; color: black; font-weight: bold; font-style: normal; font-size: 7pt;">
                                         ARMADA DEL ECUADOR

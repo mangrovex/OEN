@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-        <record id="view_sie_religion_tree" model="ir.ui.view">
+        <record id="sie_religion_view_tree" model="ir.ui.view">
             <field name="name">sie.religion.tree</field>
             <field name="model">sie.religion</field>
             <field name="priority" eval="8"/>
@@ -12,7 +12,8 @@
                 </tree>
             </field>
         </record>
-        <record id="view_sie_religion_form" model="ir.ui.view">
+
+        <record id="sie_religion_view_form" model="ir.ui.view">
             <field name="name">sie.religion.form</field>
             <field name="model">sie.religion</field>
             <field name="priority" eval="8"/>
@@ -28,7 +29,8 @@
                 </form>
             </field>
         </record>
-        <record id="view_sie_religion_search" model="ir.ui.view">
+
+        <record id="sie_religion_view_search" model="ir.ui.view">
             <field name="name">sie.religion.search</field>
             <field name="model">sie.religion</field>
             <field name="priority" eval="8"/>
@@ -44,11 +46,12 @@
                 </search>
             </field>
         </record>
-        <record model="ir.actions.act_window" id="act_open_sie_religion_view">
+
+        <record model="ir.actions.act_window" id="action_list_sie_religion">
             <field name="name">Religion</field>
             <field name="res_model">sie.religion</field>
             <field name="view_mode">tree,form</field>
-            <field name="search_view_id" ref="view_sie_religion_search"/>
+            <field name="search_view_id" ref="sie_religion_view_search"/>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
                     Click to create a new religion.

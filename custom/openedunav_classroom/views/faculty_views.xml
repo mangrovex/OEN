@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
     <data>
-        <record id="view_sie_faculty_form_escape_inh" model="ir.ui.view">
-            <field name="name">sie.faculty.form.escape.inh</field>
+        <record id="sie_faculty_view_form_inherit" model="ir.ui.view">
+            <field name="name">sie.faculty.form.inherit</field>
             <field name="model">sie.faculty</field>
             <field name="inherit_id" ref="openedunav_core.sie_faculty_view_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//page[@name='sie_information']" position="after">
+                <xpath expr="//page[@name='sie_page']" position="after">
                     <page string="Tipo de Docente">
                         <group col="4">
                             <field name="professor"/>

@@ -1,0 +1,73 @@
+<openerp>
+    <data>
+        <record id="sie_register_directors_view_tree" model="ir.ui.view">
+            <field name="name">sie.register.directors.tree</field>
+            <field name="model">sie.register.directors</field>
+            <field name="arch" type="xml">
+                <tree string="Register of Directors">
+                    <field name="name"/>
+                    <field name="course_id"/>
+                    <field name="director_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sie_register_directors_view_form" model="ir.ui.view">
+            <field name="name">sie.register.directors.form</field>
+            <field name="model">sie.register.directors</field>
+            <field name="arch" type="xml">
+                <form string="Register of directors">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="course_id" options='{"no_open":True}'/>
+                            <field name="year"/>
+                            <field name="position_director"/>
+                            <field name="director_id" options='{"no_open":True}'/>
+                            <field name="position_statistician"/>
+                            <field name="statistician_id" options='{"no_open":True}'/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sie_register_directors_view_search" model="ir.ui.view">
+            <field name="name">sie.register.directors.search</field>
+            <field name="model">sie.register.directors</field>
+            <field name="arch" type="xml">
+                <search string="Register of directors">
+                    <field name="name" select="True"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_list_sie_register_directors">
+            <field name="name">Register Directors</field>
+            <field name="res_model">sie.register.directors</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="sie_register_directors_view_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new register of directors.
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="action_open_sie_register_directors">
+            <field name="act_window_id" ref="action_list_sie_register_directors"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="sie_register_directors_view_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="action_tree_sie_register_directors">
+            <field name="act_window_id" ref="action_list_sie_register_directors"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="sie_register_directors_view_tree"/>
+        </record>
+    </data>
+</openerp>

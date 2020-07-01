@@ -4,7 +4,8 @@
 #    Manexware S.A.
 #    Copyright (C) 2009-TODAY Manexware
 #
-# noinspection PyStatementEffect
+#    noinspection PyStatementEffect
+#
 ###############################################################################
 
 
@@ -20,11 +21,9 @@
     'website': 'http://www.manexware.com',
     'depends': [
         'openedunav_core',
-        # 'openedunav_classroom',
-        # 'openedunav_cescan',
-        # 'openedunav_register',
+        'openedunav_classroom',
         # 'openedunav_timekeeping',
-        # 'openedunav_score',
+        'openedunav_score',
         # 'openedunav_report',
         # 'web_openedunav',
     ],

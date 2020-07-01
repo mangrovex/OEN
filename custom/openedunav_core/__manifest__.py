@@ -14,7 +14,6 @@
     'category': 'Education',
     'website': 'http://www.manexware.com',
     'summary': 'Sistema Educativo de la Armada del Ecuador',
-    'images': [],
     'depends': [
         'base_location',
         'partner_contact_information',
@@ -56,7 +55,12 @@
         'views/hr_view.xml',
         'views/website_assets.xml',
         'views/openedunav_template.xml',
+        'wizard/sie_create_student_views.xml',
+        'wizard/wizard_sie_faculty_employee_views.xml',
+        # 'wizard/wizard_sie_faculty_views.xml',
+        # 'wizard/wizard_sie_student_views.xml',
         'views/sie_menu.xml'
+
     ],
 
     'installable': True,

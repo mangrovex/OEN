@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="sie_matrix_view_form" model="ir.ui.view">
+            <field name="name">sie.matrix.form</field>
+            <field name="model">sie.matrix</field>
+            <field name="arch" type="xml">
+                <form string="Matrix">
+                    <sheet>
+                        <h1>
+                            <field name="display_name"/>
+                        </h1>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group col="4">
+                            <field name="promotion_course" options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'
+                                   style="width:50%%"/>
+                            <field name="year" style="width:30%%"/>
+                        </group>
+                        <notebook>
+                            <page string="Parámetros">
+                                <field name="parameter_ids" nolabel="1"/>
+                            </page>
+                            <!--<page string="Score">-->
+                                <!--<group col="4">-->
+                                    <!--<field name="min_aprovechamiento"/>-->
+                                    <!--<field name="min_integrador"/>-->
+                                    <!--<field name="min_trabajo"/>-->
+                                    <!--<field name="min_aprendizaje"/>-->
+                                    <!--<field name="min_productividad"/>-->
+                                    <!--<field name="min_actitud"/>-->
+                                    <!--<field name="minimum_score"/>-->
+                                <!--</group>-->
+                            <!--</page>-->
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sie_matrix_view_tree" model="ir.ui.view">
+            <field name="name">sie.matrix.tree</field>
+            <field name="model">sie.matrix</field>
+            <field name="arch" type="xml">
+                <tree string="Matrix">
+                    <field name="name"/>
+                    <field name="promotion_course"/>
+                    <field name="year"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sie_matrix_view_search" model="ir.ui.view">
+            <field name="name">sie.matrix.search</field>
+            <field name="model">sie.matrix</field>
+            <field name="arch" type="xml">
+                <search string="Search Course">
+                    <field name="year"/>
+                    <field name="promotion_course"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_list_sie_matrix">
+            <field name="name">Parámetros de Evaluación</field>
+            <field name="res_model">sie.matrix</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="sie_matrix_view_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new matrix.
+                </p>
+            </field>
+        </record>
+    </data>
+</openerp>
