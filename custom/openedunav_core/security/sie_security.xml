@@ -8,20 +8,20 @@
         </record>
 
         <record id="module_category_openedunav_others" model="ir.module.category">
-            <field name="name">OpenEduCat Others</field>
+            <field name="name">Others Users</field>
             <field name="description">Helps you manage your institutes different-different users.</field>
             <field name="sequence">20</field>
         </record>
 
         <record id="group_student" model="res.groups">
-            <field name="name">OpenEduNav / Alumno</field>
+            <field name="name">OpenEduNav / Student</field>
             <field name="category_id" ref="module_category_openedunav"/>
             <field name="users" eval="[(4, ref('base.user_root'))]"/>
             <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
         </record>
 
         <record id="group_faculty" model="res.groups">
-            <field name="name">OpenEduNav / Docente</field>
+            <field name="name">OpenEduNav / Faculty</field>
             <field name="category_id" ref="module_category_openedunav"/>
             <field name="users" eval="[(4, ref('base.user_root'))]"/>
             <field name="implied_ids"
@@ -29,7 +29,7 @@
         </record>
 
         <record id="group_evaluator" model="res.groups">
-            <field name="name">OpenEduNav / Evaluador</field>
+            <field name="name">OpenEduNav / Evaluator</field>
             <field name="category_id" ref="module_category_openedunav"/>
             <field name="users" eval="[(4, ref('base.user_root'))]"/>
             <field name="implied_ids"
@@ -45,7 +45,7 @@
         </record>
 
         <record id="group_director" model="res.groups">
-            <field name="name">OpenEduNav / Directivo</field>
+            <field name="name">OpenEduNav / Executive</field>
             <field name="category_id" ref="module_category_openedunav"/>
             <field name="users" eval="[(4, ref('base.user_root'))]"/>
             <field name="implied_ids"
@@ -53,7 +53,7 @@
         </record>
 
         <record id="group_admin" model="res.groups">
-            <field name="name">OpenEduNav / Back Office Admin</field>
+            <field name="name">OpenEduNav / Administrator</field>
             <field name="category_id" ref="module_category_openedunav"/>
             <field name="implied_ids"
                    eval="[(4, ref('openedunav_core.group_faculty')),(4, ref('openedunav_core.group_supervisor')),(4, ref('openedunav_core.group_evaluator')),(4, ref('openedunav_core.group_director'))]"/>
@@ -66,13 +66,33 @@
             <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
         </record>
 
-        <!-- Executive-->
-        <record id="group_sie_executive" model="res.groups">
-            <field name="name">Executive</field>
+        <record id="group_statistician" model="res.groups">
+            <field name="name">OpenEduNav / Statistician</field>
             <field name="category_id" ref="module_category_openedunav"/>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
         </record>
 
-<!--        <record model="ir.rule" id="student_login_rule">-->
+        <record id="group_professional_attitude" model="res.groups">
+            <field name="name">OpenEduNav / Professional Attitude</field>
+            <field name="category_id" ref="module_category_openedunav"/>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+
+        <record id="group_professional_attitude_professor" model="res.groups">
+            <field name="name">OpenEduNav / Professional Attitude Professor</field>
+            <field name="category_id" ref="module_category_openedunav"/>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+
+        <!-- Planning-->
+        <record id="group_planning" model="res.groups">
+            <field name="name">OpenEduNav / Planning</field>
+            <field name="category_id" ref="module_category_openedunav"/>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+
+
+        <!--        <record model="ir.rule" id="student_login_rule">-->
 <!--            <field name="name">Student Login rule</field>-->
 <!--            <field name="model_id" ref="model_sie_student" />-->
 <!--            <field name="groups"-->
@@ -120,46 +140,6 @@
 <!--            <field name="domain_force"> [(1,'=',1)]</field>-->
 <!--        </record>-->
 
-
-
-        <!-- Teacher -->
-        <record id="group_sie_teacher" model="res.groups">
-            <field name="name">Teacher</field>
-            <field name="category_id" ref="module_category_openedunav"/>
-        </record>
-        <!-- Statisticians -->
-        <record id="group_sie_stats" model="res.groups">
-            <field name="name">Statistician</field>
-            <field name="category_id" ref="module_category_openedunav"/>
-        </record>
-
-        <record id="group_sie_professional_attitude" model="res.groups">
-            <field name="name">Professional Attitude</field>
-            <field name="category_id" ref="module_category_openedunav"/>
-        </record>
-
-        <record id="group_sie_professional_attitude_professor" model="res.groups">
-            <field name="name">Professional Attitude Professor</field>
-            <field name="category_id" ref="module_category_openedunav"/>
-        </record>
-
-        <!-- Planning-->
-        <record id="group_sie_planning" model="res.groups">
-            <field name="name">Planning</field>
-            <field name="category_id" ref="module_category_openedunav"/>
-        </record>
-
-        <!-- Executive-->
-        <record id="group_sie_executive" model="res.groups">
-            <field name="name">Executive</field>
-            <field name="category_id" ref="module_category_openedunav"/>
-        </record>
-
-        <!-- Academic-->
-        <record id="group_sie_academic" model="res.groups">
-            <field name="name">Academic</field>
-            <field name="category_id" ref="module_category_openedunav"/>
-        </record>
 
 
     </data>

@@ -11,14 +11,14 @@
                                 class="oe_highlight"/>
                         <button name="action_approve" type="object" states="published" string="Approve" icon="gtk-apply"
                                 class="oe_highlight"
-                                groups="openedunav_core.group_sie_stats"/>
+                                groups="openedunav_core.group_statistician"/>
                         <button name="action_reject" type="object" icon="gtk-undo" states="published" string="Reject"
                                 class="oe_highlight"
-                                groups="openedunav_core.group_sie_stats"/>
+                                groups="openedunav_core.group_statistician"/>
                         <button name="action_to_published" type="object" icon="gtk-undo" states="approved"
                                 string="To published"
                                 class="oe_highlight"
-                                groups="openedunav_core.group_sie_stats" confirm="Are you sure?"/>
+                                groups="openedunav_core.group_statistician" confirm="Are you sure?"/>
                         <field name="state" widget="statusbar" statusbar_visible="draft,published,approved"/>
                     </header>
                     <sheet>

@@ -394,9 +394,9 @@ class SieScore(models.Model):
     #
     # @api.model
     # def _needaction_domain_get(self):
-    #     if self.env.user.groups_id.filtered(lambda r: r.id == self.env.ref('openedunav_core.group_sie_stats').id):
+    #     if self.env.user.groups_id.filtered(lambda r: r.id == self.env.ref('openedunav_core.group_statistician').id):
     #         return [('state', '=', 'published')]
-    #     if self.env.user.groups_id.filtered(lambda r: r.id == self.env.ref('openedunav_core.group_sie_teacher').id):
+    #     if self.env.user.groups_id.filtered(lambda r: r.id == self.env.ref('openedunav_core.group_faculty').id):
     #         return [('state', '=', 'for review')]
     #     return False
 

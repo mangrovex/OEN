@@ -11,10 +11,10 @@
                                 class="oe_highlight"/>
                         <button name="action_reject" type="object" states="published" string="Reject"
                                 class="oe_highlight"
-                                groups="openedunav_core.group_sie_stats"/>
+                                groups="openedunav_core.group_statistician"/>
                         <button name="action_approve" type="object" states="published" string="Approve"
                                 class="oe_highlight"
-                                groups="openedunav_core.group_sie_stats" confirm="Are you sure?"/>
+                                groups="openedunav_core.group_statistician" confirm="Are you sure?"/>
                         <button name="print_act" string="Print Act" type="object" states="published" icon="gtk-print"/>
                         <field name="state" widget="statusbar" statusbar_visible="draft,for review,published,approved"/>
                     </header>

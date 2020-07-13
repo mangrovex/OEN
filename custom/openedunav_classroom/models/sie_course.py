@@ -219,7 +219,7 @@ class SieCourse(models.Model):
     def _compute_director(self):
         for record in self:
             if record.course_name:
-                record.director = record.env.ref('openedunav_core.group_sie_executive').id
+                record.director = record.env.ref('openedunav_core.group_director').id
 
     @api.depends('subject_ids.hours','subject_ids.credits')
     def _compute_total(self):

@@ -9,15 +9,15 @@
                     <header>
                         <button name="action_plan" type="object"
                                 string="Planificado"
-                                groups="base.group_system,openedunav_core.group_sie_planning"
+                                groups="base.group_system,openedunav_core.group_planning"
                                 states="running,finalized"/>
                         <button name="action_run" type="object"
                                 string="Ejecución" states="planned"
-                                groups="base.group_system,openedunav_core.group_sie_planning"
+                                groups="base.group_system,openedunav_core.group_planning"
                                 class="oe_highlight"/>
                         <button name="action_done" type="object"
                                 string="Finalizado" states="running"
-                                groups="base.group_system,openedunav_core.group_sie_planning"
+                                groups="base.group_system,openedunav_core.group_planning"
                                 class="oe_highlight"/>
                         <field name="state" widget="statusbar"/>
                     </header>

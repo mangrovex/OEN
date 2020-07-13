@@ -23,8 +23,8 @@
         'openedunav_core',
         'openedunav_classroom',
         'openedunav_score',
-        'openedunav_report',
         'openedunav_timekeeping',
+        'openedunav_report',
         'web_openedunav',
     ],
     'images': [

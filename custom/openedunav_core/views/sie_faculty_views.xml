@@ -28,6 +28,24 @@
                 </xpath>
                 <xpath expr="//field[@name='phone']" position="before">
                     <field name="category_id" required="True" />
+                    <field name="type_personal" required="True" />
+                </xpath>
+                <xpath expr="//group[@name='military_information_group']" position="inside">
+                    <group attrs="{'invisible':[('type_personal', '=', 'civil')]}">
+                        <group>
+                            <field name="grade_id"
+                                   options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
+                            <field name="specialty_id"
+                                   options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
+                            <field name="sub_specialty_id"/>
+                        </group>
+                        <group>
+                            <field name="serial_navy"/>
+                            <field name="location_id"
+                                   options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
+
+                            </group>
+                    </group>
                 </xpath>
             </field>
         </record>
