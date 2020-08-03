@@ -53,13 +53,6 @@ class SieSubjectContent(models.Model):
         my_tz = pytz.timezone(self._context.get('tz') or 'UTC')
         return datetime.now(my_tz).strftime('Guayaquil, %d de %m/ del %Y')
 
-    @api.model_create_multi
-    def create(self, vals_list):
-        super(SieSubjectContent, self).create(vals_list)
-        for record in self:
-            parent_id = self.env['sie.subject.unit'].search([('id', '=', record.parent_id.id)])
-            parent_id.calculate_total_hours(record.hours)
-
     def write(self, vals):
         super(SieSubjectContent, self).write(vals)
         for record in self:
