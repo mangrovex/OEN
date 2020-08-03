@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-13 00:01+0000\n"
-"PO-Revision-Date: 2020-07-13 07:29-0500\n"
+"PO-Revision-Date: 2020-08-02 18:02-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
 "Language: es\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.4\n"
 
 #. module: openedunav_core
 #: model_terms:ir.ui.view,arch_db:openedunav_core.person_abstract_entity_view_form
@@ -1506,7 +1506,7 @@ msgstr "Nacionalidad"
 #: model:ir.model,name:openedunav_core.model_sie_nato
 #: model:ir.ui.menu,name:openedunav_core.sie_nato_menu
 msgid "Nato"
-msgstr ""
+msgstr "Alfabeto fonético de la OTAN"
 
 #. module: openedunav_core
 #: model:ir.model.fields,field_description:openedunav_core.field_person_abstract_entity__activity_date_deadline
@@ -1888,12 +1888,12 @@ msgstr "Dirección Privada"
 #: code:addons/openedunav_core/models/sie_promotion.py:0
 #, python-format
 msgid "Promoción"
-msgstr ""
+msgstr "Promoción"
 
 #. module: openedunav_core
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_student__promotion_id
 msgid "Promoción del Estudiante"
-msgstr ""
+msgstr "Promoción del Estudiante"
 
 #. module: openedunav_core
 #: model:ir.ui.menu,name:openedunav_core.sie_promotion_menu
@@ -1910,14 +1910,14 @@ msgstr "Proporcionado por"
 #. module: openedunav_core
 #: model_terms:ir.ui.view,arch_db:openedunav_core.person_abstract_entity_view_form
 msgid "Provincia"
-msgstr ""
+msgstr "Provincia"
 
 #. module: openedunav_core
 #: model:ir.model.fields.selection,name:openedunav_core.selection__person_abstract_entity__study_level__fifth
 #: model:ir.model.fields.selection,name:openedunav_core.selection__sie_faculty__study_level__fifth
 #: model:ir.model.fields.selection,name:openedunav_core.selection__sie_student__study_level__fifth
 msgid "Quinto Nivel"
-msgstr ""
+msgstr "Quinto Nivel"
 
 #. module: openedunav_core
 #: model:ir.model.fields,field_description:openedunav_core.field_person_abstract_entity__ref
@@ -1978,7 +1978,7 @@ msgstr "Religión"
 #. module: openedunav_core
 #: model_terms:ir.ui.view,arch_db:openedunav_core.sie_religion_view_form
 msgid "Religion Detail"
-msgstr ""
+msgstr "Detalle"
 
 #. module: openedunav_core
 #: model:ir.actions.act_window,name:openedunav_core.action_list_sie_location
@@ -2274,7 +2274,7 @@ msgstr "Etiquetas de estudiantes"
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_faculty__sub_specialty_id
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_student__sub_specialty_id
 msgid "Sub Especialidad"
-msgstr ""
+msgstr "Sub Especialidad"
 
 #. module: openedunav_core
 #: model:ir.ui.menu,name:openedunav_core.sie_sub_specialty
@@ -2284,12 +2284,12 @@ msgstr "Sub Especialidad"
 #. module: openedunav_core
 #: model:ir.actions.act_window,name:openedunav_core.action_list_sie_sub_specialty
 msgid "Sub.Specialty"
-msgstr ""
+msgstr "Sub Especialidad"
 
 #. module: openedunav_core
 #: model_terms:ir.ui.view,arch_db:openedunav_core.sie_sub_specialty_view_tree
 msgid "Sub.specialty"
-msgstr ""
+msgstr "Sub Especialidad"
 
 #. module: openedunav_core
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_student_category__name
@@ -2402,7 +2402,7 @@ msgstr "Tipo"
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_faculty__type_ced_ruc
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_student__type_ced_ruc
 msgid "Type ID"
-msgstr "ID de tipo"
+msgstr "Tipo de Identificación"
 
 #. module: openedunav_core
 #: model:ir.model.fields,help:openedunav_core.field_person_abstract_entity__activity_exception_decoration
@@ -2548,7 +2548,7 @@ msgstr ""
 #. module: openedunav_core
 #: model_terms:ir.ui.view,arch_db:openedunav_core.sie_student_view_form
 msgid "Work Permit"
-msgstr ""
+msgstr "Permiso de trabajo"
 
 #. module: openedunav_core
 #: model_terms:ir.ui.view,arch_db:openedunav_core.person_abstract_entity_view_form

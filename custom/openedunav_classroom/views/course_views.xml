@@ -49,7 +49,7 @@
                             <!--<page string="Parameters">-->
                             <!--<field name="parameter_ids" nolabel="1"/>-->
                             <!--</page>-->
-                            <page string="Asignaturas">
+                            <page string="Módulos">
                                 <group col="4">
                                     <field name="no_of_subject"/>
                                     <field name="total_hours"/>

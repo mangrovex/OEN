@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-13 00:05+0000\n"
-"PO-Revision-Date: 2020-07-13 06:33-0500\n"
+"PO-Revision-Date: 2020-08-02 18:04-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
 "Language: es\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.4\n"
 
 #. module: openedunav_classroom
 #: code:addons/openedunav_classroom/models/sie_course.py:0
@@ -97,7 +97,7 @@ msgstr ""
 #. module: openedunav_classroom
 #: model:ir.model.fields,field_description:openedunav_classroom.field_sie_subject__acronym
 msgid "Acronimo"
-msgstr ""
+msgstr "Acrónimo"
 
 #. module: openedunav_classroom
 #: model:ir.model.fields.selection,name:openedunav_classroom.selection__sie_course__enrollment__a
@@ -122,7 +122,7 @@ msgstr ""
 #. module: openedunav_classroom
 #: model:ir.model.fields,field_description:openedunav_classroom.field_sie_subject_unit__subject_ref
 msgid "Asignatura ref"
-msgstr ""
+msgstr "Referencia a la Asignatura "
 
 #. module: openedunav_classroom
 #: model_terms:ir.ui.view,arch_db:openedunav_classroom.sie_course_view_form

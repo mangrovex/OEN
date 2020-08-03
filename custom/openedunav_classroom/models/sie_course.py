@@ -75,7 +75,7 @@ class SieCourse(models.Model):
     )
     no_of_subject = fields.Integer(
         compute='_compute_total',
-        string='No. Asignaturas',
+        string='No. Módulos',
         store=True
     )
     total_hours = fields.Integer(

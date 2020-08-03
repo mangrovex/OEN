@@ -38,6 +38,13 @@
                   groups="base.group_system,openedunav_core.group_admin"
                   sequence="3"/>
 
+        <menuitem id="sie_subject_unit_menu"
+                  name="Área de Conocimiento"
+                  action="action_list_sie_subject_unit"
+                  parent="openedunav_core.sie_planning_menu"
+                  groups="base.group_system,openedunav_core.group_admin"
+                  sequence="3"/>
+
         <menuitem id="sie_subject_menu"
                   name="Módulo"
                   action="action_list_sie_subject"
