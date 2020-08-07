@@ -94,12 +94,12 @@
                   groups="base.group_system,openedunav_core.group_admin"
                   sequence="7"/>
 
-<!--        <menuitem id="sie_matrix"-->
-<!--                  name="Parámetros de Evaluación"-->
-<!--                  action="action_list_sie_matrix"-->
-<!--                  parent="openedunav_core.sie_planning_menu"-->
-<!--                  groups="base.group_system,openedunav_core.group_admin"-->
-<!--                  sequence="1"/>-->
+        <menuitem id="sie_matrix"
+                  name="Parámetros de Evaluación"
+                  action="action_list_sie_matrix"
+                  parent="openedunav_core.sie_planning_menu"
+                  groups="base.group_system,openedunav_core.group_admin"
+                  sequence="1"/>
 
         <!-- Registro -->
         <menuitem id="sie_register_menu"

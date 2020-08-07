@@ -33,11 +33,18 @@ class SieSubjectContent(models.Model):
         'Área de conocimiento',
         ondelete='cascade'
     )
-    faculty_id = fields.Many2one(
+    faculty_ids = fields.Many2many(
         'sie.faculty',
         string='Docente',
         required=True,
         ondelete='restrict'
+    )
+    faculty_id = fields.Many2one(
+        'sie.faculty',
+        string='Docente principal',
+        required=True,
+        ondelete='restrict',
+        domain="[('id', 'in', faculty_ids)]"
     )
     date_start = fields.Date('Fecha Inicio')
     date_end = fields.Date('Fecha Final')
@@ -53,8 +60,16 @@ class SieSubjectContent(models.Model):
         my_tz = pytz.timezone(self._context.get('tz') or 'UTC')
         return datetime.now(my_tz).strftime('Guayaquil, %d de %m/ del %Y')
 
+    @api.model
+    def create(self, val):
+        record = super(SieSubjectContent, self).create(val)
+        parent_id = self.env['sie.subject.unit'].search([('id', '=', record.parent_id.id)])
+        parent_id.calculate_total_hours(record.hours)
+        return record
+
     def write(self, vals):
-        super(SieSubjectContent, self).write(vals)
+        flag = super(SieSubjectContent, self).write(vals)
         for record in self:
             parent_id = self.env['sie.subject.unit'].search([('id', '=', record.parent_id.id)])
             parent_id.calculate_total_hours(record.hours)
+        return flag
