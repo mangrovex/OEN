@@ -93,6 +93,8 @@ class SieMatrixParameter(models.Model):
                             record.name = record.parent_id.param_name.name + ' -> ' + record.param_name.name
                 else:
                     record.name = record.param_name.name
+            else:
+                record.name = ""
 
     @api.depends('child_ids')
     def _compute_total_coefficient(self):

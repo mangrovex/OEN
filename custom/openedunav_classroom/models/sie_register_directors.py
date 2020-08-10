@@ -68,24 +68,24 @@ class SieRegisterDirectors(models.Model):
     def _compute_name(self):
         for record in self:
             if record.course_id:
-                year = record.course_id.start_date.split('-')[0]
+                year = record.course_id.start_date.year
                 record.name = '%s %s' % (record.course_id.name, year)
 
     @api.depends('course_id')
     def _compute_year(self):
         for record in self:
             if record.course_id:
-                record.year = record.course_id.start_date.split('-')[0]
+                record.year = record.course_id.start_date.year
 
-    @api.onchange('name')
-    def _check_digit(self):
-        if self.name:
-            unicodestring = self.name
-            s = str(unicodestring).encode("utf-8")
-            try:
-                float(s)
-            except ValueError:
-                raise ValidationError(_(u'Not a number'))
+    # @api.onchange('name')
+    # def _check_digit(self):
+    #     if self.name:
+    #         unicodestring = self.name
+    #         s = str(unicodestring).encode("utf-8")
+    #         try:
+    #             float(s)
+    #         except ValueError:
+    #             raise ValidationError(_(u'Not a number'))
 
     @api.depends('display_name')
     def name_get(self):

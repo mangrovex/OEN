@@ -18,14 +18,18 @@
             <field name="arch" type="xml">
                 <form string="Register of directors">
                     <sheet>
+                        <field name="name"/>
                         <group>
-                            <field name="name"/>
-                            <field name="course_id" options='{"no_open":True}'/>
-                            <field name="year"/>
-                            <field name="position_director"/>
-                            <field name="director_id" options='{"no_open":True}'/>
-                            <field name="position_statistician"/>
-                            <field name="statistician_id" options='{"no_open":True}'/>
+                            <group>
+                                <field name="course_id" options='{"no_open":True}'/>
+                                <field name="director_id" options='{"no_open":True}'/>
+                                <field name="position_director"/>
+                            </group>
+                            <group>
+                                <field name="year"/>
+                                <field name="statistician_id" options='{"no_open":True}'/>
+                                <field name="position_statistician"/>
+                            </group>
                         </group>
                     </sheet>
                 </form>
