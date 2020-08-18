@@ -2,7 +2,6 @@
 
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError, Warning
-from sie.openedunav_classroom.models.sie_course import SieCourse
 
 
 class SieEnrollment(models.Model):
