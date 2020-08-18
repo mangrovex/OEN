@@ -4,6 +4,7 @@ from odoo import api, models
 
 class ReportScore(models.AbstractModel):
     _name = 'report.openedunav_report.report_score_act'
+    _description = 'Reporte de notas - Actas'
 
     def render_html(self, data=None):
         for record in self:

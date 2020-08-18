@@ -4,6 +4,8 @@ from datetime import datetime
 from dateutil.relativedelta import relativedelta
 import logging
 
+from docutils.nodes import field
+
 from odoo import _, models, fields, api
 from odoo.exceptions import ValidationError, Warning
 
@@ -18,7 +20,7 @@ class SieCourse(models.Model):
         string='Nombre',
     )
     display_name = fields.Char(
-        string='Nombre',
+        string='Nombre completo',
         compute='_compute_display_name',
         store=True
     )
@@ -60,20 +62,21 @@ class SieCourse(models.Model):
         [
             ('planned', _('Planned')),
             ('running', _('Running')),
-            ('finalized', _('Finalized')),
+            ('finalized', _('Finalized'))
         ],
         'Status',
+        copy=False,
         default='planned'
     )
-    subject_ids = fields.Many2many(
-        'sie.subject',
-        string="Subject",
+    module_ids = fields.Many2many(
+        'sie.module',
+        string="Module",
         required=True,
-        domain="[('course_id', '=',False)]",
+        domain="[('course_id', '=', False)]",
         store=True,
         ondelete='restrict'
     )
-    no_of_subject = fields.Integer(
+    no_of_module = fields.Integer(
         compute='_compute_total',
         string='No. Módulos',
         store=True
@@ -139,9 +142,9 @@ class SieCourse(models.Model):
     )
     matrix_id = fields.Many2one(
         'sie.matrix',
-        string=u'Parámetros de Evaluación',
-        ondelete='restrict',
-        required=True
+        # string=u'Parámetros de Evaluación',
+        # ondelete='restrict',
+        # required=True
     )
     professional_attitude = fields.Many2many(
         'sie.faculty',
@@ -158,9 +161,6 @@ class SieCourse(models.Model):
         compute='_compute_director',
         store=True
     )
-    new_table = fields.Boolean(
-        string="2017",
-        defualt=True)
     duration_days = fields.Float(
         'Duración días',
         compute='_compute_duration_days',
@@ -221,18 +221,18 @@ class SieCourse(models.Model):
             if record.course_name:
                 record.director = record.env.ref('openedunav_core.group_director').id
 
-    @api.depends('subject_ids.hours', 'subject_ids.credits')
+    @api.depends('module_ids.hours', 'module_ids.credits')
     def _compute_total(self):
         for record in self:
-            if record.subject_ids:
-                record.no_of_subject = len(record.subject_ids)
-                if record.no_of_subject > 0:
-                    record.total_hours = sum(record.hours for record in record.subject_ids)
-                    record.total_credits = sum(record.credits for record in record.subject_ids)
-                    for subject in record.subject_ids:
+            if record.module_ids:
+                record.no_of_module = len(record.module_ids)
+                if record.no_of_module > 0:
+                    record.total_hours = sum(record.hours for record in record.module_ids)
+                    record.total_credits = sum(record.credits for record in record.module_ids)
+                    for module in record.module_ids:
                         if record.total_credits:
-                            coefficient = float(subject.credits) / float(record.total_credits)
-                            subject.write({'coefficient':coefficient})
+                            coefficient = float(module.credits) / float(record.total_credits)
+                            module.write({'coefficient': coefficient})
                 else:
                     raise Warning(_("Seleccione al menos una materia"))
 
@@ -243,7 +243,7 @@ class SieCourse(models.Model):
                 if record.course_name:
                     if record.enrollment:
                         display_name = _('%s - %s - PARALELO %s' % (record.course_name.name,
-                                                            record.promotion_course_id.name, record.enrollment))
+                                                                    record.promotion_course_id.name, record.enrollment))
                     else:
                         display_name = _('%s - %s' % (record.course_name.name, record.promotion_course_id.name))
                     record.display_name = display_name
@@ -260,26 +260,30 @@ class SieCourse(models.Model):
     def action_plan(self):
         for record in self:
             record.state = 'planned'
-            enrollment = self.env['sie.enrollment'].search([('course_id', '=', record.id)])
+            enrollment = self.get_enrollment(record)
             for students_id in enrollment.student_ids:
                 student = self.env['sie.student'].search([('id', '=', students_id.id)])
-                student.sudo().write({'in_course': False, 'current_course':None})
+                student.sudo().write({'in_course': False, 'current_course': None})
+
+    def get_enrollment(self, record):
+        enrollment = self.env['sie.enrollment'].search([('course_id', '=', record.id)])
+        return enrollment
 
     def action_run(self):
         for record in self:
             record.state = 'running'
-            enrollment = self.env['sie.enrollment'].search([('course_id', '=', record.id)])
+            enrollment = self.get_enrollment(record)
             for students_id in enrollment.student_ids:
                 student = self.env['sie.student'].search([('id', '=', students_id.id)])
-                student.sudo().write({'in_course': True,'current_course':record.id})
+                student.sudo().write({'in_course': True, 'current_course': record.id})
 
     def action_done(self):
         for record in self:
             record.state = 'finalized'
-            enrollment = self.env['sie.enrollment'].search([('course_id', '=', record.id)])
+            enrollment = self.get_enrollment(record)
             for students_id in enrollment.student_ids:
                 student = self.env['sie.student'].search([('id', '=', students_id.id)])
-                student.sudo().write({'in_course': False,'current_course':None})
+                student.sudo().write({'in_course': False, 'current_course': None})
 
     def copy(self, default=None):
         for record in self:
@@ -307,7 +311,7 @@ class SieCourse(models.Model):
             if record.state != 'planned':
                 raise ValidationError(_(u'No puedes borrar un curso cuando esta en ejecución o finalizado'))
             else:
-                enrollment = self.env['sie.enrollment'].search([('course_id', '=', record.id)])
+                enrollment = self.get_enrollment(record)
                 for students_id in enrollment.student_ids:
                     student = self.env['sie.student'].search([('id', '=', students_id.id)])
                     student.sudo().write({'in_course': False})

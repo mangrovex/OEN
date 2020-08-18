@@ -8,7 +8,7 @@ class SieIntegratorProductStudent(models.Model):
     _order = 'full_name'
 
     name = fields.Char(
-        string='ID',
+        string='Integrator Product ID',
         store=True)
     student_id = fields.Many2one(
         comodel_name='sie.student',

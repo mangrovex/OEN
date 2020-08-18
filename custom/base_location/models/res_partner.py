@@ -300,14 +300,16 @@ class ResPartner(models.Model):
             self.city_id = None
             self.parish_id = None
 
-    @api.constrains('ced_ruc', 'type_ced_ruc', 'type_person')
+    @api.constrains('type_ced_ruc', 'type_person', 'ced_ruc')
     def check_ced_ruc(self):
         for record in self:
             if record.type_ced_ruc:
-                if record.type_ced_ruc == 'cedula' and not ci.is_valid(record.ced_ruc):
-                    raise ValidationError('CI [%s] no es valido !' % record.ced_ruc)
-                elif record.type_ced_ruc == 'ruc' and not ruc.is_valid(record.ced_ruc):
-                    raise ValidationError('RUC [%s] no es valido !' % record.ced_ruc)
+                if record.ced_ruc:
+                    if not ci.is_valid(record.ced_ruc):
+                        if record.type_ced_ruc == 'cedula':
+                            raise ValidationError('CI [%s] no es valido !' % record.ced_ruc)
+                        elif record.type_ced_ruc == 'ruc':
+                            raise ValidationError('RUC [%s] no es valido !' % record.ced_ruc)
 
     def create_user(self):
         self.env['res.users'].create_user(self)

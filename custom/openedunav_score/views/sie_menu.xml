@@ -2,7 +2,7 @@
     <data>
 
         <menuitem id="menu_sie_score"
-                  name="Materias"
+                  name="Notas por Módulo"
                   action="action_list_sie_score"
                   parent="openedunav_classroom.sie_academic"
                   groups="base.group_system,openedunav_core.group_admin"

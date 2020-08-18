@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="sie_module_view_form" model="ir.ui.view">
+            <field name="name">sie.module.form</field>
+            <field name="model">sie.module</field>
+            <field name="arch" type="xml">
+                <form string="module">
+                    <sheet>
+
+                        <group>
+                            <group>
+                                <field name="name" placeholder="Nombre del Módulo"/>
+                                <field name="code"/>
+                                <field name="hours"/>
+                                <field name="running_hours" readonly="1"/>
+                                <field name="state"/>
+                            </group>
+                            <group>
+                                <field name="number_module"/>
+                                <field name="shaft_id"/>
+                                <field name="credits"/>
+                                <field name="coefficient" readonly="1"/>
+                            </group>
+
+                        </group>
+                         <group>
+                                <field name="course_ids" placeholder="Curso"/>
+                            </group>
+                        <notebook>
+                            <page string="Áreas de conocimiento">
+                                <sheet>
+                                    <field name="knowledge_ids" nolabel="1">
+                                        <tree create="false">
+                                            <field name="name"/>
+                                            <field name="total_hours"/>
+                                        </tree>
+                                    </field>
+                                </sheet>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sie_module_view_tree" model="ir.ui.view">
+            <field name="name">sie.module.tree</field>
+            <field name="model">sie.module</field>
+            <field name="arch" type="xml">
+                <tree string="module">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="credits"/>
+                    <field name="state"/>
+                    <field name="hours"/>
+                    <field name="coefficient"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sie_module_view_search" model="ir.ui.view">
+            <field name="name">sie.module.search</field>
+            <field name="model">sie.module</field>
+            <field name="arch" type="xml">
+                <search string="Search module">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="shaft_id"/>
+                    <group expand="0" string="Group By...">
+                        <filter name="group_shaft" string="Shaft of Training" context="{'group_by': 'shaft_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_list_sie_module">
+            <field name="name">Módulo</field>
+            <field name="res_model">sie.module</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="sie_module_view_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{'search_default_group_shaft': 1}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new Module.
+                </p>
+            </field>
+        </record>
+
+        <!--        <record model="ir.actions.act_window.view" id="action_open_sie_module">-->
+        <!--            <field name="act_window_id" ref="action_list_sie_module"/>-->
+        <!--            <field name="sequence" eval="20"/>-->
+        <!--            <field name="view_mode">form</field>-->
+        <!--            <field name="view_id" ref="sie_module_view_form"/>-->
+        <!--        </record>-->
+
+        <!--        <record model="ir.actions.act_window.view" id="action_tree_sie_module">-->
+        <!--            <field name="act_window_id" ref="action_list_sie_module"/>-->
+        <!--            <field name="sequence" eval="10"/>-->
+        <!--            <field name="view_mode">tree</field>-->
+        <!--            <field name="view_id" ref="sie_module_view_tree"/>-->
+        <!--        </record>-->
+    </data>
+</openerp>

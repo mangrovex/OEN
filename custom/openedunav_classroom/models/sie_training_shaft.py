@@ -19,7 +19,7 @@ class SieTrainingShaft(models.Model):
         store=True
     )
     subject_ids = fields.One2many(
-        'sie.subject',
+        'sie.module',
         'shaft_id',
         'Subjects'
     )

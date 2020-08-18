@@ -17,9 +17,9 @@ class ScoreProfessorWizard(models.TransientModel):
         compute="_compute_matrix_name",
         store=True
     )
-    subject_id = fields.Many2one(
-        'sie.subject',
-        string='Subject',
+    module_id = fields.Many2one(
+        'sie.module',
+        string='module',
         ondelete='restrict',
         required=True,
         domain="[('course_id', '=', course_id),('faculty_id.user_id','=',uid)]"
@@ -30,16 +30,16 @@ class ScoreProfessorWizard(models.TransientModel):
         for record in self:
             if record.course_id:
                 record.matrix_name = record.course_id.matrix_id.id
-                record.subject_id = None
+                record.module_id = None
 
     def print_report(self):
         for record in self:
             url = '/web/aguena/report_score?' \
                   '&course_id=%s' \
                   '&report_type=D' \
-                  '&subject_id=%s' \
+                  '&module_id=%s' \
                   '&ordenar=nombre' \
-                  % (record.course_id.id, record.subject_id.id)
+                  % (record.course_id.id, record.module_id.id)
             return {
                 'type': 'ir.actions.act_url',
                 'url': url,

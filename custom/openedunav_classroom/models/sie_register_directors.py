@@ -14,7 +14,7 @@ class SieRegisterDirectors(models.Model):
         store=True
     )
     display_name = fields.Char(
-        string='Nombre',
+        string='Nombre completo',
         compute='_compute_display_name',
         required=True
     )

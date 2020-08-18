@@ -19,5 +19,5 @@ class SieFaculty(models.Model):
     professor = fields.Boolean('Profesor')
     statistician = fields.Boolean(string='Estadistico')
     register_work_ids = fields.Many2many('sie.register.work')
-    subject_ids = fields.Many2many('sie.subject')
+    module_ids = fields.Many2many('sie.module')
 

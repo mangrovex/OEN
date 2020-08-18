@@ -12,7 +12,7 @@
                                     'required':[('course_id', '!=',False)]}"/>
                         <field name="ordenar" attrs="{'invisible':[('selected_report','not in',['S','F','FG'])],
                                     'required':[('selected_report','in',['S','F','FG'])]}"/>
-                        <field name="subject_id" attrs="{'invisible':[('selected_report','!=','D')],
+                        <field name="module_id" attrs="{'invisible':[('selected_report','!=','D')],
                                     'required':[('selected_report','=','D')]}"
                                options='{"no_open":True,"no_create_edit":True}'/>
                         <field name="matrix_name" invisible="1"/>

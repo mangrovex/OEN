@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="sie_knowledge_view_form" model="ir.ui.view">
+            <field name="name">sie.knowledge.form</field>
+            <field name="model">sie.knowledge</field>
+            <field name="arch" type="xml">
+                <form string="Learning Unit">
+                    <sheet>
+
+                        <group>
+                            <field name="name" placeholder="Ciencias Navales"/>
+                            <field name="total_hours"/>
+                            <field name="module_id"/>
+                        </group>
+                        <notebook>
+                            <page string="Contenido Imprescindible">
+                                <field name="content_ids" nolabel="1">
+                                    <tree create="false">
+                                        <field name="name"/>
+                                        <field name="code"/>
+                                        <field name="date_start"/>
+                                        <field name="date_end"/>
+                                        <field name="hours"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sie_knowledge_view_tree" model="ir.ui.view">
+            <field name="name">sie.knowledge.tree</field>
+            <field name="model">sie.knowledge</field>
+            <field name="arch" type="xml">
+                <tree string="Area de conocimiento">
+                    <field name="name"/>
+                    <field name="total_hours"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_list_sie_knowledge">
+            <field name="name">Área de Conocimiento</field>
+            <field name="res_model">sie.knowledge</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new Knowledge Area.
+                </p>
+            </field>
+        </record>
+    </data>
+</openerp>

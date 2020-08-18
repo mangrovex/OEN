@@ -10,7 +10,7 @@
         <menuitem id="sie_configuration_menu"
                   name="Configuration"
                   parent="sie_main_menu"
-                  sequence="5"/>
+                  sequence="8"/>
         
         <menuitem id="sie_school_config_general_menu"
                   name="General Management"
@@ -91,22 +91,22 @@
         <menuitem id="sie_planning_menu"
                   name="Planning"
                   parent="sie_main_menu"
-                  sequence="1"
+                  sequence="4"
         />
 
         <menuitem id="sie_faculty_menu"
-                  name="Faculty"
+                  name="Docentes"
                   action="action_list_sie_faculty"
-                  parent="sie_planning_menu"
+                  parent="sie_main_menu"
                   groups="openedunav_core.group_admin"
-                  sequence="1"
+                  sequence="3"
         />
 
         <menuitem id="sie_student_menu"
-                  name="Student"
+                  name="Estudiantes"
                   action="action_list_sie_student"
-                  parent="sie_planning_menu"
-                  groups="openedunav_core.group_admin"
+                  parent="sie_main_menu"
+                  groups="base.group_system,openedunav_core.group_admin"
                   sequence="2"
         />
 

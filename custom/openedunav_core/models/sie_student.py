@@ -25,7 +25,7 @@ class SieStudent(models.Model):
         'student_id', 
         'category_id', 
         groups="sie.group_sie_manager",
-        string='Tags'
+        string='Category Tags'
     )
     admission_date = fields.Date(
         string='F.de ingreso Armada'

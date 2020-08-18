@@ -7,19 +7,25 @@
             <field name="arch" type="xml">
                 <form string="Course" version="7.0">
                     <header>
-                        <button name="action_plan" type="object"
+                        <button name="action_plan"
                                 string="Planificado"
                                 groups="base.group_system,openedunav_core.group_planning"
+                                type="object"
+                                class="oe_highlight"
                                 states="running,finalized"/>
-                        <button name="action_run" type="object"
-                                string="Ejecución" states="planned"
+                        <button name="action_run"
+                                string="Ejecución"
                                 groups="base.group_system,openedunav_core.group_planning"
-                                class="oe_highlight"/>
-                        <button name="action_done" type="object"
-                                string="Finalizado" states="running"
+                                type="object"
+                                class="oe_highlight"
+                                states="planned"/>
+                        <button name="action_done"
+                                string="Finalizado"
                                 groups="base.group_system,openedunav_core.group_planning"
-                                class="oe_highlight"/>
-                        <field name="state" widget="statusbar"/>
+                                type="object"
+                                class="oe_highlight"
+                                states="running"/>
+                        <field name="state" widget="statusbar" statusbar_visible="planned,running,finalized"/>
                     </header>
                     <sheet>
                         <group>
@@ -32,10 +38,8 @@
                                 <field name="start_date"/>
                                 <field name="duration_days"/>
                                 <field name="assigned_officer_id" options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
-                                <!--<field name="statistician" options='{"no_open":True}'/>-->
                                 <field name="year" invisible="1"/>
                                 <field name="director" invisible="1"/>
-                                <!--<field name="new_table"/>-->
                             </group>
                             <group>
                                 <field name="promotion_course_id" options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
@@ -46,18 +50,15 @@
                             </group>
                         </group>
                         <notebook>
-                            <!--<page string="Parameters">-->
-                            <!--<field name="parameter_ids" nolabel="1"/>-->
-                            <!--</page>-->
                             <page string="Módulos">
                                 <group col="4">
-                                    <field name="no_of_subject"/>
+                                    <field name="no_of_module"/>
                                     <field name="total_hours"/>
                                     <field name="total_credits"/>
                                     <field name="exec_hours" readonly="1"/>
                                 </group>
                                 <group>
-                                    <field name="subject_ids" nolabel="1" widget="many2many_list"/>
+                                    <field name="module_ids" nolabel="1" widget="many2many_list"/>
                                 </group>
                             </page>
                             <!--<page string="Professional Attitude">-->

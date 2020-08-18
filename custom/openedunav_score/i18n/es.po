@@ -44,7 +44,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:openedunav_score.sie_score_statistician_view_form
 #: model_terms:ir.ui.view,arch_db:openedunav_score.sie_score_view_form
 msgid "Approve"
-msgstr ""
+msgstr "Aprobar"
 
 #. module: openedunav_score
 #: code:addons/openedunav_score/models/score.py:0
@@ -53,13 +53,13 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:openedunav_score.sie_score_view_search
 #, python-format
 msgid "Approved"
-msgstr ""
+msgstr "Aprobado"
 
 #. module: openedunav_score
 #: model_terms:ir.ui.view,arch_db:openedunav_score.sie_score_statistician_view_search
 #: model_terms:ir.ui.view,arch_db:openedunav_score.sie_score_view_search
 msgid "Approved Score"
-msgstr ""
+msgstr "Nota Aprobada"
 
 #. module: openedunav_score
 #: model_terms:ir.ui.view,arch_db:openedunav_score.sie_score_statistician_view_form
@@ -70,7 +70,7 @@ msgstr ""
 #. module: openedunav_score
 #: model:ir.model.fields,field_description:openedunav_score.field_sie_score__subject_id
 msgid "Asignatura"
-msgstr ""
+msgstr "Módulo"
 
 #. module: openedunav_score
 #: model:ir.ui.menu,name:openedunav_score.sie_report_aguena_score_professor
@@ -82,7 +82,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:openedunav_score.score_student_wizard_view_form
 #: model_terms:ir.ui.view,arch_db:openedunav_score.score_wizard_view_form
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #. module: openedunav_score
 #: model_terms:ir.actions.act_window,help:openedunav_score.action_list_sie_course_score
@@ -97,7 +97,7 @@ msgstr ""
 #. module: openedunav_score
 #: model_terms:ir.actions.act_window,help:openedunav_score.action_list_sie_score
 msgid "Click to create a new score."
-msgstr ""
+msgstr "Click para crear un nuevo registro."
 
 #. module: openedunav_score
 #: model:ir.model.fields,field_description:openedunav_score.field_score_professor_wizard__course_id
@@ -108,7 +108,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:openedunav_score.sie_score_statistician_view_search
 #: model_terms:ir.ui.view,arch_db:openedunav_score.sie_score_view_search
 msgid "Course"
-msgstr ""
+msgstr "Curso"
 
 #. module: openedunav_score
 #: model:ir.model.fields,field_description:openedunav_score.field_score_professor_wizard__create_uid
@@ -145,7 +145,7 @@ msgstr ""
 #: model:ir.model.fields.selection,name:openedunav_score.selection__score_student_wizard__selected_report__d
 #: model:ir.model.fields.selection,name:openedunav_score.selection__score_wizard__selected_report__d
 msgid "Detail"
-msgstr ""
+msgstr "Detalle"
 
 #. module: openedunav_score
 #: model:ir.model.fields,field_description:openedunav_score.field_score_professor_wizard__display_name
@@ -204,14 +204,14 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:openedunav_score.sie_score_view_search
 #, python-format
 msgid "For review"
-msgstr ""
+msgstr "Para revisión"
 
 #. module: openedunav_score
 #: model_terms:ir.ui.view,arch_db:openedunav_score.score_professor_wizard_view_form
 #: model_terms:ir.ui.view,arch_db:openedunav_score.score_student_wizard_view_form
 #: model_terms:ir.ui.view,arch_db:openedunav_score.score_wizard_view_form
 msgid "Generate"
-msgstr ""
+msgstr "Generado"
 
 #. module: openedunav_score
 #: model_terms:ir.ui.view,arch_db:openedunav_score.sie_score_statistician_view_search
@@ -273,7 +273,7 @@ msgstr ""
 #: model:ir.ui.menu,name:openedunav_score.menu_sie_score
 #: model_terms:ir.ui.view,arch_db:openedunav_score.sie_score_view_form
 msgid "Materias"
-msgstr ""
+msgstr "Módulos"
 
 #. module: openedunav_score
 #: model:ir.model.fields,field_description:openedunav_score.field_sie_score__matrix_id
@@ -426,7 +426,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:openedunav_score.sie_score_statistician_view_form
 #: model_terms:ir.ui.view,arch_db:openedunav_score.sie_score_view_form
 msgid "Notes"
-msgstr ""
+msgstr "Notas"
 
 #. module: openedunav_score
 #: model:ir.model.fields,field_description:openedunav_score.field_score_wizard__ordenar
@@ -437,12 +437,12 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:openedunav_score.sie_score_statistician_view_search
 #: model_terms:ir.ui.view,arch_db:openedunav_score.sie_score_view_search
 msgid "Parameter"
-msgstr ""
+msgstr "Parámetro"
 
 #. module: openedunav_score
 #: model:ir.model.fields,field_description:openedunav_score.field_sie_score__parameter_name
 msgid "Parameter Name"
-msgstr ""
+msgstr "Nombre parámetro"
 
 #. module: openedunav_score
 #: model:ir.model.fields,field_description:openedunav_score.field_sie_score__parameter_id
@@ -462,7 +462,7 @@ msgstr ""
 #. module: openedunav_score
 #: model_terms:ir.ui.view,arch_db:openedunav_score.sie_score_view_form
 msgid "Print Act"
-msgstr ""
+msgstr "Imprimir Acta"
 
 #. module: openedunav_score
 #: model:ir.model.fields.selection,name:openedunav_score.selection__score_wizard__ordenar__promedio
@@ -473,7 +473,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:openedunav_score.sie_score_statistician_view_form
 #: model_terms:ir.ui.view,arch_db:openedunav_score.sie_score_view_form
 msgid "Publish"
-msgstr ""
+msgstr "Publicar"
 
 #. module: openedunav_score
 #: code:addons/openedunav_score/models/score.py:0
@@ -508,12 +508,12 @@ msgstr ""
 #. module: openedunav_score
 #: model:ir.actions.act_window,name:openedunav_score.action_open_score_professor_wizard
 msgid "Reporte Aprovechamiento Profesor"
-msgstr ""
+msgstr "Reporte Aprovechamiento [Profesor]"
 
 #. module: openedunav_score
 #: model:ir.actions.act_window,name:openedunav_score.action_open_score_student_wizard
 msgid "Reporte Aprovechamiento Student"
-msgstr ""
+msgstr "Reporte Aprovechamiento [Estudiante]"
 
 #. module: openedunav_score
 #: model:ir.ui.menu,name:openedunav_score.sie_reports_menu
@@ -523,20 +523,20 @@ msgstr ""
 #. module: openedunav_score
 #: model:ir.model.fields,field_description:openedunav_score.field_sie_score__activity_user_id
 msgid "Responsible User"
-msgstr ""
+msgstr "Usuario responsable"
 
 #. module: openedunav_score
 #: model:ir.model,name:openedunav_score.model_score_professor_wizard
 #: model:ir.model,name:openedunav_score.model_score_wizard
 #: model:ir.model,name:openedunav_score.model_sie_score
 msgid "Score"
-msgstr ""
+msgstr "Nota"
 
 #. module: openedunav_score
 #: model_terms:ir.ui.view,arch_db:openedunav_score.score_student_wizard_view_form
 #: model_terms:ir.ui.view,arch_db:openedunav_score.score_wizard_view_form
 msgid "Score Generate"
-msgstr ""
+msgstr "Generar Notas"
 
 #. module: openedunav_score
 #: model:ir.model.fields,field_description:openedunav_score.field_sie_score_student__score_id
@@ -546,12 +546,12 @@ msgstr ""
 #. module: openedunav_score
 #: model_terms:ir.ui.view,arch_db:openedunav_score.score_professor_wizard_view_form
 msgid "Score Professor"
-msgstr ""
+msgstr "Nota [Profesor]"
 
 #. module: openedunav_score
 #: model:ir.model,name:openedunav_score.model_score_student_wizard
 msgid "Score Student"
-msgstr ""
+msgstr "Nota [Estudiante]"
 
 #. module: openedunav_score
 #: model:ir.actions.act_window,name:openedunav_score.action_list_sie_score
@@ -560,23 +560,23 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:openedunav_score.sie_score_statistician_view_tree
 #: model_terms:ir.ui.view,arch_db:openedunav_score.sie_score_view_tree
 msgid "Scores"
-msgstr ""
+msgstr "Notas"
 
 #. module: openedunav_score
 #: model:ir.actions.act_window,name:openedunav_score.action_list_sie_score_statistician
 msgid "Scores Statistician"
-msgstr ""
+msgstr "Notas [Estadístico]"
 
 #. module: openedunav_score
 #: model:ir.ui.menu,name:openedunav_score.sie_report_aguena_score_student
 msgid "Scores Student"
-msgstr ""
+msgstr "Notas [Estudiante]"
 
 #. module: openedunav_score
 #: model_terms:ir.ui.view,arch_db:openedunav_score.sie_score_statistician_view_search
 #: model_terms:ir.ui.view,arch_db:openedunav_score.sie_score_view_search
 msgid "Search Scores"
-msgstr ""
+msgstr "Buscar Notas"
 
 #. module: openedunav_score
 #: model:ir.model.fields,field_description:openedunav_score.field_sie_score_student__mother_name
@@ -592,7 +592,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:openedunav_score.sie_score_statistician_view_search
 #: model_terms:ir.ui.view,arch_db:openedunav_score.sie_score_view_search
 msgid "State"
-msgstr ""
+msgstr "Estado"
 
 #. module: openedunav_score
 #: model:ir.model.fields,help:openedunav_score.field_sie_score__activity_state
@@ -612,7 +612,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:openedunav_score.sie_score_statistician_view_form
 #: model_terms:ir.ui.view,arch_db:openedunav_score.sie_score_view_form
 msgid "Students"
-msgstr ""
+msgstr "Estudiantes"
 
 #. module: openedunav_score
 #: model:ir.model.fields,field_description:openedunav_score.field_score_professor_wizard__subject_id
@@ -621,29 +621,29 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:openedunav_score.sie_score_statistician_view_search
 #: model_terms:ir.ui.view,arch_db:openedunav_score.sie_score_view_search
 msgid "Subject"
-msgstr ""
+msgstr "Módulo"
 
 #. module: openedunav_score
 #: model:ir.actions.report,name:openedunav_score.sie_subject_act_menu
 msgid "Subject Report"
-msgstr ""
+msgstr "Reporte por Módulo"
 
 #. module: openedunav_score
 #: model:ir.model.fields.selection,name:openedunav_score.selection__score_student_wizard__selected_report__s
 #: model:ir.model.fields.selection,name:openedunav_score.selection__score_wizard__selected_report__s
 msgid "Summary"
-msgstr ""
+msgstr "Resumen"
 
 #. module: openedunav_score
 #: model_terms:ir.ui.view,arch_db:openedunav_score.sie_score_statistician_view_form
 msgid "To published"
-msgstr ""
+msgstr "Para publicar"
 
 #. module: openedunav_score
 #: model:ir.model.fields,field_description:openedunav_score.field_score_student_wizard__selected_report
 #: model:ir.model.fields,field_description:openedunav_score.field_score_wizard__selected_report
 msgid "Type"
-msgstr ""
+msgstr "Tipo"
 
 #. module: openedunav_score
 #: model:ir.model.fields,help:openedunav_score.field_sie_score__activity_exception_decoration

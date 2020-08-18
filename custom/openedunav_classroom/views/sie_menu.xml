@@ -31,93 +31,95 @@
                   sequence="7"/>
 
         <!-- School Planning -->
-        <menuitem id="sie_subject_content_menu"
+        <menuitem id="sie_admin_course_menu"
+                  name="Administración Cursos"
+                  parent="openedunav_core.sie_planning_menu"
+                  groups="base.group_system,openedunav_core.group_admin"
+                  sequence="1"/>
+
+        <menuitem id="sie_content_menu"
                   name="Contenido Imprescindible"
-                  action="action_list_sie_subject_content"
-                  parent="openedunav_core.sie_planning_menu"
+                  action="action_list_sie_content"
+                  parent="sie_admin_course_menu"
                   groups="base.group_system,openedunav_core.group_admin"
-                  sequence="3"/>
+                  sequence="1"/>
 
-        <menuitem id="sie_subject_unit_menu"
+        <menuitem id="sie_knowledge_menu"
                   name="Área de Conocimiento"
-                  action="action_list_sie_subject_unit"
-                  parent="openedunav_core.sie_planning_menu"
+                  action="action_list_sie_knowledge"
+                  parent="sie_admin_course_menu"
+                  groups="base.group_system,openedunav_core.group_admin"
+                  sequence="2"/>
+
+        <menuitem id="sie_module_menu"
+                  name="Módulo"
+                  action="action_list_sie_module"
+                  parent="sie_admin_course_menu"
                   groups="base.group_system,openedunav_core.group_admin"
                   sequence="3"/>
-
-        <menuitem id="sie_subject_menu"
-                  name="Módulo"
-                  action="action_list_sie_subject"
-                  parent="openedunav_core.sie_planning_menu"
-                  groups="base.group_system,openedunav_core.group_admin"
-                  sequence="4"/>
 
         <menuitem id="sie_course_menu"
                   name="Curso"
                   action="action_list_sie_course"
+                  parent="sie_admin_course_menu"
+                  groups="base.group_system,openedunav_core.group_admin"
+                  sequence="4"/>
+
+        <!-- Enrollment Planning -->
+        <menuitem id="sie_enrollment_menu"
+                  name="Registros"
                   parent="openedunav_core.sie_planning_menu"
                   groups="base.group_system,openedunav_core.group_admin"
                   sequence="5"/>
 
-        <menuitem id="openedunav_core.sie_student_menu"
-                  name="Estudiantes"
-                  action="openedunav_core.action_list_sie_student"
+        <menuitem id="sie_enrollment_student_menu"
+                  name="Registro de Estudiantes"
+                  action="action_list_sie_enrollment"
+                  parent="sie_enrollment_menu"
+                  groups="base.group_system,openedunav_core.group_admin"
+                  sequence="1"/>
+
+        <menuitem id="sie_register_seminary_menu"
+                  name="Registro de Seminarios"
+                  action="action_list_sie_register_seminary"
+                  parent="sie_enrollment_menu"
+                  groups="base.group_system,openedunav_core.group_admin"
+                  sequence="2"/>
+
+        <menuitem id="sie_register_subject_menu"
+                  name="Registro de Temas"
+                  action="action_list_sie_register_subject"
+                  parent="sie_enrollment_menu"
+                  groups="base.group_system,openedunav_core.group_admin"
+                  sequence="3"/>
+
+        <!-- Matrix Planning -->
+        <menuitem id="sie_matrix_menu"
+                  name="Matriz"
                   parent="openedunav_core.sie_planning_menu"
                   groups="base.group_system,openedunav_core.group_admin"
                   sequence="6"/>
 
-        <menuitem id="sie_enrollment_menu"
-                  name="Registro de Estudiantes"
-                  action="action_list_sie_enrollment"
-                  parent="openedunav_core.sie_planning_menu"
-                  groups="base.group_system,openedunav_core.group_admin"
-                  sequence="7"/>
-
-        <menuitem id="sie_register_seminary"
-                  name="Registro de Seminarios"
-                  action="action_list_sie_register_seminary"
-                  parent="openedunav_core.sie_planning_menu"
-                  groups="base.group_system,openedunav_core.group_admin"
-                  sequence="8"/>
-
-        <menuitem id="sie_register_subject"
-                  name="Registro de Temas"
-                  action="action_list_sie_register_subject"
-                  parent="openedunav_core.sie_planning_menu"
-                  groups="base.group_system,openedunav_core.group_admin"
-                  sequence="9"/>
-
-        <menuitem id="sie_enrollment_menu"
-                  name="Registro de Estudiantes"
-                  action="action_list_sie_enrollment"
-                  parent="openedunav_core.sie_planning_menu"
-                  groups="base.group_system,openedunav_core.group_admin"
-                  sequence="7"/>
-
         <menuitem id="sie_matrix"
                   name="Parámetros de Evaluación"
                   action="action_list_sie_matrix"
-                  parent="openedunav_core.sie_planning_menu"
+                  parent="sie_matrix_menu"
                   groups="base.group_system,openedunav_core.group_admin"
                   sequence="1"/>
 
         <!-- Registro -->
-        <menuitem id="sie_register_menu"
-                  name="Registro"
-                  parent="openedunav_core.sie_main_menu"
-                  sequence="2"/>
         <menuitem id="sie_register_directors"
-                  name="Registro de Directivos"
+                  name="Directivos"
                   action="action_list_sie_register_directors"
-                  parent="sie_register_menu"
+                  parent="openedunav_core.sie_main_menu"
                   groups="base.group_system,openedunav_core.group_admin"
-                  sequence="1"/>
+                  sequence="5"/>
 
         <!-- Académico -->
         <menuitem id="sie_academic"
                   name="Académico"
                   parent="openedunav_core.sie_main_menu"
-                  sequence="3"/>
+                  sequence="6"/>
 
         <menuitem id="sie_integrator_product_menu"
                   name="Producto Integrador"
@@ -125,13 +127,5 @@
                   parent="sie_academic"
                   groups="base.group_system,openedunav_core.group_admin"
                   sequence="2"/>
-<!--        <menuitem id="sie_score_menu"-->
-<!--                  name="Materias"-->
-<!--                  action="action_list_sie_score"-->
-<!--                  parent="sie_academic"-->
-<!--                  groups="base.group_system,openedunav_core.group_admin"-->
-<!--                  sequence="1"/>-->
-
-
-	</data>
+    </data>
 </odoo>

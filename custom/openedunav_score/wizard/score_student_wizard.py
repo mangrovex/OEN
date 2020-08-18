@@ -36,9 +36,9 @@ class ScoreStudentWizard(models.TransientModel):
         ],
         required=True
     )
-    subject_id = fields.Many2one(
-        'sie.subject',
-        string='Subject',
+    module_id = fields.Many2one(
+        'sie.module',
+        string='module',
         ondelete='restrict',
         domain="[('course_id', '=', course_id)]"
     )
@@ -55,9 +55,9 @@ class ScoreStudentWizard(models.TransientModel):
             url = '/web/aguena/report_score?' \
                   '&course_id=%s' \
                   '&report_type=%s' \
-                  '&subject_id=%s' \
+                  '&module_id=%s' \
                   '&student_id=%s' \
-                  % (record.course_id.id, record.selected_report, record.subject_id.id, student_id)
+                  % (record.course_id.id, record.selected_report, record.module_id.id, student_id)
             return {
                 'type': 'ir.actions.act_url',
                 'url': url,

@@ -6,9 +6,9 @@
             <field name="arch" type="xml">
                 <tree string="timekeeping">
                     <field name="course_id"/>
-                    <field name="subject_id"/>
+                    <field name="module_id"/>
                     <field name="faculty"/>
-                    <field name="unit_id"/>
+                    <field name="knowledge_id"/>
                     <field name="date"/>
                     <field name="number_of_hours"/>
                 </tree>
@@ -25,12 +25,12 @@
                             <field name="name"/>
                             <field name="course_id" options='{"no_open":True}'
                                    attrs="{'readonly':[('create_date', '!=', False)]}"/>
-                            <field name="subject_id" options='{"no_open":True}'
+                            <field name="module_id" options='{"no_open":True}'
                                    attrs="{'readonly':[('create_date', '!=', False)]}"/>
                             <field name="faculty"/>
                             <field name="date"/>
                             <field name="number_of_hours"/>
-                            <field name="unit_id" options='{"no_open":True}'/>
+                            <field name="knowledge_id" options='{"no_open":True}'/>
                             <field name="create_date" invisible="1"/>
                         </group>
                     </sheet>

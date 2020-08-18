@@ -8,7 +8,7 @@ class SieDirectionWorkStudent(models.Model):
     _order = 'last_name_1, last_name_2'
 
     name = fields.Char(
-        string='ID',
+        string='Work ID',
         store=True
     )
     student_id = fields.Many2one(

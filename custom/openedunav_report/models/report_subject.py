@@ -3,7 +3,8 @@ from odoo import api, models
 
 
 class ReportScore(models.AbstractModel):
-    _name = 'report.openedunav_report.report_subject_act'
+    _name = 'report.openedunav_report.report_module_act'
+    _description = 'Reporte de Notas por módulo'
 
     def render_html(self, data=None):
         for record in self:
@@ -12,7 +13,7 @@ class ReportScore(models.AbstractModel):
             course_name = course_id.name.split('-')[0]
             promotion = course_id.name.split('-')[1]
             year = course_id.year
-            docs = record.env['sie.subject'].search([('course_id', '=', course_id.id)])
+            docs = record.env['sie.module'].search([('course_id', '=', course_id.id)])
             ciencia_militar = docs.filtered(
                 lambda r: r.shaft_id.id == record.env.ref('openedunav_classroom.sie_training_shaft_01').id)
             cultura_militar = docs.filtered(
@@ -22,7 +23,7 @@ class ReportScore(models.AbstractModel):
             ciencia_tecnologia = docs.filtered(
                 lambda r: r.shaft_id.id == record.env.ref('openedunav_classroom.sie_training_shaft_04').id)
 
-            report = report_obj._get_report_from_name('openedunav_report.report_subject_act')
+            report = report_obj._get_report_from_name('openedunav_report.report_module_act')
             docargs = {
                 'doc_ids': record.ids,
                 'doc_model': report.model,
@@ -36,4 +37,4 @@ class ReportScore(models.AbstractModel):
                 'cultura_humanistica': cultura_humanistica,
                 'ciencia_tecnologia': ciencia_tecnologia,
             }
-            return report_obj.render('openedunav_report.report_subject_act', docargs)
+            return report_obj.render('openedunav_report.report_module_act', docargs)

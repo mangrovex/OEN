@@ -16,16 +16,17 @@
                         <newline/>
                         <group col="4">
                             <field name="course_id" options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'
-                                   attrs="{'readonly':[('course_state', '!=', 'planned')]}"/>
-                            <field name="course_state" invisible="0"/>
+                                   attrs="{'readonly':[('course_state', '!=', 'Planned')]}"/>
+                            <field name="course_state"  invisible="0"/>
                         </group>
                         <notebook>
                             <page string="Students Enrolled">
                                 <field name="student_ids" nolabel="1" mode="tree"
-                                       attrs="{'readonly':[('course_state', '!=', 'planned')]}">
+                                       attrs="{'readonly':[('course_state', '!=', 'Planned')]}">
                                     <tree editable="bottom" string="Students">
                                         <field name="ced_ruc" style="width: 10 %%"/>
                                         <field name="grade_id"/>
+                                        <field name="specialty_id"/>
                                         <field name="full_name"/>
                                     </tree>
                                 </field>

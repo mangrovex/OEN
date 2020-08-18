@@ -8,7 +8,7 @@
                 <form string="Score Professor">
                     <group>
                         <field name="course_id" options='{"no_open":True,"no_create_edit":True}'/>
-                        <field name="subject_id"
+                        <field name="module_id"
                                attrs="{'invisible':[('course_id','=',False)]}"
                                options='{"no_open":True,"no_create_edit":True}'/>
                         <field name="matrix_name" invisible="1"/>

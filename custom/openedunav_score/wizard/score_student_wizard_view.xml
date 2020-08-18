@@ -10,7 +10,7 @@
                         <field name="course_id" options='{"no_open":True,"no_create_edit":True}'/>
                         <field name="selected_report" attrs="{'invisible':[('course_id', '=',False)],
                                     'required':[('course_id', '!=',False)]}"/>
-                        <field name="subject_id" attrs="{'invisible':[('selected_report','!=','D')],
+                        <field name="module_id" attrs="{'invisible':[('selected_report','!=','D')],
                                     'required':[('selected_report','=','D')]}"
                                options='{"no_open":True,"no_create_edit":True}'/>
                         <field name="matrix_name" invisible="1"/>

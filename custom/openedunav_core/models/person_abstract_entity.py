@@ -232,14 +232,6 @@ class PersonAbstractEntity(models.AbstractModel):
         help='The internal user in charge of this contact.'
     )
 
-    # _sql_constraints = [
-    #     (
-    #         'unique_serial_navy',
-    #         'UNIQUE(serial_navy)',
-    #         'Serial Navy must be unique per student!'
-    #     )
-    # ]
-
     def toggle_active(self):
         """ It toggles patient and partner activation. """
         for record in self:
@@ -260,15 +252,18 @@ class PersonAbstractEntity(models.AbstractModel):
         elif getattr(self, attr) is False:
             self.write({attr: True})
 
-    @api.depends('grade_id', 'specialty_id', 'academic_title_ids', 'first_name', 'last_name', 'mother_name',
+    @api.depends('grade_id', 'specialty_id', 'title', 'first_name', 'last_name', 'mother_name',
                  'middle_name')
     def _compute_name(self):
         prefix = self._compute_prefix()
-        display_name = self._compute_full_name()
-        self.full_name = display_name
-        if len(prefix) > 0 and len(display_name):
-            display_name = '%s %s' % (prefix, display_name)
+        compute_full_name = self._compute_full_name()
+        if len(prefix) > 0 and len(compute_full_name):
+            display_name = '%s %s' % (prefix, compute_full_name)
             self.name = display_name.upper()
+            self.full_name = compute_full_name.upper()
+        else:
+            self.full_name = compute_full_name.upper()
+            self.name = compute_full_name.upper()
 
     def _compute_prefix(self):
         prefix = ''
@@ -293,11 +288,11 @@ class PersonAbstractEntity(models.AbstractModel):
 
     @api.onchange('first_name', 'middle_name', 'last_name', 'mother_name')
     def _onchange_name(self):
-        self.name = self._compute_full_name()
+        self._compute_name()
 
-    @api.onchange('grade_id', 'specialty_id', 'academic_title_ids')
+    @api.onchange('grade_id', 'specialty_id', 'title')
     def _onchange_name_prefix(self):
-        self.name = self._compute_name()
+        self._compute_name()
 
     def create_student_user(self):
         user_group = self.env.ref("base.group_portal") or False
@@ -313,12 +308,3 @@ class PersonAbstractEntity(models.AbstractModel):
                     'tz': self._context.get('tz'),
                 })
                 record.user_id = user_id
-
-    @api.constrains('ced_ruc', 'type_ced_ruc', 'type_person')
-    def check_ced_ruc(self):
-        for record in self:
-            if record.type_ced_ruc:
-                if record.type_ced_ruc == 'cedula' and not ci.is_valid(record.ced_ruc):
-                    raise ValidationError('CI [%s] no es valido !' % record.ced_ruc)
-                elif record.type_ced_ruc == 'ruc' and not ruc.is_valid(record.ced_ruc):
-                    raise ValidationError('RUC [%s] no es valido !' % record.ced_ruc)

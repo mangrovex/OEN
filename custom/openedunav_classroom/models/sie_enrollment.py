@@ -2,6 +2,7 @@
 
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError, Warning
+from sie.openedunav_classroom.models.sie_course import SieCourse
 
 
 class SieEnrollment(models.Model):
@@ -30,7 +31,7 @@ class SieEnrollment(models.Model):
     no_of_students = fields.Integer(
         string='No. Students',
         store=True,
-        compute='_compute_no_studentes'
+        compute='_compute_no_students'
     )
     course_state = fields.Char(
         string='Estado del curso',
@@ -73,7 +74,7 @@ class SieEnrollment(models.Model):
                 #     pass
 
     @api.depends('name', 'course_id', 'student_ids')
-    def _compute_no_studentes(self):
+    def _compute_no_students(self):
         for record in self:
             if record.student_ids:
                 record.no_of_students = len(record.student_ids)
@@ -87,11 +88,18 @@ class SieEnrollment(models.Model):
 
     @api.depends('course_id')
     def _compute_course_state(self):
+        data = [
+            ('planned', _('Planned')),
+            ('running', _('Running')),
+            ('finalized', _('Finalized'))
+        ]
         for record in self:
             if record.course_id:
-                record.course_state = record.course_id.state
+                for i in range(0, len(data)):
+                    if record.course_id.state == data[i][0]:
+                        record.course_state = data[i][1]
             else:
-                record.course_state = 'planned'
+                record.course_state = 'Running'
 
     def unlink(self):
         unlink_ids = []
@@ -110,7 +118,7 @@ class SieEnrollment(models.Model):
         students_ids = vals['student_ids']
         for students_id in students_ids[0][2]:
             student = self.env['sie.student'].search([('id', '=', students_id)])
-            student.sudo().write({'in_course': True,'current_course':vals['course_id']})
+            student.sudo().write({'in_course': True, 'current_course': vals['course_id']})
         return super(SieEnrollment, self).create(vals)
 
     def write(self, vals):

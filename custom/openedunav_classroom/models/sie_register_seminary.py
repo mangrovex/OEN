@@ -6,6 +6,7 @@ from odoo import models, fields, api
 class SieRegisterSeminary(models.Model):
     _name = 'sie.register.seminary'
     _rec_name = 'seminary_name'
+    _description = 'Redistro de seminarios'
 
     seminary_name = fields.Char(
         string='Nombre del seminario',

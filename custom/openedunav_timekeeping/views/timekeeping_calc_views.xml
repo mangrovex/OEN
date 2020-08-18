@@ -32,7 +32,7 @@
                             <page string="Materias">
                                 <field name="line_ids" nolabel="1" mode="tree">
                                     <tree string="Materias" create="false" delete="false">
-                                        <field name="subject_id" readonly="1" string="Materia"/>
+                                        <field name="module_id" readonly="1" string="Materia"/>
                                         <field name="program_hours" string="Horas Programadas"/>
                                         <field name="program_hours_week" string="Horas Programadas de la Semana"/>
                                         <field name="worked_hours_week" string="Horas Dictadas en la Semana"/>
@@ -41,7 +41,7 @@
                                         <field name="advance" string="Porcentaje de Avance"/>
                                     </tree>
                                     <form string="Control Horas Dictadas">
-                                        <field name="subject_id" readonly="1"/>
+                                        <field name="module_id" readonly="1"/>
                                         <field name="program_hours"/>
                                         <field name="program_hours_week"/>
                                         <field name="worked_hours_week"/>

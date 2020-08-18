@@ -38,8 +38,9 @@
                 </field>
                 <field name="vat" position="after">
                     <field name="type_ced_ruc" placeholder="Tipo de Identificador"/>
-                    <field name="type_person" />
-                    <field name="ced_ruc"/>
+                    <field name="type_person" required="1" attrs="{'invisible':[('type_ced_ruc', '=', False)]}"/>
+                    <field name="ced_ruc" attrs="{'invisible':[('type_ced_ruc', '=', False)]}"
+                           placeholder="091234451-1"/>
                 </field>
                 <field name="lang" position="after">
                     <field name="tz"/>

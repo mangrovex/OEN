@@ -7,46 +7,67 @@
             <field name="arch" type="xml">
                 <form string="Materias">
                     <header>
-                        <button name="action_publish" type="object" states="draft,for review" string="Publish"
+                        <button name="action_publish"
+                                type="object"
+                                states="draft,for_review"
+                                string="Publish"
                                 class="oe_highlight"/>
-                        <button name="action_reject" type="object" states="published" string="Reject"
+                        <button name="action_reject"
+                                type="object"
+                                states="published"
+                                string="Reject"
                                 class="oe_highlight"
                                 groups="openedunav_core.group_statistician"/>
-                        <button name="action_approve" type="object" states="published" string="Approve"
+                        <button name="action_approve"
+                                type="object"
+                                states="published"
+                                string="Approve"
                                 class="oe_highlight"
-                                groups="openedunav_core.group_statistician" confirm="Are you sure?"/>
-                        <button name="print_act" string="Print Act" type="object" states="published" icon="gtk-print"/>
-                        <field name="state" widget="statusbar" statusbar_visible="draft,for review,published,approved"/>
+                                groups="openedunav_core.group_statistician"
+                                confirm="Are you sure?"/>
+                        <button name="print_act"
+                                string="Print Act"
+                                type="object"
+                                states="published"
+                                icon="gtk-print"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,for_review,published,approved"/>
                     </header>
                     <sheet>
+                        <div name="smart_button" class="oe_button_box">
+                            <button class="oe_stat_button" type="object" name="sort_by_name"
+                                    icon="fa-sort" string="Order por Nombre"/>
+                            <button class="oe_stat_button" type="object" name="sort_by_score"
+                                    icon="fa-tasks" string="Ordenar por Nota"/>
+                        </div>
                         <group>
-                            <field name="course_id" options='{"no_open":True,"no_create_edit":True}'
-                                   attrs="{'readonly':[('create_date', '!=', False)]}"/>
+                            <group>
+                                <field name="course_id" options='{"no_open":True,"no_create_edit":True}'
+                                       attrs="{'readonly':[('create_date', '!=', False)]}"/>
+                                <field name="module_id" options='{"no_open":True,"no_create_edit":True}'
+                                       attrs="{'readonly':[('create_date', '!=', False)]}"/>
+                                <field name="matrix_id" invisible="1"/>
+
+                            </group>
+                            <group>
+                                <field name="parameter_id" options='{"no_open":True,"no_create_edit":True}'/>
+                                <field name="module_credits"/>
+                                <field name="teacher_id" invisible="1"/>
+                                <field name="create_date" invisible="1"/>
+                            </group>
                             <!--<field name="quiz" attrs="{'readonly':[('create_date', '!=', False)]}"/>-->
-                            <field name="parameter_id" options='{"no_open":True,"no_create_edit":True}'/>
                             <!--attrs="{'invisible':['|',('quiz','=','is_quiz_p'),('quiz','=','is_quiz_v')],-->
                             <!--'required': [('quiz','!=','is_quiz_p'),('quiz','!=','is_quiz_v')],-->
                             <!--'readonly':[('create_date', '!=', False)]}"/>-->
-                            <field name="subject_id" options='{"no_open":True,"no_create_edit":True}'
-                                   attrs="{'readonly':[('create_date', '!=', False)]}"/>
                             <!--<field name="score_number" />-->
                             <!--attrs="{'invisible':['|',('parameter_name','=','009'),('quiz','=','is_quiz_v')],-->
                             <!--'required': [('parameter_name','!=','009'),('quiz','!=','is_quiz_v')],-->
                             <!--'readonly':[('create_date', '!=', False)]}"/>-->
-                            <field name="subject_credits"/>
                             <!--<field name="parameter_name" invisible="1"/>-->
-                            <field name="matrix_id" invisible="1"/>
-                            <field name="teacher_id" invisible="1"/>
-                            <field name="create_date" invisible="1"/>
+
                         </group>
                         <notebook>
                             <page string="Students">
-                                <div class="oe_button_box" name="button_box">
-                                    <span><strong>Ordenar por </strong></span>
-                                    <button name="sort_by_name" type="object" string="Nombre" class="oe_highlight"/>
-                                    <button name="sort_by_score" type="object" string="Nota" class="oe_highlight"/>
-                                </div>
-                                <field name="student_ids" nolabel="1" mode="tree" options="{'no_create':True}"
+                                <field name="score_student_line" nolabel="1" mode="tree" options="{'no_create':True}"
                                        attrs="{'readonly':[('state', '!=', 'draft'),('state', '!=', 'for review')]}">
                                     <tree editable="top" string="Students" create="false" delete="false">
                                         <field name="seq" widget="handle"/>
@@ -81,7 +102,7 @@
                 <tree string="Scores" decoration-muted="state=='draft'" decoration-danger="state=='published'"
                       decoration-info="state=='approved'" decoration-primary="state=='for review'">
                     <field name="course_id"/>
-                    <field name="subject_id"/>
+                    <field name="module_id"/>
                     <field name="parameter_id"/>
                     <!--<field name="quiz"/>-->
                     <field name="score_number"/>
@@ -97,7 +118,7 @@
             <field name="arch" type="xml">
                 <search string="Search Scores">
                     <field name="course_id"/>
-                    <field name="subject_id"/>
+                    <field name="module_id"/>
                     <filter name="draft" string="Draft" domain="[('state','=','draft')]"/>
                     <filter name="published" string="Published" domain="[('state','=','published')]"/>
                     <filter name="review" string="For review" domain="[('state','=','for review')]"/>
@@ -106,7 +127,7 @@
                     <group expand="0" string="Group By...">
                         <filter name="State" string="State" context="{'group_by': 'state'}"/>
                         <filter name="group_course" string="Course" domain="[]" context="{'group_by': 'course_id'}"/>
-                        <filter name="Subject" string="Subject" context="{'group_by': 'subject_id'}"/>
+                        <filter name="module" string="module" context="{'group_by': 'module_id'}"/>
                         <filter name="Parameter" string="Parameter" context="{'group_by': 'parameter_id'}"/>
                     </group>
                 </search>

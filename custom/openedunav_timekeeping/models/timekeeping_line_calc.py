@@ -6,11 +6,11 @@ class SieTimekeepingLineCalc(models.Model):
     _name = 'sie.timekeeping.line.calc'
     _description = 'Timekeeping Line Calc'
 
-    # _rec_name = "subject_id"
-    # subject_id = fields.Many2one('sie.subject', string='Materia', required=True,
+    # _rec_name = "module_id"
+    # module_id = fields.Many2one('sie.module', string='Materia', required=True,
     #                              domain="[('course_id', '=', course_id),('state', '=', 'r')]", ondelete='restrict')
-    subject_id = fields.Many2one(
-        'sie.subject',
+    module_id = fields.Many2one(
+        'sie.module',
         string='Materia',
         required=True,
         ondelete='restrict'
