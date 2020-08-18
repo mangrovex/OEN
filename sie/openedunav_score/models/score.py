@@ -21,7 +21,7 @@ def set_data(course_id):
             coefficient = float(float(module_id_running_hours.running_hours) / float(exec_hours))
             module_id_running_hours.sudo().write({'coefficient': coefficient})
         # else:
-            # raise ValidationError("Ingresar primero control de horas")
+        # raise ValidationError("Ingresar primero control de horas")
     course_id.sudo().write({'exec_hours': exec_hours})
 
 
@@ -91,28 +91,6 @@ class SieScore(models.Model):
     module_credits = fields.Integer(
         related='module_id.credits',
         string=u'Créditos'
-    )
-    score_number = fields.Selection(
-        [
-            ('1', 'Note 1'),
-            ('2', 'Note 2'),
-            ('3', 'Note 3'),
-            ('4', 'Note 4'),
-            ('5', 'Note 5'),
-            ('6', 'Note 6'),
-            ('7', 'Note 7'),
-            ('8', 'Note 8'),
-            ('9', 'Note 9'),
-            ('10', 'Note 10'),
-            ('11', 'Note 11'),
-            ('12', 'Note 12'),
-            ('13', 'Note 13'),
-            ('14', 'Note 14'),
-            ('15', 'Note 15'),
-            ('16', 'Note 16'),
-            ('17', 'Note 17'),
-        ],
-        string='No. Noa'
     )
     record_name = fields.Char(compute='_compute_record_name')
 
@@ -260,14 +238,12 @@ class SieScore(models.Model):
             if record.module_id:
                 record.module_credits = record.module_id.credits
 
-    @api.depends('course_id', 'parameter_id', 'module_id', 'teacher_id', 'score_number')
+    @api.depends('course_id', 'parameter_id', 'module_id', 'teacher_id')
     def _compute_name(self):
         for record in self:
-            if record.course_id and record.parameter_id and record.module_id and record.teacher_id \
-                    and record.score_number:
-                name = '%s,%s,%s,%s,%s' % (record.course_id.id, record.parameter_id.id,
-                                           record.module_id.id, record.teacher_id.id,
-                                           record.score_number)
+            if record.course_id and record.parameter_id and record.module_id and record.teacher_id:
+                name = '%s,%s,%s,%s' % (record.course_id.id, record.parameter_id.id,
+                                        record.module_id.id, record.teacher_id.id)
                 record.name = name
             else:
                 record.name = ''

@@ -26,17 +26,12 @@
                             <field name="course_id" options='{"no_open":True,"no_create_edit":True}'
                                    attrs="{'readonly':[('create_date', '!=', False)]}"/>
                             <field name="teacher_id" attrs="{'readonly':[('create_date', '!=', False)]}"/>
-                            <!--<field name="quiz" attrs="{'readonly':[('create_date', '!=', False)]}"/>-->
                             <field name="parameter_id" options='{"no_open":True,"no_create_edit":True}'/>
                                    <!--attrs="{'invisible':['|',('quiz','=','is_quiz_p'),('quiz','=','is_quiz_v')],-->
                                    <!--'required': [('quiz','!=','is_quiz_p'),('quiz','!=','is_quiz_v')],-->
                                    <!--'readonly':[('create_date', '!=', False)]}"/>-->
                             <field name="module_id" options='{"no_open":True,"no_create_edit":True}'
                                    attrs="{'readonly':[('create_date', '!=', False)]}"/>
-                            <field name="score_number" />
-                                   <!--attrs="{'invisible':['|',('parameter_name','=','009'),('quiz','=','is_quiz_v')],-->
-                                   <!--'required': [('parameter_name','!=','009'),('quiz','!=','is_quiz_v')],-->
-                                   <!--'readonly':[('create_date', '!=', False)]}"/>-->
                             <field name="module_credits"/>
                             <!--<field name="parameter_name" invisible="1"/>-->
                             <field name="matrix_id" invisible="1"/>
@@ -76,8 +71,6 @@
                 <tree string="Scores" decoration-muted="state=='draft'" decoration-danger="state=='published'"
                       decoration-info="state=='approved'">
                     <field name="parameter_id"/>
-                    <!--<field name="quiz"/>-->
-                    <field name="score_number"/>
                     <field name="create_date"/>
                     <field name="state"/>
                 </tree>
