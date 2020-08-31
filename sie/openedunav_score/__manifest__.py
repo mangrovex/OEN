@@ -19,9 +19,6 @@
     ],
     'data': [
         'security/ir.model.access.csv',
-        'wizard/score_wizard_view.xml',
-        'wizard/score_student_wizard_view.xml',
-        'wizard/score_professor_wizard_view.xml',
         'views/score_views.xml',
         'views/score_statistician.xml',
         'views/course_score_views.xml',

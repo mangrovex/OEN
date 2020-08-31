@@ -121,11 +121,5 @@
                   parent="openedunav_core.sie_main_menu"
                   sequence="6"/>
 
-        <menuitem id="sie_integrator_product_menu"
-                  name="Producto Integrador"
-                  action="action_list_sie_integrator_product"
-                  parent="sie_academic"
-                  groups="base.group_system,openedunav_core.group_admin"
-                  sequence="2"/>
     </data>
 </odoo>

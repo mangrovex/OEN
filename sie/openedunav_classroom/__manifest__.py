@@ -37,7 +37,6 @@
         'views/param_name_views.xml',
         'views/matrix_parameter_views.xml',
         'views/matrix_views.xml',
-        'views/integrator_product_views.xml',
         'data/concepts_data.xml',
         'data/training_shaft_data.xml',
         'data/matrix_parameter_name_data.xml',

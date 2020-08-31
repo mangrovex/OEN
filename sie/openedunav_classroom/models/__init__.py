@@ -19,6 +19,6 @@ from . import sie_concept
 from . import sie_param_name
 from . import sie_matrix_parameter
 from . import sie_matrix
-from . import sie_integrator_product_student
-from . import sie_integrator_product
 from . import sie_training_shaft
+from . import sie_integrator_product
+from . import sie_integrator_product_student

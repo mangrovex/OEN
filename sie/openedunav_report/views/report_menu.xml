@@ -2,41 +2,178 @@
 <openerp>
     <data>
         <!-- Reports -->
+        <menuitem id="sie_reports_menu"
+                  name="Reportes"
+                  parent="openedunav_core.sie_main_menu"
+                  sequence="4"/>
 
-        <menuitem id="certificate_evaluation_menu"
-                  name="Certificado de Evaluacion"
+        <menuitem id="sie_report_score"
+                  name="Grade by module"
                   action="action_open_certificate_evaluation_wizard"
-                  parent="openedunav_score.sie_reports_menu"
+                  parent="sie_reports_menu"
+                  groups="base.group_system,openedunav_core.group_admin"
+                  sequence="2"/>
+
+        <menuitem id="sie_report_general"
+                  name="General Report"
+                  action="action_open_certificate_evaluation_wizard"
+                  parent="sie_reports_menu"
+                  groups="base.group_system,openedunav_core.group_admin"
+                  sequence="3"/>
+
+        <menuitem id="sie_reports_information"
+                  name="Information of the end of the course"
+                  action="action_open_certificate_evaluation_wizard"
+                  parent="sie_reports_menu"
+                  groups="base.group_system,openedunav_core.group_admin"
+                  sequence="4"/>
+
+        <menuitem id="sie_report_student_payroll"
+                  name="Student payroll"
+                  action="action_open_certificate_evaluation_wizard"
+                  parent="sie_reports_information"
                   groups="base.group_system,openedunav_core.group_admin"
                   sequence="1"/>
 
-        <menuitem id="sie_report_aguena_integrator_product"
-                  name="Integrator Product"
-                  action="action_open_integrator_product_wizard"
-                  parent="openedunav_score.sie_reports_menu"
+        <menuitem id="sie_report_payroll_teachers"
+                  name="Payroll of teachers Product"
+                  action="action_open_certificate_evaluation_wizard"
+                  parent="sie_reports_information"
                   groups="base.group_system,openedunav_core.group_admin"
                   sequence="5"/>
 
-        <menuitem id="sie_report_aguena_integrator_product_student"
-                  name="Integrator Product Student"
-                  action="action_open_integrator_product_student_wizard"
-                  parent="openedunav_score.sie_reports_menu"
-                  groups="base.group_system,openedunav_core.group_student"
+        <menuitem id="sie_reports_qualification"
+                  name="Qualification certificate"
+                  action="action_open_certificate_evaluation_wizard"
+                  parent="sie_reports_menu"
+                  groups="base.group_system,openedunav_core.group_admin"
                   sequence="6"/>
 
-        <menuitem id="sie_report_aguena_certificate_menu"
-                  name="Certificate"
-                  action="action_open_certificate_wizard"
-                  parent="openedunav_score.sie_reports_menu"
+        <menuitem id="sie_report_essential_content"
+                  name="Essential content"
+                  action="action_open_certificate_evaluation_wizard"
+                  parent="sie_reports_qualification"
                   groups="base.group_system,openedunav_core.group_admin"
                   sequence="7"/>
 
-        <menuitem id="sie_report_aguena_subject_menu"
-                  name="Subject"
-                  action="action_open_subject_wizard"
-                  parent="openedunav_score.sie_reports_menu"
+        <menuitem id="sie_report_knowledge_area"
+                  name="Knowledge area"
+                  action="action_open_certificate_evaluation_wizard"
+                  parent="sie_reports_qualification"
                   groups="base.group_system,openedunav_core.group_admin"
                   sequence="8"/>
+
+        <menuitem id="sie_report_attendance_list"
+                  name="attendance list"
+                  action="action_open_certificate_evaluation_wizard"
+                  parent="sie_reports_qualification"
+                  groups="base.group_system,openedunav_core.group_admin"
+                  sequence="8"/>
+
+        <menuitem id="sie_report_andragogic_attitude"
+                  name="Andragogic attitude"
+                  action="action_open_certificate_evaluation_wizard"
+                  parent="sie_reports_qualification"
+                  groups="base.group_system,openedunav_core.group_admin"
+                  sequence="8"/>
+
+        <menuitem id="sie_report_integrative_activities"
+                  name="Integrative activities"
+                  action="action_open_certificate_evaluation_wizard"
+                  parent="sie_reports_qualification"
+                  groups="base.group_system,openedunav_core.group_admin"
+                  sequence="8"/>
+
+        <menuitem id="sie_report_co-evaluation"
+                  name="Co-evaluation"
+                  action="action_open_certificate_evaluation_wizard"
+                  parent="sie_reports_qualification"
+                  groups="base.group_system,openedunav_core.group_admin"
+                  sequence="8"/>
+
+        <menuitem id="sie_report_product_integrator"
+                  name="Product integrator"
+                  action="action_open_certificate_evaluation_wizard"
+                  parent="sie_reports_qualification"
+                  groups="base.group_system,openedunav_core.group_admin"
+                  sequence="8"/>
+
+        <menuitem id="sie_report_recovery_evaluation"
+                  name="Recovery evaluation"
+                  action="action_open_certificate_evaluation_wizard"
+                  parent="sie_reports_qualification"
+                  groups="base.group_system,openedunav_core.group_admin"
+                  sequence="8"/>
+
+        <menuitem id="sie_reports_teacher"
+                  name="Teacher"
+                  action="action_open_certificate_evaluation_wizard"
+                  parent="sie_reports_qualification"
+                  groups="base.group_system,openedunav_core.group_admin"
+                  sequence="8"/>
+
+        <menuitem id="sie_report_teacher_essential_content"
+                  name="Essential content"
+                  action="action_open_certificate_evaluation_wizard"
+                  parent="sie_reports_teacher"
+                  groups="base.group_system,openedunav_core.group_admin"
+                  sequence="8"/>
+
+        <menuitem id="sie_report_teacher_knowledge_area"
+                  name="Knowledge area"
+                  action="action_open_certificate_evaluation_wizard"
+                  parent="sie_reports_teacher"
+                  groups="base.group_system,openedunav_core.group_admin"
+                  sequence="8"/>
+
+        <menuitem id="sie_report_teacher_andragogic_attitude"
+                  name="Andragogic attitude"
+                  action="action_open_certificate_evaluation_wizard"
+                  parent="sie_reports_teacher"
+                  groups="base.group_system,openedunav_core.group_admin"
+                  sequence="8"/>
+
+        <!-- REPORTS -->
+
+
+        <report id="sie_score_act_menu"
+                model="sie.score"
+                string="Acta de Calificaciones"
+                report_type="qweb-pdf"
+                name="openedunav_report.report_score_act"
+                file="openedunav_report.report_score_act"/>
+
+        <report id="sie_subject_act_menu"
+                model="sie.subject"
+                string="Subject Report"
+                report_type="qweb-pdf"
+                name="openedunav_report.report_subject_act"
+                file="openedunav_report.report_subject_act"/>
+
+        <record id="sie_score_act"
+                model="report.paperformat">
+            <field name="name">Act A4</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">10</field>
+            <field name="margin_bottom">10</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">1</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <record id="sie_score_act_menu"
+                model="ir.actions.report">
+            <field name="paperformat_id" ref="sie_score_act"/>
+        </record>
+
+        <record id="sie_subject_act_menu"
+                model="ir.actions.report">
+            <field name="paperformat_id" ref="sie_score_act"/>
+        </record>
 
     </data>
 </openerp>

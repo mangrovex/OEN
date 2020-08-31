@@ -50,13 +50,14 @@ class SieScore(models.Model):
         string='Módulo',
         ondelete='restrict',
         domain="[('course_ids', '=' , course_id), ('state', '=' , 'r')]",
-        required=True
+        required=False
     )
     parameter_id = fields.Many2one(
         'sie.matrix.parameter',
         string=u'Parámetro',
         ondelete='restrict',
-        domain="['&', ('last_child', '=', True), '|', ('course_ref', '=',matrix_id), ('matrix_id', '=',matrix_id) ]"
+        domain="['&', ('last_child', '=', True), '|', ('course_ref', '=',matrix_id), ('matrix_id', '=',matrix_id) ]",
+        required=True
     )
     score_student_line = fields.One2many(
         'sie.score.student',
@@ -158,8 +159,10 @@ class SieScore(models.Model):
         for record in self:
             if record.parameter_id:
                 record.parameter_name = record.parameter_id.param_name.code
-                if '009' in record.parameter_id.parent_id.parent_ref:
-                    record.parameter_name = '009'
+                # if '009' in record.parameter_id.parent_id.parent_ref:
+                #     record.parameter_name = '009'
+            else:
+                record.parameter_name = '999'
 
     def get_course(self, record):
         course_id = self.sudo().env['sie.course'].search([('id', '=', record.course_id.id)])
@@ -241,12 +244,19 @@ class SieScore(models.Model):
     @api.depends('course_id', 'parameter_id', 'module_id', 'teacher_id')
     def _compute_name(self):
         for record in self:
-            if record.course_id and record.parameter_id and record.module_id and record.teacher_id:
-                name = '%s,%s,%s,%s' % (record.course_id.id, record.parameter_id.id,
-                                        record.module_id.id, record.teacher_id.id)
-                record.name = name
+            if record.parameter_name == '042':
+                if record.course_id and record.parameter_id and record.teacher_id:
+                    name = '%s,%s,%s' % (record.course_id.id, record.parameter_id.id, record.teacher_id.id)
+                    record.name = name
+                else:
+                    record.name = ''
             else:
-                record.name = ''
+                if record.course_id and record.parameter_id and record.module_id and record.teacher_id:
+                    name = '%s,%s,%s,%s' % (record.course_id.id, record.parameter_id.id,
+                                            record.module_id.id, record.teacher_id.id)
+                    record.name = name
+                else:
+                    record.name = ''
 
     @api.constrains('score_number')
     def _check_score(self):
