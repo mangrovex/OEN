@@ -20,6 +20,7 @@
     'data': [
         'security/ir.model.access.csv',
         'views/score_views.xml',
+        'views/score_content_views.xml',
         'views/score_statistician.xml',
         'views/course_score_views.xml',
         'views/sie_menu.xml',

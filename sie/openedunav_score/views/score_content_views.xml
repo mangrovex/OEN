@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="sie_score_content_view_form" model="ir.ui.view">
+            <field name="name">sie.score.content.form</field>
+            <field name="model">sie.score.content</field>
+            <field name="arch" type="xml">
+                <form string="Materias">
+                    <header>
+                        <button name="action_publish"
+                                type="object"
+                                states="draft,for_review"
+                                string="Publish"
+                                class="oe_highlight"/>
+                        <button name="action_reject"
+                                type="object"
+                                states="published"
+                                string="Reject"
+                                class="oe_highlight"
+                                groups="openedunav_core.group_statistician"/>
+                        <button name="action_approve"
+                                type="object"
+                                states="published"
+                                string="Approve"
+                                class="oe_highlight"
+                                groups="openedunav_core.group_statistician"
+                                confirm="Are you sure?"/>
+                        <button name="print_act"
+                                string="Print Act"
+                                type="object"
+                                states="published"
+                                icon="fa-print"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,for_review,published,approved"/>
+                    </header>
+                    <sheet>
+                        <div name="smart_button" class="oe_button_box">
+                            <button class="oe_stat_button" type="object" name="sort_by_name"
+                                    icon="fa-sort" string="Order por Nombre"/>
+                            <button class="oe_stat_button" type="object" name="sort_by_score_content"
+                                    icon="fa-tasks" string="Ordenar por Nota"/>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="course_id" options='{"no_open":True,"no_create_edit":True}'
+                                       attrs="{'readonly':[('create_date', '!=', False)]}"/>
+                                <field name="knowledge_id" options='{"no_open":True,"no_create_edit":True}'/>
+                                <field name="matrix_id" invisible="1"/>
+                                <field name="content_name" invisible="1"/>
+                            </group>
+                            <group>
+                                <field name="module_id" options='{"no_open":True,"no_create_edit":True}'/>
+                                <field name="content_id" options='{"no_open":True,"no_create_edit":True}'/>
+                                <field name="teacher_id" invisible="1"/>
+                                <field name="create_date" invisible="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Students">
+                                <field name="score_content_student_line" nolabel="1" mode="tree" options="{'no_create':True}"
+                                       attrs="{'readonly':[('state', '!=', 'draft'),('state', '!=', 'for review')]}">
+                                    <tree editable="top" string="Students" create="false" delete="false">
+                                        <field name="seq" widget="handle"/>
+                                        <field name="student_id" options="{'no_open':True}" readonly="1"/>
+                                        <field name="score"/>
+                                    </tree>
+                                    <form string="Students">
+                                        <sheet>
+                                            <group>
+                                                <field name="seq"/>
+                                                <field name="student_id" options='{"no_open":True}'/>
+                                                <field name="score" options='{"no_open":True}'/>
+                                            </group>
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Notes">
+                                <field name="notes" nolabel="1"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="sie_score_content_view_tree">
+            <field name="name">sie.score.content.tree</field>
+            <field name="model">sie.score.content</field>
+            <field name="priority" eval="16"/>
+            <field name="arch" type="xml">
+                <tree string="Scores" decoration-muted="state=='draft'" decoration-danger="state=='published'"
+                      decoration-info="state=='approved'" decoration-primary="state=='for review'">
+                    <field name="course_id"/>
+                    <field name="module_id"/>
+                    <field name="knowledge_id"/>
+                    <field name="content_id"/>
+                    <field name="create_date"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sie_score_content_view_search" model="ir.ui.view">
+            <field name="name">sie.score.content.search</field>
+            <field name="model">sie.score.content</field>
+            <field name="arch" type="xml">
+                <search string="Search Scores">
+                    <field name="course_id"/>
+                    <field name="module_id"/>
+                    <filter name="draft" string="Draft" domain="[('state','=','draft')]"/>
+                    <filter name="published" string="Published" domain="[('state','=','published')]"/>
+                    <filter name="review" string="For review" domain="[('state','=','for review')]"/>
+                    <filter name="score_content_approved" string="Approved" domain="[('state','=','approved')]"
+                            help="Approved Score"/>
+                    <group expand="0" string="Group By...">
+                        <filter name="State" string="State" context="{'group_by': 'state'}"/>
+                        <filter name="group_course" string="Course" domain="[]" context="{'group_by': 'course_id'}"/>
+                        <filter name="module" string="module" context="{'group_by': 'module_id'}"/>
+                        <filter name="content" string="content" context="{'group_by': 'content_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_list_sie_score_content">
+            <field name="name">Scores</field>
+            <field name="res_model">sie.score.content</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="sie_score_content_view_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{'search_default_group_course': 1}
+            </field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new score.
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="action_open_sie_score_content">
+            <field name="act_window_id" ref="action_list_sie_score_content"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="sie_score_content_view_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="action_tree_sie_score_content">
+            <field name="act_window_id" ref="action_list_sie_score_content"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="sie_score_content_view_tree"/>
+        </record>
+
+    </data>
+</openerp>
