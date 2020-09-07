@@ -17,8 +17,12 @@ class SieScoreContentStudent(models.Model):
         required=True,
         store=True
     )
-    score = fields.Float(
-        'Nota',
+    score_1 = fields.Float(
+        'Nota T.F.',
+        digits='Score'
+    )
+    score_2 = fields.Float(
+        'Nota T.I.',
         digits='Score'
     )
     score_content_id = fields.Many2one(

@@ -172,7 +172,10 @@ class SieScore(models.Model):
         self.state = 'published'
 
     def action_reject(self):
-        self.state = 'for review'
+        self.state = 'draft'
+
+    def action_for_review(self):
+        self.state = 'for_review'
 
     def action_to_published(self):
         for record in self:

@@ -9,21 +9,27 @@
                     <header>
                         <button name="action_publish"
                                 type="object"
-                                states="draft,for_review"
+                                states="draft"
                                 string="Publish"
                                 class="oe_highlight"/>
                         <button name="action_reject"
                                 type="object"
-                                states="published"
+                                states="published,for_review"
                                 string="Reject"
                                 class="oe_highlight"
-                                groups="openedunav_core.group_statistician"/>
-                        <button name="action_approve"
+                                groups="openedunav_core.group_statistician,openedunav_core.group_admin"/>
+                        <button name="action_for_review"
                                 type="object"
                                 states="published"
+                                string="For review"
+                                class="oe_highlight"
+                                groups="openedunav_core.group_statistician,openedunav_core.group_admin"/>
+                        <button name="action_approve"
+                                type="object"
+                                states="for_review"
                                 string="Approve"
                                 class="oe_highlight"
-                                groups="openedunav_core.group_statistician"
+                                groups="openedunav_core.group_statistician,openedunav_core.group_admin"
                                 confirm="Are you sure?"/>
                         <button name="print_act"
                                 string="Print Act"
@@ -61,14 +67,16 @@
                                     <tree editable="top" string="Students" create="false" delete="false">
                                         <field name="seq" widget="handle"/>
                                         <field name="student_id" options="{'no_open':True}" readonly="1"/>
-                                        <field name="score"/>
+                                        <field name="score_1"/>
+                                        <field name="score_2"/>
                                     </tree>
                                     <form string="Students">
                                         <sheet>
                                             <group>
                                                 <field name="seq"/>
                                                 <field name="student_id" options='{"no_open":True}'/>
-                                                <field name="score" options='{"no_open":True}'/>
+                                                <field name="score_1" options='{"no_open":True}'/>
+                                                <field name="score_2" options='{"no_open":True}'/>
                                             </group>
                                         </sheet>
                                     </form>

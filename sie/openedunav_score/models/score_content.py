@@ -141,7 +141,13 @@ class SieScoreContent(models.Model):
         self.state = 'published'
 
     def action_reject(self):
-        self.state = 'for review'
+        self.state = 'draft'
+
+    def action_for_review(self):
+        self.state = 'for_review'
+
+    def action_approve(self):
+        self.state = 'approved'
 
     def action_to_published(self):
         for record in self:
@@ -154,9 +160,6 @@ class SieScoreContent(models.Model):
             if len(module_ids) == count:
                 module_id = self.sudo().env['sie.module'].search([('id', '=', record.module_id.id)])
             record.state = 'published'
-
-    def action_approve(self):
-        self.state = 'approved'
 
     # def unlink(self):
     #     unlink_ids = []
