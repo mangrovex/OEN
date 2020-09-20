@@ -1,7 +1,7 @@
 <odoo>
     <data>
         <menuitem id="sie_main_menu"
-                  name="OpenEduNav"
+                  name="OpenEducation"
                   parent=""
                   sequence="1"
                   web_icon="openedunav_core,static/src/img/army.png"/>
@@ -86,6 +86,20 @@
                   parent="sie_school_config_general_menu"
                   groups="openedunav_core.group_admin"
                   sequence="10"/>
+
+        <menuitem id="sie_school_menu"
+                  name="School"
+                  action="action_list_sie_school"
+                  parent="sie_school_config_general_menu"
+                  groups="openedunav_core.group_admin"
+                  sequence="11"/>
+
+        <menuitem id="sie_division_menu"
+                  name="División"
+                  action="action_list_sie_division"
+                  parent="sie_school_config_general_menu"
+                  groups="openedunav_core.group_admin"
+                  sequence="12"/>
 
         <!-- School Planning -->
         <menuitem id="sie_planning_menu"

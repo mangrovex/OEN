@@ -33,17 +33,26 @@
                         </group>
                         <group>
                             <group>
-                                <field name="course_name" options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
-                                <field name="enrollment"/>
+                                <field name="course_name"
+                                       options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
+                                <field name="enrollment"
+                                       options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'
+                                       attrs="{'invisible': [('place', '=', 'SCH0001')]}"/>
+                                <field name="enrollment_div"
+                                       options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'
+                                       attrs="{'invisible': [('place', '!=', 'SCH0001')]}"/>
                                 <field name="start_date"/>
                                 <field name="duration_days"/>
-                                <field name="assigned_officer_id" options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
+                                <field name="assigned_officer_id"
+                                       options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
                                 <field name="year" invisible="1"/>
                                 <field name="director" invisible="1"/>
                             </group>
                             <group>
-                                <field name="promotion_course_id" options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
-                                <field name="matrix_id" options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
+                                <field name="promotion_course_id"
+                                       options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
+                                <field name="matrix_id"
+                                       options='{"no_open":True,"no_create_edit":True,"no_create":True,"no_quick_create":True}'/>
                                 <field name="end_date"/>
                                 <field name="work_days"/>
                                 <field name="place"/>
@@ -62,27 +71,27 @@
                                 </group>
                             </page>
                             <!--<page string="Professional Attitude">-->
-                                <!--&lt;!&ndash;<group col="2">&ndash;&gt;-->
-                                <!--&lt;!&ndash;<field name="professional_attitude" nolabel="1" mode="tree" domain=" ['|',('director', '=', True), '|',('planta', '=', True),('division', '=', True)]">&ndash;&gt;-->
-                                <!--&lt;!&ndash;<tree editable="bottom" string="Students" create="true" delete="true">&ndash;&gt;-->
-                                <!--&lt;!&ndash;<field name="display_title_name" options="{'no_open':True}" readonly="1"/>&ndash;&gt;-->
-                                <!--&lt;!&ndash;</tree>&ndash;&gt;-->
-                                <!--&lt;!&ndash;</field>&ndash;&gt;-->
-                                <!--&lt;!&ndash;</group>&ndash;&gt;-->
-                                <!--<group>-->
-                                    <!--<field name="course_professional" nolabel="1" mode="tree">-->
-                                        <!--&lt;!&ndash;<tree editable="bottom" string="Students" create="false">&ndash;&gt;-->
-                                        <!--<tree editable="bottom" string="Students">-->
-                                            <!--&lt;!&ndash;<field name="name" options="{'no_open':True}" readonly="1"/>&ndash;&gt;-->
-                                            <!--&lt;!&ndash;<field name="faculty_id" options="{'no_open':True}" readonly="1" invisible="1"/>&ndash;&gt;-->
-                                            <!--<field name="faculty_id" options="{'no_open':True,'no_create': True}"/>-->
-                                            <!--<field name="director"/>-->
-                                            <!--<field name="division"/>-->
-                                            <!--<field name="planta"/>-->
-                                            <!--<field name="rol_name" readonly="1"/>-->
-                                        <!--</tree>-->
-                                    <!--</field>-->
-                                <!--</group>-->
+                            <!--&lt;!&ndash;<group col="2">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<field name="professional_attitude" nolabel="1" mode="tree" domain=" ['|',('director', '=', True), '|',('planta', '=', True),('division', '=', True)]">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<tree editable="bottom" string="Students" create="true" delete="true">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<field name="display_title_name" options="{'no_open':True}" readonly="1"/>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</tree>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</field>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</group>&ndash;&gt;-->
+                            <!--<group>-->
+                            <!--<field name="course_professional" nolabel="1" mode="tree">-->
+                            <!--&lt;!&ndash;<tree editable="bottom" string="Students" create="false">&ndash;&gt;-->
+                            <!--<tree editable="bottom" string="Students">-->
+                            <!--&lt;!&ndash;<field name="name" options="{'no_open':True}" readonly="1"/>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<field name="faculty_id" options="{'no_open':True}" readonly="1" invisible="1"/>&ndash;&gt;-->
+                            <!--<field name="faculty_id" options="{'no_open':True,'no_create': True}"/>-->
+                            <!--<field name="director"/>-->
+                            <!--<field name="division"/>-->
+                            <!--<field name="planta"/>-->
+                            <!--<field name="rol_name" readonly="1"/>-->
+                            <!--</tree>-->
+                            <!--</field>-->
+                            <!--</group>-->
                             <!--</page>-->
                         </notebook>
                     </sheet>

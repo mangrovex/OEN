@@ -2,11 +2,11 @@
 # Copyright 2017-2018 Tecnativa - Jairo Llopis
 # Copyright 2018-2019 Tecnativa - Alexandre Díaz
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
-#    noinspection PyStatementEffect
+
 {
     "name": "Web Responsive",
     "summary": "Responsive web client, community-supported",
-    "version": "13.0.2.0.0",
+    "version": "13.0.2.3.0",
     "category": "Website",
     "website": "https://github.com/OCA/web",
     "author": "LasLabs, Tecnativa, " "Odoo Community Association (OCA)",
@@ -21,5 +21,6 @@
         "static/src/xml/form_view.xml",
         "static/src/xml/navbar.xml",
         "static/src/xml/document_viewer.xml",
+        "static/src/xml/discuss.xml",
     ],
 }

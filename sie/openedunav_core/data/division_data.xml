@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<odoo>
+    <data noupdate="1">
+        <record model="sie.division" id="sie_division_01">
+            <field name="name">SUPERFICIE - MECÁNICOS</field>
+        </record>
+                <record model="sie.division" id="sie_division_02">
+            <field name="name">SUPERFICIE - ELECTRICIDAD APLICADA</field>
+        </record>
+        <record model="sie.division" id="sie_division_03">
+            <field name="name">SUPERFICIE - ELECTRÓNICOS</field>
+        </record>
+        <record model="sie.division" id="sie_division_04">
+            <field name="name">SUPERFICIE - CIENCIAS NAVALES</field>
+        </record>
+        <record model="sie.division" id="sie_division_05">
+            <field name="name">SUPERFICIE - CIENCIAS NAVALES - PARALELO A</field>
+        </record>
+        <record model="sie.division" id="sie_division_06">
+            <field name="name">SUPERFICIE - CIENCIAS NAVALES - PARALELO b</field>
+        </record>
+        <record model="sie.division" id="sie_division_07">
+            <field name="name">SUPERFICIE</field>
+        </record>
+        <record model="sie.division" id="sie_division_08">
+            <field name="name">GUARDACOSTAS</field>
+        </record>
+        <record model="sie.division" id="sie_division_09">
+            <field name="name">ABASTECIMIENTOS</field>
+        </record>
+    </data>
+</odoo>

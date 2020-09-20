@@ -111,14 +111,14 @@ class PersonAbstractEntity(models.AbstractModel):
     )
     blood_group = fields.Selection(
         [
-            ('A+', 'A+ve'),
-            ('B+', 'B+ve'),
-            ('O+', 'O+ve'),
-            ('AB+', 'AB+ve'),
-            ('A-', 'A-ve'),
-            ('B-', 'B-ve'),
-            ('O-', 'O-ve'),
-            ('AB-', 'AB-ve')
+            ('A+', 'A+'),
+            ('B+', 'B+'),
+            ('O+', 'O+'),
+            ('AB+', 'AB+'),
+            ('A-', 'A-'),
+            ('B-', 'B-'),
+            ('O-', 'O-'),
+            ('AB-', 'AB-')
         ],
         string='Blood Group'
     )
@@ -167,7 +167,7 @@ class PersonAbstractEntity(models.AbstractModel):
         tracking=True
     )
     serial_navy = fields.Char(
-        string="Serial Naval"
+        string="Còdigo ISSFA"
     )
     ssnid = fields.Char(
         'SSN No',

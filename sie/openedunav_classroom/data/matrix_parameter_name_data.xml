@@ -1,186 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data noupdate="1">
-        <record model="sie.param.name" id="sie_param_name_aprendizaje">
-            <field name="name">APRENDIZAJE</field>
-            <field name="short_name">APREN</field>
-            <field name="code">001</field>
+        <record model="sie.param.name" id="sie_param_name_001">
+            <field name="name">RENDIMIENTO ACADÉMICO</field>
+            <field name="short_name">REAC</field>
         </record>
-        <record model="sie.param.name" id="sie_param_name_academico">
-            <field name="name">RENDIMIENTO ACADEMICO</field>
-            <field name="short_name">REDAC</field>
-            <field name="code">002</field>
+        <record model="sie.param.name" id="sie_param_name_001">
+            <field name="name">PRODUCTO INTEGRADOR DEL CURSO</field>
+            <field name="short_name">PIC</field>
         </record>
-        <record model="sie.param.name" id="sie_param_name_producto_integrador">
-            <field name="name">PRODUCTO INTEGRADOR</field>
-            <field name="short_name">P.I.</field>
-            <field name="code">003</field>
-        </record>
-        <record model="sie.param.name" id="sie_param_name_comunes">
-            <field name="name">ASIGNATURA COMUNES</field>
-            <field name="short_name">COMU</field>
-            <field name="code">004</field>
-        </record>
-        <record model="sie.param.name" id="sie_param_name_cap_comun">
-            <field name="name">CAPACITACION COMUN</field>
-            <field name="short_name">P.U.</field>
-            <field name="code">005</field>
-        </record>
-        <record model="sie.param.name" id="sie_param_name_cap_especializada">
-            <field name="name">CAPACITACION ESPECIALIZADA</field>
-            <field name="short_name">TRAB</field>
-            <field name="code">006</field>
-        </record>
-        <record model="sie.param.name" id="sie_param_name_tarea">
+        <record model="sie.param.name" id="sie_param_name_001">
             <field name="name">TAREAS</field>
-            <field name="short_name">TARE</field>
-            <field name="code">007</field>
+            <field name="short_name">TAR</field>
         </record>
-        <record model="sie.param.name" id="sie_param_name_aporte">
-            <field name="name">APORTE</field>
-            <field name="short_name">APR</field>
-            <field name="code">008</field>
-        </record>
-        <record model="sie.param.name" id="sie_param_name_examen">
-            <field name="name">EXAMEN</field>
-            <field name="short_name">EXA</field>
-            <field name="code">009</field>
-        </record>
-        <record model="sie.param.name" id="sie_param_name_act_servicio">
-            <field name="name">ACTITUD PARA EL SERVICIO</field>
-            <field name="short_name">ACTSER</field>
-            <field name="code">010</field>
-        </record>
-        <record model="sie.param.name" id="sie_param_name_fisica">
-            <field name="name">CONDICION FISICA</field>
-            <field name="short_name">CONDFIS</field>
-            <field name="code">011</field>
-        </record>
-        <record model="sie.param.name" id="sie_param_name_comportamiento">
-            <field name="name">COMPORTAMIENTO</field>
-            <field name="short_name">COMPOR</field>
-            <field name="code">012</field>
-        </record>
-        <record model="sie.param.name" id="sie_param_name_productividad">
-            <field name="name">PRODUCTIVIDAD</field>
-            <field name="short_name">PRODU</field>
-            <field name="code">013</field>
-        </record>
-
-        <record model="sie.param.name" id="sie_param_name_apreciacion">
-            <field name="name">APRECIACION PERSONAL</field>
-            <field name="short_name">APRPER</field>
-            <field name="code">014</field>
-        </record>
-        <record model="sie.param.name" id="sie_param_name_seg_mes">
-            <field name="name">SEGUNDO MES</field>
-            <field name="short_name">SEGME</field>
-            <field name="code">015</field>
-        </record>
-        <record model="sie.param.name" id="sie_param_name_cuart_mes">
-            <field name="name">CUARTO MES</field>
-            <field name="short_name">CUAME</field>
-            <field name="code">016</field>
-        </record>
-        <record model="sie.param.name" id="sie_param_name_trabajo_sex_mes">
-            <field name="name">SEXTO MES</field>
-            <field name="short_name">SEXMES</field>
-            <field name="code">017</field>
-        </record>
-        <record model="sie.param.name" id="sie_param_name_puntualidad">
-            <field name="name">PUNTUALIDAD</field>
-            <field name="short_name">PUNT</field>
-            <field name="code">018</field>
-        </record>
-        <record model="sie.param.name" id="sie_param_name_presencia">
-            <field name="name">PRESENCIA PERSONAL</field>
-            <field name="short_name">PRESPER</field>
-            <field name="code">019</field>
-        </record>
-        <record model="sie.param.name" id="sie_param_name_porte_militar">
-            <field name="name">PORTE MILITAR</field>
-            <field name="short_name">PORMIL</field>
-            <field name="code">020</field>
-        </record>
-        <record model="sie.param.name" id="sie_param_name_conse_verdes">
-            <field name="name">CONSERVACION DE AREAS VERDES</field>
-            <field name="short_name">CONSAREVER</field>
-            <field name="code">021</field>
-        </record>
-        <record model="sie.param.name" id="sie_param_name_periodico_mural">
-            <field name="name">PERIODICO MURAL</field>
-            <field name="short_name">P.M.</field>
-            <field name="code">022</field>
-        </record>
-        <record model="sie.param.name" id="sie_param_name_conferencia">
-            <field name="name">CONFERENCIAS</field>
-            <field name="short_name">CONFE</field>
-            <field name="code">023</field>
-        </record>
-        <record model="sie.param.name" id="sie_param_name_trabajos_direccion">
+        <record model="sie.param.name" id="sie_param_name_001">
             <field name="name">TRABAJOS DE DIRECCION</field>
-            <field name="short_name">TDD</field>
-            <field name="code">024</field>
+            <field name="short_name">TDIR</field>
         </record>
-        <record model="sie.param.name" id="sie_param_name_comunidad">
-            <field name="name">SERVICIOS A LA COMUNIDAD/FINES DE SEMANA</field>
-            <field name="short_name">S.C/F.S.</field>
-            <field name="code">025</field>
+        <record model="sie.param.name" id="sie_param_name_001">
+            <field name="name">ACTIVIDADES INTEGRADORAS DEL MÓDULO</field>
+            <field name="short_name">AIM</field>
         </record>
-        <record model="sie.param.name" id="sie_param_name_comunitarios">
-            <field name="name">SERVICIOS COMUNITARIOS</field>
-            <field name="short_name">SERCOMUNI</field>
-            <field name="code">026</field>
+        <record model="sie.param.name" id="sie_param_name_001">
+            <field name="name">ACTIVIDAD INTEGRADORA INDIVIDUAL</field>
+            <field name="short_name">AII</field>
         </record>
-        <record model="sie.param.name" id="sie_param_name_ciudadania">
-            <field name="name">ACTIVIDADES DE APOYO A LA CIUDADANIA</field>
-            <field name="short_name">A.A.C</field>
-            <field name="code">027</field>
+        <record model="sie.param.name" id="sie_param_name_001">
+            <field name="name">ACTIVIDAD INTEGRADORA GRUPAL</field>
+            <field name="short_name">AIG</field>
         </record>
-        <record model="sie.param.name" id="sie_param_name_espiritu_cuerpo">
-            <field name="name">ESPIRTU DE CUERPO</field>
-            <field name="short_name">O.P.</field>
-            <field name="code">028</field>
+        <record model="sie.param.name" id="sie_param_name_001">
+            <field name="name">ACTITUD ANDRAGÓGICA</field>
+            <field name="short_name">AG</field>
         </record>
-        <record model="sie.param.name" id="sie_param_name_honor">
-            <field name="name">HONOR</field>
-            <field name="short_name">HONO</field>
-            <field name="code">029</field>
+                <record model="sie.param.name" id="sie_param_name_001">
+            <field name="name">COEVALUACIÓN</field>
+            <field name="short_name">COEV</field>
         </record>
-        <record model="sie.param.name" id="sie_param_name_lealtad">
-            <field name="name">LEALTAD</field>
-            <field name="short_name">LEALT</field>
-            <field name="code">030</field>
+                <record model="sie.param.name" id="sie_param_name_001">
+            <field name="name">VERIFICACIÒN ACADÈMICA</field>
+            <field name="short_name">VEAC</field>
         </record>
-        <record model="sie.param.name" id="sie_param_name_honestidad">
-            <field name="name">HONESTIDAD</field>
-            <field name="short_name">HONES</field>
-            <field name="code">031</field>
-        </record>
-        <record model="sie.param.name" id="sie_param_name_trabajos_cooperacion">
-            <field name="name">COOPERACION</field>
-            <field name="short_name">COOPE</field>
-            <field name="code">032</field>
-        </record>
-        <record model="sie.param.name" id="sie_param_name_odg_puente">
-            <field name="name">CAPACITION PUESTO OPERATIVO ODG PUENTE/NAVEGANDO Y PUERTO</field>
-            <field name="short_name">C.P.O.O.P</field>
-            <field name="code">033</field>
-        </record>
-        <record model="sie.param.name" id="sie_param_name_operativo_ing">
-            <field name="name">CALIFICACION PUESTO OPERATIVO INGENIERIA</field>
-            <field name="short_name">C.P.O.I</field>
-            <field name="code">034</field>
-        </record>
-        <record model="sie.param.name" id="sie_param_name_operativo_abordaje">
-            <field name="name">CALIFICACION PUESTO OPERATIVO ABORDAJE</field>
-            <field name="short_name">C.P.O.A</field>
-            <field name="code">035</field>
-        </record>
-        <record model="sie.param.name" id="sie_param_name_operativo_incendio">
-            <field name="name">CALIFICACION PUESTO OPERATIVO EJERCICIO CONTRE INCENDIO</field>
-            <field name="short_name">C.P.O.E.C.I</field>
-            <field name="code">036</field>
+                <record model="sie.param.name" id="sie_param_name_001">
+            <field name="name">EVALUACIÒN DEL APRENDIZAJE</field>
+            <field name="short_name">EVAP</field>
         </record>
     </data>
 </openerp>

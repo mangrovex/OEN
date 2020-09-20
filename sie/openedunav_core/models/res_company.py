@@ -15,3 +15,6 @@ class ResCompany(models.Model):
     approval_authority = fields.Text(
         'Approval Authority'
     )
+    school_id = fields.Many2one(
+        'sie.school'
+    )

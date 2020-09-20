@@ -8,7 +8,6 @@ from werkzeug.utils import redirect
 
 DEFAULT_IMAGE = '/backend_theme_v13/static/src/img/material-background.png'
 
-
 class DasboardBackground(Controller):
 
     @route(['/dashboard'], type='http', auth='user', website=False)

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="sie_school_view_tree" model="ir.ui.view">
+            <field name="name">sie.school.tree</field>
+            <field name="model">sie.school</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="school">
+                    <field name="name"/>
+                    <field name="shortname"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sie_school_view_form" model="ir.ui.view">
+            <field name="name">sie.school.form</field>
+            <field name="model">sie.school</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="school">
+                    <sheet>
+                        <separator colspan="4" string="Reparto"/>
+                        <group col="4" colspan="4">
+                            <field name="name"/>
+                            <field name="shortname"/>
+                            <field name="code" class="oe_inline"/>
+                            <label class="oe_inline" string=" " for="code"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="sie_school_view_search" model="ir.ui.view">
+            <field name="name">sie.school.search</field>
+            <field name="model">sie.school</field>
+            <field name="arch" type="xml">
+                <search string="school">
+                    <field name="name"/>
+                    <field name="shortname"/>
+                    <field name="code"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_list_sie_school">
+            <field name="name">Escuela</field>
+            <field name="res_model">sie.school</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="sie_school_view_search"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Clic para crear un nueva escuela.
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

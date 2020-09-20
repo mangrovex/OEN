@@ -76,9 +76,15 @@ class SieScoreContentStudent(models.Model):
             if record.score < 0.0 or record.score > 20:
                 raise ValidationError(record.student_id.name + ' revisar Nota ' + str(record.score))
 
-    @api.onchange('score')
+    @api.onchange('score_1')
     def onchange_score(self):
         for record in self:
-            if record.score < 0.0 or record.score > 20:
-                raise ValidationError(record.student_id.name + ' revisar Nota ' + str(record.score))
+            if record.score_1 < 0.0 or record.score_1 > 20:
+                raise ValidationError(record.student_id.name + ' revisar Nota ' + str(record.score_1))
+
+    @api.onchange('score_2')
+    def onchange_score(self):
+        for record in self:
+            if record.score_2 < 0.0 or record.score_2 > 20:
+                raise ValidationError(record.student_id.name + ' revisar Nota ' + str(record.score_2))
 

@@ -19,6 +19,7 @@
     ],
     'data': [
         'security/ir.model.access.csv',
+        'data/openedunav_code.xml',
         'views/promotion_course_views.xml',
         'views/knowledge_views.xml',
         'views/module_views.xml',

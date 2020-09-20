@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-13 00:01+0000\n"
-"PO-Revision-Date: 2020-08-02 18:02-0500\n"
+"POT-Creation-Date: 2020-09-14 17:19+0000\n"
+"PO-Revision-Date: 2020-09-14 12:32-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -15,39 +15,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
 "Language: es\n"
-"X-Generator: Poedit 2.4\n"
+"X-Generator: Poedit 2.4.1\n"
 
 #. module: openedunav_core
 #: model_terms:ir.ui.view,arch_db:openedunav_core.person_abstract_entity_view_form
-msgid "091234451-1"
-msgstr ""
-
-#. module: openedunav_core
-#: model:ir.model.fields.selection,name:openedunav_core.selection__person_abstract_entity__blood_group__a+
-#: model:ir.model.fields.selection,name:openedunav_core.selection__sie_faculty__blood_group__a+
-#: model:ir.model.fields.selection,name:openedunav_core.selection__sie_student__blood_group__a+
-msgid "A+ve"
-msgstr ""
-
-#. module: openedunav_core
-#: model:ir.model.fields.selection,name:openedunav_core.selection__person_abstract_entity__blood_group__a-
-#: model:ir.model.fields.selection,name:openedunav_core.selection__sie_faculty__blood_group__a-
-#: model:ir.model.fields.selection,name:openedunav_core.selection__sie_student__blood_group__a-
-msgid "A-ve"
+msgid "0912344511"
 msgstr ""
 
 #. module: openedunav_core
 #: model:ir.model.fields.selection,name:openedunav_core.selection__person_abstract_entity__blood_group__ab+
 #: model:ir.model.fields.selection,name:openedunav_core.selection__sie_faculty__blood_group__ab+
 #: model:ir.model.fields.selection,name:openedunav_core.selection__sie_student__blood_group__ab+
-msgid "AB+ve"
+msgid "AB+"
 msgstr ""
 
 #. module: openedunav_core
 #: model:ir.model.fields.selection,name:openedunav_core.selection__person_abstract_entity__blood_group__ab-
 #: model:ir.model.fields.selection,name:openedunav_core.selection__sie_faculty__blood_group__ab-
 #: model:ir.model.fields.selection,name:openedunav_core.selection__sie_student__blood_group__ab-
-msgid "AB-ve"
+msgid "AB-"
 msgstr ""
 
 #. module: openedunav_core
@@ -216,20 +202,6 @@ msgid "Años en Fuerzas"
 msgstr ""
 
 #. module: openedunav_core
-#: model:ir.model.fields.selection,name:openedunav_core.selection__person_abstract_entity__blood_group__b+
-#: model:ir.model.fields.selection,name:openedunav_core.selection__sie_faculty__blood_group__b+
-#: model:ir.model.fields.selection,name:openedunav_core.selection__sie_student__blood_group__b+
-msgid "B+ve"
-msgstr ""
-
-#. module: openedunav_core
-#: model:ir.model.fields.selection,name:openedunav_core.selection__person_abstract_entity__blood_group__b-
-#: model:ir.model.fields.selection,name:openedunav_core.selection__sie_faculty__blood_group__b-
-#: model:ir.model.fields.selection,name:openedunav_core.selection__sie_student__blood_group__b-
-msgid "B-ve"
-msgstr ""
-
-#. module: openedunav_core
 #: model:ir.model.fields.selection,name:openedunav_core.selection__person_abstract_entity__certificate__bachelor
 #: model:ir.model.fields.selection,name:openedunav_core.selection__sie_faculty__certificate__bachelor
 #: model:ir.model.fields.selection,name:openedunav_core.selection__sie_student__certificate__bachelor
@@ -320,6 +292,11 @@ msgid "Category Name"
 msgstr "Nombre de la categoía"
 
 #. module: openedunav_core
+#: model:ir.model.fields,field_description:openedunav_core.field_sie_student__category_ids
+msgid "Category Tags"
+msgstr ""
+
+#. module: openedunav_core
 #: model:ir.model.constraint,message:openedunav_core.constraint_sie_faculty_category_name_uniq
 msgid "Category name already exists !"
 msgstr "¡El nombre de la categoría ya existe!"
@@ -389,6 +366,11 @@ msgid "Civil"
 msgstr ""
 
 #. module: openedunav_core
+#: model_terms:ir.actions.act_window,help:openedunav_core.action_list_sie_school
+msgid "Clic para crear un nueva escuela."
+msgstr ""
+
+#. module: openedunav_core
 #: model_terms:ir.actions.act_window,help:openedunav_core.action_list_sie_location
 msgid "Clic para crear un nuevo reparto."
 msgstr "Click para crear un nuevo reparto."
@@ -442,7 +424,6 @@ msgstr "Haga clic para crear una nueva especialidad."
 #. module: openedunav_core
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_faculty_category__code
 #: model_terms:ir.ui.view,arch_db:openedunav_core.sie_faculty_category_view_search
-#: model_terms:ir.ui.view,arch_db:openedunav_core.sie_location_view_search
 #: model_terms:ir.ui.view,arch_db:openedunav_core.sie_religion_view_search
 msgid "Code"
 msgstr "Código"
@@ -631,6 +612,7 @@ msgstr "Crear el primer estudiante"
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_person_title__create_uid
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_promotion__create_uid
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_religion__create_uid
+#: model:ir.model.fields,field_description:openedunav_core.field_sie_school__create_uid
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_specialty__create_uid
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_student__create_uid
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_student_category__create_uid
@@ -654,6 +636,7 @@ msgstr "Creado por"
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_person_title__create_date
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_promotion__create_date
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_religion__create_date
+#: model:ir.model.fields,field_description:openedunav_core.field_sie_school__create_date
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_specialty__create_date
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_student__create_date
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_student_category__create_date
@@ -679,9 +662,17 @@ msgid "Cuarto Nivel"
 msgstr ""
 
 #. module: openedunav_core
+#: model:ir.model.fields,field_description:openedunav_core.field_person_abstract_entity__serial_navy
+#: model:ir.model.fields,field_description:openedunav_core.field_sie_faculty__serial_navy
+#: model:ir.model.fields,field_description:openedunav_core.field_sie_student__serial_navy
+msgid "Còdigo ISSFA"
+msgstr ""
+
+#. module: openedunav_core
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_location__code
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_nato__name
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_religion__code
+#: model:ir.model.fields,field_description:openedunav_core.field_sie_school__code
 msgid "Código"
 msgstr ""
 
@@ -709,6 +700,7 @@ msgstr "Fecha de fallecimiento"
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_location__display_name
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_person_title__display_name
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_religion__display_name
+#: model:ir.model.fields,field_description:openedunav_core.field_sie_school__display_name
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_specialty__display_name
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_student__display_name
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_student_category__display_name
@@ -725,6 +717,11 @@ msgstr "Nombre completo"
 #: model:ir.model.fields.selection,name:openedunav_core.selection__sie_student__marital__divorced
 msgid "Divorced"
 msgstr "Divorciado"
+
+#. module: openedunav_core
+#: model:ir.ui.menu,name:openedunav_core.sie_faculty_menu
+msgid "Docentes"
+msgstr "Docente"
 
 #. module: openedunav_core
 #: model:ir.actions.act_window,name:openedunav_core.action_list_sie_faculty
@@ -804,6 +801,11 @@ msgid "Es oficial?"
 msgstr ""
 
 #. module: openedunav_core
+#: model:ir.actions.act_window,name:openedunav_core.action_list_sie_school
+msgid "Escuela"
+msgstr ""
+
+#. module: openedunav_core
 #: model:ir.model.fields,field_description:openedunav_core.field_person_abstract_entity__specialty_id
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_faculty__specialty_id
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_student__specialty_id
@@ -839,7 +841,6 @@ msgstr "Docentes"
 
 #. module: openedunav_core
 #: model:ir.model.fields.selection,name:openedunav_core.selection__res_partner__type__sie_faculty
-#: model:ir.ui.menu,name:openedunav_core.sie_faculty_menu
 #: model_terms:ir.ui.view,arch_db:openedunav_core.sie_faculty_view_form
 msgid "Faculty"
 msgstr "Docente"
@@ -1004,7 +1005,6 @@ msgstr ""
 
 #. module: openedunav_core
 #: model_terms:ir.ui.view,arch_db:openedunav_core.sie_faculty_category_view_search
-#: model_terms:ir.ui.view,arch_db:openedunav_core.sie_location_view_search
 #: model_terms:ir.ui.view,arch_db:openedunav_core.sie_religion_view_search
 msgid "Group By..."
 msgstr "Agrupar por..."
@@ -1028,6 +1028,7 @@ msgstr "Le ayuda a administrar sus institutos con diferentes usuarios."
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_person_title__id
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_promotion__id
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_religion__id
+#: model:ir.model.fields,field_description:openedunav_core.field_sie_school__id
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_specialty__id
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_student__id
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_student_category__id
@@ -1090,6 +1091,14 @@ msgstr "Si está marcado, los nuevos mensajes requieren su atención."
 #: model:ir.model.fields,help:openedunav_core.field_sie_student__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Si está marcado, algunos mensajes tienen un error de entrega."
+
+#. module: openedunav_core
+#: model:ir.model.fields,help:openedunav_core.field_person_abstract_entity__team_id
+#: model:ir.model.fields,help:openedunav_core.field_sie_faculty__team_id
+#: model:ir.model.fields,help:openedunav_core.field_sie_student__team_id
+msgid ""
+"If set, this Sales Team will be used for sales and assignations related to this partner"
+msgstr ""
 
 #. module: openedunav_core
 #: model:ir.model.fields,help:openedunav_core.field_person_abstract_entity__is_blacklisted
@@ -1285,6 +1294,7 @@ msgstr "Idioma"
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_person_title____last_update
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_promotion____last_update
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_religion____last_update
+#: model:ir.model.fields,field_description:openedunav_core.field_sie_school____last_update
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_specialty____last_update
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_student____last_update
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_student_category____last_update
@@ -1315,6 +1325,7 @@ msgstr "Apellido"
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_person_title__write_uid
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_promotion__write_uid
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_religion__write_uid
+#: model:ir.model.fields,field_description:openedunav_core.field_sie_school__write_uid
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_specialty__write_uid
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_student__write_uid
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_student_category__write_uid
@@ -1338,6 +1349,7 @@ msgstr "Última actualización por"
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_person_title__write_date
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_promotion__write_date
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_religion__write_date
+#: model:ir.model.fields,field_description:openedunav_core.field_sie_school__write_date
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_specialty__write_date
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_student__write_date
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_student_category__write_date
@@ -1369,16 +1381,17 @@ msgstr ""
 
 #. module: openedunav_core
 #: model:ir.model,name:openedunav_core.model_sie_location
+#: model:ir.model.fields,field_description:openedunav_core.field_sie_student__location_id
 #: model:ir.ui.menu,name:openedunav_core.sie_location_menu
 msgid "Location"
-msgstr "Ubicación"
+msgstr "Reparto de procedencia"
 
 #. module: openedunav_core
 #: model:ir.model.fields,field_description:openedunav_core.field_person_abstract_entity__login
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_faculty__login
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_student__login
 msgid "Login"
-msgstr ""
+msgstr "Ingresar"
 
 #. module: openedunav_core
 #: model:ir.model.fields,field_description:openedunav_core.field_person_abstract_entity__message_main_attachment_id
@@ -1490,7 +1503,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_student__name
 #: model_terms:ir.ui.view,arch_db:openedunav_core.person_abstract_entity_view_form
 #: model_terms:ir.ui.view,arch_db:openedunav_core.sie_faculty_category_view_search
-#: model_terms:ir.ui.view,arch_db:openedunav_core.sie_location_view_search
 #: model_terms:ir.ui.view,arch_db:openedunav_core.sie_religion_view_search
 msgid "Name"
 msgstr "Nombre"
@@ -1546,6 +1558,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_parameters__name
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_promotion__name
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_religion__name
+#: model:ir.model.fields,field_description:openedunav_core.field_sie_school__name
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_specialty__name
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_sub_specialty__name
 #, python-format
@@ -1563,6 +1576,7 @@ msgstr ""
 #: model:ir.model.constraint,message:openedunav_core.constraint_sie_location_name_uk
 #: model:ir.model.constraint,message:openedunav_core.constraint_sie_person_title_name_uk
 #: model:ir.model.constraint,message:openedunav_core.constraint_sie_religion_name_uk
+#: model:ir.model.constraint,message:openedunav_core.constraint_sie_school_name_uk
 #: model:ir.model.constraint,message:openedunav_core.constraint_sie_specialty_name_uk
 #: model:ir.model.constraint,message:openedunav_core.constraint_sie_sub_specialty_name_uk
 msgid "Nombre debe ser único"
@@ -1625,20 +1639,6 @@ msgid "Number of unread messages"
 msgstr "Número de mensajes no leídos"
 
 #. module: openedunav_core
-#: model:ir.model.fields.selection,name:openedunav_core.selection__person_abstract_entity__blood_group__o+
-#: model:ir.model.fields.selection,name:openedunav_core.selection__sie_faculty__blood_group__o+
-#: model:ir.model.fields.selection,name:openedunav_core.selection__sie_student__blood_group__o+
-msgid "O+ve"
-msgstr ""
-
-#. module: openedunav_core
-#: model:ir.model.fields.selection,name:openedunav_core.selection__person_abstract_entity__blood_group__o-
-#: model:ir.model.fields.selection,name:openedunav_core.selection__sie_faculty__blood_group__o-
-#: model:ir.model.fields.selection,name:openedunav_core.selection__sie_student__blood_group__o-
-msgid "O-ve"
-msgstr ""
-
-#. module: openedunav_core
 #: model_terms:ir.ui.view,arch_db:openedunav_core.person_abstract_entity_view_form
 msgid "Observaciones..."
 msgstr ""
@@ -1656,13 +1656,7 @@ msgid "Official"
 msgstr "Oficial"
 
 #. module: openedunav_core
-#: model:ir.module.category,name:openedunav_core.module_category_openedunav_others
-msgid "OpenEduCat Others"
-msgstr "OpenEduNav Otros"
-
-#. module: openedunav_core
 #: model:ir.module.category,name:openedunav_core.module_category_openedunav
-#: model:ir.ui.menu,name:openedunav_core.sie_main_menu
 msgid "OpenEduNav"
 msgstr ""
 
@@ -1714,7 +1708,7 @@ msgstr "OpenEduNav / Estudiante"
 #. module: openedunav_core
 #: model:res.groups,name:openedunav_core.group_supervisor
 msgid "OpenEduNav / Supervisor"
-msgstr "OpenEduNav / Supervisor"
+msgstr ""
 
 #. module: openedunav_core
 #: model:res.groups,name:openedunav_core.group_user
@@ -1728,16 +1722,20 @@ msgid "OpenEduNav Faculty"
 msgstr "Docente"
 
 #. module: openedunav_core
-#: code:addons/openedunav_core/models/sie_grade.py:0
+#: model:ir.ui.menu,name:openedunav_core.sie_main_menu
+msgid "OpenEducation"
+msgstr ""
+
+#. module: openedunav_core
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_grade__order_
+msgid "Orden"
+msgstr ""
+
+#. module: openedunav_core
+#: code:addons/openedunav_core/models/sie_grade.py:0
 #, python-format
 msgid "Order"
 msgstr "Orden"
-
-#. module: openedunav_core
-#: model:ir.model.fields,field_description:openedunav_core.field_sie_student__location_id
-msgid "Origin"
-msgstr "Origen"
 
 #. module: openedunav_core
 #: model:ir.model.fields.selection,name:openedunav_core.selection__person_abstract_entity__certificate__other
@@ -1745,6 +1743,11 @@ msgstr "Origen"
 #: model:ir.model.fields.selection,name:openedunav_core.selection__sie_student__certificate__other
 msgid "Other"
 msgstr "Otro"
+
+#. module: openedunav_core
+#: model:ir.module.category,name:openedunav_core.module_category_openedunav_others
+msgid "Others Users"
+msgstr ""
 
 #. module: openedunav_core
 #: model:ir.model,name:openedunav_core.model_sie_parameters
@@ -1863,6 +1866,13 @@ msgid "Porcentaje"
 msgstr ""
 
 #. module: openedunav_core
+#: model:ir.model.fields,field_description:openedunav_core.field_person_abstract_entity__property_product_pricelist
+#: model:ir.model.fields,field_description:openedunav_core.field_sie_faculty__property_product_pricelist
+#: model:ir.model.fields,field_description:openedunav_core.field_sie_student__property_product_pricelist
+msgid "Pricelist"
+msgstr ""
+
+#. module: openedunav_core
 #: model_terms:ir.ui.view,arch_db:openedunav_core.person_abstract_entity_view_form
 msgid "Primer Apellido"
 msgstr ""
@@ -1888,12 +1898,12 @@ msgstr "Dirección Privada"
 #: code:addons/openedunav_core/models/sie_promotion.py:0
 #, python-format
 msgid "Promoción"
-msgstr "Promoción"
+msgstr ""
 
 #. module: openedunav_core
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_student__promotion_id
 msgid "Promoción del Estudiante"
-msgstr "Promoción del Estudiante"
+msgstr ""
 
 #. module: openedunav_core
 #: model:ir.ui.menu,name:openedunav_core.sie_promotion_menu
@@ -1910,14 +1920,14 @@ msgstr "Proporcionado por"
 #. module: openedunav_core
 #: model_terms:ir.ui.view,arch_db:openedunav_core.person_abstract_entity_view_form
 msgid "Provincia"
-msgstr "Provincia"
+msgstr ""
 
 #. module: openedunav_core
 #: model:ir.model.fields.selection,name:openedunav_core.selection__person_abstract_entity__study_level__fifth
 #: model:ir.model.fields.selection,name:openedunav_core.selection__sie_faculty__study_level__fifth
 #: model:ir.model.fields.selection,name:openedunav_core.selection__sie_student__study_level__fifth
 msgid "Quinto Nivel"
-msgstr "Quinto Nivel"
+msgstr ""
 
 #. module: openedunav_core
 #: model:ir.model.fields,field_description:openedunav_core.field_person_abstract_entity__ref
@@ -1983,6 +1993,7 @@ msgstr "Detalle"
 #. module: openedunav_core
 #: model:ir.actions.act_window,name:openedunav_core.action_list_sie_location
 #: model_terms:ir.ui.view,arch_db:openedunav_core.sie_location_view_form
+#: model_terms:ir.ui.view,arch_db:openedunav_core.sie_school_view_form
 msgid "Reparto"
 msgstr ""
 
@@ -2033,6 +2044,13 @@ msgid "SSN No"
 msgstr ""
 
 #. module: openedunav_core
+#: model:ir.model.fields,field_description:openedunav_core.field_person_abstract_entity__team_id
+#: model:ir.model.fields,field_description:openedunav_core.field_sie_faculty__team_id
+#: model:ir.model.fields,field_description:openedunav_core.field_sie_student__team_id
+msgid "Sales Team"
+msgstr ""
+
+#. module: openedunav_core
 #: model:ir.model.fields,field_description:openedunav_core.field_person_abstract_entity__phone_sanitized
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_faculty__phone_sanitized
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_student__phone_sanitized
@@ -2040,11 +2058,17 @@ msgid "Sanitized Number"
 msgstr ""
 
 #. module: openedunav_core
+#: model:ir.model,name:openedunav_core.model_sie_school
+#: model:ir.ui.menu,name:openedunav_core.sie_school_menu
+msgid "School"
+msgstr "Escuela"
+
+#. module: openedunav_core
 #: model:ir.model.fields,field_description:openedunav_core.field_person_abstract_entity__study_school
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_faculty__study_school
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_student__study_school
 msgid "School Name"
-msgstr ""
+msgstr "Institución Educativa"
 
 #. module: openedunav_core
 #: model_terms:ir.ui.view,arch_db:openedunav_core.person_abstract_entity_view_form
@@ -2068,13 +2092,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_faculty__self
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_student__self
 msgid "Self"
-msgstr ""
-
-#. module: openedunav_core
-#: model:ir.model.fields,field_description:openedunav_core.field_person_abstract_entity__serial_navy
-#: model:ir.model.fields,field_description:openedunav_core.field_sie_faculty__serial_navy
-#: model:ir.model.fields,field_description:openedunav_core.field_sie_student__serial_navy
-msgid "Serial Naval"
 msgstr ""
 
 #. module: openedunav_core
@@ -2107,6 +2124,12 @@ msgstr ""
 #. module: openedunav_core
 #: model:ir.model,name:openedunav_core.model_sie_sub_specialty
 msgid "SieSubSpecialty"
+msgstr ""
+
+#. module: openedunav_core
+#: model:ir.model.fields,field_description:openedunav_core.field_sie_location__shortname
+#: model:ir.model.fields,field_description:openedunav_core.field_sie_school__shortname
+msgid "Siglas"
 msgstr ""
 
 #. module: openedunav_core
@@ -2237,7 +2260,7 @@ msgstr "Calle # 2"
 #: model:ir.model.fields.selection,name:openedunav_core.selection__res_partner__type__sie_student
 #: model_terms:ir.ui.view,arch_db:openedunav_core.sie_student_view_form
 msgid "Student"
-msgstr "Alumno"
+msgstr "Alumno Militar"
 
 #. module: openedunav_core
 #: model:ir.model,name:openedunav_core.model_sie_student_category
@@ -2274,7 +2297,7 @@ msgstr "Etiquetas de estudiantes"
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_faculty__sub_specialty_id
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_student__sub_specialty_id
 msgid "Sub Especialidad"
-msgstr "Sub Especialidad"
+msgstr ""
 
 #. module: openedunav_core
 #: model:ir.ui.menu,name:openedunav_core.sie_sub_specialty
@@ -2304,7 +2327,6 @@ msgstr "¡El nombre de la etiqueta ya existe!"
 #. module: openedunav_core
 #: model:ir.model.fields,field_description:openedunav_core.field_person_abstract_entity__category_id
 #: model:ir.model.fields,field_description:openedunav_core.field_sie_student__category_id
-#: model:ir.model.fields,field_description:openedunav_core.field_sie_student__category_ids
 msgid "Tags"
 msgstr "Etiquetas"
 
@@ -2317,8 +2339,8 @@ msgstr "Identificación del impuesto"
 
 #. module: openedunav_core
 #: model:sie.person.title,name:openedunav_core.person_title_06
-msgid "Tecnologo"
-msgstr "Tecnólogo"
+msgid "Tecnólogo"
+msgstr ""
 
 #. module: openedunav_core
 #: model:ir.model.fields.selection,name:openedunav_core.selection__person_abstract_entity__study_level__third
@@ -2337,6 +2359,15 @@ msgid ""
 msgstr ""
 "El número de identificación fiscal. Complete esto si el contacto está sujeto a "
 "impuestos gubernamentales. Usado en algunas declaraciones legales."
+
+#. module: openedunav_core
+#: code:addons/openedunav_core/models/sie_location.py:0
+#: code:addons/openedunav_core/models/sie_school.py:0
+#: model:ir.model.constraint,message:openedunav_core.constraint_sie_location_location_unique_code
+#: model:ir.model.constraint,message:openedunav_core.constraint_sie_school_school_unique_code
+#, python-format
+msgid "The code must be unique!"
+msgstr ""
 
 #. module: openedunav_core
 #: model:ir.model.fields,help:openedunav_core.field_person_abstract_entity__website_url
@@ -2363,6 +2394,15 @@ msgstr ""
 "Este campo se utiliza para buscar en la dirección de correo electrónico, ya que el "
 "campo de correo electrónico principal puede contener más que una dirección de correo "
 "electrónico estrictamente."
+
+#. module: openedunav_core
+#: model:ir.model.fields,help:openedunav_core.field_person_abstract_entity__property_product_pricelist
+#: model:ir.model.fields,help:openedunav_core.field_sie_faculty__property_product_pricelist
+#: model:ir.model.fields,help:openedunav_core.field_sie_student__property_product_pricelist
+msgid ""
+"This pricelist will be used, instead of the default one, for sales to the current "
+"partner"
+msgstr ""
 
 #. module: openedunav_core
 #: model:ir.model.fields,field_description:openedunav_core.field_person_abstract_entity__tz
@@ -2571,7 +2611,6 @@ msgstr "p.ej. Señor"
 #: model_terms:ir.ui.view,arch_db:openedunav_core.sie_location_view_form
 #: model_terms:ir.ui.view,arch_db:openedunav_core.sie_location_view_search
 #: model_terms:ir.ui.view,arch_db:openedunav_core.sie_location_view_tree
-#, fuzzy
 msgid "location"
 msgstr "ubicación"
 
@@ -2591,7 +2630,7 @@ msgstr ""
 #. module: openedunav_core
 #: model_terms:ir.ui.view,arch_db:openedunav_core.person_abstract_entity_view_kanban
 msgid "person"
-msgstr ""
+msgstr "persona"
 
 #. module: openedunav_core
 #: model:ir.actions.act_window,name:openedunav_core.action_list_sie_person_title
@@ -2606,12 +2645,19 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:openedunav_core.sie_promotion_view_search
 #: model_terms:ir.ui.view,arch_db:openedunav_core.sie_promotion_view_tree
 msgid "promotion"
-msgstr ""
+msgstr "promoción"
+
+#. module: openedunav_core
+#: model_terms:ir.ui.view,arch_db:openedunav_core.sie_school_view_form
+#: model_terms:ir.ui.view,arch_db:openedunav_core.sie_school_view_search
+#: model_terms:ir.ui.view,arch_db:openedunav_core.sie_school_view_tree
+msgid "school"
+msgstr "escuela"
 
 #. module: openedunav_core
 #: model_terms:ir.ui.view,arch_db:openedunav_core.sie_specialty_view_search
 msgid "specialty"
-msgstr ""
+msgstr "especialidad"
 
 #. module: openedunav_core
 #: model_terms:ir.ui.view,arch_db:openedunav_core.sie_sub_specialty_view_form

@@ -8,6 +8,7 @@
             <field name="arch" type="xml">
                 <tree string="location">
                     <field name="name"/>
+                    <field name="shortname"/>
                     <field name="code"/>
                 </tree>
             </field>
@@ -23,7 +24,9 @@
                         <separator colspan="4" string="Reparto"/>
                         <group col="4" colspan="4">
                             <field name="name"/>
-                            <field name="code"/>
+                            <field name="shortname"/>
+                            <field name="code" class="oe_inline"/>
+                            <label class="oe_inline" string=" " for="code"/>
                         </group>
                     </sheet>
                 </form>
@@ -36,12 +39,8 @@
             <field name="arch" type="xml">
                 <search string="location">
                     <field name="name"/>
+                    <field name="shortname"/>
                     <field name="code"/>
-                    <newline/>
-                    <group expand="0" string="Group By...">
-                        <filter name="Name" string="Name" domain="[]" context="{'group_by':'name'}"/>
-                        <filter name="Code" string="Code" domain="[]" context="{'group_by':'code'}"/>
-                    </group>
                 </search>
             </field>
         </record>

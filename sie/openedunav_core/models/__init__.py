@@ -25,4 +25,6 @@ from . import sie_specialty
 from . import sie_student_category
 from . import sie_student
 from . import sie_sub_specialty
+from . import sie_school
+from . import sie_division
 

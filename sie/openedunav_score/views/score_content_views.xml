@@ -35,6 +35,7 @@
                                 string="Print Act"
                                 type="object"
                                 states="published"
+                                class="oe_highlight"
                                 icon="fa-print"/>
                         <field name="state" widget="statusbar" statusbar_visible="draft,for_review,published,approved"/>
                     </header>

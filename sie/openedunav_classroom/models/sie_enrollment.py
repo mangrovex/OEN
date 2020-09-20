@@ -87,18 +87,11 @@ class SieEnrollment(models.Model):
 
     @api.depends('course_id')
     def _compute_course_state(self):
-        data = [
-            ('planned', _('Planned')),
-            ('running', _('Running')),
-            ('finalized', _('Finalized'))
-        ]
         for record in self:
             if record.course_id:
-                for i in range(0, len(data)):
-                    if record.course_id.state == data[i][0]:
-                        record.course_state = data[i][1]
+                record.course_state = record.course_id.state
             else:
-                record.course_state = 'Running'
+                record.course_state = 'planned'
 
     def unlink(self):
         unlink_ids = []

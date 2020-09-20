@@ -4,8 +4,10 @@
 import logging
 
 from dateutil.relativedelta import relativedelta
+from stdnum.ec import ci
 
 from odoo import _, models, fields, api
+from odoo.exceptions import ValidationError
 
 _logger = logging.getLogger(__name__)
 
@@ -41,7 +43,7 @@ class SieStudent(models.Model):
     )
     location_id = fields.Many2one(
         'sie.location',
-        string='Origin'
+        string='Location'
     )
 
     @api.depends('admission_date')
@@ -84,3 +86,16 @@ class SieStudent(models.Model):
                     'tz': self._context.get('tz'),
                 })
                 record.user_id = user_id
+
+    @api.onchange('ced_ruc')
+    def _onchange_ced_ruc(self):
+        for rec in self:
+            if rec.ced_ruc:
+                ced_ruc = rec.ced_ruc.replace('-', '')
+                rec.ced_ruc = ced_ruc
+                if not ci.is_valid(ced_ruc):
+                    if rec.type_ced_ruc == 'cedula':
+                        raise ValidationError('CI [%s] no es valido !' % ced_ruc)
+                    elif rec.type_ced_ruc == 'ruc':
+                        raise ValidationError('RUC [%s] no es valido !' % ced_ruc)
+

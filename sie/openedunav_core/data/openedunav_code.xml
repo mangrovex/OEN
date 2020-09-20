@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<odoo noupdate="1">
+
+    <record model="ir.sequence" id="sequence_location">
+        <field name="name">Location Code</field>
+        <field name="code">sie.location</field>
+        <field name="padding" eval="4"/>
+        <field name="prefix">LO</field>
+    </record>
+
+    <record model="ir.sequence" id="sequence_school">
+        <field name="name">School Code</field>
+        <field name="code">sie.school</field>
+        <field name="padding" eval="4"/>
+        <field name="prefix">SCH</field>
+    </record>
+
+    <record model="ir.sequence" id="sequence_division">
+        <field name="name">Division Code</field>
+        <field name="code">sie.division</field>
+        <field name="padding" eval="4"/>
+        <field name="prefix">DIV</field>
+    </record>
+
+</odoo>

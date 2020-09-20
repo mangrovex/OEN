@@ -42,6 +42,20 @@
             </field>
         </record>
 
+        <record id="sie_knowledge_view_search" model="ir.ui.view">
+            <field name="name">sie.knowledge.search</field>
+            <field name="model">sie.knowledge</field>
+            <field name="arch" type="xml">
+                <search string="Search knowledge">
+                    <field name="name"/>
+                    <field name="module_id"/>
+                    <group expand="0" string="Group By...">
+                        <filter name="group_module" string="Module" context="{'group_by': 'module_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
         <record model="ir.actions.act_window" id="action_list_sie_knowledge">
             <field name="name">Área de Conocimiento</field>
             <field name="res_model">sie.knowledge</field>

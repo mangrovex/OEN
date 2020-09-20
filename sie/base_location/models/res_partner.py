@@ -202,7 +202,7 @@ class ResPartner(models.Model):
         'NUC/RUC',
         help=u'Identificación o Registro Unico de Contribuyentes',
         store=True,
-        track_visibility='onchange'
+        track_visibility='onchange',
     )
     vat = fields.Char(
         compute='_compute_vat',
@@ -277,6 +277,11 @@ class ResPartner(models.Model):
                     record.vat = record.country_id.code + record.ced_ruc
                 else:
                     record.vat = "EC" + record.ced_ruc
+                if not ci.is_valid(record.ced_ruc):
+                    if record.type_ced_ruc == 'cedula':
+                        raise ValidationError('CI [%s] no es valido !' % record.ced_ruc)
+                    elif record.type_ced_ruc == 'ruc':
+                        raise ValidationError('RUC [%s] no es valido !' % record.ced_ruc)
             else:
                 record.vat = None
 

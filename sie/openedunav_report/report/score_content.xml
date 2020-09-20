@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="report.paperformat" id="paperformat_score_content_report">
+        <field name="name">paperformat.score.content.report</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_width">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">60</field>
+        <field name="margin_right">5</field>
+        <field name="margin_bottom">10</field>
+        <field name="margin_left">5</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">1</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <report id="score_content_report"
+            model="score.content.report.wizard"
+            string="Score Content Report"
+            report_type="qweb-pdf"
+            name="openedunav_report.score_content_report_view"
+            paperformat="paperformat_score_content_report"
+            menu="False"/>
+
+
+    <template id="score_content_report_view">
+        <t t-call="web.html_container">
+            <div class="article">
+                <table class="table table-condensed table-bordered" style="width: 100%">
+                    <tbody>
+                        <t t-foreach="docs" t-as="doc">
+                            <tr>
+                                <td>
+                                    <span>CURSO:</span>
+                                    <span t-esc="doc['course_name']"/>
+                                </td>
+                                <td class="text-left">
+                                    <span>DIVISIÔN:</span>
+                                    <span t-esc="doc['division']"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>ÀREA DE CONOCIMIENTO:</span>
+                                    <span t-esc="doc['knowledge_name']"/>
+                                </td>
+                                <td class="text-left">
+                                    <span>N. MÒDULO:</span>
+                                    <span t-esc="doc['number_module']"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>CONTENIDO IMPRESCINDIBLE:</span>
+                                    <span t-esc="doc['content_name']"/>
+                                </td>
+                                <td class="text-left">
+                                    <span>MÒDULO:</span>
+                                    <span t-esc="doc['module_name']"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>DOCENTE:</span>
+                                    <span t-esc="doc['teacher']"/>
+                                </td>
+                                <td class="text-left">
+                                    <span>FECHA DEL ACTA:</span>
+                                    <span t-esc="doc['report_date']"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+                <table class="table table-condensed table-bordered" style="width: 100%">
+                    <tbody>
+                        <tr>
+                            <td class="text-center" style="width: 4px">No.</td>
+                            <td class="text-center" style="width: 35px">CÈDULA</td>
+                            <td class="text-center" style="width: 20px">GRADO/ESP.</td>
+                            <td class="text-center" style=" width: 600px;
+    height: 120px;">APELLIDOS Y NOMBRES</td>
+                            <td class="text-center" style="width: 10px;
+    height: 120px; /* Rotate div */
+    -ms-transform: rotate(-90deg); /* IE 9 */
+    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+    transform: rotate(-90deg);">NOTA
+                                TAREA
+                                FORMADORA(/20)
+                            </td>
+                            <td class="text-center" style="width: 10px;
+    height: 120px; /* Rotate div */
+    -ms-transform: rotate(-90deg); /* IE 9 */
+    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+    transform: rotate(-90deg);">NOTA TAREA
+                                INTEGRADORA(/20)
+                            </td>
+                            <td class="text-center" style="width: 10px;
+    height: 120px; /* Rotate div */
+    -ms-transform: rotate(-90deg); /* IE 9 */
+    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+    transform: rotate(-90deg);">NOTA CONTENIDO
+                                IMPRESCINDIBLE(/20)
+                            </td>
+                            <td class="text-center" style="width: 10px;
+    height: 150px; /* Rotate div */
+    -ms-transform: rotate(-90deg); /* IE 9 */
+    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+    transform: rotate(-90deg);">TOMÈ CONOCIMIENTO
+                            </td>
+                        </tr>
+                        <t t-foreach="students" t-as="student">
+                            <tr>
+                                <td>
+                                    <span t-esc="student['seq']"/>
+                                </td>
+                                <td class="text-center">
+                                    <span t-esc="student['ruc']"/>
+                                </td>
+                                <td class="text-center">
+                                    <span t-esc="student['grade']"/>
+                                </td>
+                                <td class="text-center">
+                                    <span t-esc="student['full_name']"/>
+                                </td>
+                                <td class="text-center">
+                                    <span t-esc="student['score_1']"/>
+                                </td>
+                                <td class="text-center">
+                                    <span t-esc="student['score_2']"/>
+                                </td>
+                                <td>
+                                    <span t-esc="student['score']"/>
+                                </td>
+                                <td class="text-center">
+                                    <span t-esc="student['note']"/>
+                                </td>
+
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+                <table class="table table-condensed table-bordered" style="width: 100%">
+                    <tbody>
+                        <t t-foreach="docs" t-as="doc">
+
+                            <tr>
+                                <td>
+                                    <span>FIRMA DEL DOCENTE:</span>
+                                </td>
+                                <td class="text-left">
+                                    <span>_____________________</span>
+                                </td>
+                            </tr>
+
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+            <div class="footer">
+                <div class="row text-center" style="border-top: 1px solid black;">
+                    <div class="col col-3 offset-9 text-right">
+                        <ul class="list-inline mt-2">
+                            <li class="list-inline-item">Page:</li>
+                            <li class="list-inline-item">
+                                <span class="page"/>
+                            </li>
+                            <li class="list-inline-item">/</li>
+                            <li class="list-inline-item">
+                                <span class="topage"/>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+
+</odoo>

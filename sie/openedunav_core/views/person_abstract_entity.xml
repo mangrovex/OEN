@@ -80,7 +80,7 @@
                                     <field name="type_person" required="1"
                                            attrs="{'invisible':[('type_ced_ruc', '=', False)],}"/>
                                     <field name="ced_ruc" attrs="{'invisible':[('type_ced_ruc', '=', False)]}"
-                                           placeholder="091234451-1"/>
+                                           placeholder="0912344511"/>
                                 </group>
                                 <group name="general" string="General" col="2">
                                     <field name="gender"/>

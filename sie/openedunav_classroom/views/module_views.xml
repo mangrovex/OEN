@@ -66,9 +66,9 @@
                 <search string="Search module">
                     <field name="code"/>
                     <field name="name"/>
-                    <field name="shaft_id"/>
-                    <group expand="0" string="Group By...">
-                        <filter name="group_shaft" string="Shaft of Training" context="{'group_by': 'shaft_id'}"/>
+                    <field name="state"/>
+                     <group expand="0" string="Group By...">
+                        <filter name="group_state" string="State" context="{'group_by': 'state'}"/>
                     </group>
                 </search>
             </field>
@@ -88,18 +88,5 @@
             </field>
         </record>
 
-        <!--        <record model="ir.actions.act_window.view" id="action_open_sie_module">-->
-        <!--            <field name="act_window_id" ref="action_list_sie_module"/>-->
-        <!--            <field name="sequence" eval="20"/>-->
-        <!--            <field name="view_mode">form</field>-->
-        <!--            <field name="view_id" ref="sie_module_view_form"/>-->
-        <!--        </record>-->
-
-        <!--        <record model="ir.actions.act_window.view" id="action_tree_sie_module">-->
-        <!--            <field name="act_window_id" ref="action_list_sie_module"/>-->
-        <!--            <field name="sequence" eval="10"/>-->
-        <!--            <field name="view_mode">tree</field>-->
-        <!--            <field name="view_id" ref="sie_module_view_tree"/>-->
-        <!--        </record>-->
     </data>
 </openerp>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="report_score_content" model="ir.actions.report">
+        <field name="name">Acta de Notas Contenido Imprescindible</field>
+        <field name="model">openedunav_score.sie.score.content</field>
+        <field name="report_name">score_content</field>
+        <field name="print_report_name">Acta de Notas</field>
+        <field name="report_type">py3o</field>
+        <field name="py3o_filetype">pdf</field>
+        <field name="py3o_multi_in_one" eval="True"/>
+        <field name="module">openedunav_report</field>
+        <field name="py3o_template_fallback">report/score_content.odt</field>
+    </record>
+
+
+</odoo>

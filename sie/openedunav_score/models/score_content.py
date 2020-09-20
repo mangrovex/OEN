@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-
+import json
 import logging
+from datetime import date
 from operator import attrgetter
 
 import icu
@@ -217,8 +218,21 @@ class SieScoreContent(models.Model):
                 record.record_name = record.content_id.name
 
     def print_act(self):
-        for record in self:
-            return self.env['report'].get_action(record, 'openedunav_core_report.report_score_content_act')
+        today = date.today()
+        report_date = today.strftime("%d/%m/%Y")
+        data = {
+            'ids': self.ids,
+            'model': self._name,
+            'form': {
+                'course_id': self.course_id.id,
+                'module_id': self.module_id.id,
+                'knowledge_id': self.knowledge_id.id,
+                'content_id': self.content_id.id,
+                'report_date': report_date,
+            },
+        }
+
+        return self.env.ref('openedunav_report.score_content_report').report_action(self, data=data)
 
     def sort_by_name(self):
         for record in self:
@@ -239,3 +253,6 @@ class SieScoreContent(models.Model):
             for student in score_content_student_line:
                 seq += 1
                 student.write({'seq': seq})
+
+
+

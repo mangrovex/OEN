@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="assets_login" inherit_id="web.assets_frontend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/openedunav_login/static/src/css/web_login_style.css"/>
+        </xpath>
+    </template>
+
+    <template id="login_layout" inherit_id="web.login_layout" name="Login Layout Inherit">
+        <xpath expr="//t[@t-set='body_classname']" position="after">
+            <t t-set="body_classname" t-value="'manex_login_background'"/>
+        </xpath>
+
+        <xpath expr="//div[hasclass('container')]" position="attributes">
+            <attribute name="class">row h-80</attribute>
+        </xpath>
+
+        <xpath expr="//div[@t-attf-class='card border-0 mx-auto bg-100 {{login_card_classes}} o_database_list']"
+               position="before">
+            <div id="logo" class="col-12 col-sm-6 col-md-8 col-lg-9 col-xl-9 d-none d-sm-block">
+                <div class="col-12 h-75">
+                    <img class="manex_login_logo" t-attf-src="/openedunav_login/static/src/img/openedunav.png"
+                         alt="Logo" style="width:600"/>
+                </div>
+
+            </div>
+        </xpath>
+
+        <xpath expr="//div[@t-attf-class='card border-0 mx-auto bg-100 {{login_card_classes}} o_database_list']"
+               position="attributes">
+            <attribute name="class">col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 bg-100 {{login_card_classes}}
+                o_database_list col-3
+            </attribute>
+            <attribute name="style"/>
+        </xpath>
+
+        <xpath expr="//div[hasclass('card-body')]/div/img[1]" position="attributes">
+            <attribute name="class">company_logo</attribute>
+        </xpath>
+    </template>
+
+    <template id="login" inherit_id="web.login" name="Login Inherit">
+        <xpath expr="//label[@for='db']" position="replace"/>
+        <xpath expr="//label[@for='login']" position="replace"/>
+        <xpath expr="//label[@for='password']" position="replace"/>
+
+        <xpath expr="//input[@name='login']" position="attributes">
+            <attribute name="placeholder">Email ...</attribute>
+            <attribute name="autocomplete">off</attribute>
+            <attribute name="autocorrect">off</attribute>
+        </xpath>
+
+        <xpath expr="//input[@name='password']" position="attributes">
+            <attribute name="placeholder">Password ...</attribute>
+        </xpath>
+
+        <xpath expr="//a[@href='/web/database/selector']" position="replace">
+            <a role="button" href="/web/database/selector" class="btn btn-secondary">
+                <i class="fa fa-database" role="img" aria-label="Database" title="Database"/>
+            </a>
+        </xpath>
+    </template>
+
+</odoo>

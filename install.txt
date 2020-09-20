@@ -1,0 +1,15 @@
+sudo touch /etc/odoo-server.conf
+
+sudo su root -c "printf '[options] \n; This is the password that allows database operations:\n' >> /etc/odoo-server.conf"
+
+sudo su root -c "printf 'admin_passwd = admin\n' >> /etc/odoo-server.conf"
+
+sudo su root -c "printf 'xmlrpc_port = 8069\n' >> /etc/odoo-server.conf"
+
+sudo su root -c "printf 'logfile = /var/log/odoo/odoo-server.log\n' >> /etc/odoo-server.conf"
+
+sudo su root -c "printf 'addons_path=/odoo/odoo-server/addons\n' >> /etc/odoo-server.conf"
+
+sudo chown odoo:odoo /etc/odoo-server.conf
+
+sudo chmod 640 /etc/odoo-server.conf

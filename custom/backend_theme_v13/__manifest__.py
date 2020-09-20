@@ -1,39 +1,34 @@
 # -*- coding: utf-8 -*-
-###############################################################################
-#
-#    Manexware S.A.
-#    Copyright (C) 2009-TODAY Manexware
-#
-#    noinspection PyStatementEffect
-###############################################################################
+# Copyright 2016, 2020 Openworx - Mario Gielissen
+# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
+
 {
-    "name": "Material Backend Theme V13",
-    "summary": "Material Backend Theme V13",
-    "version": "13.0.0.1",
+    "name": "Openworx Material Backend Theme V13",
+    "summary": "Openworx Material Backend Theme V13",
+    "version": "13.0.0.3",
     "category": "Theme/Backend",
-    "website": "http://www.manexware.com",
+    "website": "http://www.openworx.nl",
 	"description": """
-		Material Backend theme for Odoo 13.0 community edition.
+		Openworx Material Backend theme for Odoo 13.0 community edition.
     """,
 	'images':[
         'images/screen.png'
 	],
-    "author": "Manuel Vega",
+    "author": "Openworx",
     "license": "LGPL-3",
     "installable": True,
     "depends": [
         'web',
         'web_responsive',
+
     ],
     "data": [
         'views/assets.xml',
 		'views/res_company_view.xml',
-        'views/res_config_settings_views.xml'
-		#'views/users.xml',
-        #'views/sidebar.xml',
+		'views/users.xml',
+        	'views/sidebar.xml',
     ],
-    'qweb': [
-        "static/src/xml/*.xml",
-    ],
+    #'live_test_url': 'https://youtu.be/JX-ntw2ORl8'
+
 }
 

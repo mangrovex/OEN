@@ -1,0 +1,365 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* openedunav_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-14 17:39+0000\n"
+"PO-Revision-Date: 2020-09-14 17:39+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: openedunav_report
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_content_report_view
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_knowledge_report_view
+msgid "<span>CONTENIDO IMPRESCINDIBLE:</span>"
+msgstr ""
+
+#. module: openedunav_report
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_content_report_view
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_knowledge_report_view
+msgid "<span>CURSO:</span>"
+msgstr ""
+
+#. module: openedunav_report
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_content_report_view
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_knowledge_report_view
+msgid "<span>DIVISIÔN:</span>"
+msgstr ""
+
+#. module: openedunav_report
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_content_report_view
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_knowledge_report_view
+msgid "<span>DOCENTE:</span>"
+msgstr ""
+
+#. module: openedunav_report
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_content_report_view
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_knowledge_report_view
+msgid "<span>FECHA DEL ACTA:</span>"
+msgstr ""
+
+#. module: openedunav_report
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_content_report_view
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_knowledge_report_view
+msgid "<span>FIRMA DEL DOCENTE:</span>"
+msgstr ""
+
+#. module: openedunav_report
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_content_report_view
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_knowledge_report_view
+msgid "<span>MÒDULO:</span>"
+msgstr ""
+
+#. module: openedunav_report
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_content_report_view
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_knowledge_report_view
+msgid "<span>N. MÒDULO:</span>"
+msgstr ""
+
+#. module: openedunav_report
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_content_report_view
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_knowledge_report_view
+msgid "<span>_____________________</span>"
+msgstr ""
+
+#. module: openedunav_report
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_content_report_view
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_knowledge_report_view
+msgid "<span>ÀREA DE CONOCIMIENTO:</span>"
+msgstr ""
+
+#. module: openedunav_report
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_content_report_view
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_knowledge_report_view
+msgid "APELLIDOS Y NOMBRES"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.actions.act_window,name:openedunav_report.action_score_content_report_wizard
+#: model:ir.ui.menu,name:openedunav_report.sie_report_score_content
+msgid "Acta Notas Contenido Imprescindible"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.actions.act_window,name:openedunav_report.action_score_knowledge_report_wizard
+msgid "Acta Notas Promedio Contenido Imprescindible"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.ui.menu,name:openedunav_report.sie_report_andragogic_attitude
+#: model:ir.ui.menu,name:openedunav_report.sie_report_teacher_andragogic_attitude
+msgid "Andragogic attitude"
+msgstr ""
+
+#. module: openedunav_report
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_content_report_wizard
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_knowledge_report_wizard
+msgid "Cancel"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.ui.menu,name:openedunav_report.sie_report_co-evaluation
+msgid "Co-evaluation"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.model.fields,field_description:openedunav_report.field_score_content_report_wizard__content_id
+msgid "Contenido imprescindible"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.model.fields,field_description:openedunav_report.field_score_content_report_wizard__course_id
+#: model:ir.model.fields,field_description:openedunav_report.field_score_knowledge_report_wizard__course_id
+msgid "Course"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.model.fields,field_description:openedunav_report.field_score_content_report_wizard__create_uid
+#: model:ir.model.fields,field_description:openedunav_report.field_score_knowledge_report_wizard__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.model.fields,field_description:openedunav_report.field_score_content_report_wizard__create_date
+#: model:ir.model.fields,field_description:openedunav_report.field_score_knowledge_report_wizard__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: openedunav_report
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_content_report_view
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_knowledge_report_view
+msgid "CÈDULA"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.model.fields,field_description:openedunav_report.field_report_openedunav_report_score_content_report_view__display_name
+#: model:ir.model.fields,field_description:openedunav_report.field_report_openedunav_report_score_knowledge_report_view__display_name
+#: model:ir.model.fields,field_description:openedunav_report.field_score_content_report_wizard__display_name
+#: model:ir.model.fields,field_description:openedunav_report.field_score_knowledge_report_wizard__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.ui.menu,name:openedunav_report.sie_report_essential_content
+#: model:ir.ui.menu,name:openedunav_report.sie_report_teacher_essential_content
+msgid "Essential content"
+msgstr ""
+
+#. module: openedunav_report
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_content_report_view
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_knowledge_report_view
+msgid "GRADO/ESP."
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.ui.menu,name:openedunav_report.sie_report_general
+msgid "General Report"
+msgstr ""
+
+#. module: openedunav_report
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_content_report_wizard
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_knowledge_report_wizard
+msgid "Generar"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.ui.menu,name:openedunav_report.sie_report_score
+msgid "Grade by module"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.model.fields,field_description:openedunav_report.field_report_openedunav_report_score_content_report_view__id
+#: model:ir.model.fields,field_description:openedunav_report.field_report_openedunav_report_score_knowledge_report_view__id
+#: model:ir.model.fields,field_description:openedunav_report.field_score_content_report_wizard__id
+#: model:ir.model.fields,field_description:openedunav_report.field_score_knowledge_report_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.ui.menu,name:openedunav_report.sie_reports_information
+msgid "Information of the end of the course"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.ui.menu,name:openedunav_report.sie_report_integrative_activities
+msgid "Integrative activities"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.ui.menu,name:openedunav_report.sie_report_knowledge_area
+#: model:ir.ui.menu,name:openedunav_report.sie_report_teacher_knowledge_area
+msgid "Knowledge area"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.model.fields,field_description:openedunav_report.field_report_openedunav_report_score_content_report_view____last_update
+#: model:ir.model.fields,field_description:openedunav_report.field_report_openedunav_report_score_knowledge_report_view____last_update
+#: model:ir.model.fields,field_description:openedunav_report.field_score_content_report_wizard____last_update
+#: model:ir.model.fields,field_description:openedunav_report.field_score_knowledge_report_wizard____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.model.fields,field_description:openedunav_report.field_score_content_report_wizard__write_uid
+#: model:ir.model.fields,field_description:openedunav_report.field_score_knowledge_report_wizard__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.model.fields,field_description:openedunav_report.field_score_content_report_wizard__write_date
+#: model:ir.model.fields,field_description:openedunav_report.field_score_knowledge_report_wizard__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.model.fields,field_description:openedunav_report.field_score_content_report_wizard__module_id
+#: model:ir.model.fields,field_description:openedunav_report.field_score_knowledge_report_wizard__module_id
+msgid "Módulo"
+msgstr ""
+
+#. module: openedunav_report
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_content_report_view
+msgid ""
+"NOTA\n"
+"                                TAREA\n"
+"                                FORMADORA(/20)"
+msgstr ""
+
+#. module: openedunav_report
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_content_report_view
+msgid ""
+"NOTA CONTENIDO\n"
+"                                IMPRESCINDIBLE(/20)"
+msgstr ""
+
+#. module: openedunav_report
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_knowledge_report_view
+msgid ""
+"NOTA DEL ÁREA DE\n"
+"                                CONOCIMIENTO (/20)"
+msgstr ""
+
+#. module: openedunav_report
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_content_report_view
+msgid ""
+"NOTA TAREA\n"
+"                                INTEGRADORA(/20)"
+msgstr ""
+
+#. module: openedunav_report
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_content_report_view
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_knowledge_report_view
+msgid "No."
+msgstr ""
+
+#. module: openedunav_report
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_content_report_view
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_knowledge_report_view
+msgid "Page:"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.ui.menu,name:openedunav_report.sie_report_payroll_teachers
+msgid "Payroll of teachers Product"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.ui.menu,name:openedunav_report.sie_report_product_integrator
+msgid "Product integrator"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.ui.menu,name:openedunav_report.sie_reports_qualification
+msgid "Qualification certificate"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.ui.menu,name:openedunav_report.sie_report_recovery_evaluation
+msgid "Recovery evaluation"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.ui.menu,name:openedunav_report.sie_reports_menu
+msgid "Reportes"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.model,name:openedunav_report.model_score_content_report_wizard
+msgid "Score Content"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.actions.report,name:openedunav_report.score_content_report
+msgid "Score Content Report"
+msgstr ""
+
+#. module: openedunav_report
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_content_report_wizard
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_knowledge_report_wizard
+msgid "Score Generate"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.model,name:openedunav_report.model_score_knowledge_report_wizard
+msgid "Score Knowledge"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.actions.report,name:openedunav_report.score_knowledge_report
+msgid "Score knowledge Report"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.model.fields,field_description:openedunav_report.field_score_content_report_wizard__report_date
+#: model:ir.model.fields,field_description:openedunav_report.field_score_knowledge_report_wizard__report_date
+msgid "Start Date"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.ui.menu,name:openedunav_report.sie_report_student_payroll
+msgid "Student payroll"
+msgstr ""
+
+#. module: openedunav_report
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_content_report_view
+msgid "TOMÈ CONOCIMIENTO"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.ui.menu,name:openedunav_report.sie_reports_teacher
+msgid "Teacher"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.ui.menu,name:openedunav_report.sie_report_attendance_list
+msgid "attendance list"
+msgstr ""
+
+#. module: openedunav_report
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_content_report_wizard
+#: model_terms:ir.ui.view,arch_db:openedunav_report.score_knowledge_report_wizard
+msgid "or"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.model,name:openedunav_report.model_report_openedunav_report_score_content_report_view
+msgid "report.openedunav_report.score_content_report_view"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.model,name:openedunav_report.model_report_openedunav_report_score_knowledge_report_view
+msgid "report.openedunav_report.score_knowledge_report_view"
+msgstr ""
+
+#. module: openedunav_report
+#: model:ir.model.fields,field_description:openedunav_report.field_score_content_report_wizard__knowledge_id
+#: model:ir.model.fields,field_description:openedunav_report.field_score_knowledge_report_wizard__knowledge_id
+msgid "Àrea de conocimiento"
+msgstr ""

@@ -72,7 +72,7 @@ class SieCourse(models.Model):
         'sie.module',
         string="Module",
         required=True,
-        domain="[('course_id', '=', False)]",
+        # domain="[('course_ids', '=', False)]",
         store=True,
         ondelete='restrict'
     )
@@ -108,36 +108,15 @@ class SieCourse(models.Model):
         required=True,
         states={'running': [('readonly', True)], 'finalized': [('readonly', True)]}
     )
-    enrollment = fields.Selection(
-        [
-            ('A', 'Alpha'),
-            ('B', 'Bravo'),
-            ('C', 'Charlie'),
-            ('D', 'Delta'),
-            ('E', 'Echo'),
-            ('F', 'Foxtrot'),
-            ('G', 'Golfo'),
-            ('H', 'Hotel'),
-            ('I', 'India'),
-            ('J', 'Juliet'),
-            ('K', 'Kilo'),
-            ('L', 'Lima'),
-            ('M', 'Mike'),
-            ('N', 'November'),
-            ('NN', u'Ñandu'),
-            ('O', 'Oscar'),
-            ('P', 'Papa'),
-            ('Q', 'Quebeq'),
-            ('R', 'Romeo'),
-            ('S', 'Sierra'),
-            ('T', 'Tango'),
-            ('U', 'Uniform'),
-            ('V', 'Victor'),
-            ('W', 'Wisky'),
-            ('X', 'X-Ray'),
-            ('Y', 'Yankie'),
-            ('Z', 'Zulu'),
-        ],
+    # enrollment = fields.Many2one(
+    #     'sie.nato',
+    #     string=u'Paralelo'
+    # )
+    enrollment = fields.Char(
+        string=u'Paralelo'
+    )
+    enrollment_div = fields.Many2one(
+        'sie.division',
         string=u'División'
     )
     matrix_id = fields.Many2one(
@@ -167,12 +146,10 @@ class SieCourse(models.Model):
         store=True
     )
     work_days = fields.Float('Días laborables')
-    place = fields.Selection(
-        [
-            ('escape', 'ESCAPE'),
-            ('esdeim', 'ESDEIM')
-        ],
-        string="Lugar/Escuela"
+    place = fields.Char(
+        string="Lugar/Escuela",
+        compute='_compute_place',
+        store=True
     )
 
     _sql_constraints = [
@@ -245,7 +222,8 @@ class SieCourse(models.Model):
                         display_name = _('%s - %s - PARALELO %s' % (record.course_name.name,
                                                                     record.promotion_course_id.name, record.enrollment))
                     else:
-                        display_name = _('%s - %s' % (record.course_name.name, record.promotion_course_id.name))
+                        display_name = _('%s - %s - %s' % (
+                        record.course_name.name, record.promotion_course_id.name, record.enrollment_div))
                     record.display_name = display_name
                     record.name = display_name.upper()
 
@@ -256,6 +234,12 @@ class SieCourse(models.Model):
                 start_date = fields.Date.from_string(record.start_date)
                 end_date = fields.Date.from_string(record.end_date)
                 record.duration_days = (end_date - start_date).days
+
+    @api.depends('course_name')
+    def _compute_place(self):
+        for record in self:
+            company_id = self.env.user.company_id
+            record.place = company_id.school_id.code
 
     def action_plan(self):
         for record in self:

@@ -41,3 +41,15 @@ class SieFaculty(models.Model):
     def create(self, vals):
         self.env['ir.config_parameter'].sudo().set_param('sie_entity.global.variable', 'sie_faculty')
         return super(SieFaculty, self).create(vals)
+
+    @api.onchange('ced_ruc')
+    def _onchange_ced_ruc(self):
+        for rec in self:
+            if rec.ced_ruc:
+                ced_ruc = rec.ced_ruc.replace('-', '')
+                rec.ced_ruc = ced_ruc
+                if not ci.is_valid(ced_ruc):
+                    if rec.type_ced_ruc == 'cedula':
+                        raise ValidationError('CI [%s] no es valido !' % ced_ruc)
+                    elif rec.type_ced_ruc == 'ruc':
+                        raise ValidationError('RUC [%s] no es valido !' % ced_ruc)
