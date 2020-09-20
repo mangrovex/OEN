@@ -1,19 +1,24 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* report_py3o
+# * report_py3o
 #
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+# Fernando Lara <gennesis45@gmail.com>, 2017
+# Pedro M. Baeza <pedro.baeza@gmail.com>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 13.0\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-19 20:42+0000\n"
-"PO-Revision-Date: 2020-02-19 20:42+0000\n"
-"Last-Translator: \n"
-"Language-Team: \n"
+"POT-Creation-Date: 2018-01-16 08:52+0000\n"
+"PO-Revision-Date: 2018-01-16 08:52+0000\n"
+"Last-Translator: Pedro M. Baeza <pedro.baeza@gmail.com>, 2017\n"
+"Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: report_py3o
 #: code:addons/report_py3o/models/ir_actions_report.py:0
@@ -64,7 +69,7 @@ msgstr "Agrupar por"
 #: model:ir.model.fields,field_description:report_py3o.field_py3o_report__id
 #: model:ir.model.fields,field_description:report_py3o.field_py3o_template__id
 msgid "ID"
-msgstr "ID (identificación)"
+msgstr "ID"
 
 #. module: report_py3o
 #: model:ir.model.fields,help:report_py3o.field_ir_actions_report__py3o_template_fallback
@@ -79,13 +84,13 @@ msgstr ""
 #: model:ir.model.fields,help:report_py3o.field_ir_actions_report__py3o_multi_in_one
 msgid ""
 "If you execute a report on several records, by default Odoo will generate a "
-"ZIP file that contains as many files as selected records. If you enable this"
-" option, Odoo will generate instead a single report for the selected "
-"records."
+"ZIP file that contains as many files as selected records. If you enable this "
+"option, Odoo will generate instead a single report for the selected records."
 msgstr ""
 
 #. module: report_py3o
 #: model:ir.model.fields,field_description:report_py3o.field_py3o_report__ir_actions_report_id
+#, fuzzy
 msgid "Ir Actions Report"
 msgstr "Ir a los informes de acciones xml id"
 
@@ -109,7 +114,7 @@ msgstr "Última modificación en"
 #: model:ir.model.fields,field_description:report_py3o.field_py3o_report__write_uid
 #: model:ir.model.fields,field_description:report_py3o.field_py3o_template__write_uid
 msgid "Last Updated by"
-msgstr "Última actualización de"
+msgstr "Última actualización por"
 
 #. module: report_py3o
 #: model:ir.model.fields,field_description:report_py3o.field_py3o_report__write_date
@@ -173,7 +178,7 @@ msgstr ""
 #. module: report_py3o
 #: model:ir.model.fields.selection,name:report_py3o.selection__py3o_template__filetype__ods
 msgid "ODF Spreadsheet"
-msgstr ""
+msgstr "Hoja de cálculo ODF"
 
 #. module: report_py3o
 #: model:ir.model.fields.selection,name:report_py3o.selection__py3o_template__filetype__fods
@@ -183,7 +188,7 @@ msgstr ""
 #. module: report_py3o
 #: model:ir.model.fields.selection,name:report_py3o.selection__py3o_template__filetype__odt
 msgid "ODF Text Document"
-msgstr ""
+msgstr "Documento de Texto ODF"
 
 #. module: report_py3o
 #: model:ir.model.fields.selection,name:report_py3o.selection__py3o_template__filetype__fodt
@@ -227,13 +232,15 @@ msgstr "Modelos Py3o"
 
 #. module: report_py3o
 #: model:ir.model,name:report_py3o.model_py3o_template
+#, fuzzy
 msgid "Py3o template"
 msgstr "Modelos Py3o"
 
 #. module: report_py3o
 #: model:ir.model,name:report_py3o.model_ir_actions_report
+#, fuzzy
 msgid "Report Action"
-msgstr "Acción de informe"
+msgstr "Informe"
 
 #. module: report_py3o
 #: model:ir.model,name:report_py3o.model_py3o_report
@@ -242,8 +249,9 @@ msgstr "Reporte de Py30"
 
 #. module: report_py3o
 #: model:ir.model.fields,field_description:report_py3o.field_ir_actions_report__report_type
+#, fuzzy
 msgid "Report Type"
-msgstr "Tipo de informe"
+msgstr "Reporte de Py30"
 
 #. module: report_py3o
 #: model:ir.model.fields,field_description:report_py3o.field_ir_actions_report__py3o_template_id
@@ -259,11 +267,11 @@ msgstr "El módulo implementador que proporciona este informe"
 #: code:addons/report_py3o/models/ir_actions_report.py:0
 #, python-format
 msgid ""
-"The libreoffice runtime is required to genereate the py3o report '%s' but is"
-" not found into the bin path. You must install the libreoffice runtime on "
-"the server. If the runtime is already installed and is not found by Odoo, "
-"you can provide the full path to the runtime by setting the key "
-"'py3o.conversion_command' into the configuration parameters."
+"The libreoffice runtime is required to genereate the py3o report '%s' but is "
+"not found into the bin path. You must install the libreoffice runtime on the "
+"server. If the runtime is already installed and is not found by Odoo, you "
+"can provide the full path to the runtime by setting the key 'py3o."
+"conversion_command' into the configuration parameters."
 msgstr ""
 
 #. module: report_py3o
@@ -274,7 +282,9 @@ msgid ""
 "browser PDF means the report will be rendered using Wkhtmltopdf and "
 "downloaded by the user."
 msgstr ""
-"El tipo de informe que se renderizará, cada uno con su propio método de "
-"renderización. HTML indica que el informe se abrirá directamente en el "
-"navegador, PDF indica que el informe se renderizará usando Wkhtmltopdf y "
-"luego será descargado por el usuario."
+
+#~ msgid "ir.actions.report.xml"
+#~ msgstr "ir.actions.report.xml"
+
+#~ msgid "py3o.template"
+#~ msgstr "py3o.modelo"
