@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from odoo import _, models, fields
+from odoo import _, models, fields, api
+from odoo.osv import expression
 
 
 class SieSubSpecialty(models.Model):
@@ -29,6 +30,16 @@ class SieSubSpecialty(models.Model):
         ('acronym_uk', 'unique(acronym)', u'Acronimo debe ser único'),
         ('name_uk', 'unique(name)', u'Nombre debe ser único'),
     ]
+
+    @api.model
+    def _name_search(self, name, args=None, operator='ilike', limit=100, name_get_uid=None):
+        args = args or []
+        if operator == 'ilike' and not (name or '').strip():
+            domain = []
+        else:
+            domain = ['|', ('name', operator, name), ('acronym', operator, name)]
+        rec = self._search(expression.AND([domain, args]), limit=limit, access_rights_uid=name_get_uid)
+        return models.lazy_name_get(self.browse(rec).with_user(name_get_uid))
 
     def _search_name(self, operator, value):
         if operator == 'like':

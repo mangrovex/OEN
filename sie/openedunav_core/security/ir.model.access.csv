@@ -7,8 +7,8 @@ access_sie_person_title,access_sie_person_title,model_sie_person_title,base.grou
 access_sie_promotion,access_sie_promotion,model_sie_promotion,base.group_user,1,0,0,0
 access_sie_religion,access_sie_religion,model_sie_religion,base.group_user,1,0,0,0
 access_sie_specialty,access_sie_specialty,model_sie_specialty,base.group_user,1,0,0,0
+access_sie_specialty_category,access_sie_specialty_category,model_sie_specialty_category,base.group_user,1,0,0,0
 access_sie_sub_specialty,access_sie_sub_specialty,model_sie_sub_specialty,base.group_user,1,0,0,0
-access_sie_parameters,access_sie_parameters,model_sie_parameters,base.group_user,1,0,0,0
 access_sie_faculty,access_sie_faculty,model_sie_faculty,base.group_user,1,0,0,0
 access_sie_faculty_category,access_sie_faculty_category,model_sie_faculty_category,base.group_user,1,0,0,0
 access_sie_student_category,access_sie_student_category,model_sie_student_category,base.group_user,1,0,0,0
@@ -23,9 +23,9 @@ access_sie_nato,access_sie_nato,model_sie_nato,openedunav_core.group_admin,1,1,1
 access_sie_person_title,access_sie_person_title,model_sie_person_title,openedunav_core.group_admin,1,1,1,1
 access_sie_promotion,access_sie_promotion,model_sie_promotion,openedunav_core.group_admin,1,1,1,1
 access_sie_religion,access_sie_religion,model_sie_religion,openedunav_core.group_admin,1,1,1,1
+access_sie_specialty_category,access_sie_specialty_category,model_sie_specialty_category,openedunav_core.group_admin,1,1,1,1
 access_sie_specialty,access_sie_specialty,model_sie_specialty,openedunav_core.group_admin,1,1,1,1
 access_sie_sub_specialty,access_sie_sub_specialty,model_sie_sub_specialty,openedunav_core.group_admin,1,1,1,1
-access_sie_parameters,access_sie_parameters,model_sie_parameters,openedunav_core.group_admin,1,1,1,1
 access_sie_faculty,access_sie_faculty,model_sie_faculty,openedunav_core.group_admin,1,1,1,1
 access_sie_faculty_category,access_sie_faculty_category,model_sie_faculty_category,openedunav_core.group_admin,1,1,1,1
 access_sie_student_category,access_sie_student_category,model_sie_student_category,openedunav_core.group_admin,1,1,1,1

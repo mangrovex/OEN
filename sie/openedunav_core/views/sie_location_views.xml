@@ -25,7 +25,7 @@
                         <group col="4" colspan="4">
                             <field name="name"/>
                             <field name="shortname"/>
-                            <field name="code" class="oe_inline"/>
+                            <field name="code" class="oe_inline" invisible="1"/>
                             <label class="oe_inline" string=" " for="code"/>
                         </group>
                     </sheet>

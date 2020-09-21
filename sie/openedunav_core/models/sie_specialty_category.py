@@ -4,9 +4,9 @@ from odoo import _, models, fields, api
 from odoo.osv import expression
 
 
-class SieSpecialty(models.Model):
-    _name = 'sie.specialty'
-    _description = 'SieSpecialty'
+class SieSpecialtyCategory(models.Model):
+    _name = 'sie.specialty.category'
+    _description = 'Sie Specialty Category'
 
     acronym = fields.Char(
         _('Acronimo'),
@@ -20,11 +20,7 @@ class SieSpecialty(models.Model):
         required=True,
         search='_search_name'
     )
-    specialty_category_id = fields.Many2one(
-        'sie.specialty.category',
-        string='Categoría',
-        ondelete='restrict'
-    )
+
     _sql_constraints = [
         ('acronym_uk', 'unique(acronym)', u'Acronimo debe ser único'),
         ('name_uk', 'unique(name)', u'Nombre debe ser único'),
@@ -66,4 +62,4 @@ class SieSpecialty(models.Model):
                 new_acronym = u"Copy of {} ({})".format(record.acronym, copied_count)
             default['name'] = new_name
             default['acronym'] = new_acronym
-            return super(SieSpecialty, record).copy(default)
+            return super(SieSpecialtyCategory, record).copy(default)

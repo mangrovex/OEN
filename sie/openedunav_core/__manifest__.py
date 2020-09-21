@@ -50,6 +50,7 @@
         'views/sie_religion_views.xml',
         'views/sie_promotion_views.xml',
         'views/res_company_views.xml',
+        'views/sie_specialty_category_views.xml',
         'views/sie_specialty_views.xml',
         'views/sie_sub_specialty_views.xml',
         'views/sie_student_views.xml',

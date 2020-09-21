@@ -16,16 +16,16 @@
             <attribute name="class">row h-80</attribute>
         </xpath>
 
-        <xpath expr="//div[@t-attf-class='card border-0 mx-auto bg-100 {{login_card_classes}} o_database_list']"
-               position="before">
-            <div id="logo" class="col-12 col-sm-6 col-md-8 col-lg-9 col-xl-9 d-none d-sm-block">
-                <div class="col-12 h-75">
-                    <img class="manex_login_logo" t-attf-src="/openedunav_login/static/src/img/openedunav.png"
-                         alt="Logo" style="width:600"/>
-                </div>
+        <!--        <xpath expr="//div[@t-attf-class='card border-0 mx-auto bg-100 {{login_card_classes}} o_database_list']"-->
+        <!--               position="before">-->
+        <!--            <div id="logo" class="col-12 col-sm-6 col-md-8 col-lg-9 col-xl-9 d-none d-sm-block">-->
+        <!--                <div class="col-12 h-75">-->
+        <!--                    <img class="manex_login_logo" t-attf-src="/openedunav_login/static/src/img/openedunav.png"-->
+        <!--                         alt="Logo" style="width:600"/>-->
+        <!--                </div>-->
 
-            </div>
-        </xpath>
+        <!--            </div>-->
+        <!--        </xpath>-->
 
         <xpath expr="//div[@t-attf-class='card border-0 mx-auto bg-100 {{login_card_classes}} o_database_list']"
                position="attributes">
@@ -38,6 +38,12 @@
         <xpath expr="//div[hasclass('card-body')]/div/img[1]" position="attributes">
             <attribute name="class">company_logo</attribute>
         </xpath>
+<!-- <xpath expr="//button[name('redirect')]" position="replace">-->
+<!--            <img class="manex_logo"-->
+<!--                 t-attf-src="/openedunav_login/static/src/img/openedunav.png"-->
+<!--                 alt="Logo_openedunav"/>-->
+<!--        </xpath>-->
+
     </template>
 
     <template id="login" inherit_id="web.login" name="Login Inherit">
@@ -60,6 +66,8 @@
                 <i class="fa fa-database" role="img" aria-label="Database" title="Database"/>
             </a>
         </xpath>
+
+
     </template>
 
 </odoo>

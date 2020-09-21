@@ -59,47 +59,54 @@
                   groups="openedunav_core.group_admin"
                   sequence="6"/>
 
+        <menuitem id="sie_specialty_category_menu"
+                  name="Specialty Category"
+                  action="action_list_sie_specialty_category"
+                  parent="sie_school_config_general_menu"
+                  groups="openedunav_core.group_admin"
+                  sequence="7"/>
+
         <menuitem id="sie_specialty_menu"
                   name="Specialty"
                   action="action_list_sie_specialty"
                   parent="sie_school_config_general_menu"
                   groups="openedunav_core.group_admin"
-                  sequence="7"/>
+                  sequence="8"/>
 
-        <menuitem id="sie_sub_specialty"
+        <menuitem id="sie_sub_specialty_menu"
                   name="Sub Specialty"
                   action="action_list_sie_sub_specialty"
                   parent="sie_school_config_general_menu"
                   groups="openedunav_core.group_admin"
-                  sequence="8"/>
+                  sequence="9"/>
 
         <menuitem id="sie_person_title_menu"
                   name="Person Títle"
                   action="action_list_sie_person_title"
                   parent="sie_school_config_general_menu"
                   groups="openedunav_core.group_admin"
-                  sequence="9"/>
+                  sequence="10"/>
 
         <menuitem id="sie_location_menu"
                   name="Location"
                   action="action_list_sie_location"
                   parent="sie_school_config_general_menu"
                   groups="openedunav_core.group_admin"
-                  sequence="10"/>
+                  sequence="11"/>
 
         <menuitem id="sie_school_menu"
                   name="School"
                   action="action_list_sie_school"
                   parent="sie_school_config_general_menu"
                   groups="openedunav_core.group_admin"
-                  sequence="11"/>
+                  sequence="12"/>
 
         <menuitem id="sie_division_menu"
                   name="División"
                   action="action_list_sie_division"
                   parent="sie_school_config_general_menu"
                   groups="openedunav_core.group_admin"
-                  sequence="12"/>
+                  sequence="13"/>
 
         <!-- School Planning -->
         <menuitem id="sie_planning_menu"

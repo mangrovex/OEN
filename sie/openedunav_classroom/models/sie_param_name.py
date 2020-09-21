@@ -41,6 +41,6 @@ class SieParamName(models.Model):
         if operator == 'ilike' and not (name or '').strip():
             domain = []
         else:
-            domain = ['|', ('name', operator, name), ('shortname', operator, name)]
+            domain = ['|', ('name', operator, name), ('short_name', operator, name)]
         rec = self._search(expression.AND([domain, args]), limit=limit, access_rights_uid=name_get_uid)
         return models.lazy_name_get(self.browse(rec).with_user(name_get_uid))
